@@ -597,7 +597,7 @@ def analyze_trends(data):
                      "If you're a cyber firm, your pipeline should be at maximum capacity right now.")
         lines.append("")
 
-    # AI/ML trend
+    # Advanced Technology trend
     ai_awards = []
     for item in sections.get("new_awards", {}).get("items", []):
         desc = (item.get("contract_name", "") + " " + item.get("notable_detail", "")).lower()
@@ -606,17 +606,17 @@ def analyze_trends(data):
 
     if ai_awards:
         total_ai = sum(a.get("award_value_raw", 0) for a in ai_awards)
-        lines.append("### AI/ML Spending: From Pilots to Production")
+        lines.append("### Advanced Technology Spending: From Pilots to Production")
         lines.append("")
-        lines.append(f"This week saw {fmt_dollars(total_ai)} in AI-related awards across {len(ai_awards)} contracts. "
+        lines.append(f"This week saw {fmt_dollars(total_ai)} in advanced technology awards across {len(ai_awards)} contracts. "
                      f"Notable: these aren't study contracts or research grants. They're production deployments.")
         lines.append("")
         for a in ai_awards:
             lines.append(f"- {a.get('contract_name', 'Unknown')}: {a.get('award_value', 'N/A')} to {a.get('awardee', 'Unknown')}")
         lines.append("")
-        lines.append("**Forward look:** The federal AI market is bifurcating. Large platforms (Palantir, Scale AI) "
+        lines.append("**Forward look:** The federal advanced technology market is bifurcating. Large platforms (Palantir, Scale AI) "
                      "are winning the data infrastructure layer. Traditional primes are winning the integration layer. "
-                     "Small firms can win in niche verticals (healthcare AI, environmental modeling, financial fraud detection) "
+                     "Small firms can win in niche verticals (healthcare analytics, environmental modeling, financial fraud detection) "
                      "where domain expertise beats platform scale.")
         lines.append("")
 
@@ -810,7 +810,7 @@ def generate_one_liners(data):
         agency = item.get("agency", "a federal agency")
 
         if "AI" in name or "AI" in detail:
-            hooks.append(f"{awardee} just won {value} for AI work at {agency}. The federal AI market isn't coming -- it's here, and it's moving fast.")
+            hooks.append(f"{awardee} just won {value} for advanced technology work at {agency}. The federal tech market isn't coming -- it's here, and it's moving fast.")
             award_templates_used += 1
             continue
 

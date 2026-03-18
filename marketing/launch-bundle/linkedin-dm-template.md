@@ -59,7 +59,7 @@ Quick intro: I just launched GovCon Weekly Intelligence — a curated newsletter
 Every Monday you get:
 → Recompete alerts 3-6 months before SAM.gov
 → Competitor tracking (who won what this week)
-→ AI analysis with action items
+→ expert analysis with action items
 
 Designed for 8(a)/SDVOSB firms in IT verticals (cyber, cloud, AI, DevSecOps, etc.).
 
@@ -237,7 +237,7 @@ GovCon Weekly Intelligence is a curated newsletter for small GovCon BD teams.
 
 How it works:
 1. We pull 500+ contract actions/week from USAspending.gov
-2. AI analyzes for recompetes, trends, competitor moves
+2. Our engine analyzes for recompetes, trends, competitor moves
 3. We deliver an 8-minute brief every Monday with "so what" insights
 
 No database searching. No 10,000-row exports. Just signal.

@@ -21,7 +21,7 @@ You just signed up for the free tier, which means you'll get a monthly market ov
 What's inside:
 → 4 recompetes worth $962M (with days-to-expiration and incumbent analysis)
 → Competitor tracking: who won what this week
-→ AI analysis: what these moves mean for your pipeline
+→ expert analysis: what these moves mean for your pipeline
 → Action items: specific things you should do by Friday
 
 This lands in Pro subscribers' inboxes every Monday @ 7am.
@@ -144,7 +144,7 @@ Pro tier ($149/mo):
 - Weekly intelligence brief every Monday @ 7am
 - NAICS code filtering (only contracts you care about)
 - Competitor tracking (up to 15 companies)
-- AI analysis with specific action items
+- expert analysis with specific action items
 - Recompete alerts 3-6 months in advance
 
 Think: Free tier keeps you informed. Pro tier keeps you ahead.

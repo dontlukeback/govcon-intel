@@ -2,20 +2,256 @@
 
 **Last Updated:** 2026-03-18
 **Owner:** CFO
-**Status:** Draft for Review
+**Status:** Revised — Value-First Launch
 
 ---
 
-## Executive Summary
+## REALITY CHECK: We Have 0 Subscribers
 
-**Recommended Launch Pricing:**
-- **Free Tier:** Weekly newsletter with executive summary + top 3 recompetes
-- **Pro Tier:** $99/month ($990/year) — Full weekly intelligence report
-- **Enterprise Tier:** $499/month ($4,990/year) — Pro + raw data exports + API access + team seats
+**Current State:**
+- 0 newsletter subscribers
+- 0 product validation
+- 0 evidence that people will pay
+- 0 data on what features matter
 
-**Key Insight:** Existing market tools (GovWin IQ, Bloomberg Government, Deltek) cost $20K-100K/year and target large primes. We're going after the **80% of GovCon firms** (small/mid-size) who can't justify that spend but desperately need this intelligence.
+**The Problem with the Old Pricing:**
+We jumped straight to a 3-tier pricing model ($0/$149/$399) without proving value first. The "Most Popular" badge on Pro was aspirational fiction. We guessed at features people might want.
 
-**Target:** 100 paid subscribers at average $150/month = $15K MRR within 6 months.
+**The New Approach:**
+1. **Prove value first** — Get 500+ free subscribers who love the newsletter
+2. **Learn what they'd pay for** — Ask, don't assume
+3. **Price based on evidence** — Not guesses
+
+---
+
+## Launch Strategy: Free-First, Learn, Then Monetize
+
+### Phase 1: NOW — Prove Value (Months 1-3)
+
+**ONLY ONE TIER: FREE**
+
+**What Users Get:**
+- Weekly newsletter (every Monday morning)
+- Top 10 recompetes by ceiling value in their NAICS codes
+- Major awards summary (who won what)
+- Competitor intelligence highlights
+- Strategic analysis and trend spotting
+
+**What We're NOT Offering Yet:**
+- No paid tier
+- No "Pro" features
+- No enterprise plans
+
+**Why:**
+- We have 0 subscribers — nobody has validated this is useful
+- We need to prove we can deliver consistent value week after week
+- We need to learn what people actually want before setting a price
+- Free removes all friction — let the product speak for itself
+
+**Success Metrics:**
+- 500+ free subscribers within 3 months
+- 40%+ weekly open rate
+- 10+ unsolicited "I'd pay for this" emails or LinkedIn messages
+- 5+ feature requests that cluster around similar needs
+
+**Red Flags (triggers for pivot):**
+- <200 subscribers after 2 months
+- <25% open rate
+- No organic sharing or referrals
+- No inbound "how do I get more of this?" questions
+
+---
+
+### Phase 2: AFTER 500 Subscribers — Introduce Paid Tier
+
+**Trigger:** 500+ free subscribers AND evidence they'd pay (survey responses, inbound requests)
+
+**Before launching paid tier, we need answers to:**
+1. What are subscribers using the newsletter for? (BD capture? Competitive intelligence? Market research?)
+2. What do they wish they had? (Daily alerts? Custom NAICS filtering? Historical data? Deeper analysis?)
+3. What are they paying for now? (GovWin? GovTribe? Manual analyst time?)
+4. What's their budget? (Expensable <$100? Requires approval at $200+?)
+5. Who's the decision-maker? (BD Director? VP? CEO?)
+
+**Initial Paid Tier Structure (HYPOTHESIS to test):**
+
+**Pro Tier: $TBD/month (likely $99-149)**
+- Everything in Free, PLUS:
+- **Feature A** (based on top subscriber request — likely daily alerts or custom NAICS filtering)
+- **Feature B** (based on second-most requested feature — likely historical data access or deeper competitor profiles)
+- **Feature C** (based on third request — likely export to CRM or saved searches)
+
+**Pricing Discovery Process:**
+1. Email survey to all free subscribers: "If we added [Feature A], would you pay? How much?"
+2. 1:1 interviews with 20 most engaged subscribers (high open rate, replies to newsletter)
+3. Analyze existing spending (ask: "What tools do you pay for today?")
+4. Test pricing with pilot group: Offer 10 power users early access at $79/month for 3 months
+5. Set pricing based on data, not guesses
+
+---
+
+### Phase 3: AFTER 50 Paid — Introduce Enterprise Tier
+
+**Trigger:** 50+ paying Pro subscribers AND multiple requests for team access or API
+
+**Enterprise Tier: $TBD/month (likely $399-599)**
+- Everything in Pro, PLUS:
+- Team seats (up to 5-10 users)
+- REST API access
+- Custom integrations (Slack, Teams, Salesforce)
+- Priority support
+- (Other features based on what enterprises actually ask for)
+
+**Why wait:**
+- No one knows they need "enterprise" features until they've used the product
+- Enterprise buyers want proof of value — 50+ paid users = social proof
+- We'll learn what enterprises need by talking to Pro customers who outgrow it
+
+---
+
+## 10 Questions to Ask Subscribers Before Setting Price
+
+### Product-Market Fit Questions:
+1. **"What problem does this newsletter solve for you?"** (Validates core value prop)
+2. **"What would you do if we stopped sending it?"** (Measures "must-have" vs. "nice-to-have")
+3. **"What's missing? What do you wish this included?"** (Uncovers paid feature opportunities)
+
+### Willingness-to-Pay Questions:
+4. **"Do you currently pay for contract intelligence tools? Which ones? How much?"** (Anchors pricing context)
+5. **"If we added [top requested feature], would you pay for it? What's a fair price?"** (Tests price sensitivity)
+6. **"At what price would this feel like a steal? A good deal? Expensive? Too expensive?"** (Van Westendorp pricing model)
+
+### Buyer Psychology Questions:
+7. **"Who would approve this purchase at your company?"** (Identifies decision-maker)
+8. **"What budget would this come out of? BD tools? Marketing? IT?"** (Identifies budget source)
+9. **"Do you expense tools yourself, or does it require approval? What's your threshold?"** (Finds friction points)
+
+### Segmentation Questions:
+10. **"Would your team use this? How many people?"** (Identifies team vs. individual buyers)
+
+**How to Deploy:**
+- Send survey to all free subscribers after Week 4 (once they've seen value)
+- Do 1:1 calls with top 20 most-engaged users
+- Offer $50 Amazon gift card for 20-minute interview
+- Synthesize responses into pricing decision document
+
+---
+
+## Pricing Discovery Interview Script
+
+**Opening (1 min):**
+"Thanks for taking the time. We're figuring out what to build next for GovCon Weekly, and you're one of our most engaged readers. I want to understand how you're using it and what would make it even more valuable. This is purely research — not a sales pitch. Sound good?"
+
+**Current Usage (5 min):**
+1. "Walk me through what you do when the newsletter lands in your inbox every Monday."
+2. "What parts do you read first? What do you skip?"
+3. "Have you shared any intel from the newsletter with your team? What happened?"
+4. "What decisions has this informed? (Capture targets, competitive positioning, etc.)"
+
+**Pain Points & Needs (5 min):**
+5. "What's missing? What would make this 10x more useful?"
+6. "If you could wave a magic wand and add one feature, what would it be?"
+7. "How often do you wish you could [daily alerts / custom filtering / historical data]?"
+8. "What tools are you using today for contract intelligence? What do they cost?"
+
+**Willingness to Pay (5 min):**
+9. "If we built [their top requested feature], is that something you'd pay for?"
+10. "What feels like a fair monthly price for that?"
+11. (If they say $X) "What if it were $X+50? Too much? What if it were $X-50? Feels too cheap?"
+12. "Would you need approval to expense this, or could you just swipe your card?"
+
+**Segmentation (3 min):**
+13. "Would this be just for you, or would your team use it?"
+14. "How big is your BD team? Who else would find this useful?"
+15. "Are you at a small firm or part of a larger company? (Revenue range?)"
+
+**Closing (1 min):**
+"This is super helpful. Last question: If we launched a paid tier in the next 30 days with [their requested feature], would you be interested in early access at a discount? (Get email for pilot list.)"
+
+---
+
+## Competitive Research (Hypotheses to Validate)
+
+**Current Market:**
+- **GovWin IQ**: $25K-60K/year per seat — too expensive for small/mid firms
+- **GovTribe**: $3K-8K/year — better search, but still just filtered data
+- **Bloomberg Government**: $25K-50K/year — built for policy wonks, not BD teams
+- **SAM.gov**: Free — data overload, no insights
+
+**Our Positioning (HYPOTHESIS):**
+We're not replacing GovWin. We're replacing the manual analyst that small firms can't afford to hire. Value = time saved + insights delivered.
+
+**Willingness-to-Pay Hypotheses (TO BE TESTED):**
+- Small firms ($2M-10M revenue): $79-99/month is impulse-buy range
+- Mid firms ($10M-50M revenue): $149-199/month if it saves 10+ hours/week
+- Large firms ($50M+ revenue): $399-599/month for team access + API
+
+**We will NOT set prices based on these hypotheses. We will TEST them with real subscribers.**
+
+---
+
+## What We're NOT Doing (Anti-Patterns)
+
+### ❌ Setting Prices Based on Costs
+"Our cost per user is $2, so let's charge $99 for a 50x markup."
+**Why not:** Customers don't care about your costs. They care about value delivered.
+
+### ❌ Copying Competitor Pricing
+"GovWin charges $25K, so we'll undercut them at $10K."
+**Why not:** Different product, different customer, different value prop. Irrelevant comparison.
+
+### ❌ Pricing Based on "What Feels Right"
+"$149 feels like a good B2B SaaS price point."
+**Why not:** You're not the customer. Your intuition is worthless without data.
+
+### ❌ Launching Multiple Tiers on Day 1
+"Let's do Free/Pro/Enterprise from the start."
+**Why not:** Adds complexity, splits focus, requires guessing at feature differentiation. Start simple.
+
+### ❌ Showing Pricing Before We Have Customers
+"Let's put $149/month on the landing page to anchor expectations."
+**Why not:** Signals we're selling before we've proven value. Turn people off. Better to just say "Free" and earn the right to charge later.
+
+---
+
+## Next Steps
+
+### This Week:
+1. ✅ Revise landing page — remove 3-tier pricing grid, replace with "Free weekly newsletter" value prop
+2. ✅ Update this document to reflect reality-based strategy
+3. ✅ Update financial model to mark revenue projections as "assumptions to validate"
+
+### Weeks 1-4 (April 2026):
+4. Launch free newsletter
+5. Get first 100 subscribers (LinkedIn, word-of-mouth, GovCon communities)
+6. Monitor open rates, replies, and engagement
+
+### Weeks 5-8 (May 2026):
+7. Send pricing survey to all subscribers
+8. Conduct 20 pricing discovery interviews
+9. Synthesize findings into "What to build" and "What to charge" decision doc
+
+### Weeks 9-12 (June 2026):
+10. Build top 3 requested features
+11. Launch Pro tier pilot with 10 early adopters at discounted price
+12. Iterate based on feedback
+13. Official Pro tier launch (if pilot works)
+
+### Month 4+ (July 2026):
+14. Monitor Pro conversion rate (target: 5-10% of free → paid)
+15. Identify enterprise leads (teams, API requests)
+16. Build enterprise features based on demand
+17. Launch enterprise tier when we have 50+ Pro customers
+
+---
+
+## Bottom Line
+
+**OLD STRATEGY:** Guess at pricing. Hope customers show up.
+
+**NEW STRATEGY:** Prove value first. Learn from customers. Price based on evidence.
+
+**Key Insight:** We don't have a pricing problem. We have a validation problem. Once we prove people love the free version, pricing will be obvious.
 
 ---
 

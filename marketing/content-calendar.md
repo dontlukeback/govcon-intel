@@ -9,12 +9,12 @@ I spent 10 years watching small GovCon firms miss $10M+ recompetes because they 
 
 So I built something different.
 
-GovCon Weekly Intelligence: AI-powered contract intel for $149/mo, not $20,000/yr.
+GovCon Weekly Intelligence: contract intelligence for $149/mo, not $20,000/yr.
 
 Every Monday morning, you get:
 → Recompete alerts (3-6 months before SAM.gov)
 → Competitor tracking (who won what this week)
-→ AI analysis that tells you "so what" not just "what"
+→ expert analysis that tells you "so what" not just "what"
 
 First report is free. No credit card required.
 
@@ -37,7 +37,7 @@ I built a weekly intelligence brief that tells you:
 - Who won what this week and for how much
 - What it actually means for your pipeline
 
-It's AI-powered but reads like a human wrote it. Think Bloomberg Brief for GovCon.
+It's Proprietary but reads like a human wrote it. Think Bloomberg Brief for GovCon.
 
 First report is free: [link]
 
@@ -160,7 +160,7 @@ Summary from this week's report:
 
 [3 paragraphs summarizing top insights]
 
-Want the full analysis with recompete alerts, competitor tracking, and AI recommendations?
+Want the full analysis with recompete alerts, competitor tracking, and strategic recommendations?
 
 Subscribe to GovCon Weekly Intelligence: [link]
 ```
@@ -203,11 +203,11 @@ $149/mo. First report free: [link]
 
 ### Wednesday (Day 10)
 **Reddit AMA: r/govcontracting**
-Title: "I built an AI tool that tracks federal contracts. AMA."
+Title: "I built a tool that tracks federal contracts. AMA."
 
 Body:
 ```
-I'm the founder of GovCon Weekly Intelligence — a newsletter that analyzes federal contract data and sends you recompete alerts, competitor tracking, and AI analysis every Monday.
+I'm the founder of GovCon Weekly Intelligence — a newsletter that analyzes federal contract data and sends you recompete alerts, competitor tracking, and expert analysis every Monday.
 
 Been in the federal space for 10 years. Built this because I was tired of missing opportunities and overpaying for intel tools.
 
@@ -215,7 +215,7 @@ Ask me anything about:
 - How to track recompetes without GovWin
 - NAICS code strategies
 - What the data says about current federal spending trends
-- How the tool works (USAspending API + AI analysis)
+- How the tool works (USAspending API + expert analysis)
 
 Proof: [link to sample report]
 ```
@@ -345,7 +345,7 @@ Your competitor just got a $12M recompete alert.
 
 You didn't.
 
-GovCon Weekly Intelligence: AI-powered contract intel for small/mid GovCon firms.
+GovCon Weekly Intelligence: contract intelligence for small/mid GovCon firms.
 
 $149/mo, not $20,000/yr.
 
@@ -398,7 +398,7 @@ How GovCon Weekly Intelligence works:
 
 1. Pull 500+ contract actions/week from USAspending API
 2. Filter by 9 high-value verticals (cyber, cloud, AI/ML, etc.)
-3. AI analyzes: recompetes, trends, agency signals, competitor moves
+3. Our engine analyzes: recompetes, trends, agency signals, competitor moves
 4. Generate "so what" insights (not just "what")
 5. Deliver to your inbox every Monday @ 7am
 
@@ -528,7 +528,7 @@ Here's what you're missing in the weekly Pro tier:
 → Recompete alerts (not just summaries)
 → Competitor tracking (15 companies)
 → NAICS code filtering (your specific codes)
-→ AI analysis tailored to your pipeline
+→ expert analysis tailored to your pipeline
 
 Normally $149/mo.
 
@@ -552,7 +552,7 @@ You get:
 → Weekly recompete alerts (not just monthly summaries)
 → Competitor tracking (15 companies)
 → NAICS filtering (your codes only)
-→ AI analysis tailored to your pipeline
+→ expert analysis tailored to your pipeline
 
 Expires Monday @ midnight.
 

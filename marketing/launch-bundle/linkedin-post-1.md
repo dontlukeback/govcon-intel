@@ -10,21 +10,19 @@ The big primes get GovWin. The mid-tier gets Bloomberg Gov. Small 8(a) and SDVOS
 
 I built something to fix this.
 
-GovCon Weekly Intelligence: AI-powered contract intel, free to start.
+GovCon Weekly Intelligence: contract intelligence, free to start.
 
 Every Monday morning at 7am, you get:
 
-→ Recompete alerts 3-6 months BEFORE SAM.gov (we track contract expiration dates, not just solicitation drops)
-→ Competitor tracking (General Dynamics IT just won $1.2B at Army PEO C3T — you should know about it)
-→ AI analysis that tells you "SO WHAT" not just "what happened"
+→ 1,173 contract awards tracked this week across 9 IT verticals ($8.7B total)
+→ Competitor tracking (Leidos won $663M at DOT. SAIC picked up $135M at State. Deloitte landed $67M in cyber transformation.)
+→ Strategic analysis that tells you "SO WHAT" not just "what happened"
 
 Real example from this week's report:
 
-"$487M DISA contract expires in 104 days. Incumbent: Leidos. Draft RFP expected April 2026.
+"547 cybersecurity awards this week — the most active vertical by count. Small business set-asides were thin: only 7 of 1,173 awards. If you're a small business chasing cyber work, the subcontracting path is where the action is right now."
 
-Translation: If you're NOT the incumbent and the RFP hasn't dropped yet, you're already behind. Submit a capabilities brief by Friday."
-
-That's the kind of intel that changes your capture strategy.
+That's the kind of pattern recognition that changes your capture strategy.
 
 First report is FREE. No credit card required.
 

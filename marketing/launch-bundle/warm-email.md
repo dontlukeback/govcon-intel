@@ -24,7 +24,7 @@ Knowing you and [COMPANY] work in [cybersecurity/cloud/AI/DevSecOps], figured th
 
 → Recompete alerts 3-6 months before SAM.gov
 → Competitor tracking (who won what this week)
-→ AI analysis with specific action items
+→ expert analysis with specific action items
 
 First report is free, takes 8 minutes to read. If it's helpful, great. If not, no worries — just wanted to share.
 

@@ -168,7 +168,7 @@ I get it. But here's the thing: this is PUBLIC data. USAspending.gov, FPDS-NG, c
 
 The "magic" isn't secret data. It's:
 1. Pulling 500+ contract actions per week (most people don't have time)
-2. Running AI analysis to identify what matters (most people don't have the tools)
+2. Running expert analysis to identify what matters (most people don't have the tools)
 3. Curating it into an 8-minute read (most people don't have the expertise)
 
 It's not too good to be true. It's just organized and actionable.

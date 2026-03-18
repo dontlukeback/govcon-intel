@@ -121,7 +121,7 @@ This post will likely outperform Post 1 because:
 ```
 USAspending.gov (federal procurement data) + FPDS-NG (contract actions).
 
-We pull 500+ contract actions per week, run them through AI analysis to identify patterns, then surface the signal.
+We pull 500+ contract actions per week, run them through expert analysis to identify patterns, then surface the signal.
 
 All public data — we just make it actually useful.
 

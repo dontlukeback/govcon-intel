@@ -35,7 +35,7 @@ Get 100 free subscribers in 30 days. Convert 10 to paid ($149/mo) within 60 days
 **Proof points:**
 - Real recompete alerts 3-6 months before SAM.gov posting
 - Competitor tracking (who won what, option exercises, ceiling increases)
-- AI analysis that tells you "so what" not just "what"
+- expert analysis that tells you "so what" not just "what"
 - 5-minute Monday morning read vs. 10 hours of manual research
 
 ---
@@ -90,7 +90,7 @@ Get 100 free subscribers in 30 days. Convert 10 to paid ($149/mo) within 60 days
    - Pitch the newsletter at the end
 
 4. **Reddit AMA** (Day 10)
-   - r/govcontracting: "I built an AI tool that tracks federal contracts. AMA."
+   - r/govcontracting: "I built a tool that tracks federal contracts. AMA."
    - Answer questions for 2 hours
    - Drop link to sample report in responses
 
@@ -245,7 +245,7 @@ Get 100 free subscribers in 30 days. Convert 10 to paid ($149/mo) within 60 days
 "Your competitor just got a $12M recompete alert. You didn't."
 
 ### Problem (Landing Page Hero)
-"Stop missing federal contracts. AI-powered weekly intelligence on who's winning, who's losing, and where the recompetes are."
+"Stop missing federal contracts. Proprietary weekly intelligence on who's winning, who's losing, and where the recompetes are."
 
 ### Differentiation
 "For $149/mo, not $20,000/yr. Built for small and mid-size GovCon firms who can't afford GovWin but need real competitive intel."
@@ -281,7 +281,7 @@ Get 100 free subscribers in 30 days. Convert 10 to paid ($149/mo) within 60 days
 
 **Example sentences:**
 - ✅ "Enterprise IT Support Services (EITSS-III) at DISA expires in 104 days. Leidos is the incumbent. Draft RFP drops in April. If you're targeting this, your capabilities brief is due by Friday."
-- ❌ "Our AI-powered platform leverages machine learning to deliver actionable insights that transform your business development strategy."
+- ❌ "Our Proprietary platform leverages machine learning to deliver actionable insights that transform your business development strategy."
 
 ---
 

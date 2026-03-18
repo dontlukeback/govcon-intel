@@ -95,7 +95,7 @@
 **Cost:** $800-$1,200 for sponsored content
 **Best for:** Established credibility, IT-focused firms
 **Action items:**
-- Pitch guest article: "How AI is Changing Federal Contract Intelligence"
+- Pitch guest article: "How Data Intelligence is Changing Federal Contracting"
 - Include byline + link to newsletter
 - Run sponsored post if guest article doesn't land
 

@@ -8,12 +8,12 @@ I spent 10 years watching small GovCon firms miss $10M+ recompetes because they 
 
 So I built something different.
 
-GovCon Weekly Intelligence: AI-powered contract intel for $149/mo, not $20,000/yr.
+GovCon Weekly Intelligence: contract intelligence for $149/mo, not $20,000/yr.
 
 Every Monday morning, you get:
 → Recompete alerts (3-6 months before SAM.gov)
 → Competitor tracking (who won what this week)
-→ AI analysis that tells you "so what" not just "what"
+→ expert analysis that tells you "so what" not just "what"
 
 First report is free. No credit card required.
 
@@ -238,7 +238,7 @@ If a post flops, cut it in half. LinkedIn algorithm favors posts that get read a
 Great question. Here's the 30-second version:
 
 1. We pull contract data from USAspending.gov every week (500+ actions)
-2. AI analyzes for recompetes, trends, competitor moves
+2. Our engine analyzes for recompetes, trends, competitor moves
 3. We send you a 5-minute brief every Monday with "so what" insights
 
 First report is free if you want to see it in action: [link]
@@ -312,7 +312,7 @@ First report is free if you want to compare: [link]
 
 Here's a $487M contract at DISA that expires in 104 days. Incumbent: Leidos.
 
-[Scroll to AI analysis box]
+[Scroll to expert analysis box]
 
 Here's what it means: The RFP hasn't dropped yet, so if you're targeting this, you're already behind. Submit a capabilities brief by Friday.
 
