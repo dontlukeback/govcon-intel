@@ -22,7 +22,7 @@ If you're NOT actively pursuing cyber work right now, you're leaving money on th
 
 Real contracts from this week:
 
-→ $487M DISA Enterprise IT Support (expires in 104 days)
+→ $663M Leidos at DOT (ATOP program)
 → $312M CYBERCOM Network Ops & Cyber Defense (sources sought published, restructured for multiple awards)
 → $94.5M DHA Health IT Modernization (small business set-aside, 166 days out)
 
@@ -132,7 +132,7 @@ Want to see the full methodology? I'll send you this week's report with the raw 
 ```
 These are the 3 contracts you should be tracking right now:
 
-1. $487M DISA EITSS-III (104 days, prime-tier only but subcontracting opps)
+1. $663M Leidos at DOT (ATOP program — watch for subcontracting opps)
 2. $312M CYBERCOM NOCDef (119 days, restructured for multiple awards — your shot)
 3. $94.5M DHA Health IT (166 days, small business set-aside)
 
@@ -160,7 +160,7 @@ Want to see a sample? Free report: [link]
 Fair skepticism. Here's the math:
 
 → $1.2B: General Dynamics IT (Army PEO C3T JADC2 contract)
-→ $487M: Leidos (DISA EITSS-III — expiring soon)
+→ $663M: Leidos (DOT ATOP)
 → $312M: Booz Allen (CYBERCOM NOCDef — recompete)
 → $94M: CACI (DHA Health IT)
 → +$78M: Scale AI (NGA AI/ML work)

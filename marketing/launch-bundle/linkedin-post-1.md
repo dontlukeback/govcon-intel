@@ -43,12 +43,12 @@ Sample report (actual data from this week): [INSERT LINK TO insights_2026-03-18.
 ## Image/Visual Recommendation
 
 **Option 1 (Preferred):** Screenshot of the actual newsletter report showing:
-- The $487M DISA recompete section
+- The $663M Leidos DOT section
 - The "So What" analysis box highlighted
 - Clean, professional format with real contract numbers visible
 
 **Option 2:** Simple graphic with text overlay:
-- Headline: "$149/mo vs. $20,000/yr"
+- Headline: "Free to start vs. $20,000/yr"
 - Subhead: "Same intel. 99% less cost."
 - Background: Clean, professional (navy blue or dark gray)
 
@@ -65,7 +65,7 @@ Sample report (actual data from this week): [INSERT LINK TO insights_2026-03-18.
 1. **Leads with pain point** — Small GovCons feel this every day
 2. **Positions against incumbents** — GovWin/Bloomberg are the villains (expensive, bloated)
 3. **Specific value prop** — $149 vs. $20K is a no-brainer comparison
-4. **Real data proof** — Uses actual contract from this week's report ($487M DISA, 104 days)
+4. **Real data proof** — Uses actual contract from this week's report ($663M Leidos DOT, verified from USAspending)
 5. **Clear CTA** — Free report = zero friction
 6. **Hashtags** — Targets BD Directors, small business contractors, federal sales pros
 
@@ -135,7 +135,7 @@ We're pre-analyzed intel. 8-minute read, actionable insights, no searching requi
 
 Think Bloomberg Brief for GovCon.
 
-Also: $149/mo vs. $20K/yr.
+Also: Free vs. $20K/yr.
 
 First report is free if you want to compare: [link]
 ```
@@ -146,7 +146,7 @@ Totally get it. Here's what I'd suggest:
 
 1. Grab the free sample report (link in comments)
 2. Forward it to your BD team
-3. If they find value, upgrade to Pro ($149/mo)
+3. If they find value, try the free newsletter
 
 No commitment. Cancel anytime.
 ```

@@ -26,7 +26,7 @@ GovCon Weekly Intelligence tracks contract expiration dates across 500+ federal 
 
 Real examples from this week's report:
 
-→ $487M DISA contract (104 days to expiration, RFP not even dropped yet)
+→ $663M Leidos DOT contract (ATOP program — major award this week)
 → $312M CYBERCOM contract (119 days, sources sought just published)
 → $94.5M DHA contract (166 days, small business set-aside)
 
@@ -155,7 +155,7 @@ I hear you. Most 'early alert' services are just scraping SAM.gov faster.
 
 We're different: We track EXPIRATION DATES on existing contracts, not solicitation postings.
 
-Example: $487M DISA contract expires in 104 days. The RFP hasn't even dropped yet. Most alert services won't notify you until it hits SAM.gov — by then you've lost 2-3 months of positioning time.
+Example: Leidos picked up $663M at DOT this week for the ATOP program. If they.re your competitor and you didn.t know about it, you.re already behind.
 
 We give you 3-6 months of runway, not 45 days of panic.
 
