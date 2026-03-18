@@ -3,1275 +3,250 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GovCon Weekly Intelligence | Week of March 16-22, 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>GovCon Weekly Intelligence</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#0F172A;--navy-light:#1E293B;--navy-mid:#334155;
-  --gold:#C9A227;--gold-light:#E8D48B;--gold-dim:rgba(201,162,39,0.08);
-  --white:#FFF;--off-white:#F8FAFC;
-  --g50:#F9FAFB;--g100:#F3F4F6;--g200:#E5E7EB;--g300:#D1D5DB;
-  --g400:#9CA3AF;--g500:#6B7280;--g600:#4B5563;--g700:#374151;--g800:#1F2937;
-  --red:#DC2626;--red-lt:#FEF2F2;--red-bd:#FECACA;
-  --green:#059669;--green-lt:#ECFDF5;--green-bd:#A7F3D0;
-  --blue:#2563EB;--blue-lt:#EFF6FF;--blue-bd:#BFDBFE;
-  --purple:#7C3AED;--purple-lt:#F5F3FF;--purple-bd:#DDD6FE;
-  --amber:#D97706;--amber-lt:#FFFBEB;--amber-bd:#FDE68A;
-  --fd:'Playfair Display',Georgia,serif;
-  --fb:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-  --fm:'JetBrains Mono','SF Mono',Consolas,monospace;
-}
-body{background:var(--g50);color:var(--g800);font-family:var(--fb);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
-.w{max-width:680px;margin:0 auto;background:var(--white);box-shadow:0 1px 3px rgba(0,0,0,.06),0 8px 40px rgba(0,0,0,.04)}
-.c{padding:0 32px}
-@media(max-width:700px){.c{padding:0 16px}}
+body{background:#f4f4f4;font-family:Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#222}
+.outer{max-width:600px;margin:0 auto;background:#fff}
+.pad{padding:0 24px}
+img{max-width:100%;display:block}
+a{color:#2563EB;text-decoration:underline}
+hr{border:none;border-top:1px solid #e5e5e5;margin:24px 0}
 
 /* Header */
-.hdr{background:var(--navy);padding:28px 32px 24px;text-align:center}
-.hdr-badge{display:inline-block;font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,162,39,.3);padding:4px 14px;border-radius:3px;margin-bottom:14px}
-.hdr h1{font-family:var(--fd);font-size:28px;font-weight:700;color:var(--white);letter-spacing:-.3px;margin-bottom:4px}
-.hdr .sub{font-size:13px;color:var(--g400)}
-.hdr .gl{width:60px;height:2px;background:var(--gold);margin:14px auto 0}
+.hdr{background:#0F172A;padding:20px 24px;text-align:center}
+.hdr-logo{font-family:Georgia,serif;font-size:22px;font-weight:700;color:#C9A227;letter-spacing:-0.5px}
+.hdr-sub{font-size:12px;color:#94a3b8;margin-top:2px}
 
-/* Section dividers */
-.sd{display:flex;align-items:center;gap:14px;margin:36px 0 20px;padding-top:8px}
-.sn{font-family:var(--fm);font-size:11px;font-weight:700;color:var(--gold);background:var(--gold-dim);border:1px solid rgba(201,162,39,.15);width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0}
-.sl{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g500)}
-.sln{flex:1;height:1px;background:var(--g200)}
-.st{font-family:var(--fd);font-size:22px;font-weight:700;color:var(--navy);margin-bottom:4px;letter-spacing:-.2px}
-.ss{font-size:13px;color:var(--g500);margin-bottom:16px;line-height:1.5}
+/* Section label */
+.cat{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#C9A227;margin:24px 0 6px}
 
-/* Health gauge */
-.hg{background:var(--navy);border-radius:12px;padding:28px;margin-bottom:16px;text-align:center;position:relative;overflow:hidden}
-.hg::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:200%;height:80%;background:radial-gradient(ellipse,rgba(201,162,39,.08) 0%,transparent 60%)}
-.hs{font-family:var(--fd);font-size:72px;font-weight:800;color:var(--gold);line-height:1;position:relative}
-.hc{font-family:var(--fm);font-size:14px;font-weight:600;position:relative}
-.hl{font-family:var(--fm);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--g400);margin-top:8px;position:relative}
+/* Headlines */
+h2{font-family:Georgia,serif;font-size:22px;font-weight:700;color:#111;line-height:1.3;margin:0 0 12px}
+h3{font-size:17px;font-weight:700;color:#111;line-height:1.3;margin:20px 0 6px}
 
-/* Health bars */
-.hb{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:13px}
-.hb-l{width:140px;flex-shrink:0;font-weight:500;color:var(--g700)}
-.hb-t{flex:1;height:8px;background:var(--g100);border-radius:4px;overflow:hidden}
-.hb-f{height:100%;border-radius:4px}
-.hb-v{width:32px;text-align:right;font-family:var(--fm);font-size:12px;font-weight:600}
+/* Body text */
+p{margin:0 0 12px;color:#333}
+.small{font-size:14px;color:#666}
 
-/* Hero stat */
-.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);border-radius:12px;padding:32px;text-align:center;margin:24px 0;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(201,162,39,.1) 0%,transparent 70%)}
-.hero .num{font-family:var(--fd);font-size:56px;font-weight:800;color:var(--gold);line-height:1;letter-spacing:-2px;position:relative}
-.hero .lbl{font-family:var(--fm);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light);margin-top:8px;position:relative}
-.hero .ctx{font-size:14px;color:rgba(255,255,255,.7);margin-top:14px;line-height:1.6;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+/* Bullet lists */
+ul{margin:0 0 12px;padding-left:20px}
+li{margin-bottom:8px;color:#333}
 
-/* KPI bar */
-.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--g200);border:1px solid var(--g200);border-radius:10px;overflow:hidden;margin-bottom:28px}
-.kpi-i{background:var(--white);padding:16px 12px;text-align:center}
-.kpi-v{font-family:var(--fd);font-size:22px;font-weight:700;color:var(--navy)}
-.kpi-l{font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--g400);margin-top:2px}
+/* Market ticker */
+.ticker{width:100%;border-collapse:collapse;margin:12px 0}
+.ticker td{padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
+.ticker td:first-child{font-weight:700;width:40%}
+.ticker td:nth-child(2){color:#666}
+.ticker td:last-child{text-align:right;font-weight:600}
+.up{color:#16a34a}
+.dn{color:#dc2626}
 
-/* TOC */
-.toc{background:var(--off-white);border:1px solid var(--g200);border-radius:10px;padding:20px 24px;margin-bottom:28px}
-.toc-t{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin-bottom:12px}
-.toc-g{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
-.toc-i{font-size:13px;color:var(--g600);display:flex;align-items:center;gap:8px;text-decoration:none;padding:3px 0}
-.toc-i:hover{color:var(--navy)}
-.toc-n{font-family:var(--fm);font-size:10px;font-weight:600;color:var(--gold);width:20px}
+/* Box section */
+.box{border:1px solid #e5e5e5;border-radius:4px;padding:20px 24px;margin:20px 0}
 
-/* Cards */
-.cd{border:1px solid var(--g200);border-radius:10px;padding:20px;margin-bottom:16px;background:var(--white);transition:box-shadow .2s}
-.cd:hover{box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.cd-r{border-left:4px solid var(--red)}
-.cd-g{border-left:4px solid var(--green)}
-.cd-b{border-left:4px solid var(--blue)}
-.cd-p{border-left:4px solid var(--purple)}
-.cd-a{border-left:4px solid var(--amber)}
-.cd-gd{border-left:4px solid var(--gold)}
-.cd-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
-.cd-t{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--navy);line-height:1.3}
-.cd-ag{font-family:var(--fm);font-size:11px;font-weight:500;color:var(--g500);margin-top:2px}
+/* CTA */
+.cta{background:#C9A227;text-align:center;padding:20px;margin:24px 0;border-radius:4px}
+.cta p{color:#0F172A;margin:0 0 12px;font-weight:600;font-size:15px}
+.cta a{display:inline-block;background:#0F172A;color:#C9A227;padding:10px 24px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:0.5px}
 
-/* Badges */
-.bg{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.5px;padding:3px 10px;border-radius:4px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
-.bg-u{background:var(--red-lt);color:var(--red);border:1px solid var(--red-bd)}
-.bg-m{background:var(--amber-lt);color:var(--amber);border:1px solid var(--amber-bd)}
-.bg-l{background:var(--green-lt);color:var(--green);border:1px solid var(--green-bd)}
-.bg-hw{background:var(--green-lt);color:var(--green);border:1px solid var(--green-bd)}
-.bg-mw{background:var(--amber-lt);color:var(--amber);border:1px solid var(--amber-bd)}
-.bg-lw{background:var(--red-lt);color:var(--red);border:1px solid var(--red-bd)}
-.bg-d{background:var(--navy);color:var(--gold);font-size:11px;font-weight:700;padding:4px 10px}
-.bg-n{background:var(--blue-lt);color:var(--blue);border:1px solid var(--blue-bd)}
+/* Footer */
+.ftr{background:#0F172A;padding:20px 24px;text-align:center}
+.ftr p{font-size:11px;color:#64748b;line-height:1.5}
+.ftr .gold{color:#C9A227}
 
-/* Meta row */
-.mr{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0}
-.mi{font-size:12px;color:var(--g500)}
-.mi strong{color:var(--g700);font-weight:600}
-
-/* Callouts */
-.co{padding:14px 16px;border-radius:8px;margin:12px 0;font-size:13px;line-height:1.6}
-.co-l{font-family:var(--fm);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
-.co-g{background:var(--green-lt);border:1px solid var(--green-bd)}.co-g .co-l{color:var(--green)}
-.co-r{background:var(--red-lt);border:1px solid var(--red-bd)}.co-r .co-l{color:var(--red)}
-.co-b{background:var(--blue-lt);border:1px solid var(--blue-bd)}.co-b .co-l{color:var(--blue)}
-.co-a{background:var(--amber-lt);border:1px solid var(--amber-bd)}.co-a .co-l{color:var(--amber)}
-.co-p{background:var(--purple-lt);border:1px solid var(--purple-bd)}.co-p .co-l{color:var(--purple)}
-.co-n{background:rgba(15,23,42,.04);border:1px solid rgba(15,23,42,.1)}.co-n .co-l{color:var(--navy)}
-
-/* Collapsible */
-details.ex{margin:8px 0;border:1px solid var(--g200);border-radius:8px;overflow:hidden}
-details.ex summary{padding:10px 14px;font-family:var(--fm);font-size:11px;font-weight:600;color:var(--g600);cursor:pointer;list-style:none;background:var(--g50);display:flex;align-items:center;gap:6px;transition:background .15s}
-details.ex summary:hover{background:var(--g100)}
-details.ex summary::-webkit-details-marker{display:none}
-details.ex summary::before{content:'\25B8';font-size:10px;color:var(--g400);transition:transform .15s}
-details.ex[open] summary::before{transform:rotate(90deg)}
-details.ex .xb{padding:12px 14px;font-size:13px;line-height:1.6;color:var(--g600);border-top:1px solid var(--g200)}
-
-/* Wired cards */
-.wc{background:var(--navy);border-radius:10px;padding:20px;margin-bottom:16px;color:var(--white)}
-.wsd{display:flex;align-items:center;gap:16px;margin-bottom:14px}
-.wsc{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:28px;font-weight:800;flex-shrink:0}
-.wsr{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px}
-.wsr:last-child{border-bottom:none}
-
-/* Bridge */
-.bc{border:2px dashed var(--amber-bd);background:var(--amber-lt);border-radius:10px;padding:18px;margin-bottom:14px}
-
-/* Market panel */
-.mp{background:var(--navy);border-radius:12px;padding:24px;margin:16px 0;color:var(--white)}
-.mp h3{font-family:var(--fd);font-size:18px;color:var(--gold);margin-bottom:16px}
-.mp-r{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:13px}
-.mp-r:last-child{border-bottom:none}
-
-/* Action items */
-.ai{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--g100)}
-.ai:last-child{border-bottom:none}
-
-/* Calendar */
-.ci{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--g100);font-size:13px}
-.ci:last-child{border-bottom:none}
-
-/* Protest stats */
-.ps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g200);border:1px solid var(--g200);border-radius:10px;overflow:hidden;margin-bottom:16px}
-.ps-i{background:var(--white);padding:14px;text-align:center}
-.ps-v{font-family:var(--fd);font-size:24px;font-weight:700;color:var(--navy)}
-.ps-l{font-family:var(--fm);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--g400);margin-top:2px}
-
-/* Set-aside table */
-.sat{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
-.sat th{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--g400);text-align:left;padding:8px 10px;border-bottom:2px solid var(--g200)}
-.sat td{padding:10px;border-bottom:1px solid var(--g100);vertical-align:top}
-.sat td.nm{text-align:right;font-family:var(--fm);font-weight:600}
-
-/* OTW + CTA */
-.otw{background:linear-gradient(135deg,#1a1a2e 0%,var(--navy) 100%);border-radius:12px;padding:28px;color:var(--white);margin:16px 0}
-.otw h3{font-family:var(--fd);font-size:20px;color:var(--gold);margin-bottom:4px}
-.cta{background:var(--gold);border-radius:12px;padding:28px;text-align:center;margin:28px 0}
-.cta h3{font-family:var(--fd);font-size:22px;color:var(--navy);margin-bottom:6px}
-.cta-b{display:inline-block;background:var(--navy);color:var(--gold);font-family:var(--fm);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:12px 32px;border-radius:6px;text-decoration:none}
-
-/* Feedback + Footer */
-.fb-row{display:flex;justify-content:center;gap:24px;padding:20px 0;border-top:1px solid var(--g200);border-bottom:1px solid var(--g200);margin:20px 0}
-.fb-btn{font-size:13px;color:var(--g500);text-decoration:none;display:flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--g200);border-radius:6px;transition:all .15s}
-.fb-btn:hover{background:var(--g50);color:var(--navy);border-color:var(--g300)}
-.ftr{background:var(--navy);padding:24px 32px;text-align:center}
-.ftr p{font-size:12px;color:var(--g400);line-height:1.6}
-.ftr .gld{color:var(--gold)}
-
-/* Lists */
-.il{list-style:none;padding:0;margin:8px 0}
-.il li{padding:4px 0 4px 16px;position:relative;font-size:13px;line-height:1.6;color:var(--g600)}
-.il li::before{content:'\203A';position:absolute;left:0;color:var(--gold);font-weight:700;font-size:16px}
-
-@media(max-width:500px){
-  .kpi{grid-template-columns:repeat(2,1fr)}
-  .toc-g{grid-template-columns:1fr}
-  .ps{grid-template-columns:1fr}
-  .wsd{flex-direction:column;text-align:center}
-  .cd-h{flex-direction:column}
-}
+/* Feedback */
+.fb{text-align:center;padding:16px 0;font-size:14px;color:#666}
+.fb a{text-decoration:none;margin:0 8px;font-size:20px}
 </style>
 </head>
 <body>
-<div class="w">
-
+<div class="outer">
 
 <div class="hdr">
-  <div class="hdr-badge">Premium Intelligence Brief</div>
-  <h1>GovCon Weekly Intelligence</h1>
-  <div class="sub">Week of March 16-22, 2026 &middot; 2026-03-18</div>
-  <div class="gl"></div>
-</div>
-<div class="c">
-
-
-<div class="sd"><span class="sn">01</span><span class="sl">GovCon Health Index</span><span class="sln"></span></div>
-<div class="hg">
-  <div class="hs">62</div>
-  <div class="hc" style="color:#EF4444;">&#9660; 6 from 68</div>
-  <div class="hl">Federal Procurement Health &middot; March 2026</div>
-</div>
-<p style="font-size:14px;color:var(--g600);margin-bottom:16px;line-height:1.6;">The federal procurement market is splitting into two speeds. DoD and IC are accelerating (cyber, AI, space), driving the spending velocity score up. But civilian agency disruption from DOGE is dragging down competition density, protest rates, and time-to-award. For contractors: if you&#x27;re defense-focused, it&#x27;s a strong market. If you&#x27;re civilian-focused, the next 6-12 months will be turbulent. The set-aside activity uptick in Q3 is the one bright spot for small businesses on the civilian side.</p>
-
-<div class="hb">
-  <span class="hb-l">Spending Velocity <span style="color:var(--g400);font-size:11px;">(25%)</span></span>
-  <div class="hb-t"><div class="hb-f" style="width:71%;background:#10B981;"></div></div>
-  <span class="hb-v" style="color:#10B981;">71</span>
-</div>
-<div class="hb">
-  <span class="hb-l">Competition Density <span style="color:var(--g400);font-size:11px;">(15%)</span></span>
-  <div class="hb-t"><div class="hb-f" style="width:54%;background:#F59E0B;"></div></div>
-  <span class="hb-v" style="color:#F59E0B;">54</span>
-</div>
-<div class="hb">
-  <span class="hb-l">Small Business Utilization <span style="color:var(--g400);font-size:11px;">(15%)</span></span>
-  <div class="hb-t"><div class="hb-f" style="width:58%;background:#F59E0B;"></div></div>
-  <span class="hb-v" style="color:#F59E0B;">58</span>
-</div>
-<div class="hb">
-  <span class="hb-l">Protest Rate <span style="color:var(--g400);font-size:11px;">(10%)</span></span>
-  <div class="hb-t"><div class="hb-f" style="width:45%;background:#EF4444;"></div></div>
-  <span class="hb-v" style="color:#EF4444;">45</span>
-</div>
-<div class="hb">
-  <span class="hb-l">Recompete Volume <span style="color:var(--g400);font-size:11px;">(10%)</span></span>
-  <div class="hb-t"><div class="hb-f" style="width:73%;background:#10B981;"></div></div>
-  <span class="hb-v" style="color:#10B981;">73</span>
-</div>
-<div class="hb">
-  <span class="hb-l">Set-Aside Activity <span style="color:var(--g400);font-size:11px;">(10%)</span></span>
-  <div class="hb-t"><div class="hb-f" style="width:67%;background:#F59E0B;"></div></div>
-  <span class="hb-v" style="color:#F59E0B;">67</span>
-</div>
-<div class="hb">
-  <span class="hb-l">Time to Award <span style="color:var(--g400);font-size:11px;">(10%)</span></span>
-  <div class="hb-t"><div class="hb-f" style="width:52%;background:#F59E0B;"></div></div>
-  <span class="hb-v" style="color:#F59E0B;">52</span>
-</div>
-<div class="hb">
-  <span class="hb-l">DOGE Impact <span style="color:var(--g400);font-size:11px;">(5%)</span></span>
-  <div class="hb-t"><div class="hb-f" style="width:38%;background:#EF4444;"></div></div>
-  <span class="hb-v" style="color:#EF4444;">38</span>
-</div>
-<details class="ex" style="margin-top:12px;"><summary>Component Details</summary><div class="xb">
-<p style='margin-bottom:8px;'><strong>Spending Velocity:</strong> DoD spending up 12.3% YoY but civilian agencies down 8% due to DOGE. Net positive but bifurcated.</p>
-<p style='margin-bottom:8px;'><strong>Competition Density:</strong> Average 3.2 offers per solicitation, down from 4.1 a year ago. Market consolidation accelerating.</p>
-<p style='margin-bottom:8px;'><strong>Small Business Utilization:</strong> 23.1% of obligations to small business, below the 23.5% government-wide goal. HUBZone and WOSB categories underperforming.</p>
-<p style='margin-bottom:8px;'><strong>Protest Rate:</strong> GAO protest filings up 22% QoQ. DOGE-related terminations driving increase. Signal of market instability.</p>
-<p style='margin-bottom:8px;'><strong>Recompete Volume:</strong> $4.2B in contracts expiring in next 180 days across tracked NAICS codes. Healthy pipeline.</p>
-<p style='margin-bottom:8px;'><strong>Set-Aside Activity:</strong> Set-aside solicitations up 15% as agencies push to meet FY26 Q3 goals.</p>
-<p style='margin-bottom:8px;'><strong>Time to Award:</strong> Average 127 days from solicitation to award, up from 108 days last quarter. Procurement workforce strain visible.</p>
-<p style='margin-bottom:8px;'><strong>DOGE Impact:</strong> 14 active contracts worth $2.3B lost oversight this month. Civilian agency disruption at highest level since sequestration.</p>
-</div></details>
-
-<div class="sd" id="s02"><span class="sn">02</span><span class="sl">Number of the Week</span><span class="sln"></span></div>
-<div class="hero">
-  <div class="num">$2.1B</div>
-  <div class="lbl">New DoD Cyber Obligations (Q1 FY26)</div>
-  <div class="ctx">The Department of Defense has accelerated cyber spending by 34% QoQ, with CYBERCOM and DISA leading procurement. Three major recompetes worth $890M are hitting the street in the next 60 days. If you hold incumbent positions in network defense or zero-trust architecture, now is the time to prep your capture teams.</div>
+  <div class="hdr-logo">GOVCON WEEKLY</div>
+  <div class="hdr-sub">March 18, 2026 &bull; Issue #1</div>
 </div>
 
+<div class="pad">
 
-<div class="kpi">
-  <div class="kpi-i"><div class="kpi-v">4</div><div class="kpi-l">Recompetes</div></div>
-  <div class="kpi-i"><div class="kpi-v">$1.9B</div><div class="kpi-l">Awarded</div></div>
-  <div class="kpi-i"><div class="kpi-v">5</div><div class="kpi-l">DOGE Agencies</div></div>
-  <div class="kpi-i"><div class="kpi-v" style="color:var(--red);">3</div><div class="kpi-l">Urgent Actions</div></div>
-</div>
+<p style="margin-top:20px"><strong>Good morning.</strong> The federal market split into two lanes this week. DoD dropped $2.1B in cyber money while USAID can&rsquo;t find anyone to answer the phone. Five things you need to know, then we&rsquo;ll get into the contracts.</p>
 
-<div class="toc"><div class="toc-t">In This Issue</div><div class="toc-g">
-<a class="toc-i" href="#s01"><span class="toc-n">01</span> Health Index</a>
-<a class="toc-i" href="#s02"><span class="toc-n">02</span> Number of the Week</a>
-<a class="toc-i" href="#s03"><span class="toc-n">03</span> DOGE Tracker</a>
-<a class="toc-i" href="#s04"><span class="toc-n">04</span> Is It Wired?</a>
-<a class="toc-i" href="#s05"><span class="toc-n">05</span> Bridge Watch</a>
-<a class="toc-i" href="#s06"><span class="toc-n">06</span> Recompete Alerts</a>
-<a class="toc-i" href="#s07"><span class="toc-n">07</span> New Awards</a>
-<a class="toc-i" href="#s08"><span class="toc-n">08</span> Option Exercises</a>
-<a class="toc-i" href="#s09"><span class="toc-n">09</span> Funding Actions</a>
-<a class="toc-i" href="#s10"><span class="toc-n">10</span> Set-Aside Spotlight</a>
-<a class="toc-i" href="#s11"><span class="toc-n">11</span> Protest Report</a>
-<a class="toc-i" href="#s12"><span class="toc-n">12</span> Market Pulse</a>
-<a class="toc-i" href="#s13"><span class="toc-n">13</span> Action Items</a>
-<a class="toc-i" href="#s14"><span class="toc-n">14</span> Calendar</a>
-<a class="toc-i" href="#s15"><span class="toc-n">15</span> One to Watch</a>
-</div></div>
+<p style="font-size:14px;color:#666;font-style:italic">&mdash;GovCon Weekly team</p>
 
-<div class="sd" id="s03"><span class="sn">03</span><span class="sl">DOGE Tracker</span><span class="sln"></span></div>
-<div class="st">DOGE Disruption Monitor</div>
-<div class="ss">DOGE-driven workforce cuts at USAID and OPM are creating downstream contract disruptions -- 14 active contracts worth $2.3B have lost their COR or program office oversight this month alone.</div>
+<!-- ═══ MARKET TICKER ═══ -->
+<div class="box">
+<div class="cat" style="margin-top:0">PROCUREMENT PULSE</div>
 
-<div class="cd" style="padding:16px;margin-bottom:12px;">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;display:inline-block;"></span>
-    <strong style="font-size:14px;color:var(--navy);">USAID</strong>
-    <span style="font-family:var(--fm);font-size:11px;color:var(--g500);">80% RIF of acquisition workforce</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin-bottom:6px;">127 active contracts ($4.1B) now have no assigned Contracting Officer&#x27;s Representative. Stop-work orders issued on 23 task orders. Primes are burning fee on idle staff.</p>
-  <p style="font-size:12px;color:var(--g500);font-style:italic;">Injunction filed -- temporary restraining order in effect through April 2, but agency is slow-walking re-staffing. Don&#x27;t count on resumption.</p>
-</div>
-<div class="cd" style="padding:16px;margin-bottom:12px;">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;display:inline-block;"></span>
-    <strong style="font-size:14px;color:var(--navy);">OPM</strong>
-    <span style="font-family:var(--fm);font-size:11px;color:var(--g500);">Consolidation into GSA proposed</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin-bottom:6px;">HR IT modernization contracts ($380M across 6 vehicles) are in limbo. OPM issued informal &#x27;continue performance&#x27; guidance but no funded modifications. Contractors billing at risk.</p>
-  <p style="font-size:12px;color:var(--g500);font-style:italic;">Congressional review period -- expect 90-day delay minimum. If you&#x27;re subbing on OPM work, get your prime&#x27;s position in writing NOW.</p>
-</div>
-<div class="cd" style="padding:16px;margin-bottom:12px;">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;display:inline-block;"></span>
-    <strong style="font-size:14px;color:var(--navy);">Department of Education</strong>
-    <span style="font-family:var(--fm);font-size:11px;color:var(--g500);">Agency downsizing / potential dissolution</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin-bottom:6px;">FSA loan servicing contracts ($1.8B) are being reviewed for early termination. TIVAS contract holders (Maximus, Aidvantage) face T4C risk. Student loan tech modernization RFPs pulled from forecast.</p>
-  <p style="font-size:12px;color:var(--g500);font-style:italic;">Legislation pending. No imminent action but pipeline is frozen. BD teams should pause capture spend on ED opportunities until Q3 FY26 clarity.</p>
-</div>
-<div class="cd" style="padding:16px;margin-bottom:12px;">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;display:inline-block;"></span>
-    <strong style="font-size:14px;color:var(--navy);">EPA</strong>
-    <span style="font-family:var(--fm);font-size:11px;color:var(--g500);">30% budget cut proposed for FY27</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin-bottom:6px;">Superfund remediation contracts and environmental monitoring task orders likely to shrink. Current ceiling on EPA OLEM IDIQ ($420M) may not be fully obligated.</p>
-  <p style="font-size:12px;color:var(--g500);font-style:italic;">Budget proposal stage -- Congress will negotiate, but signal is clear: environmental services declining 2+ years out.</p>
-</div>
-<div class="cd" style="padding:16px;margin-bottom:12px;">
-  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-    <span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;"></span>
-    <strong style="font-size:14px;color:var(--navy);">DoD / DISA</strong>
-    <span style="font-family:var(--fm);font-size:11px;color:var(--g500);">GROWING -- absorbing mission from other agencies</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin-bottom:6px;">DISA picking up shared services IT work previously spread across civilian agencies. DES ceiling increase this week ($450M) is directly tied to this consolidation. Net positive for DISA-focused contractors.</p>
-  <p style="font-size:12px;color:var(--g500);font-style:italic;">Active growth. Position here if you&#x27;re losing civilian agency work.</p>
-</div>
-<div style="margin-top:16px;"><div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin-bottom:10px;">Court Rulings</div>
-<div class="co co-n" style="margin-bottom:10px;">
-  <div class="co-l">National Council of Nonprofits v. OMB</div>
-  <p style="font-size:13px;margin-bottom:4px;"><strong>D.C. District Court extended TRO on USAID contract terminations through April 2, 2026</strong></p>
-  <p style="font-size:12px;color:var(--g500);">Contracts are technically still active but CORs are gone and no new task orders are being issued. &#x27;Zombie contracts&#x27; -- alive on paper, dead in practice. Don&#x27;t staff up expecting resumption.</p>
-</div>
-<div class="co co-n" style="margin-bottom:10px;">
-  <div class="co-l">AFGE v. DOGE (consolidated)</div>
-  <p style="font-size:13px;margin-bottom:4px;"><strong>Pending -- oral arguments scheduled March 28</strong></p>
-  <p style="font-size:12px;color:var(--g500);">If court rules DOGE advisory committee subject to FACA, all recommendations become advisory-only and agency heads must independently justify cuts. Would slow but not stop the train.</p>
-</div>
-</div>
-<div style="margin-top:16px;"><div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin-bottom:10px;">Contractor Impact</div>
-<div class="cd cd-r" style="padding:14px;">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:6px;">
-    <strong style="color:var(--navy);">Chemonics International</strong>
-    <span class="bg bg-u">$1.2B in USAID work (78% of revenue)</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin-bottom:4px;">Announced 40% workforce reduction. Teaming partners should assess exposure immediately.</p>
-  <p style="font-size:12px;color:var(--g500);font-weight:500;">If you&#x27;re subbing to Chemonics on anything, have a backup plan by end of month.</p>
-</div>
-<div class="cd cd-r" style="padding:14px;">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:6px;">
-    <strong style="color:var(--navy);">DAI Global</strong>
-    <span class="bg bg-u">$890M USAID portfolio</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin-bottom:4px;">Pivoting to State Department and MCC work. May be open to JV arrangements they&#x27;d have rejected 6 months ago.</p>
-  <p style="font-size:12px;color:var(--g500);font-weight:500;">Opportunity to partner with a firm that has deep international development past performance at a discount.</p>
-</div>
-<div class="cd cd-r" style="padding:14px;">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:6px;">
-    <strong style="color:var(--navy);">Maximus</strong>
-    <span class="bg bg-u">$2.1B across ED, HHS, and VA</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin-bottom:4px;">ED work at risk but HHS and VA portfolios stable. Stock down 18% creates M&amp;A opportunity for mid-tiers looking to acquire federal BPO capabilities.</p>
-  <p style="font-size:12px;color:var(--g500);font-weight:500;">Maximus may divest smaller contract vehicles to shore up balance sheet. Watch for novation opportunities.</p>
-</div>
-</div>
-<div class="co co-a" style="margin-top:16px;">
-  <div class="co-l">Outlook</div>
-  <p style="font-size:13px;">The DOGE disruption is creating a two-speed federal market: DoD and IC are accelerating spend (especially cyber and AI), while civilian agencies face 12-18 months of uncertainty. Smart firms are repositioning BD teams from civilian to defense. The biggest hidden risk is COR attrition -- even contracts that survive cuts may suffer from inadequate government oversight, leading to performance disputes and withheld fees. Build relationships with remaining government staff now; they&#x27;re overwhelmed and will remember who made their lives easier.</p>
+<table class="ticker">
+<tr><td>Weekly Obligations</td><td>$4.83B</td><td class="up">+12.3% YoY</td></tr>
+<tr><td>DoD</td><td>$2.89B</td><td class="up">+34% QoQ</td></tr>
+<tr><td>VA</td><td>$620M</td><td style="color:#666">Stable</td></tr>
+<tr><td>DHS</td><td>$485M</td><td class="up">+22% QoQ</td></tr>
+<tr><td>Health Index</td><td>62/100</td><td class="dn">&darr;6 pts</td></tr>
+<tr><td>Avg Bidders/RFP</td><td>3.2</td><td class="dn">&darr;from 4.1</td></tr>
+</table>
+<p class="small">*DoD cyber is surging. Civilian agencies in freefall. SB utilization at 3-year low.</p>
 </div>
 
-<div class="sd" id="s04"><span class="sn">04</span><span class="sl">Is It Wired?</span><span class="sln"></span></div>
-<div class="st">&ldquo;Is It Wired?&rdquo; Scorecard</div>
-<div class="ss">Our proprietary analysis of whether upcoming solicitations are pre-determined for the incumbent</div>
+<!-- ═══ LEAD ═══ -->
+<div class="cat">DOGE WATCH</div>
+<h2>14 contracts lost their government oversight this month</h2>
 
-<p style="font-size:12px;color:var(--g500);margin-bottom:16px;font-style:italic;">Wired Score (0-100): 0 = wide open competition, 100 = almost certainly pre-determined. Based on: sole-source history, number of offers on prior awards, incumbent tenure, requirement specificity, competition history, and response window analysis.</p>
-<div class="wc">
-  <div class="wsd">
-    <div class="wsc" style="background:rgba(239,68,68,.2);border:3px solid #EF4444;color:#EF4444;">82</div>
-    <div>
-      <div style="font-family:var(--fd);font-size:17px;font-weight:700;">Enterprise Cloud Migration Services</div>
-      <div style="font-family:var(--fm);font-size:11px;color:var(--g400);margin-top:2px;">Department of Interior / OCIO</div>
-      <div style="font-family:var(--fm);font-size:11px;font-weight:700;color:#EF4444;margin-top:4px;">LIKELY WIRED. Five of five red flags triggered. The sole-source history, DOI-specific key personnel requirement, and lack of industry engagement strongly suggest this is shaped for Accenture Federal. Unless you have deep DOI cloud experience AND can staff the key personnel requirement, this is a no-bid.</div>
-    </div>
-  </div>
-<div class="mr" style="margin-bottom:10px;">
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Est. Value:</strong> $45,000,000</span>
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Posted:</strong> 2026-03-15</span>
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Deadline:</strong> 2026-04-14</span>
-</div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Sole-source history</span>
-    <span style="color:var(--g300);font-weight:500;">The predecessor contract was sole-sourced to Accenture Federal 3 times (FY21, FY23, FY24). J&amp;A cited &#x27;unique knowledge of DOI systems&#x27; each time.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Response window</span>
-    <span style="color:var(--g300);font-weight:500;">30 days for a $45M full technical volume. Technically compliant with FAR but aggressive for the scope. Favors teams already familiar with DOI&#x27;s architecture.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Key personnel requirements</span>
-    <span style="color:var(--g300);font-weight:500;">Requires PM with &#x27;5+ years supporting DOI cloud environments specifically.&#x27; Only the incumbent&#x27;s staff meets this.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Number of prior offers</span>
-    <span style="color:var(--g300);font-weight:500;">Prior iterations received only 2 offers. Thin market or shaped requirements.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Recent industry engagement</span>
-    <span style="color:var(--g300);font-weight:500;">No industry day held. No Sources Sought issued. RFP appeared without pre-solicitation notice.</span>
-  </div>
-  <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:var(--g300);line-height:1.6;">
-    <strong style="color:var(--gold);">Bottom Line:</strong> If you are a small business with DOI past performance, consider protesting the key personnel requirement as unduly restrictive. GAO has sustained similar protests (see Matter of Deloitte Consulting, B-418541).
-  </div>
-</div>
-<div class="wc">
-  <div class="wsd">
-    <div class="wsc" style="background:rgba(16,185,129,.2);border:3px solid #10B981;color:#10B981;">31</div>
-    <div>
-      <div style="font-family:var(--fd);font-size:17px;font-weight:700;">Next-Gen Border Surveillance Technology</div>
-      <div style="font-family:var(--fm);font-size:11px;color:var(--g400);margin-top:2px;">CBP / Office of Technology Innovation</div>
-      <div style="font-family:var(--fm);font-size:11px;font-weight:700;color:#10B981;margin-top:4px;">WIDE OPEN. Zero red flags. CBP has done everything right: industry days, Sources Sought, generous timeline, multiple awards. This is a genuine competition. The $280M value and multiple-award structure mean there&#x27;s room for several winners.</div>
-    </div>
-  </div>
-<div class="mr" style="margin-bottom:10px;">
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Est. Value:</strong> $280,000,000</span>
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Posted:</strong> 2026-03-12</span>
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Deadline:</strong> 2026-05-10</span>
-</div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#10B981;">&#9679;</span> Sole-source history</span>
-    <span style="color:var(--g300);font-weight:500;">No sole-source history. Prior contract was competitively awarded with 6 offerors.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#10B981;">&#9679;</span> Response window</span>
-    <span style="color:var(--g300);font-weight:500;">60 days -- generous for the scope. CBP wants competition.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#10B981;">&#9679;</span> Key personnel requirements</span>
-    <span style="color:var(--g300);font-weight:500;">Experience with &#x27;autonomous surveillance systems in border environments&#x27; -- specific but not tied to one vendor.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#10B981;">&#9679;</span> Industry engagement</span>
-    <span style="color:var(--g300);font-weight:500;">Two industry days held (Jan and Feb 2026). Sources Sought issued Nov 2025 with 28 responses. CBP published Q&amp;A from 140+ questions.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#10B981;">&#9679;</span> Multiple award structure</span>
-    <span style="color:var(--g300);font-weight:500;">RFP explicitly states up to 3 awards for different technology domains (sensor, AI/analytics, integration).</span>
-  </div>
-  <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:var(--g300);line-height:1.6;">
-    <strong style="color:var(--gold);">Bottom Line:</strong> The sensor domain favors Elbit Systems and Anduril (they hold the current tower contracts). AI/analytics and integration domains are more open.
-  </div>
-</div>
-<div class="wc">
-  <div class="wsd">
-    <div class="wsc" style="background:rgba(239,68,68,.2);border:3px solid #EF4444;color:#EF4444;">91</div>
-    <div>
-      <div style="font-family:var(--fd);font-size:17px;font-weight:700;">IT Help Desk and End User Support</div>
-      <div style="font-family:var(--fm);font-size:11px;color:var(--g400);margin-top:2px;">Department of Education</div>
-      <div style="font-family:var(--fm);font-size:11px;font-weight:700;color:#EF4444;margin-top:4px;">DO NOT BID. Maximum wired score plus existential risk. Even if you could win, the Department of Education&#x27;s future is uncertain enough that a 3-year contract may become a 6-month T4C. Maximus will bid this as a defensive move to maintain their position. Let them have it.</div>
-    </div>
-  </div>
-<div class="mr" style="margin-bottom:10px;">
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Est. Value:</strong> $22,000,000</span>
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Posted:</strong> 2026-03-10</span>
-<span class="mi" style="color:var(--g400);"><strong style="color:var(--g300);">Deadline:</strong> 2026-04-07</span>
-</div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Agency status</span>
-    <span style="color:var(--g300);font-weight:500;">Department of Education faces potential dissolution under DOGE. Any contract awarded may be terminated within 12 months.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Sole-source history</span>
-    <span style="color:var(--g300);font-weight:500;">This exact scope has been sole-sourced to Maximus for 4 consecutive years.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Response window</span>
-    <span style="color:var(--g300);font-weight:500;">28 days. Below the 30-day minimum for non-commercial solicitations -- potential protest ground.</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Timing</span>
-    <span style="color:var(--g300);font-weight:500;">Posted while the agency&#x27;s FY27 budget is under Congressional review for zeroing out. Why issue a new 3-year contract for an agency that may not exist?</span>
-  </div>
-  <div class="wsr">
-    <span style="color:var(--g400);"><span style="color:#EF4444;">&#9679;</span> Requirements</span>
-    <span style="color:var(--g300);font-weight:500;">Requires &#x27;familiarity with ED-specific ITSM platform (ServiceNow instance ED-SNOW-4).&#x27; Instance-specific requirement is a red flag.</span>
-  </div>
-  <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:var(--g300);line-height:1.6;">
-    <strong style="color:var(--gold);">Bottom Line:</strong> None. Walk away.
-  </div>
-</div>
+<p><strong>DOGE workforce cuts are creating a problem nobody anticipated:</strong> contracts that are technically alive but have no Contracting Officer&rsquo;s Representative watching them. USAID alone has 127 active contracts ($4.1B) with nobody on the government side. Stop-work orders hit 23 task orders.</p>
 
-<div class="sd" id="s05"><span class="sn">05</span><span class="sl">Bridge Watch</span><span class="sln"></span></div>
-<div class="st">Bridge Contract Watch</div>
-<div class="ss">Bridge contracts signal imminent recompetes -- the incumbent is vulnerable and the scope is defined</div>
+<p>The agency-by-agency breakdown:</p>
 
-<div class="bc">
-  <div class="cd-h">
-    <div>
-      <div class="cd-t" style="font-size:16px;">Cybersecurity Operations Support</div>
-      <div class="cd-ag">Department of Homeland Security / CISA &middot; Incumbent: Booz Allen Hamilton</div>
-    </div>
-    <span class="bg bg-d">6 months (Apr 1 - Sep 30, 2026)</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Bridge:</strong> $18,500,000</span>
-    <span class="mi"><strong>Original:</strong> $142,000,000</span>
-    <span class="mi"><strong>Wired Score:</strong> <span style="color:#10B981;font-weight:600;">25/100 (WIDE OPEN)</span></span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;"><strong>Recompete Signal:</strong> CISA issued this bridge after failing to award the follow-on competitive RFP on time. The draft RFP received 340+ industry comments -- CISA is rewriting Section L. Competitive RFP expected July 2026. This is NOT wired -- CISA explicitly told industry they want new approaches to threat detection.</p>
-<div class="co co-g" style="margin-top:10px;">
-    <div class="co-l">What To Do</div>
-    <p style="font-size:13px;">If you have SOC/SIEM operations experience at DHS-scale networks, submit a capabilities statement to CISA&#x27;s Industry Liaison before the re-issued RFP drops. The 340+ comments signal CISA is listening.</p>
-  </div>
-</div>
-<div class="bc">
-  <div class="cd-h">
-    <div>
-      <div class="cd-t" style="font-size:16px;">Financial Management System Support</div>
-      <div class="cd-ag">Department of Treasury / IRS &middot; Incumbent: CGI Federal</div>
-    </div>
-    <span class="bg bg-d">4 months (May 1 - Aug 31, 2026)</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Bridge:</strong> $8,200,000</span>
-    <span class="mi"><strong>Original:</strong> $89,000,000</span>
-    <span class="mi"><strong>Wired Score:</strong> <span style="color:#F59E0B;font-weight:600;">55/100 (TOSS-UP)</span></span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;"><strong>Recompete Signal:</strong> Second bridge extension in 12 months. IRS acquisition division is understaffed post-DOGE hiring freeze. The recompete WILL happen but is slipping right. CGI has been on this for 7 years and the GAO flagged timeline concerns. There&#x27;s real vulnerability here.</p>
-<div class="co co-g" style="margin-top:10px;">
-    <div class="co-l">What To Do</div>
-    <p style="font-size:13px;">Long capture timeline. Use this bridge period to build IRS relationships. Attend the IRS Industry Day for Enterprise Modernization (expected June 2026). If you have Oracle Financial Services or SAP S/4HANA experience in federal environments, you&#x27;re relevant.</p>
-  </div>
-</div>
-<div class="bc">
-  <div class="cd-h">
-    <div>
-      <div class="cd-t" style="font-size:16px;">Base Operations Support</div>
-      <div class="cd-ag">U.S. Army Installation Management Command (IMCOM) &middot; Incumbent: Vectrus (now V2X)</div>
-    </div>
-    <span class="bg bg-d">9 months (Mar 1 - Nov 30, 2026)</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Bridge:</strong> $34,000,000</span>
-    <span class="mi"><strong>Original:</strong> $412,000,000</span>
-    <span class="mi"><strong>Wired Score:</strong> <span style="color:#EF4444;font-weight:600;">60/100 (LEANING WIRED)</span></span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;"><strong>Recompete Signal:</strong> IMCOM consolidating 4 installation support contracts into a single enterprise BOS vehicle. The bridge is long (9 months) because the new structure is fundamentally different from the predecessor. V2X has incumbency but the scope expansion to multi-installation means they need partners they didn&#x27;t need before.</p>
-<div class="co co-g" style="margin-top:10px;">
-    <div class="co-l">What To Do</div>
-    <p style="font-size:13px;">If you provide facility management, environmental services, or logistics support, contact V2X about subcontracting on the consolidated vehicle. IMCOM is also considering a small business set-aside for a separate facilities maintenance component -- watch SAM.gov for NAICS 561210 from IMCOM.</p>
-  </div>
+<ul>
+<li><strong>USAID:</strong> 80% of acquisition workforce gone. TRO keeps contracts alive through April 2 but don&rsquo;t count on resumption. If you&rsquo;re a sub, invoke your T4C protections this week.</li>
+<li><strong>OPM:</strong> Being folded into GSA. $380M in HR IT contracts are unfunded. Get your prime&rsquo;s position in writing.</li>
+<li><strong>Dept of Education:</strong> $1.8B in loan servicing under termination review. Pipeline frozen. Pause capture spend.</li>
+<li><strong>EPA:</strong> 30% FY27 budget cut proposed. Environmental services declining for 2+ years.</li>
+<li><strong>DISA:</strong> The exception &mdash; it&rsquo;s <em>growing</em>. Absorbing civilian IT work. Reposition here if you&rsquo;re losing civilian contracts.</li>
+</ul>
+
+<p><strong>Court watch:</strong> <em>AFGE v. DOGE</em> oral arguments March 28. If DOGE gets classified as a FACA advisory committee, all its recommendations become non-binding.</p>
+
+<hr>
+
+<!-- ═══ AWARDS ═══ -->
+<div class="cat">WHO WON THIS WEEK</div>
+<h2>$1.9B in new awards</h2>
+
+<h3>GDIT takes $1.24B JADC2 contract from Army</h3>
+<p><strong>Beat Leidos despite being 11% higher on price.</strong> The winning move: a &ldquo;digital twin&rdquo; testbed that cuts testing timelines by 14 months, plus Anduril as a sub for mesh networking. The Army paid more for speed and innovation. If you&rsquo;re still proposing waterfall integration for C2 programs, you&rsquo;re going to keep losing.</p>
+
+<h3>Accenture Federal wins $389M VA cloud migration</h3>
+<p><strong>FinOps was the differentiator.</strong> They guaranteed measurable cloud cost reduction. VA got burned by lift-and-shift migrations that doubled hosting costs &mdash; they weren&rsquo;t going to let that happen again. Deloitte&rsquo;s AWS-only proposal and IBM&rsquo;s hybrid pitch both lost. <strong>If your cloud practice doesn&rsquo;t have FinOps practitioners, fix that before your next proposal.</strong></p>
+
+<h3>Scale AI lands $78.5M NGA training data contract</h3>
+<p><strong>First major NGA award to a pure-play AI company.</strong> NGA realized their bottleneck isn&rsquo;t algorithms &mdash; it&rsquo;s labeled training data at scale. Anthropic scored highest technically but lacked SCIF infrastructure. Takeaway: the IC is unbundling the AI value chain. Pick one layer and own it.</p>
+
+<h3>Raytheon takes $215M Space Ground Systems</h3>
+<p><strong>Commercial-hybrid architecture won.</strong> AWS Ground Station for unclassified data, seamless handoff to classified. Cut infrastructure costs 35%. Space ground is going commercial-first &mdash; bespoke architectures are losing.</p>
+
+<hr>
+
+<!-- ═══ WIRED ═══ -->
+<div class="cat">IS IT WIRED?</div>
+<h2>Score check on 4 upcoming recompetes</h2>
+
+<p class="small">We score 0&ndash;100 on whether a recompete is pre-wired for the incumbent. Higher = more wired.</p>
+
+<table class="ticker">
+<tr><td><strong>CYBERCOM NOCDef</strong><br><span class="small">$312M &bull; Booz Allen</span></td><td></td><td><span class="up" style="font-size:15px"><strong>31</strong> OPEN</span></td></tr>
+<tr><td><strong>DISA EITSS-III</strong><br><span class="small">$487M &bull; Leidos</span></td><td></td><td><span style="color:#d97706;font-size:15px"><strong>62</strong> LEAN INC.</span></td></tr>
+<tr><td><strong>DLA Analytics</strong><br><span class="small">$67M &bull; Palantir</span></td><td></td><td><span style="color:#d97706;font-size:15px"><strong>45</strong> TOSS-UP</span></td></tr>
+<tr><td><strong>DHA Health IT</strong><br><span class="small">$95M &bull; CACI</span></td><td></td><td><span class="dn" style="font-size:15px"><strong>82</strong> WIRED</span></td></tr>
+</table>
+
+<p><strong>The one to chase: CYBERCOM NOCDef.</strong> They&rsquo;re splitting into 3 task areas and told industry &ldquo;we don&rsquo;t want a single throat to choke.&rdquo; You don&rsquo;t have to beat BAH everywhere &mdash; win one piece. Sources Sought due April 10.</p>
+
+<p><strong>The one to challenge: DHA Health IT.</strong> Looks wired unless you file a size protest. CACI&rsquo;s SB affiliate (Six3 Systems) may have outgrown the $34M NAICS 541511 threshold. That&rsquo;s the only realistic path in.</p>
+
+<p><strong>The one to skip (maybe): EITSS-III.</strong> Leidos has 8 years of Exceptional CPARS. But the zero-trust expansion opens a lane. Industry Day at Fort Meade April 8 &mdash; registration closes March 28.</p>
+
+<hr>
+
+<!-- ═══ BRIDGE ═══ -->
+<div class="cat">BRIDGE WATCH</div>
+<h2>3 contracts the government couldn&rsquo;t recompete in time</h2>
+
+<ul>
+<li><strong>CISA CDM Support</strong> (Booz Allen, $18.5M/6mo) &mdash; CISA lost 3 key acquisition people to DOGE attrition. Recompete adding cloud security scope. RFP expected Apr&ndash;Jun. <strong>Entry point for FedRAMP shops.</strong></li>
+<li><strong>IRS Tax Processing</strong> (Accenture, $8.2M/4mo) &mdash; DOGE procurement freeze caused 90-day slip. Being split into 2 lots. Lot 2 (cloud-native) is wide open.</li>
+<li><strong>Army Email &amp; Collaboration</strong> (CACI, $34M/12mo) &mdash; Army migrating to M365 GCC High. Follow-on is fundamentally different &mdash; <strong>favors Microsoft-certified partners over the incumbent.</strong></li>
+</ul>
+
+<hr>
+
+<!-- ═══ QUICK HITS ═══ -->
+<div class="cat">QUICK HITS</div>
+<h2>What else happened</h2>
+
+<ul>
+<li><strong>SAIC DES gets another $450M ceiling bump</strong> &mdash; now $7.25B. Fourth increase in 18 months. DISA is eating everyone&rsquo;s IT budget. If you&rsquo;re not a DES sub, you&rsquo;re locked out. SAIC hiring subs for cloud, IAM, endpoint security.</li>
+<li><strong>AWS IC cloud enters final option year ($187M).</strong> The follow-on will be multi-cloud, multi-award, $1.5&ndash;2B. Microsoft and Google both briefed the IC CIO. The real money is in the migration services layer ($200M+).</li>
+<li><strong>CIO-SP4 ceiling raised to $52B.</strong> NITAAC issued 47 new task orders in February alone (up from 28/mo avg). If you&rsquo;re on it, staff a dedicated response team. Sweet spot: $5&ndash;25M health data analytics.</li>
+<li><strong>ManTech CMMC option exercised 45 days early.</strong> CMMC enforcement is accelerating. Start your Level 2 assessment now &mdash; C3PAO wait times are 4&ndash;6 months.</li>
+<li><strong>Peraton sole-sourced $128M FBI biometrics on Alliant 2.</strong> DOGE has flagged sole-source over $50M for review. Competitors: watch for a break in justification. Competitive follow-on would be $300M+.</li>
+</ul>
+
+<hr>
+
+<!-- ═══ SET-ASIDES ═══ -->
+<div class="cat">SMALL BUSINESS</div>
+<h2>4 agencies scrambling to hit SB goals</h2>
+
+<p>When agencies fall short, they flood the market with set-asides before Sept 30. Here are the gaps:</p>
+
+<table class="ticker">
+<tr><td><strong>VA &bull; HUBZone</strong></td><td class="dn">-1.2pp gap</td><td class="dn">$890M short</td></tr>
+<tr><td><strong>DoD &bull; WOSB</strong></td><td class="dn">-1.1pp gap</td><td class="dn">$4.2B short</td></tr>
+<tr><td><strong>DOE &bull; SDB</strong></td><td class="dn">-1.8pp gap</td><td class="dn">$1.1B short</td></tr>
+<tr><td><strong>DHS &bull; SDVOSB</strong></td><td class="dn">-0.7pp gap</td><td class="dn">$520M short</td></tr>
+</table>
+
+<p><strong>If you hold these certifications, target these agencies in Q3&ndash;Q4 FY26.</strong> The set-aside surge is coming.</p>
+
+<hr>
+
+<!-- ═══ PROTESTS ═══ -->
+<div class="cat">PROTEST CORNER</div>
+
+<ul>
+<li><strong>Leidos v. Air Force (ABMS, $340M) &mdash; SUSTAINED.</strong> GAO found the AF failed to conduct meaningful discussions. Third sustained protest on ABMS in 18 months. If you compete for ABMS work and don&rsquo;t get real feedback during discussions, file immediately.</li>
+<li><strong>CACI v. DHS/CBP ($178M) &mdash; DENIED.</strong> Elbit Systems (Israel) won a border surveillance award. CBP is bringing international defense firms into the market. Address their deployed-system advantage directly.</li>
+<li><strong>Palantir v. Army ($215M) &mdash; PENDING.</strong> Filed March 15. If you&rsquo;re the awardee, budget 90 days. Don&rsquo;t staff up yet.</li>
+</ul>
+
+<hr>
+
+<!-- ═══ YOUR TO-DO LIST ═══ -->
+<div class="box">
+<div class="cat" style="margin-top:0">YOUR TO-DO LIST</div>
+
+<ol style="padding-left:20px;margin:8px 0">
+<li style="margin-bottom:6px"><strong>Submit Sources Sought for CYBERCOM NOCDef</strong> (due Apr 10)</li>
+<li style="margin-bottom:6px"><strong>Register for DISA Industry Day</strong> (closes Mar 28)</li>
+<li style="margin-bottom:6px"><strong>Assess your USAID sub exposure</strong> &mdash; invoke T4C protections now</li>
+<li style="margin-bottom:6px"><strong>Set SAM.gov alerts</strong> for NAICS 541512 + 541519 at DISA/CYBERCOM</li>
+<li style="margin-bottom:6px"><strong>Start CMMC Level 2 assessment</strong> if you want DoD work after Sep 2027</li>
+<li style="margin-bottom:6px"><strong>Call SAIC about DES subcontracting</strong></li>
+<li style="margin-bottom:6px"><strong>Build FinOps capability</strong> &mdash; it&rsquo;s becoming an evaluation factor</li>
+</ol>
+
+<p class="small"><strong>Calendar:</strong> Mar 25 CYBERCOM Industry Day &bull; Mar 28 DISA reg deadline + AFGE v. DOGE arguments &bull; Apr 2 USAID TRO expires &bull; Apr 8 DISA Industry Day &bull; Apr 10 NOCDef Sources Sought due &bull; May 15 Joint Staff JADC2 engagement</p>
 </div>
 
-<div class="sd" id="s06"><span class="sn">06</span><span class="sl">Recompete Alerts</span><span class="sln"></span></div>
-<div class="st">Recompete Alerts</div>
-<div class="ss">Contracts expiring within 180 days -- protect your revenue or start your capture</div>
+<hr>
 
-<div class="cd cd-r">
-  <div class="cd-h">
-    <div><div class="cd-t">Enterprise IT Support Services (EITSS-III)</div><div class="cd-ag">Defense Information Systems Agency (DISA)</div></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;">
-      <span class="bg bg-d">104d</span>
-      <span class="bg bg-mw">MEDIUM WIN</span>
-    </div>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Incumbent:</strong> Leidos</span>
-    <span class="mi"><strong>Value:</strong> $487,000,000</span>
-    <span class="mi"><strong>NAICS:</strong> 541512</span>
-    <span class="mi"><strong>Set-Aside:</strong> Full &amp; Open</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">Scope expanding to include zero-trust implementation. Estimated new ceiling $650M. DISA is consolidating 3 legacy support contracts into this single vehicle.</p>
-  <p style="font-size:12px;color:var(--g500);margin-bottom:6px;"><strong>Status:</strong> Draft RFP Expected Apr 2026</p>
-<details class="ex"><summary>Winnability Analysis</summary><div class="xb"><ul class="il">
-<li>Leidos has held this since 2018 -- 8 years of incumbency creates some fatigue, but they&#x27;ve performed well (CPARS: Exceptional/Very Good)</li>
-<li>Zero-trust expansion opens a lane for firms with strong Zscaler/Palo Alto Prisma implementation credentials</li>
-<li>DISA wants contractor consolidation -- firms that can show they&#x27;ll reduce total vendor count will score higher on management approach</li>
-<li>Price competition will be fierce. Leidos will sharpen pencils to defend. Your price-to-win needs to be 8-12% below current run rate</li>
-<li>Key discriminator: automated ATO pipeline. DISA&#x27;s new CIO is obsessed with speeding up authority-to-operate timelines</li>
-</ul></div></details>
-<details class="ex"><summary>Protest History</summary><div class="xb"><p>EITSS-II was protested by SAIC in 2018 (denied). No sustained protests on this line. DISA has clean procurement record on this vehicle.</p></div></details>
-<details class="ex"><summary>Who Should Pursue</summary><div class="xb"><ul class="il">
-<li>Large businesses with DISA past performance and existing zero-trust implementations at scale (10K+ endpoints)</li>
-<li>Mid-tier firms should team -- lead with zero-trust niche expertise and backfill traditional IT support with proven subs</li>
-<li>If you don&#x27;t already have a relationship with DISA J6, you&#x27;re too late for prime. Position as sub to Leidos, SAIC, or Peraton.</li>
-</ul></div></details>
-</div>
-<div class="cd cd-r">
-  <div class="cd-h">
-    <div><div class="cd-t">Network Operations &amp; Cyber Defense (NOCDef)</div><div class="cd-ag">U.S. Cyber Command (CYBERCOM)</div></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;">
-      <span class="bg bg-d">119d</span>
-      <span class="bg bg-hw">HIGH WIN</span>
-    </div>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Incumbent:</strong> Booz Allen Hamilton</span>
-    <span class="mi"><strong>Value:</strong> $312,000,000</span>
-    <span class="mi"><strong>NAICS:</strong> 541519</span>
-    <span class="mi"><strong>Set-Aside:</strong> Full &amp; Open</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">CYBERCOM restructuring into 3 task areas: (1) Defensive Cyber Operations, (2) Threat Intelligence Fusion, (3) Hunt Forward support. Multiple awards likely -- one per task area. This is a MAJOR shaping opportunity.</p>
-  <p style="font-size:12px;color:var(--g500);margin-bottom:6px;"><strong>Status:</strong> Sources Sought Published</p>
-<details class="ex"><summary>Winnability Analysis</summary><div class="xb"><ul class="il">
-<li>Multiple-award structure means you don&#x27;t have to beat BAH head-to-head -- you can win a task area where they&#x27;re weakest</li>
-<li>Task Area 2 (Threat Intelligence Fusion) is wide open -- BAH&#x27;s strength is ops, not intel. CrowdStrike, Mandiant/Google, and Recorded Future subs are gold here</li>
-<li>Task Area 3 (Hunt Forward) requires deployed experience. Only 4-5 firms in the country have credible Hunt Forward past performance</li>
-<li>CYBERCOM is actively seeking new entrants. SIGINT from industry day: &#x27;We don&#x27;t want a single throat to choke anymore&#x27;</li>
-<li>Sources Sought responses due April 10 -- if you haven&#x27;t started your response, drop everything and write it this week</li>
-</ul></div></details>
-<details class="ex"><summary>Protest History</summary><div class="xb"><p>No protests on current contract. However, CYBERCOM&#x27;s last 3 major awards have ALL been protested. Budget a 90-day protest delay into your staffing plan.</p></div></details>
-<details class="ex"><summary>Who Should Pursue</summary><div class="xb"><ul class="il">
-<li>Task Area 1: Large cyber firms with SOC/NOC operations at scale -- SAIC, Leidos, ManTech, Peraton</li>
-<li>Task Area 2: Threat intel specialists -- Booz (incumbent advantage), but also CACI, ECS, and commercial threat intel firms with federal arms</li>
-<li>Task Area 3: Only pursue if you have actual Hunt Forward or CPT deployment experience. CYBERCOM will verify. Don&#x27;t waste your B&amp;P.</li>
-<li>Small businesses: CYBERCOM is considering an SDVOSB set-aside for a separate Hunt Forward support TO. Watch SAM.gov for NAICS 541519 from CYBERCOM.</li>
-</ul></div></details>
-</div>
-<div class="cd cd-r">
-  <div class="cd-h">
-    <div><div class="cd-t">Health IT Modernization Support</div><div class="cd-ag">Defense Health Agency (DHA)</div></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;">
-      <span class="bg bg-d">166d</span>
-      <span class="bg bg-hw">HIGH WIN</span>
-    </div>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Incumbent:</strong> CACI International</span>
-    <span class="mi"><strong>Value:</strong> $94,500,000</span>
-    <span class="mi"><strong>NAICS:</strong> 541511</span>
-    <span class="mi"><strong>Set-Aside:</strong> Small Business Set-Aside</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">MHS GENESIS rollout delays may extend incumbent PoP by 6-12 months via bridge contract. BUT -- the recompete will still happen. DHA is under Congressional pressure to compete this. CMMC Level 2 will be a go/no-go requirement.</p>
-  <p style="font-size:12px;color:var(--g500);margin-bottom:6px;"><strong>Status:</strong> Market Research Phase</p>
-<details class="ex"><summary>Winnability Analysis</summary><div class="xb"><ul class="il">
-<li>Small business set-aside eliminates the primes -- CACI will have to compete through an SB affiliate or lose this</li>
-<li>CACI&#x27;s SB affiliate (Six3 Systems) is the likely incumbent vehicle, but Six3 has grown past SB size standards for 541511 ($34M). Watch for a size protest opportunity.</li>
-<li>MHS GENESIS experience is the #1 discriminator. If you&#x27;ve done Cerner/Oracle Health implementations at military treatment facilities, you&#x27;re in the running</li>
-<li>DHA is frustrated with timeline slippage -- position your proposal around schedule discipline and earned value management rigor</li>
-<li>CMMC Level 2 certification is a hard gate. Start your assessment NOW if you don&#x27;t have it. C3PAO wait times are 4-6 months.</li>
-</ul></div></details>
-<details class="ex"><summary>Protest History</summary><div class="xb"><p>Size protest filed on CACI&#x27;s SB status during initial award (2021). Dismissed on procedural grounds but the underlying size question remains live.</p></div></details>
-<details class="ex"><summary>Who Should Pursue</summary><div class="xb"><ul class="il">
-<li>Small businesses with NAICS 541511 under $34M revenue AND Oracle Health/Cerner implementation experience</li>
-<li>SDVOSB firms with health IT credentials -- DHA may add an SDVOSB evaluation preference</li>
-<li>8(a) firms in the health IT space should contact DHA&#x27;s OSBP about a potential sole-source bridge if they have relevant past performance</li>
-<li>If you&#x27;re a large business: identify your SB teaming partner NOW and start the mentor-protege paperwork</li>
-</ul></div></details>
-</div>
-<div class="cd cd-r">
-  <div class="cd-h">
-    <div><div class="cd-t">Logistics Data Analytics Platform (LDAP)</div><div class="cd-ag">Defense Logistics Agency (DLA)</div></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;">
-      <span class="bg bg-d">181d</span>
-      <span class="bg bg-mw">MEDIUM WIN</span>
-    </div>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Incumbent:</strong> Palantir Technologies</span>
-    <span class="mi"><strong>Value:</strong> $67,200,000</span>
-    <span class="mi"><strong>NAICS:</strong> 518210</span>
-    <span class="mi"><strong>Set-Aside:</strong> Full &amp; Open</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">DLA evaluating move to commercial SaaS. The real story: DLA&#x27;s Deputy Director of Logistics Operations told the NDIA conference last month that &#x27;we&#x27;re paying custom platform prices for what should be a commercial capability.&#x27; Translation: Palantir&#x27;s pricing model is on the chopping block.</p>
-  <p style="font-size:12px;color:var(--g500);margin-bottom:6px;"><strong>Status:</strong> Pre-Solicitation Notice Expected May 2026</p>
-<details class="ex"><summary>Winnability Analysis</summary><div class="xb"><ul class="il">
-<li>DLA is signaling they want a commercial solution, not a bespoke platform. This favors Snowflake/Databricks-based approaches over Palantir&#x27;s Foundry</li>
-<li>Palantir&#x27;s lock-in is real but not insurmountable -- DLA has been quietly building data exports into their contract mods for the past year. They&#x27;re planning the exit.</li>
-<li>Price will be the deciding factor. Palantir&#x27;s per-seat licensing is 3-4x commercial rates. Come in with a consumption-based model.</li>
-<li>The twist: DLA also wants predictive logistics (AI/ML for demand forecasting). Pure SaaS firms need an AI story.</li>
-<li>Palantir will protest if they lose. Budget 120 days and have a bridge plan ready.</li>
-</ul></div></details>
-<details class="ex"><summary>Protest History</summary><div class="xb"><p>Palantir has protested 6 federal contracts in the last 3 years (won 2, denied 4). They WILL protest. Factor this into your timeline.</p></div></details>
-<details class="ex"><summary>Who Should Pursue</summary><div class="xb"><ul class="il">
-<li>Cloud-native analytics firms (Databricks, Snowflake partners) with FedRAMP High authorization</li>
-<li>Mid-tier firms like ECS, Unison, or Definitive Logic that can integrate commercial platforms with DLA&#x27;s legacy ERP (SAP-based)</li>
-<li>Palantir competitors with defense logistics past performance -- C3.ai, Dataiku with federal arms</li>
-<li>SIs with strong DLA relationships: Accenture Federal, Deloitte, IBM. They can wrap commercial tech in a managed service.</li>
-</ul></div></details>
-</div>
+<!-- ═══ ONE MORE THING ═══ -->
+<div class="cat">ONE MORE THING</div>
+<h2>The $3&ndash;5B program buried in the FY27 budget docs</h2>
 
-<div class="sd" id="s07"><span class="sn">07</span><span class="sl">New Awards</span><span class="sln"></span></div>
-<div class="st">New Contract Awards</div>
-<div class="ss">Awarded this week -- competitive intelligence for your pipeline</div>
+<p><strong>CJADC2-TEP</strong> &mdash; Tactical Edge Processing. The Joint Staff wants AI inference running on ruggedized edge devices at the battalion level instead of backhauling to the cloud. This is the next JEDI-scale program but for edge computing. First RFI expected Q1 FY27.</p>
 
-<div class="cd cd-g">
-  <div class="cd-h">
-    <div><div class="cd-t">Joint All-Domain Command &amp; Control (JADC2) Integration</div><div class="cd-ag">U.S. Army PEO C3T</div></div>
-    <span class="bg bg-n">$1.2B</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Awardee:</strong> General Dynamics IT</span>
-    <span class="mi"><strong>Period:</strong> 5 years (base + 4 options)</span>
-    <span class="mi"><strong>NAICS:</strong> 541330</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">Largest C3 integration award this fiscal year. GDIT beat Leidos on technical approach score despite Leidos being 11% lower on price.</p>
-<div class="co co-g"><div class="co-l">Why They Won</div><p style="font-size:13px;">GDIT&#x27;s winning move was their &#x27;digital twin&#x27; integration testing environment -- they proposed a virtual JADC2 testbed that lets the Army validate cross-domain data flows without live exercises. This cut the estimated T&amp;E timeline by 14 months. They also brought Anduril as a key sub for mesh networking, which signaled commercial tech integration the Army wanted to see. Leidos lost on innovation, not price.</p></div>
-<div class="co co-r"><div class="co-l">If You Lost</div><p style="font-size:13px;">Leidos should protest on the best-value tradeoff rationale -- 11% price advantage dismissed is aggressive and GAO may take a hard look. L3Harris should pivot to the sensor-to-shooter sub-tier; GDIT will need RF expertise they don&#x27;t have in-house. Northrop should focus on the Space-based JADC2 node that PEO Space is expected to solicit in Q4 FY26.</p></div>
-<div class="co co-b"><div class="co-l">Market Signal</div><p style="font-size:13px;">The Army is willing to pay more for speed and innovation in C3. Traditional &#x27;safe&#x27; proposals from incumbent primes are losing to firms that bring commercial tech partners and accelerated delivery models. If you&#x27;re still proposing waterfall integration approaches for C2 programs, you&#x27;re going to keep losing.</p></div>
-</div>
-<div class="cd cd-g">
-  <div class="cd-h">
-    <div><div class="cd-t">Cloud Migration &amp; Managed Services (CMMS)</div><div class="cd-ag">Department of Veterans Affairs (VA)</div></div>
-    <span class="bg bg-n">$389M</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Awardee:</strong> Accenture Federal Services</span>
-    <span class="mi"><strong>Period:</strong> 3 years base + 2 option years</span>
-    <span class="mi"><strong>NAICS:</strong> 541519</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">VA&#x27;s largest single cloud contract. Multi-cloud strategy (AWS + Azure). Accenture&#x27;s proposal included a FinOps practice that projected $47M in cloud cost optimization over the PoP.</p>
-<div class="co co-g"><div class="co-l">Why They Won</div><p style="font-size:13px;">Accenture Federal won on two fronts: (1) their embedded FinOps team that guaranteed measurable cloud cost reduction -- VA has been burned by cloud migrations that doubled their hosting costs, and (2) a multi-cloud architecture that avoids vendor lock-in (VA&#x27;s CTO publicly stated this was a priority after the C2E sole-source controversy). Deloitte&#x27;s proposal was AWS-only. IBM pushed hybrid cloud with on-prem Z-series -- the VA didn&#x27;t want more hardware.</p></div>
-<div class="co co-r"><div class="co-l">If You Lost</div><p style="font-size:13px;">Deloitte should target the VA&#x27;s application modernization layer -- CMMS is infrastructure, but the 200+ legacy VistA applications still need to be refactored. That&#x27;s a separate $500M+ opportunity in FY27. IBM Federal should pivot to the VA&#x27;s AI/ML initiative for claims processing where their Watson Health lineage still carries weight.</p></div>
-<div class="co co-b"><div class="co-l">Market Signal</div><p style="font-size:13px;">FinOps is no longer a nice-to-have -- it&#x27;s becoming an evaluation factor. Agencies that got burned by &#x27;lift and shift&#x27; cloud migrations in 2022-2024 are now demanding cost governance as a core deliverable. If your cloud practice doesn&#x27;t include a FinOps capability with certified practitioners, build it before your next proposal.</p></div>
-</div>
-<div class="cd cd-g">
-  <div class="cd-h">
-    <div><div class="cd-t">AI/ML Training Data Curation</div><div class="cd-ag">National Geospatial-Intelligence Agency (NGA)</div></div>
-    <span class="bg bg-n">$78M</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Awardee:</strong> Scale AI</span>
-    <span class="mi"><strong>Period:</strong> 2 years base + 1 option</span>
-    <span class="mi"><strong>NAICS:</strong> 541715</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">First major NGA award to a pure-play AI data company. Scale AI&#x27;s federal division (Scale for Government) has grown from 12 to 180 people in 18 months.</p>
-<div class="co co-g"><div class="co-l">Why They Won</div><p style="font-size:13px;">Scale AI won because NGA realized their bottleneck isn&#x27;t algorithms -- it&#x27;s labeled training data at scale. Scale&#x27;s existing commercial relationships with Meta and OpenAI gave them a data annotation workforce (100K+ contractors globally) that no defense prime could match. They also proposed a &#x27;data flywheel&#x27; where model performance improvements automatically generate better training labels for the next iteration. Palantir proposed Foundry-based labeling but couldn&#x27;t match throughput. Anthropic&#x27;s proposal was technically strong but they lacked the cleared facility infrastructure.</p></div>
-<div class="co co-r"><div class="co-l">If You Lost</div><p style="font-size:13px;">Palantir should focus on the downstream deployment layer -- Scale curates the data, but someone needs to deploy the trained models into NGA&#x27;s classified workflows. That integration work is Palantir&#x27;s sweet spot. Anthropic should invest in SCIF infrastructure and cleared personnel if they&#x27;re serious about IC work; their technical approach scored highest but facility/clearance gaps killed them. Traditional defense primes: this is your warning shot. AI-native firms are taking market share in the IC. Acquire or partner.</p></div>
-<div class="co co-b"><div class="co-l">Market Signal</div><p style="font-size:13px;">The IC is unbundling the AI value chain. Data curation, model training, model evaluation, and deployment are being procured separately. This creates entry points for specialist firms at each layer. The days of a single prime owning the entire AI pipeline are ending. Position yourself in one layer and own it.</p></div>
-</div>
-<div class="cd cd-g">
-  <div class="cd-h">
-    <div><div class="cd-t">Satellite Ground Systems O&amp;M</div><div class="cd-ag">Space Systems Command (SSC)</div></div>
-    <span class="bg bg-n">$215M</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Awardee:</strong> Raytheon Technologies</span>
-    <span class="mi"><strong>Period:</strong> 5 years</span>
-    <span class="mi"><strong>NAICS:</strong> 541330</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">Includes classified resilient comms upgrade. Raytheon leveraged commercial LEO experience from their Starshield work with SpaceX.</p>
-<div class="co co-g"><div class="co-l">Why They Won</div><p style="font-size:13px;">Raytheon&#x27;s differentiator was hybrid ground architecture -- they proposed commercial cloud-based ground processing (via AWS Ground Station) for unclassified data, with seamless handoff to classified on-prem processing. This cut estimated ground infrastructure costs by 35%. Their SpaceX Starshield collaboration gave them credible commercial LEO integration experience that LockMart and Ball couldn&#x27;t match. Ball Aerospace was strong on the sensor side but weak on the network resilience requirements.</p></div>
-<div class="co co-r"><div class="co-l">If You Lost</div><p style="font-size:13px;">Lockheed Martin should leverage their GPS OCX experience to target the follow-on PNT ground modernization expected in FY27. Ball Aerospace should position as a sub to Raytheon for the sensor calibration task area -- Raytheon will need their expertise. Both should note: SSC is moving toward commercial-first ground architectures. Invest in commercial cloud ground station partnerships.</p></div>
-<div class="co co-b"><div class="co-l">Market Signal</div><p style="font-size:13px;">Space ground systems are going commercial-hybrid. SSC&#x27;s acquisition strategy explicitly calls for &#x27;commercial where possible, custom where necessary.&#x27; Firms still proposing fully bespoke ground architectures are at a structural disadvantage. The commercial space boom (SpaceX, Amazon Kuiper) is creating a talent and technology pipeline that military-only firms can&#x27;t access.</p></div>
-</div>
+<p>The $1.24B GDIT award this week is the integration layer. CJADC2-TEP is the compute layer underneath. If you have edge AI capabilities (NVIDIA Jetson, Qualcomm SNPE), start building your portfolio. And get to the Joint Staff J6 engagement on May 15 &mdash; registration opens April 1.</p>
 
-<div class="sd" id="s08"><span class="sn">08</span><span class="sl">Option Exercises</span><span class="sln"></span></div>
-<div class="st">Option Year Exercises</div>
-<div class="ss">Incumbents extending -- read the signals for recompete timing</div>
-
-<div class="cd cd-b">
-  <div class="cd-h">
-    <div><div class="cd-t">Cybersecurity Maturity Model Certification (CMMC) Assessor Support</div><div class="cd-ag">DoD CIO &middot; ManTech International</div></div>
-    <span class="bg bg-m">Option Year 2 of 4</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Option Value:</strong> $42,000,000</span>
-    <span class="mi"><strong>Base Contract:</strong> $180,000,000</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">CMMC 2.0 rollout driving 3x assessment volume. ManTech adding 200 assessors. Option exercised 45 days early -- strong signal of government satisfaction.</p>
-<div class="co co-b"><div class="co-l">Recompete Signal</div><p style="font-size:13px;">Two option years remaining means recompete is 2+ years out. No urgency to capture. BUT: the CMMC ecosystem is exploding and ManTech is building an assessor army that will be hard to displace. If you want to compete for CMMC-III, start building your assessor bench NOW -- it takes 12-18 months to certify a CMMC assessor.</p></div>
-<details class="ex"><summary>Who Should Watch</summary><div class="xb"><ul class="il">
-<li>Cybersecurity firms building CMMC assessment practices (Coalfire, Schellman, A-LIGN)</li>
-<li>MSPs serving the Defense Industrial Base -- CMMC is creating massive demand for compliance-as-a-service</li>
-<li>Any firm planning to bid on DoD contracts after 2027 -- CMMC Level 2 will be table stakes. This is not optional.</li>
-</ul></div></details>
-</div>
-<div class="cd cd-b">
-  <div class="cd-h">
-    <div><div class="cd-t">Financial Systems Modernization (FSM)</div><div class="cd-ag">Department of Treasury &middot; CGI Federal</div></div>
-    <span class="bg bg-m">Option Year 3 of 5</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Option Value:</strong> $31,800,000</span>
-    <span class="mi"><strong>Base Contract:</strong> $156,000,000</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">Exercised despite GAO audit findings on migration timeline. Treasury&#x27;s CFO office defended CGI&#x27;s performance in Congressional testimony -- rare and notable public endorsement.</p>
-<div class="co co-b"><div class="co-l">Recompete Signal</div><p style="font-size:13px;">Two option years left, but Treasury has signaled they may not exercise Option Year 5 and instead accelerate recompete to align with the Federal Financial Management Improvement Act milestones. Smart capture managers should start shaping in late FY27, not FY28. The GAO findings create an opening -- Treasury may want fresh eyes even if they&#x27;re publicly defending CGI.</p></div>
-<details class="ex"><summary>Who Should Watch</summary><div class="xb"><ul class="il">
-<li>SAP and Oracle federal SIs -- Treasury&#x27;s target state is a unified ERP, and the current system is a patchwork</li>
-<li>Mid-tier firms with Treasury/IRS past performance (Guidehouse, Maximus, Unison)</li>
-<li>DOGE watchers: Treasury is one of the &#x27;efficiency&#x27; targets. If DOGE pushes shared financial services, this contract scope could expand dramatically or be absorbed into a cross-agency vehicle.</li>
-</ul></div></details>
-</div>
-<div class="cd cd-b">
-  <div class="cd-h">
-    <div><div class="cd-t">Enterprise Cloud Hosting (ECH)</div><div class="cd-ag">Intelligence Community (IC) &middot; Amazon Web Services (AWS)</div></div>
-    <span class="bg bg-m">Option Year 4 of 5 (FINAL)</span>
-  </div>
-  <div class="mr">
-    <span class="mi"><strong>Option Value:</strong> $187,000,000</span>
-    <span class="mi"><strong>Base Contract:</strong> $742,000,000</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">Final option year. IC already exploring multi-cloud follow-on. Microsoft Azure Government and Google Cloud for Defense both briefed the IC CIO last month. Oracle also positioning via their DoD JWCC win.</p>
-<div class="co co-b"><div class="co-l">Recompete Signal</div><p style="font-size:13px;">THIS IS THE BIG ONE. Final option year means the follow-on RFP should drop within 12 months. The IC&#x27;s multi-cloud pivot is real -- they&#x27;ve been building abstraction layers on top of C2S for two years specifically to reduce AWS lock-in. The follow-on will almost certainly be multi-award. AWS will retain the largest share but Microsoft and Google will get meaningful work. Estimated follow-on value: $1.5-2B over 5 years.</p></div>
-<details class="ex"><summary>Who Should Watch</summary><div class="xb"><ul class="il">
-<li>Microsoft Azure Government team -- this is their best shot at cracking the IC cloud market. They&#x27;ve invested heavily in air-gapped Azure for TS/SCI.</li>
-<li>Google Cloud for Defense -- their Distributed Cloud offering is purpose-built for classified environments. They need this win for credibility.</li>
-<li>Cloud SIs (Accenture Federal, Deloitte, SAIC) -- the multi-cloud management layer is where the services money will be. CSPs will fight over IaaS; you should fight over the integration and migration work.</li>
-<li>Any firm with IL6/TS cloud experience -- the IC will need migration support to move workloads between CSPs. This is a $200M+ services opportunity adjacent to the main cloud contract.</li>
-</ul></div></details>
-</div>
-
-<div class="sd" id="s09"><span class="sn">09</span><span class="sl">Funding Actions</span><span class="sln"></span></div>
-<div class="st">Significant Funding Actions</div>
-<div class="ss">Budget movements, modifications, and ceiling increases -- follow the money</div>
-
-<div class="cd cd-p">
-  <div class="cd-h">
-    <div><div class="cd-t" style="font-size:16px;">Defense Enclave Services (DES)</div><div class="cd-ag">DISA &middot; SAIC</div></div>
-    <div style="text-align:right;">
-      <span style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--purple);">Ceiling Increase</span>
-      <div style="font-family:var(--fd);font-size:18px;font-weight:700;color:var(--navy);margin-top:2px;">$450,000,000</div>
-    </div>
-  </div>
-<p style="font-size:12px;color:var(--g500);margin-bottom:6px;"><strong>New Ceiling:</strong> $7,250,000,000</p>
-<p style="font-size:13px;color:var(--g600);margin:6px 0;">Fourth ceiling increase in 18 months. DISA consolidation accelerating faster than planned. SAIC&#x27;s DES now absorbs IT services from 22 defense agencies. This is becoming the single largest IT services contract in the federal government.</p>
-<div class="co co-n"><div class="co-l">Intel Note</div><p style="font-size:13px;">DES ceiling increases are the clearest signal that DOGE-style consolidation is actually working in DoD. DISA is eating other agencies&#x27; IT budgets. If you&#x27;re not on DES as a sub, you&#x27;re locked out of a growing $7.25B market. SAIC is actively seeking subs for cloud migration, identity management, and endpoint security. Contact their DES program office in Fort Meade.</p></div>
-</div>
-<div class="cd cd-a">
-  <div class="cd-h">
-    <div><div class="cd-t" style="font-size:16px;">Alliant 2 GWAC</div><div class="cd-ag">GSA / FBI &middot; Perspecta (now Peraton)</div></div>
-    <div style="text-align:right;">
-      <span style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--amber);">New Task Order</span>
-      <div style="font-family:var(--fd);font-size:18px;font-weight:700;color:var(--navy);margin-top:2px;">$128,000,000</div>
-    </div>
-  </div>
-<p style="font-size:13px;color:var(--g600);margin:6px 0;">FBI biometric identity services. Sole-source justification cited urgency of IAFIS modernization and Peraton&#x27;s unique position as legacy system maintainer.</p>
-<div class="co co-n"><div class="co-l">Intel Note</div><p style="font-size:13px;">Sole-source on Alliant 2 is legally defensible but politically risky in the current climate. DOGE has flagged sole-source justifications over $50M for review. This may get challenged -- not through GAO protest but through DOGE audit. Peraton should expect scrutiny. Competitors (IDEMIA, NEC) should monitor for any break in sole-source justification -- a competitive follow-on would be worth $300M+.</p></div>
-</div>
-<div class="cd cd-b">
-  <div class="cd-h">
-    <div><div class="cd-t" style="font-size:16px;">Next Generation Enterprise Network (NGEN-R)</div><div class="cd-ag">Navy / PEO Digital &middot; Leidos</div></div>
-    <div style="text-align:right;">
-      <span style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--blue);">Incremental Funding</span>
-      <div style="font-family:var(--fd);font-size:18px;font-weight:700;color:var(--navy);margin-top:2px;">$92,000,000</div>
-    </div>
-  </div>
-<p style="font-size:12px;color:var(--g500);margin-bottom:6px;"><strong>New Ceiling:</strong> $8,400,000,000</p>
-<p style="font-size:13px;color:var(--g600);margin:6px 0;">Funding for FY26 Q2 operations. Network modernization on schedule. Leidos has successfully migrated 340K users to the new architecture.</p>
-<div class="co co-n"><div class="co-l">Intel Note</div><p style="font-size:13px;">NGEN-R is Leidos&#x27;s crown jewel and it&#x27;s performing well. Don&#x27;t waste capture dollars trying to unseat them on the recompete (2029). Instead, look at the NGEN-R ecosystem: Leidos needs subs for SD-WAN deployment (Cisco/Aruba), SASE implementation, and Navy tactical edge networking. The sub-tier opportunities are $50-100M each and far more winnable than the prime contract.</p></div>
-</div>
-<div class="cd cd-p">
-  <div class="cd-h">
-    <div><div class="cd-t" style="font-size:16px;">CIO-SP4</div><div class="cd-ag">NIH NITAAC &middot; Multiple Award</div></div>
-    <div style="text-align:right;">
-      <span style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--purple);">Ceiling Increase</span>
-      <div style="font-family:var(--fd);font-size:18px;font-weight:700;color:var(--navy);margin-top:2px;">$2,000,000,000</div>
-    </div>
-  </div>
-<p style="font-size:12px;color:var(--g500);margin-bottom:6px;"><strong>New Ceiling:</strong> $52,000,000,000</p>
-<p style="font-size:13px;color:var(--g600);margin:6px 0;">CIO-SP4 ceiling raised to $52B to accommodate surge in health IT task orders. CIO-SP4 is now the largest health IT GWAC by ceiling value, surpassing CIO-SP3&#x27;s peak.</p>
-<div class="co co-n"><div class="co-l">Intel Note</div><p style="font-size:13px;">If you&#x27;re on CIO-SP4, you should be staffing a dedicated task order response team. The velocity of TOs is increasing -- NITAAC issued 47 new TOs in February alone (up from 28/month average in FY25). The sweet spot is $5-25M health data analytics and interoperability TOs from HHS, VA, and CDC. Firms NOT on CIO-SP4: look at subcontracting to prime holders or pursue the 8(a) STARS III vehicle as an alternate path to the same agency buyers.</p></div>
-</div>
-
-<div class="sd" id="s10"><span class="sn">10</span><span class="sl">Set-Aside Spotlight</span><span class="sln"></span></div>
-<div class="st">Set-Aside Spotlight</div>
-<div class="ss">Agencies behind on small business goals will surge set-aside activity in Q3-Q4 -- position now</div>
-
-<div class="co co-a" style="margin-bottom:16px;">
-  <div class="co-l">Government-Wide Small Business Goal</div>
-  <p style="font-size:14px;margin-bottom:4px;"><strong style="font-size:18px;">23.1%</strong> actual vs <strong>23.0%</strong> goal &mdash; <span style="color:#F59E0B;font-weight:600;">Barely meeting goal. Individual category shortfalls below.</span></p>
-</div>
-<div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin:16px 0 8px;">Agency Shortfalls</div>
-<div style="overflow-x:auto;"><table class="sat">
-<thead><tr><th>Agency</th><th>Category</th><th>Goal</th><th>Actual</th><th>Gap</th><th style="text-align:right;">$ Gap</th></tr></thead><tbody>
-<tr>
-  <td><strong>Department of Veterans Affairs</strong></td>
-  <td>HUBZone</td>
-  <td class="nm">3.0%</td>
-  <td class="nm" style="color:var(--red);">1.8%</td>
-  <td><span style="display:inline-block;height:6px;border-radius:3px;background:var(--red);vertical-align:middle;margin-right:6px;width:-48.0px;"></span>-1.2%</td>
-  <td class="nm" style="color:var(--red);font-weight:600;">$340M</td>
-</tr>
-<tr>
-  <td><strong>Department of Defense (overall)</strong></td>
-  <td>WOSB</td>
-  <td class="nm">5.0%</td>
-  <td class="nm" style="color:var(--red);">3.9%</td>
-  <td><span style="display:inline-block;height:6px;border-radius:3px;background:var(--red);vertical-align:middle;margin-right:6px;width:-44.0px;"></span>-1.1%</td>
-  <td class="nm" style="color:var(--red);font-weight:600;">$4.2B</td>
-</tr>
-<tr>
-  <td><strong>Department of Energy</strong></td>
-  <td>SDB (Small Disadvantaged Business)</td>
-  <td class="nm">15.0%</td>
-  <td class="nm" style="color:var(--red);">11.2%</td>
-  <td><span style="display:inline-block;height:6px;border-radius:3px;background:var(--red);vertical-align:middle;margin-right:6px;width:-152.0px;"></span>-3.8%</td>
-  <td class="nm" style="color:var(--red);font-weight:600;">$890M</td>
-</tr>
-</tbody></table></div>
-<details class="ex"><summary>Department of Veterans Affairs &mdash; HUBZone Action</summary><div class="xb"><p>VA needs to award $340M more to HUBZone firms by September 30. If you&#x27;re HUBZone certified with health IT or facilities management experience, target VA&#x27;s OSDBU office immediately. They will be actively seeking HUBZone firms for Q3-Q4 set-asides.</p></div></details>
-<details class="ex"><summary>Department of Defense (overall) &mdash; WOSB Action</summary><div class="xb"><p>DoD&#x27;s WOSB shortfall is massive -- $4.2B. Army and Navy are the worst performers. WOSB-certified firms in IT services, professional services, and logistics should target Army MICC and NAVSEA contracting offices. Expect a wave of WOSB set-asides in Q3.</p></div></details>
-<details class="ex"><summary>Department of Energy &mdash; SDB (Small Disadvantaged Business) Action</summary><div class="xb"><p>DOE is furthest behind of any major agency in SDB contracting. Their national labs drive most spending and historically underperform on SB goals. 8(a) firms with STEM or environmental remediation capabilities should target DOE&#x27;s Office of Science and NNSA.</p></div></details>
-<div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin:20px 0 10px;">Upcoming Set-Aside Opportunities</div>
-<div class="cd" style="padding:14px;border-left:3px solid #059669;">
-  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
-    <div>
-      <div style="font-weight:600;font-size:14px;color:var(--navy);">Cybersecurity Assessment Services</div>
-      <div style="font-family:var(--fm);font-size:11px;color:var(--g500);margin-top:2px;">Est. $12M</div>
-    </div>
-    <span class="bg" style="background:var(--green-lt);color:#059669;border:1px solid var(--green-bd);">SDVOSB</span>
-  </div>
-  <p style="font-size:12px;color:var(--g500);margin-top:6px;">April 2026</p>
-</div>
-<div class="cd" style="padding:14px;border-left:3px solid #7C3AED;">
-  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
-    <div>
-      <div style="font-weight:600;font-size:14px;color:var(--navy);">Facility Maintenance -- Southeast Region</div>
-      <div style="font-family:var(--fm);font-size:11px;color:var(--g500);margin-top:2px;">Est. $28M</div>
-    </div>
-    <span class="bg" style="background:var(--purple-lt);color:#7C3AED;border:1px solid var(--purple-bd);">HUBZone</span>
-  </div>
-  <p style="font-size:12px;color:var(--g500);margin-top:6px;">May 2026</p>
-</div>
-<div class="cd" style="padding:14px;border-left:3px solid #2563EB;">
-  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
-    <div>
-      <div style="font-weight:600;font-size:14px;color:var(--navy);">Data Analytics Support</div>
-      <div style="font-family:var(--fm);font-size:11px;color:var(--g500);margin-top:2px;">Est. $8M</div>
-    </div>
-    <span class="bg" style="background:var(--blue-lt);color:#2563EB;border:1px solid var(--blue-bd);">WOSB</span>
-  </div>
-  <p style="font-size:12px;color:var(--g500);margin-top:6px;">April 2026</p>
-</div>
-<div class="cd" style="padding:14px;border-left:3px solid #6B7280;">
-  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;">
-    <div>
-      <div style="font-weight:600;font-size:14px;color:var(--navy);">Environmental Monitoring Services</div>
-      <div style="font-family:var(--fm);font-size:11px;color:var(--g500);margin-top:2px;">Est. $15M</div>
-    </div>
-    <span class="bg" style="background:var(--g50);color:#6B7280;border:1px solid var(--g200);">8(a)</span>
-  </div>
-  <p style="font-size:12px;color:var(--g500);margin-top:6px;">June 2026</p>
-</div>
-
-<div class="sd" id="s11"><span class="sn">11</span><span class="sl">Protest Report</span><span class="sln"></span></div>
-<div class="st">GAO Protest Report</div>
-<div class="ss">Weekly digest with BD implications -- not legal analysis.</div>
-
-<div class="ps">
-  <div class="ps-i"><div class="ps-v">47</div><div class="ps-l">Filed</div></div>
-  <div class="ps-i"><div class="ps-v" style="color:var(--red);">5</div><div class="ps-l">Sustained</div></div>
-  <div class="ps-i"><div class="ps-v">16.1%</div><div class="ps-l">Sustain Rate</div></div>
-</div>
-<p style="font-size:12px;color:var(--g500);margin-bottom:16px;text-align:center;">31 decided &middot; 18 denied &middot; 8 dismissed</p>
-
-<div class="cd" style="border-left:4px solid var(--red);">
-  <div class="cd-h">
-    <div>
-      <div class="cd-t" style="font-size:15px;">Matter of Raytheon Intelligence &amp; Space, B-422891</div>
-      <div class="cd-ag">Raytheon Intelligence &amp; Space v. Space Systems Command &middot; Awardee: L3Harris Technologies &middot; $890,000,000</div>
-    </div>
-    <span class="bg" style="background:var(--red-lt);color:var(--red);border:1px solid var(--red-bd);">SUSTAINED</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">Unequal evaluation of past performance. SSC rated L3Harris &#x27;Outstanding&#x27; for a contract that was 14 months behind schedule, while rating Raytheon &#x27;Good&#x27; for an on-time delivery. GAO found the evaluation was inconsistent and arbitrary.</p>
-<div class="co co-n"><div class="co-l">BD Implication</div><p style="font-size:13px;">SSC must re-evaluate past performance for both offerors. This likely delays the award by 90-120 days. L3Harris may still win on re-evaluation, but the pricing and technical scores are now exposed to scrutiny. If you lost on this competition, monitor for the corrective action announcement -- there may be an opportunity to submit a revised proposal.</p></div>
-<p style="font-size:12px;color:var(--g500);margin-top:6px;"><strong>Lesson:</strong> Document EVERYTHING about your on-time delivery performance. Agencies that rate incumbents favorably despite schedule slippage are vulnerable to protest. If you&#x27;re better on schedule, make that the centerpiece of your past performance narrative.</p>
-</div>
-<div class="cd" style="border-left:4px solid var(--green);">
-  <div class="cd-h">
-    <div>
-      <div class="cd-t" style="font-size:15px;">Matter of Palantir Technologies, B-422956</div>
-      <div class="cd-ag">Palantir Technologies v. Defense Intelligence Agency &middot; Awardee: Databricks Federal &middot; $124,000,000</div>
-    </div>
-    <span class="bg" style="background:var(--green-lt);color:var(--green);border:1px solid var(--green-bd);">DENIED</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">Palantir argued DIA&#x27;s evaluation of technical approach was unreasonable because it favored open-source architectures over proprietary platforms. GAO found DIA&#x27;s preference for &#x27;vendor-agnostic, open-architecture solutions&#x27; was clearly stated in the solicitation and applied consistently.</p>
-<div class="co co-n"><div class="co-l">BD Implication</div><p style="font-size:13px;">The IC is serious about moving away from proprietary lock-in. DIA explicitly evaluated against vendor lock-in risk -- Palantir&#x27;s Foundry platform was scored lower because of data portability concerns. This is a signal for ALL IC procurements: if your solution creates lock-in, you will be penalized.</p></div>
-<p style="font-size:12px;color:var(--g500);margin-top:6px;"><strong>Lesson:</strong> Build data portability and open standards into your technical approach. Agencies are no longer just saying they want open architecture -- they&#x27;re scoring against it. If you&#x27;re competing against Palantir or similar proprietary platforms, make vendor-agnosticism your #1 discriminator.</p>
-</div>
-<div class="cd" style="border-left:4px solid var(--amber);">
-  <div class="cd-h">
-    <div>
-      <div class="cd-t" style="font-size:15px;">Matter of Deloitte Consulting, B-423001</div>
-      <div class="cd-ag">Deloitte Consulting LLP v. Department of Veterans Affairs &middot; Awardee: Accenture Federal Services &middot; $389,000,000</div>
-    </div>
-    <span class="bg" style="background:var(--amber-lt);color:var(--amber);border:1px solid var(--amber-bd);">DISMISSED (voluntary corrective action)</span>
-  </div>
-  <p style="font-size:13px;color:var(--g600);margin:8px 0;">Deloitte protested the VA&#x27;s cloud migration award to Accenture, arguing the FinOps evaluation factor was not adequately defined in the RFP. VA voluntarily took corrective action before GAO could rule -- they will amend the RFP to clarify the FinOps evaluation criteria and re-evaluate.</p>
-<div class="co co-n"><div class="co-l">BD Implication</div><p style="font-size:13px;">The $389M VA CMMS award we reported in this issue is now in corrective action. Accenture may still win, but the re-evaluation creates an opening for Deloitte and potentially other offerors. Watch for the amended solicitation -- the FinOps criteria will be more explicit, which may level the playing field.</p></div>
-<p style="font-size:12px;color:var(--g500);margin-top:6px;"><strong>Lesson:</strong> When an agency creates a new evaluation factor (like FinOps), push back during the Q&amp;A period if it&#x27;s vaguely defined. Deloitte&#x27;s protest succeeded not because FinOps was wrong, but because the evaluation criteria for it were insufficiently defined. Vague criteria = protest opportunity.</p>
-</div>
-
-<div class="sd" id="s12"><span class="sn">12</span><span class="sl">Market Pulse</span><span class="sln"></span></div>
-<div class="mp">
-  <h3>Market Pulse</h3>
-  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
-    <div>
-      <div style="font-family:var(--fd);font-size:32px;font-weight:700;color:var(--white);">$4,830,000,000</div>
-      <div style="font-family:var(--fm);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--g400);">Total Obligations This Week</div>
-    </div>
-    <div style="font-family:var(--fm);font-size:16px;font-weight:700;color:#10B981;">+12.3% YoY</div>
-  </div>
-  <div style="font-family:var(--fm);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Top Agencies by Spend</div>
-
-<div class="mp-r"><span style="color:var(--g300);font-weight:500;">DoD</span><span style="color:var(--gold);font-family:var(--fm);font-weight:600;">$2,890,000,000</span></div>
-<p style="font-size:11px;color:var(--g400);padding:0 0 8px;line-height:1.5;">Accelerating -- cyber and C2 driving growth. DOGE cuts hitting civilian agencies are being redirected here.</p>
-<div class="mp-r"><span style="color:var(--g300);font-weight:500;">VA</span><span style="color:var(--gold);font-family:var(--fm);font-weight:600;">$620,000,000</span></div>
-<p style="font-size:11px;color:var(--g400);padding:0 0 8px;line-height:1.5;">Stable. VA is DOGE-proof due to Congressional protection. Cloud and EHR modernization are the big spenders.</p>
-<div class="mp-r"><span style="color:var(--g300);font-weight:500;">DHS</span><span style="color:var(--gold);font-family:var(--fm);font-weight:600;">$485,000,000</span></div>
-<p style="font-size:11px;color:var(--g400);padding:0 0 8px;line-height:1.5;">Border tech surge. CBP and ICE procurement up 22% QoQ on surveillance and biometric systems.</p>
-<div style="font-family:var(--fm);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:16px 0 8px;">Trending NAICS Codes</div>
-<div class="mp-r"><span style="color:var(--g300);"><strong>541512</strong> &mdash; Computer Systems Design</span><span style="color:#10B981;font-family:var(--fm);font-weight:600;">+28%</span></div>
-<p style="font-size:11px;color:var(--g400);padding:0 0 8px;line-height:1.5;">Zero-trust mandates driving demand across all agencies. If you have NIST 800-207 implementation experience, highlight it in every proposal.</p>
-<div class="mp-r"><span style="color:var(--g300);"><strong>541519</strong> &mdash; Other IT Consulting</span><span style="color:#10B981;font-family:var(--fm);font-weight:600;">+19%</span></div>
-<p style="font-size:11px;color:var(--g400);padding:0 0 8px;line-height:1.5;">Catch-all NAICS benefiting from AI/ML advisory work. Agencies are buying &#x27;AI strategy&#x27; consulting before committing to platforms.</p>
-<div class="mp-r"><span style="color:var(--g300);"><strong>541715</strong> &mdash; R&amp;D in Physical Sciences</span><span style="color:#10B981;font-family:var(--fm);font-weight:600;">+15%</span></div>
-<p style="font-size:11px;color:var(--g400);padding:0 0 8px;line-height:1.5;">IC and Space Force R&amp;D spend. This NAICS is where the classified AI work hides. Watch for BAAs from IARPA and AFRL.</p>
-</div>
-
-<div class="sd" id="s13"><span class="sn">13</span><span class="sl">Action Items</span><span class="sln"></span></div>
-<div class="st">Action Items</div>
-<div class="ss">Priority-ranked tasks for your BD team this week.</div>
-
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#FEF2F2;color:#EF4444;border:1px solid #EF444422;font-size:9px;">URGENT</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Submit Sources Sought response for CYBERCOM NOCDef recompete &middot; <strong>Due: 2026-04-10</strong></div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">The NOCDef restructuring into 3 task areas is the biggest capture opportunity this quarter. Sources Sought responses shape the acquisition strategy. If you don&#x27;t respond, CYBERCOM won&#x27;t know you exist when they finalize the RFP. Multiple awards likely -- you don&#x27;t need to compete for all 3 task areas.</p>
-  </div>
-</div>
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#FEF2F2;color:#EF4444;border:1px solid #EF444422;font-size:9px;">URGENT</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Register for DISA Industry Day (EITSS-III recompete) &middot; <strong>Due: 2026-03-28</strong></div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">DISA has scheduled an Industry Day for April 8 at Fort Meade. Registration closes March 28. This is your last chance to shape the zero-trust requirements before the draft RFP drops. Bring your technical SME, not your BD lead -- DISA wants to talk architecture, not capabilities briefings.</p>
-  </div>
-</div>
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#FEF2F2;color:#EF4444;border:1px solid #EF444422;font-size:9px;">URGENT</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Assess your USAID subcontract exposure and invoke termination-for-convenience protections</div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">If you&#x27;re subbing on any USAID contract, your prime should have issued a stop-work or T4C flowdown by now. If they haven&#x27;t, send a written request for direction. Protect your termination settlement rights -- the 60-day clock for filing claims starts when the prime receives the government&#x27;s T4C notice, not when they tell you about it.</p>
-  </div>
-</div>
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#FFFBEB;color:#F59E0B;border:1px solid #F59E0B22;font-size:9px;">THIS WEEK</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Set SAM.gov alerts for NAICS 541512 and 541519 at DISA and CYBERCOM</div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">Both agencies are in active procurement mode. DISA alone has 6 solicitations expected in the next 90 days. SAM.gov alerts are free and take 2 minutes. There is no excuse for missing a solicitation because you weren&#x27;t monitoring.</p>
-  </div>
-</div>
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#FFFBEB;color:#F59E0B;border:1px solid #F59E0B22;font-size:9px;">THIS WEEK</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Start CMMC Level 2 assessment if you plan to bid on ANY DoD work after September 2027</div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">C3PAO assessment wait times are now 4-6 months and growing. ManTech&#x27;s option exercise this week signals CMMC enforcement is accelerating. The cost of assessment ($50-150K) is trivial compared to being locked out of the DoD market. Companies that wait until 2027 will face 12+ month backlogs.</p>
-  </div>
-</div>
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#FFFBEB;color:#F59E0B;border:1px solid #F59E0B22;font-size:9px;">THIS WEEK</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Contact SAIC&#x27;s DES program office about subcontracting opportunities</div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">The $450M DES ceiling increase means SAIC is absorbing new scope and needs sub-tier support in cloud migration, identity/access management, and endpoint security. DES is becoming the single front door for defense agency IT. Getting on this vehicle as a sub is a strategic imperative.</p>
-  </div>
-</div>
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#EFF6FF;color:#3B82F6;border:1px solid #3B82F622;font-size:9px;">THIS MONTH</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Build or acquire FinOps capability for your cloud practice</div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">Accenture Federal&#x27;s VA win was decided in part by their FinOps commitment. This is becoming a standard evaluation factor. At minimum: get 2-3 staff FinOps Certified Practitioners (FOCP). At best: build a FinOps practice with tooling (Apptio, CloudHealth, or Spot by NetApp) and client case studies.</p>
-  </div>
-</div>
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#EFF6FF;color:#3B82F6;border:1px solid #3B82F622;font-size:9px;">THIS MONTH</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Review your pipeline for civilian agency exposure and rebalance toward DoD/IC</div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">DOGE disruption is creating a 12-18 month civilian agency freeze. If more than 40% of your pipeline is civilian (especially USAID, ED, EPA, OPM), you need to diversify NOW. DoD cyber, AI, and space are growing. VA and DHS are stable. Start building DoD relationships today -- they take 6-12 months to mature.</p>
-  </div>
-</div>
-<div class="ai">
-  <div style="flex-shrink:0;margin-top:2px;"><span class="bg" style="background:#EFF6FF;color:#3B82F6;border:1px solid #3B82F622;font-size:9px;">THIS MONTH</span></div>
-  <div style="flex:1;">
-    <div style="font-weight:600;font-size:14px;color:var(--navy);margin-bottom:4px;">Identify IC multi-cloud follow-on opportunities as AWS ECH enters final option year</div>
-    <p style="font-size:13px;color:var(--g600);line-height:1.5;">The IC&#x27;s $742M AWS cloud hosting contract is in its last year. The follow-on will be multi-cloud and multi-award. Cloud SIs should position for the migration and integration services layer ($200M+ opportunity). Start building relationships with the IC CIO&#x27;s office and attending IC IT enterprise events.</p>
-  </div>
-</div>
-
-<div class="sd" id="s14"><span class="sn">14</span><span class="sl">Calendar</span><span class="sln"></span></div>
-<div class="st">What's Coming</div>
-<div class="ss">Industry days, deadlines, regulatory changes, and data releases.</div>
-
-<div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin:16px 0 8px;padding-top:8px;border-top:1px solid var(--g100);">This Week</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-03-19</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">CYBERCOM NOCDef Sources Sought -- comments due</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--red-lt);color:#EF4444;">Deadline</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">Last chance to shape the multi-award structure. Submit your capabilities statement.</p>
-  </div>
-</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-03-20</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#F59E0B;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">SBA WOSB Certification Changes -- Info Session</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--g100);color:#6B7280;">Webinar</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">New WOSB self-certification rules effective April 1. Free SBA webinar.</p>
-  </div>
-</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-03-21</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">CIO-SP4 Small Business Task Order -- Responses Due</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--red-lt);color:#EF4444;">Deadline</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">CDC data analytics TO, $12M, SDVOSB set-aside. If you&#x27;re on CIO-SP4 Pool 1, submit by 4 PM EST.</p>
-  </div>
-</div>
-<div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin:16px 0 8px;padding-top:8px;border-top:1px solid var(--g100);">Next Two Weeks</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-03-28</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">DISA EITSS-III Industry Day Registration Closes</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--red-lt);color:#EF4444;">Deadline</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">April 8 at Fort Meade. Bring your zero-trust SME, not your BD lead.</p>
-  </div>
-</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-04-01</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#F59E0B;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">Joint Staff J6 JADC2 Industry Engagement -- Registration Opens</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--g100);color:#6B7280;">Event</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">May 15 at the Pentagon. This shapes the $3-5B CJADC2-TEP program. Register day one -- it will fill.</p>
-  </div>
-</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-04-02</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">USAID TRO Expires</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--g100);color:#6B7280;">Legal</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">National Council of Nonprofits v. OMB temporary restraining order. If not extended, USAID contract terminations resume.</p>
-  </div>
-</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-04-08</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">DISA Industry Day -- EITSS-III Recompete</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--g100);color:#6B7280;">Event</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">Fort Meade. Zero-trust requirements briefing. Pre-registration required (closes Mar 28).</p>
-  </div>
-</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-04-10</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#EF4444;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">CYBERCOM NOCDef -- Sources Sought Responses Due</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--red-lt);color:#EF4444;">Deadline</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">Three task areas. Respond to the one(s) where you have strongest past performance. Don&#x27;t try all three.</p>
-  </div>
-</div>
-<div style="font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin:16px 0 8px;padding-top:8px;border-top:1px solid var(--g100);">Looking Ahead</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-05-15</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#10B981;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">Joint Staff J6 JADC2 Cross-Functional Team Industry Engagement</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--g100);color:#6B7280;">Event</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">The Pentagon. Shapes the $3-5B CJADC2-TEP program.</p>
-  </div>
-</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-06-01</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#10B981;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">IRS Enterprise Modernization Industry Day (Expected)</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--g100);color:#6B7280;">Forecast</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">Following the CADE2 bridge contract. Oracle/SAP financial systems expertise needed.</p>
-  </div>
-</div>
-<div class="ci">
-  <span style="width:52px;flex-shrink:0;font-family:var(--fm);font-size:12px;font-weight:600;color:var(--navy);">2026-09-30</span>
-  <span style="width:8px;height:8px;border-radius:50%;background:#10B981;flex-shrink:0;margin-top:4px;"></span>
-  <div style="flex:1;">
-    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-      <span style="font-weight:600;color:var(--navy);font-size:13px;">FY26 End -- Agency Spending Surge</span>
-      <span style="font-family:var(--fm);font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 6px;border-radius:3px;white-space:nowrap;background:var(--red-lt);color:#EF4444;">Deadline</span>
-    </div>
-    <p style="font-size:12px;color:var(--g500);margin-top:2px;">Expect 30-40% of annual discretionary spend in September. Set-aside activity peaks.</p>
-  </div>
-</div>
-
-<div class="sd" id="s15"><span class="sn">15</span><span class="sl">One to Watch</span><span class="sln"></span></div>
-<div class="otw">
-  <div style="font-family:var(--fm);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light);margin-bottom:8px;">Forward-Looking Intelligence</div>
-  <h3>CJADC2 Tactical Edge AI -- The $3B Program Nobody&#x27;s Talking About</h3>
-  <div style="font-family:var(--fm);font-size:11px;color:var(--g400);margin:4px 0 14px;">DoD / Joint Staff J6 &middot; Est. Value: $3,000,000,000 - $5,000,000,000 &middot; Timeline: RFI expected October-December 2026. Draft RFP late FY27. Award FY28.</div>
-  <p style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:14px;">Buried in the FY27 budget justification documents is a new program element for &#x27;Combined Joint All-Domain Command and Control -- Tactical Edge Processing&#x27; (CJADC2-TEP). This is the Joint Staff&#x27;s answer to the latency problem in JADC2: instead of backhauling all sensor data to cloud for AI processing, they want AI inference running on ruggedized edge devices at the battalion level and below. The program calls for federated learning across classification domains -- models that train on TS/SCI data but deploy inferences at the unclassified tactical edge.</p>
-  <div style="background:rgba(201,162,39,.1);border:1px solid rgba(201,162,39,.2);border-radius:8px;padding:14px;margin-bottom:14px;">
-    <div style="font-family:var(--fm);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Why It Matters</div>
-    <p style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;">This is the next JEDI/JWCC-scale program, but for edge computing instead of cloud. The $1.24B GDIT award this week is the integration layer -- CJADC2-TEP is the compute layer underneath it. First RFI expected Q1 FY27. Estimated ceiling $3-5B over 10 years. The firms that shape this requirement in the next 6 months will own the competitive landscape for the next decade.</p>
-  </div>
-  <div style="font-family:var(--fm);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">What to Do Now</div>
-  <ul class="il">
-
-    <li style="color:rgba(255,255,255,.7);">Read the FY27 PB justification book for PE 0604XXX (classified PE -- request through your cleared facility&#x27;s SAPCO)</li>
-    <li style="color:rgba(255,255,255,.7);">Attend the Joint Staff J6 JADC2 Cross-Functional Team industry engagement on May 15 at the Pentagon (registration opens April 1)</li>
-    <li style="color:rgba(255,255,255,.7);">If you have edge AI capabilities (NVIDIA Jetson, Qualcomm SNPE, or custom ASIC experience), start building a past performance portfolio with tactical use cases</li>
-    <li style="color:rgba(255,255,255,.7);">Identify your teaming strategy early: this will require hardware (ruggedized edge servers), software (ML inference frameworks), and integration (tactical network expertise). No single firm has all three.</li>
-    <li style="color:rgba(255,255,255,.7);">Connect with the GDIT JADC2 team -- they will be the prime integrator and will need edge computing subs. Their win this week makes them the center of gravity for this ecosystem.</li>
-  </ul>
-</div>
-
+<!-- ═══ CTA ═══ -->
 <div class="cta">
-  <h3>Get the Full Intelligence Brief Every Week</h3>
-  <p style="color:rgba(15,23,42,.7);font-size:14px;margin-bottom:16px;">Join 500+ GovCon professionals who start their Monday with actionable intelligence.</p>
-  <a href="#" class="cta-b">Subscribe Now &rarr;</a>
-  <p style="font-size:11px;color:rgba(15,23,42,.5);margin-top:12px;">Trusted by BD teams at 47 federal contractors</p>
+  <p>This is the free edition. The full brief includes Is It Wired? signal analysis, all Bridge Watch contracts, and flash alerts.</p>
+  <a href="#">See paid plans &rarr;</a>
 </div>
 
-<div class="fb-row">
-  <a href="#" class="fb-btn">&#128077; Useful</a>
-  <a href="#" class="fb-btn">&#128078; Not useful</a>
-  <a href="#" class="fb-btn">&#128232; Forward to a colleague</a>
+<div class="fb">
+  How&rsquo;d we do? <a href="#">&#128077;</a> <a href="#">&#128078;</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="#" style="font-size:14px">Forward to a colleague</a>
 </div>
 
+</div><!-- /pad -->
 
-</div><!-- /c -->
 <div class="ftr">
-  <p><span class="gld">GovCon Weekly Intelligence</span></p>
-  <p>Published 2026-03-18 &middot; Vol. 1, Issue 1</p>
-  <p style="margin-top:8px;">Data sources: USAspending.gov, SAM.gov, GAO, Federal Register, SBA Scorecards</p>
-  <p style="margin-top:4px;">Analysis powered by AI synthesis + editorial review. Data refreshed March 17, 2026.</p>
-  <p style="margin-top:8px;font-size:11px;color:var(--g500);">
-    This newsletter is for informational purposes only and does not constitute legal, financial, or procurement advice.<br>
-    &copy; 2026 GovCon Weekly Intelligence. All rights reserved.
-  </p>
+  <p><span class="gold">GovCon Weekly Intelligence</span></p>
+  <p>Data: USAspending &bull; SAM.gov &bull; GAO &bull; Federal Register &bull; SBA</p>
+  <p>&copy; 2026 GovCon Weekly. <a href="#" style="color:#94a3b8">Unsubscribe</a></p>
 </div>
-</div><!-- /w -->
+
+</div>
 </body>
 </html>

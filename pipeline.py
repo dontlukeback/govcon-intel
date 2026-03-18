@@ -165,13 +165,32 @@ VEHICLE_PATTERNS = {
     "8(a) STARS II": [r"47QTC[A-Z]18"],
 }
 
+# Vehicle keywords to detect from award descriptions (case-insensitive substring match)
+VEHICLE_KEYWORDS = {
+    "GSA OASIS": ["oasis", "gs00q", "47qr"],
+    "STARS III": ["stars iii", "stars 3", "47qtcb"],
+    "STARS II": ["stars ii", "stars 2"],
+    "8(a) STARS II": ["8(a) stars", "8a stars ii"],
+    "CIO-SP3": ["cio-sp3", "ciosp3", "cios3", "75n98"],
+    "CIO-SP4": ["cio-sp4", "ciosp4", "cios4"],
+    "SEWP": ["sewp", "solutions for enterprise-wide procurement", "nng15s"],
+    "ALLIANT 2": ["alliant 2", "alliant ii", "alliant2", "47qtc"],
+    "VETS 2": ["vets 2", "vets ii", "veteran-owned small business"],
+    "NITAAC": ["nitaac", "nih information technology"],
+    "OASIS+": ["oasis+", "oasis plus"],
+    "GSA Schedule 70": ["schedule 70", "gsa schedule", "multiple award schedule"],
+    "Chess": ["chess", "computer hardware enterprise"],
+    "EIS": ["enterprise infrastructure solutions"],
+}
+
 # Set-aside keywords (case-insensitive match against description + type_set_aside)
 SET_ASIDE_PATTERNS = {
-    "8(a)": [r"8\s*\(\s*a\s*\)", r"8a\b"],
-    "SDVOSB": [r"SDVOSB", r"service.disabled.veteran"],
-    "HUBZone": [r"HUBZone", r"hub.zone"],
-    "WOSB": [r"WOSB", r"women.owned\s+small"],
-    "Small Business": [r"small\s+business", r"SBA\b", r"small\s+disadvantaged"],
+    "8(a)": [r"8\s*\(\s*a\s*\)", r"8a\b", r"8\(a\)\s*(?:program|set.aside|sole.source)"],
+    "SDVOSB": [r"SDVOSB", r"service.disabled.veteran", r"service\s+disabled", r"sdvos\b"],
+    "HUBZone": [r"HUBZone", r"hub.zone", r"historically\s+underutilized"],
+    "WOSB": [r"WOSB", r"women.owned\s+small", r"women[\s-]owned", r"EDWOSB", r"economically\s+disadvantaged\s+women"],
+    "Small Business": [r"small\s+business\s+set.aside", r"SBA\b", r"small\s+disadvantaged", r"small\s+business\b", r"SDB\b"],
+    "VOSB": [r"VOSB\b", r"veteran.owned\s+small"],
 }
 
 # ---------------------------------------------------------------------------
@@ -236,13 +255,23 @@ def curl_get(url, timeout=20, retries=1):
     return None
 
 
-def detect_vehicle(award_id, generated_id):
-    """Detect contract vehicle from award ID patterns."""
+def detect_vehicle(award_id, generated_id, description=None):
+    """Detect contract vehicle from award ID patterns and description keywords."""
+    # First try ID-based regex patterns (high confidence)
     combined = f"{award_id or ''} {generated_id or ''}"
     for vehicle, patterns in VEHICLE_PATTERNS.items():
         for pat in patterns:
             if re.search(pat, combined, re.IGNORECASE):
                 return vehicle
+
+    # Then try description keyword matching (medium confidence)
+    if description:
+        desc_lower = description.lower()
+        for vehicle, keywords in VEHICLE_KEYWORDS.items():
+            for kw in keywords:
+                if kw in desc_lower:
+                    return vehicle
+
     return None
 
 
@@ -393,7 +422,7 @@ def main():
 
     # Step 3: Detect contract vehicles from award IDs
     for gid, award in awards_map.items():
-        award["vehicle"] = detect_vehicle(award["award_id"], gid)
+        award["vehicle"] = detect_vehicle(award["award_id"], gid, award.get("description"))
 
     vehicle_count = sum(1 for a in awards_map.values() if a["vehicle"])
     log(f"Contract vehicles detected: {vehicle_count}")
@@ -428,7 +457,16 @@ def main():
 
     log(f"  NAICS enriched: {enriched_count} awards")
 
-    # Step 6: Prepare final output
+    # Step 6: Filter out $0 and null-amount awards (noise reduction)
+    pre_filter_count = len(awards_map)
+    awards_map = {
+        gid: award for gid, award in awards_map.items()
+        if award.get("award_amount") and award["award_amount"] != 0
+    }
+    filtered_out = pre_filter_count - len(awards_map)
+    log(f"\nFiltered out {filtered_out} awards with $0 or null amounts ({pre_filter_count} -> {len(awards_map)})")
+
+    # Step 7: Prepare final output
     awards_list = sorted(
         awards_map.values(),
         key=lambda a: (a["award_amount"] or 0),
@@ -439,7 +477,7 @@ def main():
     for a in awards_list:
         a["verticals_str"] = ", ".join(a["verticals"])
 
-    # Step 7: Save outputs
+    # Step 8: Save outputs
     script_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(script_dir, "data")
     os.makedirs(data_dir, exist_ok=True)
@@ -471,7 +509,7 @@ def main():
         writer.writerows(awards_list)
     log(f"CSV saved:  {csv_path}")
 
-    # Step 8: Summary stats
+    # Step 9: Summary stats
     log(f"\n{'='*60}")
     log(f"SUMMARY")
     log(f"{'='*60}")

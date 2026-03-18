@@ -752,6 +752,44 @@
             opacity: 1;
         }
 
+        /* ── FAQ ── */
+        .faq {
+            background: var(--gray-100);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .faq-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            padding: 28px 24px;
+        }
+
+        .faq-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .faq-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.65;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ── Responsive ── */
         @media (max-width: 768px) {
             .nav-links {
@@ -838,8 +876,8 @@
         <div class="hero-badge">Federal Contract Intelligence</div>
         <h1>Stop Missing Federal Contracts</h1>
         <p class="hero-sub">
-            Weekly intelligence on who's winning, who's losing, and where the recompetes are.
-            <strong>Free to start.</strong> No GovWin contract required.
+            Track recompetes in your NAICS, monitor competitor wins, and get plain-English analysis.
+            <strong>Every Monday.</strong> No SAM.gov drudgery.
         </p>
         <!-- BEEHIIV EMBED CODE HERE -->
         <div class="hero-form-placeholder" style="max-width: 480px; margin: 0 auto 20px;">
@@ -847,7 +885,7 @@
             <!-- The form below is a placeholder that mirrors Beehiiv styling. -->
             <form class="hero-form" action="#" method="post">
                 <input type="email" placeholder="Enter your work email" required>
-                <button type="submit">Subscribe Free</button>
+                <button type="submit">Get This Week's Brief</button>
             </form>
         </div>
         <p class="hero-trust">Free weekly brief. No credit card required. Unsubscribe anytime.</p>
@@ -858,9 +896,9 @@
 <section class="problem" id="problem">
     <div class="section-inner">
         <span class="section-label">The Problem</span>
-        <h2 class="section-title">You're flying blind on federal opportunities.</h2>
+        <h2 class="section-title">You're missing contracts in your NAICS.</h2>
         <p class="section-subtitle">
-            You're checking SAM.gov manually. Your competitors are using $20K/yr tools. Neither works well enough.
+            You're checking SAM.gov manually. The big shops have $20K tools. Neither works.
         </p>
         <div class="problem-grid">
             <div class="problem-card">
@@ -868,21 +906,21 @@
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
                 </div>
                 <h3>Missing Recompetes</h3>
-                <p>Contracts worth millions expire every quarter in your NAICS codes. By the time you see them on SAM.gov, incumbents have a 6-month head start on capture.</p>
+                <p>$487M in IT services contracts expire in Q3 2026 across NAICS 541512 and 541519. By the time solicitations hit SAM.gov, incumbents already have 6+ months of capture work done. You're bidding blind.</p>
             </div>
             <div class="problem-card">
                 <div class="problem-card-icon">
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z"/></svg>
                 </div>
                 <h3>Can't Track Competitors</h3>
-                <p>You don't know when a competitor picks up a new option year, wins in an adjacent space, or starts building a team for a recompete you're targeting.</p>
+                <p>Leidos picked up $663M at DOT last week. SAIC won $135M at State. Deloitte landed $67M in cyber. If these are your competitors, you found out just now&mdash;not when it happened.</p>
             </div>
             <div class="problem-card">
                 <div class="problem-card-icon">
                     <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6-2a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"/><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" d="M2 2l20 20"/></svg>
                 </div>
                 <h3>Overpaying for Stale Intel</h3>
-                <p>GovWin and Deltek charge $15K-$25K/yr for databases that still require hours of manual analysis. Small and mid-size firms can't justify the spend.</p>
+                <p>Enterprise tools cost $15K-$25K per seat and still dump raw data on your desk. You need analysis, not another database. That's what you get here.</p>
             </div>
         </div>
     </div>
@@ -1080,15 +1118,41 @@
 
 <!-- Bottom CTA -->
 <section class="cta-bottom" id="cta">
-    <h2>Your competitors already have this intel.</h2>
-    <p>Get your first weekly brief free. See what you've been missing.</p>
+    <h2>Start tracking recompetes in your NAICS.</h2>
+    <p>Every Monday morning. Free to start. Unsubscribe anytime.</p>
     <!-- BEEHIIV EMBED CODE HERE -->
     <div class="hero-form-placeholder">
         <!-- Replace this entire div with your Beehiiv embed code. -->
         <form class="hero-form" action="#" method="post">
             <input type="email" placeholder="Enter your work email" required>
-            <button type="submit">Subscribe Free</button>
+            <button type="submit">Get This Week's Brief</button>
         </form>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="section-inner">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Common questions</h2>
+        <div class="faq-grid">
+            <div class="faq-card">
+                <h3>Where does the data come from?</h3>
+                <p>All contract data comes from USAspending.gov and FPDS&mdash;public federal procurement databases maintained by the U.S. government. We pull, clean, and analyze the data so you don't have to.</p>
+            </div>
+            <div class="faq-card">
+                <h3>How is this different from GovWin?</h3>
+                <p>GovWin is a search database. This is a curated weekly brief. You spend 8 minutes reading instead of 10 hours searching. Different tool, different job.</p>
+            </div>
+            <div class="faq-card">
+                <h3>Can I cancel anytime?</h3>
+                <p>Yes. One-click unsubscribe link at the bottom of every email. No hoops, no "are you sure?" screens, no guilt trips.</p>
+            </div>
+            <div class="faq-card">
+                <h3>Who built this?</h3>
+                <p>[YOUR NAME]&mdash;a data engineer who got tired of watching small GovCon firms fly blind while the big shops hoarded intel behind $20K paywalls. Built this to level the playing field.</p>
+            </div>
+        </div>
     </div>
 </section>
 
