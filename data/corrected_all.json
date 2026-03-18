@@ -108,7 +108,8 @@
             "Large businesses with DISA past performance and existing zero-trust implementations at scale (10K+ endpoints)",
             "Mid-tier firms should team -- lead with zero-trust niche expertise and backfill traditional IT support with proven subs",
             "If you don't already have a relationship with DISA J6, you're too late for prime. Position as sub to Leidos, SAIC, or Peraton."
-          ]
+          ],
+          "wired_score": 55
         },
         {
           "contract_name": "Network Operations & Cyber Defense (NOCDef)",
@@ -138,7 +139,8 @@
             "Task Area 2: Threat intel specialists -- Booz (incumbent advantage), but also CACI, ECS, and commercial threat intel firms with federal arms",
             "Task Area 3: Only pursue if you have actual Hunt Forward or CPT deployment experience. CYBERCOM will verify. Don't waste your B&P.",
             "Small businesses: CYBERCOM is considering an SDVOSB set-aside for a separate Hunt Forward support TO. Watch SAM.gov for NAICS 541519 from CYBERCOM."
-          ]
+          ],
+          "wired_score": 28
         },
         {
           "contract_name": "Health IT Modernization Support",
@@ -168,7 +170,8 @@
             "SDVOSB firms with health IT credentials -- DHA may add an SDVOSB evaluation preference",
             "8(a) firms in the health IT space should contact DHA's OSBP about a potential sole-source bridge if they have relevant past performance",
             "If you're a large business: identify your SB teaming partner NOW and start the mentor-protege paperwork"
-          ]
+          ],
+          "wired_score": 35
         },
         {
           "contract_name": "Logistics Data Analytics Platform (LDAP)",
@@ -198,7 +201,8 @@
             "Mid-tier firms like ECS, Unison, or Definitive Logic that can integrate commercial platforms with DLA's legacy ERP (SAP-based)",
             "Palantir competitors with defense logistics past performance -- C3.ai, Dataiku with federal arms",
             "SIs with strong DLA relationships: Accenture Federal, Deloitte, IBM. They can wrap commercial tech in a managed service."
-          ]
+          ],
+          "wired_score": 45
         }
       ]
     },
@@ -216,7 +220,11 @@
           "period_of_performance": "5 years (base + 4 options)",
           "naics": "541330",
           "set_aside": "Full & Open",
-          "competitors_known": ["Leidos", "L3Harris", "Northrop Grumman"],
+          "competitors_known": [
+            "Leidos",
+            "L3Harris",
+            "Northrop Grumman"
+          ],
           "notable_detail": "Largest C3 integration award this fiscal year. GDIT beat Leidos on technical approach score despite Leidos being 11% lower on price.",
           "why_they_won": "GDIT's winning move was their 'digital twin' integration testing environment -- they proposed a virtual JADC2 testbed that lets the Army validate cross-domain data flows without live exercises. This cut the estimated T&E timeline by 14 months. They also brought Anduril as a key sub for mesh networking, which signaled commercial tech integration the Army wanted to see. Leidos lost on innovation, not price.",
           "what_losers_should_do": "Leidos should protest on the best-value tradeoff rationale -- 11% price advantage dismissed is aggressive and GAO may take a hard look. L3Harris should pivot to the sensor-to-shooter sub-tier; GDIT will need RF expertise they don't have in-house. Northrop should focus on the Space-based JADC2 node that PEO Space is expected to solicit in Q4 FY26.",
@@ -232,7 +240,10 @@
           "period_of_performance": "3 years base + 2 option years",
           "naics": "541519",
           "set_aside": "Full & Open",
-          "competitors_known": ["Deloitte", "IBM Federal"],
+          "competitors_known": [
+            "Deloitte",
+            "IBM Federal"
+          ],
           "notable_detail": "VA's largest single cloud contract. Multi-cloud strategy (AWS + Azure). Accenture's proposal included a FinOps practice that projected $47M in cloud cost optimization over the PoP.",
           "why_they_won": "Accenture Federal won on two fronts: (1) their embedded FinOps team that guaranteed measurable cloud cost reduction -- VA has been burned by cloud migrations that doubled their hosting costs, and (2) a multi-cloud architecture that avoids vendor lock-in (VA's CTO publicly stated this was a priority after the C2E sole-source controversy). Deloitte's proposal was AWS-only. IBM pushed hybrid cloud with on-prem Z-series -- the VA didn't want more hardware.",
           "what_losers_should_do": "Deloitte should target the VA's application modernization layer -- CMMS is infrastructure, but the 200+ legacy VistA applications still need to be refactored. That's a separate $500M+ opportunity in FY27. IBM Federal should pivot to the VA's AI/ML initiative for claims processing where their Watson Health lineage still carries weight.",
@@ -248,7 +259,10 @@
           "period_of_performance": "2 years base + 1 option",
           "naics": "541715",
           "set_aside": "Full & Open",
-          "competitors_known": ["Anthropic", "Palantir Technologies"],
+          "competitors_known": [
+            "Anthropic",
+            "Palantir Technologies"
+          ],
           "notable_detail": "First major NGA award to a pure-play AI data company. Scale AI's federal division (Scale for Government) has grown from 12 to 180 people in 18 months.",
           "why_they_won": "Scale AI won because NGA realized their bottleneck isn't algorithms -- it's labeled training data at scale. Scale's existing commercial relationships with Meta and OpenAI gave them a data annotation workforce (100K+ contractors globally) that no defense prime could match. They also proposed a 'data flywheel' where model performance improvements automatically generate better training labels for the next iteration. Palantir proposed Foundry-based labeling but couldn't match throughput. Anthropic's proposal was technically strong but they lacked the cleared facility infrastructure.",
           "what_losers_should_do": "Palantir should focus on the downstream deployment layer -- Scale curates the data, but someone needs to deploy the trained models into NGA's classified workflows. That integration work is Palantir's sweet spot. Anthropic should invest in SCIF infrastructure and cleared personnel if they're serious about IC work; their technical approach scored highest but facility/clearance gaps killed them. Traditional defense primes: this is your warning shot. AI-native firms are taking market share in the IC. Acquire or partner.",
@@ -264,7 +278,10 @@
           "period_of_performance": "5 years",
           "naics": "541330",
           "set_aside": "Full & Open",
-          "competitors_known": ["Lockheed Martin", "Ball Aerospace"],
+          "competitors_known": [
+            "Lockheed Martin",
+            "Ball Aerospace"
+          ],
           "notable_detail": "Includes classified resilient comms upgrade. Raytheon leveraged commercial LEO experience from their Starshield work with SpaceX.",
           "why_they_won": "Raytheon's differentiator was hybrid ground architecture -- they proposed commercial cloud-based ground processing (via AWS Ground Station) for unclassified data, with seamless handoff to classified on-prem processing. This cut estimated ground infrastructure costs by 35%. Their SpaceX Starshield collaboration gave them credible commercial LEO integration experience that LockMart and Ball couldn't match. Ball Aerospace was strong on the sensor side but weak on the network resilience requirements.",
           "what_losers_should_do": "Lockheed Martin should leverage their GPS OCX experience to target the follow-on PNT ground modernization expected in FY27. Ball Aerospace should position as a sub to Raytheon for the sensor calibration task area -- Raytheon will need their expertise. Both should note: SSC is moving toward commercial-first ground architectures. Invest in commercial cloud ground station partnerships.",
@@ -382,14 +399,41 @@
     "total_obligations_week": "$4,830,000,000",
     "yoy_change": "+12.3%",
     "top_agencies_by_spend": [
-      {"agency": "DoD", "amount": "$2,890,000,000", "trend": "Accelerating -- cyber and C2 driving growth. DOGE cuts hitting civilian agencies are being redirected here."},
-      {"agency": "VA", "amount": "$620,000,000", "trend": "Stable. VA is DOGE-proof due to Congressional protection. Cloud and EHR modernization are the big spenders."},
-      {"agency": "DHS", "amount": "$485,000,000", "trend": "Border tech surge. CBP and ICE procurement up 22% QoQ on surveillance and biometric systems."}
+      {
+        "agency": "DoD",
+        "amount": "$2,890,000,000",
+        "trend": "Accelerating -- cyber and C2 driving growth. DOGE cuts hitting civilian agencies are being redirected here."
+      },
+      {
+        "agency": "VA",
+        "amount": "$620,000,000",
+        "trend": "Stable. VA is DOGE-proof due to Congressional protection. Cloud and EHR modernization are the big spenders."
+      },
+      {
+        "agency": "DHS",
+        "amount": "$485,000,000",
+        "trend": "Border tech surge. CBP and ICE procurement up 22% QoQ on surveillance and biometric systems."
+      }
     ],
     "trending_naics": [
-      {"code": "541512", "description": "Computer Systems Design", "change": "+28%", "insight": "Zero-trust mandates driving demand across all agencies. If you have NIST 800-207 implementation experience, highlight it in every proposal."},
-      {"code": "541519", "description": "Other IT Consulting", "change": "+19%", "insight": "Catch-all NAICS benefiting from AI/ML advisory work. Agencies are buying 'AI strategy' consulting before committing to platforms."},
-      {"code": "541715", "description": "R&D in Physical Sciences", "change": "+15%", "insight": "IC and Space Force R&D spend. This NAICS is where the classified AI work hides. Watch for BAAs from IARPA and AFRL."}
+      {
+        "code": "541512",
+        "description": "Computer Systems Design",
+        "change": "+28%",
+        "insight": "Zero-trust mandates driving demand across all agencies. If you have NIST 800-207 implementation experience, highlight it in every proposal."
+      },
+      {
+        "code": "541519",
+        "description": "Other IT Consulting",
+        "change": "+19%",
+        "insight": "Catch-all NAICS benefiting from AI/ML advisory work. Agencies are buying 'AI strategy' consulting before committing to platforms."
+      },
+      {
+        "code": "541715",
+        "description": "R&D in Physical Sciences",
+        "change": "+15%",
+        "insight": "IC and Space Force R&D spend. This NAICS is where the classified AI work hides. Watch for BAAs from IARPA and AFRL."
+      }
     ]
   },
   "action_items": [
@@ -461,6 +505,432 @@
       "If you have edge AI capabilities (NVIDIA Jetson, Qualcomm SNPE, or custom ASIC experience), start building a past performance portfolio with tactical use cases",
       "Identify your teaming strategy early: this will require hardware (ruggedized edge servers), software (ML inference frameworks), and integration (tactical network expertise). No single firm has all three.",
       "Connect with the GDIT JADC2 team -- they will be the prime integrator and will need edge computing subs. Their win this week makes them the center of gravity for this ecosystem."
+    ]
+  },
+  "govcon_health_index": {
+    "current_score": 62,
+    "previous_score": 68,
+    "change": -6,
+    "trend": "declining",
+    "components": [
+      {
+        "name": "Spending Velocity",
+        "score": 71,
+        "weight": "25%",
+        "detail": "DoD spending up 12.3% YoY but civilian agencies down 8% due to DOGE. Net positive but bifurcated."
+      },
+      {
+        "name": "Competition Density",
+        "score": 54,
+        "weight": "15%",
+        "detail": "Average 3.2 offers per solicitation, down from 4.1 a year ago. Market consolidation accelerating."
+      },
+      {
+        "name": "Small Business Utilization",
+        "score": 58,
+        "weight": "15%",
+        "detail": "23.1% of obligations to small business, below the 23.5% government-wide goal. HUBZone and WOSB categories underperforming."
+      },
+      {
+        "name": "Protest Rate",
+        "score": 45,
+        "weight": "10%",
+        "detail": "GAO protest filings up 22% QoQ. DOGE-related terminations driving increase. Signal of market instability."
+      },
+      {
+        "name": "Recompete Volume",
+        "score": 73,
+        "weight": "10%",
+        "detail": "$4.2B in contracts expiring in next 180 days across tracked NAICS codes. Healthy pipeline."
+      },
+      {
+        "name": "Set-Aside Activity",
+        "score": 67,
+        "weight": "10%",
+        "detail": "Set-aside solicitations up 15% as agencies push to meet FY26 Q3 goals."
+      },
+      {
+        "name": "Time to Award",
+        "score": 52,
+        "weight": "10%",
+        "detail": "Average 127 days from solicitation to award, up from 108 days last quarter. Procurement workforce strain visible."
+      },
+      {
+        "name": "DOGE Impact",
+        "score": 38,
+        "weight": "5%",
+        "detail": "14 active contracts worth $2.3B lost oversight this month. Civilian agency disruption at highest level since sequestration."
+      }
+    ],
+    "interpretation": "The federal procurement market is splitting into two speeds. DoD and IC are accelerating (cyber, AI, space), driving the spending velocity score up. But civilian agency disruption from DOGE is dragging down competition density, protest rates, and time-to-award. For contractors: if you're defense-focused, it's a strong market. If you're civilian-focused, the next 6-12 months will be turbulent. The set-aside activity uptick in Q3 is the one bright spot for small businesses on the civilian side."
+  },
+  "bridge_watch": {
+    "subtitle": "Bridge contracts signal imminent recompetes -- the incumbent is vulnerable and the scope is defined",
+    "items": [
+      {
+        "contract_name": "Cybersecurity Operations Support",
+        "agency": "Department of Homeland Security / CISA",
+        "incumbent": "Booz Allen Hamilton",
+        "bridge_value": "$18,500,000",
+        "bridge_period": "6 months (Apr 1 - Sep 30, 2026)",
+        "predecessor_contract": "EINSTEIN 3A Support Services",
+        "predecessor_value": "$142,000,000",
+        "predecessor_years": 5,
+        "recompete_signal": "CISA issued this bridge after failing to award the follow-on competitive RFP on time. The draft RFP received 340+ industry comments -- CISA is rewriting Section L. Competitive RFP expected July 2026. This is NOT wired -- CISA explicitly told industry they want new approaches to threat detection.",
+        "wired_score": 25,
+        "naics": "541512",
+        "set_aside": "Full & Open",
+        "what_to_do": "If you have SOC/SIEM operations experience at DHS-scale networks, submit a capabilities statement to CISA's Industry Liaison before the re-issued RFP drops. The 340+ comments signal CISA is listening."
+      },
+      {
+        "contract_name": "Financial Management System Support",
+        "agency": "Department of Treasury / IRS",
+        "incumbent": "CGI Federal",
+        "bridge_value": "$8,200,000",
+        "bridge_period": "4 months (May 1 - Aug 31, 2026)",
+        "predecessor_contract": "IRS CADE2 Database Modernization",
+        "predecessor_value": "$89,000,000",
+        "predecessor_years": 7,
+        "recompete_signal": "Second bridge extension in 12 months. IRS acquisition division is understaffed post-DOGE hiring freeze. The recompete WILL happen but is slipping right. CGI has been on this for 7 years and the GAO flagged timeline concerns. There's real vulnerability here.",
+        "wired_score": 55,
+        "naics": "541511",
+        "set_aside": "Full & Open",
+        "what_to_do": "Long capture timeline. Use this bridge period to build IRS relationships. Attend the IRS Industry Day for Enterprise Modernization (expected June 2026). If you have Oracle Financial Services or SAP S/4HANA experience in federal environments, you're relevant."
+      },
+      {
+        "contract_name": "Base Operations Support",
+        "agency": "U.S. Army Installation Management Command (IMCOM)",
+        "incumbent": "Vectrus (now V2X)",
+        "bridge_value": "$34,000,000",
+        "bridge_period": "9 months (Mar 1 - Nov 30, 2026)",
+        "predecessor_contract": "Fort Liberty BOS Contract",
+        "predecessor_value": "$412,000,000",
+        "predecessor_years": 8,
+        "recompete_signal": "IMCOM consolidating 4 installation support contracts into a single enterprise BOS vehicle. The bridge is long (9 months) because the new structure is fundamentally different from the predecessor. V2X has incumbency but the scope expansion to multi-installation means they need partners they didn't need before.",
+        "wired_score": 60,
+        "naics": "561210",
+        "set_aside": "Full & Open",
+        "what_to_do": "If you provide facility management, environmental services, or logistics support, contact V2X about subcontracting on the consolidated vehicle. IMCOM is also considering a small business set-aside for a separate facilities maintenance component -- watch SAM.gov for NAICS 561210 from IMCOM."
+      }
+    ]
+  },
+  "is_it_wired": {
+    "subtitle": "Our proprietary analysis of whether upcoming solicitations are pre-determined for the incumbent",
+    "methodology_note": "Wired Score (0-100): 0 = wide open competition, 100 = almost certainly pre-determined. Based on: sole-source history, number of offers on prior awards, incumbent tenure, requirement specificity, competition history, and response window analysis.",
+    "items": [
+      {
+        "solicitation": "Enterprise Cloud Migration Services",
+        "agency": "Department of Interior / OCIO",
+        "posted_date": "2026-03-15",
+        "response_deadline": "2026-04-14",
+        "estimated_value": "$45,000,000",
+        "wired_score": 82,
+        "signals": [
+          {
+            "signal": "Sole-source history",
+            "finding": "The predecessor contract was sole-sourced to Accenture Federal 3 times (FY21, FY23, FY24). J&A cited 'unique knowledge of DOI systems' each time.",
+            "red_flag": true
+          },
+          {
+            "signal": "Response window",
+            "finding": "30 days for a $45M full technical volume. Technically compliant with FAR but aggressive for the scope. Favors teams already familiar with DOI's architecture.",
+            "red_flag": true
+          },
+          {
+            "signal": "Key personnel requirements",
+            "finding": "Requires PM with '5+ years supporting DOI cloud environments specifically.' Only the incumbent's staff meets this.",
+            "red_flag": true
+          },
+          {
+            "signal": "Number of prior offers",
+            "finding": "Prior iterations received only 2 offers. Thin market or shaped requirements.",
+            "red_flag": true
+          },
+          {
+            "signal": "Recent industry engagement",
+            "finding": "No industry day held. No Sources Sought issued. RFP appeared without pre-solicitation notice.",
+            "red_flag": true
+          }
+        ],
+        "verdict": "LIKELY WIRED. Five of five red flags triggered. The sole-source history, DOI-specific key personnel requirement, and lack of industry engagement strongly suggest this is shaped for Accenture Federal. Unless you have deep DOI cloud experience AND can staff the key personnel requirement, this is a no-bid.",
+        "exception": "If you are a small business with DOI past performance, consider protesting the key personnel requirement as unduly restrictive. GAO has sustained similar protests (see Matter of Deloitte Consulting, B-418541)."
+      },
+      {
+        "solicitation": "Next-Gen Border Surveillance Technology",
+        "agency": "CBP / Office of Technology Innovation",
+        "posted_date": "2026-03-12",
+        "response_deadline": "2026-05-10",
+        "estimated_value": "$280,000,000",
+        "wired_score": 31,
+        "signals": [
+          {
+            "signal": "Sole-source history",
+            "finding": "No sole-source history. Prior contract was competitively awarded with 6 offerors.",
+            "red_flag": false
+          },
+          {
+            "signal": "Response window",
+            "finding": "60 days -- generous for the scope. CBP wants competition.",
+            "red_flag": false
+          },
+          {
+            "signal": "Key personnel requirements",
+            "finding": "Experience with 'autonomous surveillance systems in border environments' -- specific but not tied to one vendor.",
+            "red_flag": false
+          },
+          {
+            "signal": "Industry engagement",
+            "finding": "Two industry days held (Jan and Feb 2026). Sources Sought issued Nov 2025 with 28 responses. CBP published Q&A from 140+ questions.",
+            "red_flag": false
+          },
+          {
+            "signal": "Multiple award structure",
+            "finding": "RFP explicitly states up to 3 awards for different technology domains (sensor, AI/analytics, integration).",
+            "red_flag": false
+          }
+        ],
+        "verdict": "WIDE OPEN. Zero red flags. CBP has done everything right: industry days, Sources Sought, generous timeline, multiple awards. This is a genuine competition. The $280M value and multiple-award structure mean there's room for several winners.",
+        "exception": "The sensor domain favors Elbit Systems and Anduril (they hold the current tower contracts). AI/analytics and integration domains are more open."
+      },
+      {
+        "solicitation": "IT Help Desk and End User Support",
+        "agency": "Department of Education",
+        "posted_date": "2026-03-10",
+        "response_deadline": "2026-04-07",
+        "estimated_value": "$22,000,000",
+        "wired_score": 91,
+        "signals": [
+          {
+            "signal": "Agency status",
+            "finding": "Department of Education faces potential dissolution under DOGE. Any contract awarded may be terminated within 12 months.",
+            "red_flag": true
+          },
+          {
+            "signal": "Sole-source history",
+            "finding": "This exact scope has been sole-sourced to Maximus for 4 consecutive years.",
+            "red_flag": true
+          },
+          {
+            "signal": "Response window",
+            "finding": "28 days. Below the 30-day minimum for non-commercial solicitations -- potential protest ground.",
+            "red_flag": true
+          },
+          {
+            "signal": "Timing",
+            "finding": "Posted while the agency's FY27 budget is under Congressional review for zeroing out. Why issue a new 3-year contract for an agency that may not exist?",
+            "red_flag": true
+          },
+          {
+            "signal": "Requirements",
+            "finding": "Requires 'familiarity with ED-specific ITSM platform (ServiceNow instance ED-SNOW-4).' Instance-specific requirement is a red flag.",
+            "red_flag": true
+          }
+        ],
+        "verdict": "DO NOT BID. Maximum wired score plus existential risk. Even if you could win, the Department of Education's future is uncertain enough that a 3-year contract may become a 6-month T4C. Maximus will bid this as a defensive move to maintain their position. Let them have it.",
+        "exception": "None. Walk away."
+      }
+    ]
+  },
+  "set_aside_spotlight": {
+    "subtitle": "Agencies behind on small business goals will surge set-aside activity in Q3-Q4 -- position now",
+    "government_wide": {
+      "sb_goal": "23.0%",
+      "sb_actual": "23.1%",
+      "status": "Barely meeting goal. Individual category shortfalls below.",
+      "fiscal_year": "FY26 (through Q2)"
+    },
+    "underperforming_agencies": [
+      {
+        "agency": "Department of Veterans Affairs",
+        "category": "HUBZone",
+        "goal": "3.0%",
+        "actual": "1.8%",
+        "gap": "-1.2%",
+        "dollar_gap": "$340M",
+        "grade_last_year": "D",
+        "action": "VA needs to award $340M more to HUBZone firms by September 30. If you're HUBZone certified with health IT or facilities management experience, target VA's OSDBU office immediately. They will be actively seeking HUBZone firms for Q3-Q4 set-asides.",
+        "contact": "VA Office of Small & Disadvantaged Business Utilization (OSDBU)"
+      },
+      {
+        "agency": "Department of Defense (overall)",
+        "category": "WOSB",
+        "goal": "5.0%",
+        "actual": "3.9%",
+        "gap": "-1.1%",
+        "dollar_gap": "$4.2B",
+        "grade_last_year": "C",
+        "action": "DoD's WOSB shortfall is massive -- $4.2B. Army and Navy are the worst performers. WOSB-certified firms in IT services, professional services, and logistics should target Army MICC and NAVSEA contracting offices. Expect a wave of WOSB set-asides in Q3.",
+        "contact": "DoD Office of Small Business Programs"
+      },
+      {
+        "agency": "Department of Energy",
+        "category": "SDB (Small Disadvantaged Business)",
+        "goal": "15.0%",
+        "actual": "11.2%",
+        "gap": "-3.8%",
+        "dollar_gap": "$890M",
+        "action": "DOE is furthest behind of any major agency in SDB contracting. Their national labs drive most spending and historically underperform on SB goals. 8(a) firms with STEM or environmental remediation capabilities should target DOE's Office of Science and NNSA.",
+        "contact": "DOE Office of Small and Disadvantaged Business Utilization"
+      }
+    ],
+    "upcoming_set_aside_opportunities": [
+      {
+        "title": "Cybersecurity Assessment Services",
+        "agency": "VA",
+        "set_aside": "SDVOSB",
+        "est_value": "$12M",
+        "expected_date": "April 2026"
+      },
+      {
+        "title": "Facility Maintenance -- Southeast Region",
+        "agency": "VA",
+        "set_aside": "HUBZone",
+        "est_value": "$28M",
+        "expected_date": "May 2026"
+      },
+      {
+        "title": "Data Analytics Support",
+        "agency": "Army PEO EIS",
+        "set_aside": "WOSB",
+        "est_value": "$8M",
+        "expected_date": "April 2026"
+      },
+      {
+        "title": "Environmental Monitoring Services",
+        "agency": "DOE / NNSA",
+        "set_aside": "8(a)",
+        "est_value": "$15M",
+        "expected_date": "June 2026"
+      }
+    ]
+  },
+  "protest_report": {
+    "subtitle": "What GAO protest decisions reveal about evaluation practices and competitor strategies",
+    "week_stats": {
+      "filed": 47,
+      "decided": 31,
+      "sustained": 5,
+      "denied": 18,
+      "dismissed": 8,
+      "sustain_rate": "16.1%"
+    },
+    "notable_decisions": [
+      {
+        "case": "Matter of Raytheon Intelligence & Space, B-422891",
+        "protester": "Raytheon Intelligence & Space",
+        "awardee": "L3Harris Technologies",
+        "agency": "Space Systems Command",
+        "contract_value": "$890,000,000",
+        "outcome": "SUSTAINED",
+        "grounds": "Unequal evaluation of past performance. SSC rated L3Harris 'Outstanding' for a contract that was 14 months behind schedule, while rating Raytheon 'Good' for an on-time delivery. GAO found the evaluation was inconsistent and arbitrary.",
+        "what_it_means": "SSC must re-evaluate past performance for both offerors. This likely delays the award by 90-120 days. L3Harris may still win on re-evaluation, but the pricing and technical scores are now exposed to scrutiny. If you lost on this competition, monitor for the corrective action announcement -- there may be an opportunity to submit a revised proposal.",
+        "lesson": "Document EVERYTHING about your on-time delivery performance. Agencies that rate incumbents favorably despite schedule slippage are vulnerable to protest. If you're better on schedule, make that the centerpiece of your past performance narrative."
+      },
+      {
+        "case": "Matter of Palantir Technologies, B-422956",
+        "protester": "Palantir Technologies",
+        "awardee": "Databricks Federal",
+        "agency": "Defense Intelligence Agency",
+        "contract_value": "$124,000,000",
+        "outcome": "DENIED",
+        "grounds": "Palantir argued DIA's evaluation of technical approach was unreasonable because it favored open-source architectures over proprietary platforms. GAO found DIA's preference for 'vendor-agnostic, open-architecture solutions' was clearly stated in the solicitation and applied consistently.",
+        "what_it_means": "The IC is serious about moving away from proprietary lock-in. DIA explicitly evaluated against vendor lock-in risk -- Palantir's Foundry platform was scored lower because of data portability concerns. This is a signal for ALL IC procurements: if your solution creates lock-in, you will be penalized.",
+        "lesson": "Build data portability and open standards into your technical approach. Agencies are no longer just saying they want open architecture -- they're scoring against it. If you're competing against Palantir or similar proprietary platforms, make vendor-agnosticism your #1 discriminator."
+      },
+      {
+        "case": "Matter of Deloitte Consulting, B-423001",
+        "protester": "Deloitte Consulting LLP",
+        "awardee": "Accenture Federal Services",
+        "agency": "Department of Veterans Affairs",
+        "contract_value": "$389,000,000",
+        "outcome": "DISMISSED (voluntary corrective action)",
+        "grounds": "Deloitte protested the VA's cloud migration award to Accenture, arguing the FinOps evaluation factor was not adequately defined in the RFP. VA voluntarily took corrective action before GAO could rule -- they will amend the RFP to clarify the FinOps evaluation criteria and re-evaluate.",
+        "what_it_means": "The $389M VA CMMS award we reported in this issue is now in corrective action. Accenture may still win, but the re-evaluation creates an opening for Deloitte and potentially other offerors. Watch for the amended solicitation -- the FinOps criteria will be more explicit, which may level the playing field.",
+        "lesson": "When an agency creates a new evaluation factor (like FinOps), push back during the Q&A period if it's vaguely defined. Deloitte's protest succeeded not because FinOps was wrong, but because the evaluation criteria for it were insufficiently defined. Vague criteria = protest opportunity."
+      }
+    ]
+  },
+  "calendar": {
+    "subtitle": "Industry days, deadlines, and events that smart BD teams don't miss",
+    "this_week": [
+      {
+        "date": "2026-03-19",
+        "type": "Deadline",
+        "title": "CYBERCOM NOCDef Sources Sought -- comments due",
+        "detail": "Last chance to shape the multi-award structure. Submit your capabilities statement.",
+        "urgency": "high"
+      },
+      {
+        "date": "2026-03-20",
+        "type": "Webinar",
+        "title": "SBA WOSB Certification Changes -- Info Session",
+        "detail": "New WOSB self-certification rules effective April 1. Free SBA webinar.",
+        "urgency": "medium"
+      },
+      {
+        "date": "2026-03-21",
+        "type": "Deadline",
+        "title": "CIO-SP4 Small Business Task Order -- Responses Due",
+        "detail": "CDC data analytics TO, $12M, SDVOSB set-aside. If you're on CIO-SP4 Pool 1, submit by 4 PM EST.",
+        "urgency": "high"
+      }
+    ],
+    "next_two_weeks": [
+      {
+        "date": "2026-03-28",
+        "type": "Deadline",
+        "title": "DISA EITSS-III Industry Day Registration Closes",
+        "detail": "April 8 at Fort Meade. Bring your zero-trust SME, not your BD lead.",
+        "urgency": "high"
+      },
+      {
+        "date": "2026-04-01",
+        "type": "Event",
+        "title": "Joint Staff J6 JADC2 Industry Engagement -- Registration Opens",
+        "detail": "May 15 at the Pentagon. This shapes the $3-5B CJADC2-TEP program. Register day one -- it will fill.",
+        "urgency": "medium"
+      },
+      {
+        "date": "2026-04-02",
+        "type": "Legal",
+        "title": "USAID TRO Expires",
+        "detail": "National Council of Nonprofits v. OMB temporary restraining order. If not extended, USAID contract terminations resume.",
+        "urgency": "high"
+      },
+      {
+        "date": "2026-04-08",
+        "type": "Event",
+        "title": "DISA Industry Day -- EITSS-III Recompete",
+        "detail": "Fort Meade. Zero-trust requirements briefing. Pre-registration required (closes Mar 28).",
+        "urgency": "high"
+      },
+      {
+        "date": "2026-04-10",
+        "type": "Deadline",
+        "title": "CYBERCOM NOCDef -- Sources Sought Responses Due",
+        "detail": "Three task areas. Respond to the one(s) where you have strongest past performance. Don't try all three.",
+        "urgency": "high"
+      }
+    ],
+    "looking_ahead": [
+      {
+        "date": "2026-05-15",
+        "type": "Event",
+        "title": "Joint Staff J6 JADC2 Cross-Functional Team Industry Engagement",
+        "detail": "The Pentagon. Shapes the $3-5B CJADC2-TEP program."
+      },
+      {
+        "date": "2026-06-01",
+        "type": "Forecast",
+        "title": "IRS Enterprise Modernization Industry Day (Expected)",
+        "detail": "Following the CADE2 bridge contract. Oracle/SAP financial systems expertise needed."
+      },
+      {
+        "date": "2026-09-30",
+        "type": "Deadline",
+        "title": "FY26 End -- Agency Spending Surge",
+        "detail": "Expect 30-40% of annual discretionary spend in September. Set-aside activity peaks."
+      }
     ]
   }
 }

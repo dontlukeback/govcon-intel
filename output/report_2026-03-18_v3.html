@@ -1,0 +1,2968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>GovCon Weekly Intelligence — Week of March 16-22, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+/* === RESET & BASE === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #0F172A;
+  --navy-deep: #070E1A;
+  --navy-mid: #1E293B;
+  --navy-light: #334155;
+  --gold: #C9A227;
+  --gold-light: #E8D48B;
+  --gold-dim: rgba(201, 162, 39, 0.12);
+  --gold-glow: rgba(201, 162, 39, 0.06);
+  --white: #FFFFFF;
+  --off-white: #F8FAFC;
+  --gray-50: #F9FAFB;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --gray-400: #94A3B8;
+  --gray-500: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --red: #EF4444;
+  --red-dim: #FEF2F2;
+  --red-border: #FECACA;
+  --green: #10B981;
+  --green-dim: #ECFDF5;
+  --green-border: #A7F3D0;
+  --blue: #3B82F6;
+  --blue-dim: #EFF6FF;
+  --blue-border: #BFDBFE;
+  --purple: #8B5CF6;
+  --purple-dim: #F5F3FF;
+  --purple-border: #C4B5FD;
+  --amber: #F59E0B;
+  --amber-dim: #FFFBEB;
+  --amber-border: #FDE68A;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: var(--gray-50);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === WRAPPER === */
+.wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--gray-200), var(--shadow-lg);
+}
+
+@media (min-width: 720px) {
+  .wrapper { margin: 24px auto; border-radius: var(--radius-lg); overflow: hidden; }
+}
+
+/* === HEADER === */
+.header {
+  background: var(--navy-deep);
+  background-image:
+    radial-gradient(ellipse at 30% 0%, rgba(201,162,39,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(59,130,246,0.06) 0%, transparent 50%);
+  padding: 40px 32px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+}
+
+.header-flag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,162,39,0.3);
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeDown 0.6s ease forwards 0.2s;
+}
+
+.header-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeDown 0.6s ease forwards 0.35s;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: var(--gray-400);
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeDown 0.6s ease forwards 0.45s;
+}
+
+/* === HERO STAT === */
+.hero-stat {
+  background: var(--navy);
+  background-image: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-mid) 100%);
+  padding: 28px 32px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+
+.hero-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.hero-stat-number {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: countPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.5s;
+}
+
+.hero-stat-context {
+  font-size: 13px;
+  color: var(--gray-400);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* === KPI BAR === */
+.kpi-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--gray-50);
+}
+
+.kpi-item {
+  padding: 16px 12px;
+  text-align: center;
+  border-right: 1px solid var(--gray-200);
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+.kpi-item:last-child { border-right: none; }
+.kpi-item:nth-child(1) { animation-delay: 0.6s; }
+.kpi-item:nth-child(2) { animation-delay: 0.7s; }
+.kpi-item:nth-child(3) { animation-delay: 0.8s; }
+.kpi-item:nth-child(4) { animation-delay: 0.9s; }
+
+.kpi-number {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+}
+
+.kpi-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+/* === HEALTH INDEX PANEL === */
+.health-panel {
+  background: var(--navy);
+  background-image: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-mid) 100%);
+  padding: 28px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.health-score-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.health-score-big {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.health-score-meta {
+  flex: 1;
+}
+
+.health-change {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.health-change-neg { color: var(--red); }
+.health-change-pos { color: var(--green); }
+
+.health-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.health-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+}
+
+.health-comp-name {
+  font-size: 11px;
+  color: var(--gray-400);
+  font-weight: 500;
+}
+
+.health-comp-val {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.health-interp {
+  font-size: 13px;
+  color: var(--gray-400);
+  line-height: 1.6;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* === TABLE OF CONTENTS === */
+.toc {
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--white);
+}
+
+.toc-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 12px;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 24px;
+}
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray-600);
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.15s;
+}
+.toc-item:hover { color: var(--navy); }
+
+.toc-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  min-width: 20px;
+}
+
+.toc-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* === SECTION LAYOUT === */
+.section {
+  padding: 0 32px 32px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 0 8px;
+  margin-bottom: 4px;
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.3px;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+
+/* === DIVIDER === */
+.divider {
+  height: 1px;
+  background: var(--gray-200);
+  margin: 0 32px;
+}
+
+.divider-gold {
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-dim));
+  margin: 0;
+}
+
+/* === CARD BASE === */
+.card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+.card-red { border-left: 4px solid var(--red); }
+.card-green { border-left: 4px solid var(--green); }
+.card-blue { border-left: 4px solid var(--blue); }
+.card-purple { border-left: 4px solid var(--purple); }
+.card-amber { border-left: 4px solid var(--amber); }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-bottom: 12px;
+}
+
+.card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-meta strong {
+  color: var(--gray-700);
+  font-weight: 600;
+}
+
+.card-body {
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* === BADGES === */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-urgent {
+  background: var(--red);
+  color: white;
+}
+
+.badge-days {
+  background: var(--red-dim);
+  color: var(--red);
+  border: 1px solid var(--red-border);
+}
+
+.badge-days-medium {
+  background: var(--amber-dim);
+  color: #92400E;
+  border: 1px solid var(--amber-border);
+}
+
+.badge-winnability-high {
+  background: var(--green-dim);
+  color: #065F46;
+  border: 1px solid var(--green-border);
+}
+.badge-winnability-medium {
+  background: var(--amber-dim);
+  color: #92400E;
+  border: 1px solid var(--amber-border);
+}
+.badge-winnability-low {
+  background: var(--red-dim);
+  color: #991B1B;
+  border: 1px solid var(--red-border);
+}
+
+.badge-value {
+  background: var(--navy);
+  color: var(--gold-light);
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.badge-set-aside {
+  background: var(--purple-dim);
+  color: #5B21B6;
+  border: 1px solid var(--purple-border);
+}
+
+.badge-fno {
+  background: var(--gray-100);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-300);
+}
+
+/* === CALLOUT BOXES === */
+.callout {
+  border-radius: 6px;
+  padding: 16px;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.callout-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.callout-green {
+  background: var(--green-dim);
+  border: 1px solid var(--green-border);
+  color: #065F46;
+}
+.callout-green .callout-label { color: var(--green); }
+
+.callout-red {
+  background: var(--red-dim);
+  border: 1px solid var(--red-border);
+  color: #991B1B;
+}
+.callout-red .callout-label { color: var(--red); }
+
+.callout-blue {
+  background: var(--blue-dim);
+  border: 1px solid var(--blue-border);
+  color: #1E40AF;
+}
+.callout-blue .callout-label { color: var(--blue); }
+
+.callout-amber {
+  background: var(--amber-dim);
+  border: 1px solid var(--amber-border);
+  color: #92400E;
+}
+.callout-amber .callout-label { color: var(--amber); }
+
+.callout-navy {
+  background: var(--navy);
+  border: 1px solid var(--navy-light);
+  color: var(--gray-300);
+}
+.callout-navy .callout-label { color: var(--gold); }
+
+.callout-purple {
+  background: var(--purple-dim);
+  border: 1px solid var(--purple-border);
+  color: #5B21B6;
+}
+.callout-purple .callout-label { color: var(--purple); }
+
+/* === FACTORS LIST === */
+.factors {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.factors li {
+  position: relative;
+  padding: 6px 0 6px 20px;
+  font-size: 13px;
+  color: var(--gray-600);
+  line-height: 1.55;
+  border-bottom: 1px solid var(--gray-100);
+}
+.factors li:last-child { border-bottom: none; }
+
+.factors li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* === WHO SHOULD PURSUE === */
+.pursue-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.pursue-list li {
+  position: relative;
+  padding: 8px 0 8px 28px;
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.55;
+}
+
+.pursue-list li::before {
+  content: '\2192';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* === DOGE TRACKER === */
+.doge-panel {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.doge-agency {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.doge-agency:last-child { margin-bottom: 0; }
+
+.doge-agency-name {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.doge-action {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.doge-impact {
+  font-size: 13px;
+  color: var(--gray-400);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.doge-status {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--amber);
+  line-height: 1.5;
+}
+
+.doge-status-growing {
+  color: var(--green);
+}
+
+/* === COURT RULINGS === */
+.court-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid var(--amber);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.court-case {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.court-ruling {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-bottom: 6px;
+}
+
+.court-impact {
+  font-size: 12px;
+  color: var(--gray-300);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* === CONTRACTOR IMPACT === */
+.contractor-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.contractor-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.contractor-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.contractor-exposure {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--red);
+  margin: 2px 0 6px;
+}
+
+.contractor-status {
+  font-size: 12px;
+  color: var(--gray-400);
+  line-height: 1.5;
+}
+
+.contractor-signal {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* === "IS IT WIRED?" SECTION === */
+.wired-card {
+  background: var(--navy-deep);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wired-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.wired-card-open::before { background: var(--green); }
+.wired-card-monitor::before { background: var(--amber); }
+.wired-card-likely::before { background: var(--red); }
+.wired-card-donot::before { background: #991B1B; }
+
+.wired-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.wired-meta {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.wired-meta strong { color: var(--gray-300); }
+
+.wired-signals {
+  margin: 16px 0;
+}
+
+.wired-signal-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 13px;
+  color: var(--gray-300);
+  line-height: 1.5;
+}
+
+.wired-signal-row:last-child { border-bottom: none; }
+
+.signal-flag {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+
+.signal-red { background: var(--red); box-shadow: 0 0 6px rgba(239,68,68,0.4); }
+.signal-green { background: var(--green); box-shadow: 0 0 6px rgba(16,185,129,0.4); }
+.signal-amber { background: var(--amber); box-shadow: 0 0 6px rgba(245,158,11,0.4); }
+
+.wired-verdict {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-top: 12px;
+}
+
+.wired-verdict-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.wired-verdict-text {
+  font-size: 13px;
+  color: var(--gray-300);
+  line-height: 1.6;
+}
+
+.wired-exception {
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #6EE7B7;
+  line-height: 1.5;
+}
+
+/* === MARKET PULSE === */
+.pulse-panel {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.pulse-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pulse-total {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--white);
+}
+
+.pulse-change {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.pulse-subtitle {
+  font-size: 11px;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.pulse-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.pulse-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.pulse-agency-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.pulse-amount {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.pulse-trend {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.naics-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.naics-code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--gold-dim);
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.naics-desc {
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.naics-change {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.naics-insight {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* === ACTION ITEMS === */
+.action-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+}
+.action-card:hover { box-shadow: var(--shadow-sm); }
+
+.action-priority {
+  flex-shrink: 0;
+  width: 4px;
+  border-radius: 2px;
+  min-height: 40px;
+}
+
+.action-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.action-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.action-context {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.55;
+}
+
+.action-deadline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--red);
+  margin-top: 6px;
+}
+
+/* === ONE TO WATCH === */
+.watch-panel {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #1a2744 100%);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(201,162,39,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.watch-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.watch-flag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.watch-headline {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.watch-meta {
+  font-size: 13px;
+  color: var(--gray-400);
+  margin-bottom: 16px;
+}
+
+.watch-meta strong {
+  color: var(--gold);
+}
+
+.watch-body {
+  font-size: 14px;
+  color: var(--gray-300);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.watch-why {
+  background: rgba(201,162,39,0.08);
+  border: 1px solid rgba(201,162,39,0.15);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.watch-why-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.watch-why-text {
+  font-size: 13px;
+  color: var(--gray-300);
+  line-height: 1.6;
+}
+
+.watch-actions {
+  list-style: none;
+  padding: 0;
+}
+
+.watch-actions li {
+  position: relative;
+  padding: 8px 0 8px 24px;
+  font-size: 13px;
+  color: var(--gray-300);
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.watch-actions li:last-child { border-bottom: none; }
+
+.watch-actions li::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 16px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* === PROTEST REPORT === */
+.protest-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.protest-stat {
+  text-align: center;
+  padding: 14px 8px;
+  border-right: 1px solid var(--gray-200);
+}
+
+.protest-stat:last-child { border-right: none; }
+
+.protest-stat-num {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.protest-stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+.protest-outcome {
+  display: inline-flex;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+.protest-sustained { background: var(--green-dim); color: #065F46; border: 1px solid var(--green-border); }
+.protest-denied { background: var(--red-dim); color: #991B1B; border: 1px solid var(--red-border); }
+.protest-dismissed { background: var(--amber-dim); color: #92400E; border: 1px solid var(--amber-border); }
+
+/* === CALENDAR SECTION === */
+.cal-group-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin: 16px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.cal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 13px;
+}
+
+.cal-item:last-child { border-bottom: none; }
+
+.cal-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  min-width: 52px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.cal-type-badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.cal-type-deadline { background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); }
+.cal-type-event { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+.cal-type-webinar { background: var(--purple-dim); color: var(--purple); border: 1px solid var(--purple-border); }
+.cal-type-legal { background: var(--amber-dim); color: #92400E; border: 1px solid var(--amber-border); }
+.cal-type-forecast { background: var(--green-dim); color: #065F46; border: 1px solid var(--green-border); }
+
+.cal-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cal-title-text {
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.4;
+}
+
+.cal-detail {
+  font-size: 12px;
+  color: var(--gray-500);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.cal-urgency {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+/* === SET-ASIDE SPOTLIGHT === */
+.setaside-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: var(--purple-dim);
+  border: 1px solid var(--purple-border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.setaside-stat {
+  text-align: center;
+  padding: 14px 8px;
+  border-right: 1px solid var(--purple-border);
+}
+
+.setaside-stat:last-child { border-right: none; }
+
+.setaside-stat-num {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  color: #5B21B6;
+}
+
+.setaside-stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #7C3AED;
+  margin-top: 2px;
+}
+
+/* === CTA === */
+.cta-block {
+  background: var(--navy);
+  padding: 32px;
+  text-align: center;
+}
+
+.cta-headline {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.cta-body {
+  font-size: 14px;
+  color: var(--gray-400);
+  margin-bottom: 20px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-deep);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(201,162,39,0.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201,162,39,0.4);
+}
+
+.cta-price {
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-top: 12px;
+}
+
+/* === FEEDBACK === */
+.feedback {
+  padding: 20px 32px;
+  text-align: center;
+  border-top: 1px solid var(--gray-200);
+  background: var(--gray-50);
+}
+
+.feedback-question {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-bottom: 12px;
+}
+
+.feedback-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.feedback-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-600);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.feedback-btn:hover {
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+/* === FOOTER === */
+.footer {
+  padding: 24px 32px;
+  text-align: center;
+  background: var(--navy-deep);
+  color: var(--gray-500);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* === DETAILS/EXPAND === */
+details {
+  margin: 8px 0;
+}
+details summary {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  cursor: pointer;
+  padding: 6px 0;
+  user-select: none;
+  list-style: none;
+}
+details summary::before {
+  content: '\25B6  ';
+  font-size: 9px;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes countPop {
+  0% { opacity: 0; transform: scale(0.8); }
+  70% { transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 640px) {
+  .header { padding: 28px 20px 24px; }
+  .header-title { font-size: 26px; }
+  .hero-stat { padding: 20px; }
+  .hero-stat-number { font-size: 42px; }
+  .section { padding: 0 20px 24px; }
+  .divider { margin: 0 20px; }
+  .toc { padding: 16px 20px; }
+  .toc-grid { grid-template-columns: 1fr; }
+  .kpi-bar { grid-template-columns: repeat(2, 1fr); }
+  .kpi-item:nth-child(2) { border-right: none; }
+  .cta-block { padding: 24px 20px; }
+  .feedback { padding: 16px 20px; }
+  .pulse-headline { flex-direction: column; gap: 4px; }
+  .health-panel { padding: 20px; }
+  .health-score-big { font-size: 48px; }
+  .health-grid { grid-template-columns: 1fr; }
+  .protest-stats-bar { grid-template-columns: repeat(3, 1fr); }
+  .protest-stat:nth-child(3) { border-right: none; }
+  .setaside-stats-bar { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-flag">Intelligence Brief</div>
+    <div class="header-title">GovCon Weekly Intelligence</div>
+    <div class="header-subtitle">Week of March 16-22, 2026 &middot; March 18, 2026</div>
+  </div>
+
+  <!-- HERO STAT -->
+  <div class="hero-stat">
+    <div class="hero-stat-label">Number of the Week</div>
+    <div class="hero-stat-number">$2.1B</div>
+    <div class="hero-stat-context">New DoD Cyber Obligations (Q1 FY26)</div>
+  </div>
+
+  <!-- KPI BAR -->
+  <div class="kpi-bar">
+    <div class="kpi-item">
+      <div class="kpi-number">$961M</div>
+      <div class="kpi-label">Recompetes</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-number">$1.9B</div>
+      <div class="kpi-label">New Awards</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-number">$2.7B</div>
+      <div class="kpi-label">Funding Actions</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-number" style="color: var(--red);">3</div>
+      <div class="kpi-label">Urgent Actions</div>
+    </div>
+  </div>
+
+  <!-- GOVCON HEALTH INDEX -->
+  <div class="health-panel">
+    <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px;">GovCon Health Index &mdash; March 2026</div>
+    <div class="health-score-row">
+      <div class="health-score-big">62</div>
+      <div class="health-score-meta">
+        <div class="health-change health-change-neg">&#9660; -6 from last month</div>
+        <div class="health-label">Proprietary Market Health Score (0-100)</div>
+      </div>
+    </div>
+    <div class="health-grid">
+      <div class="health-component">
+        <span class="health-comp-name">Spending Velocity (25%)</span>
+        <span class="health-comp-val">71</span>
+      </div>
+      <div class="health-component">
+        <span class="health-comp-name">Competition Density (15%)</span>
+        <span class="health-comp-val">54</span>
+      </div>
+      <div class="health-component">
+        <span class="health-comp-name">Small Business Utilization (15%)</span>
+        <span class="health-comp-val">58</span>
+      </div>
+      <div class="health-component">
+        <span class="health-comp-name">Protest Rate (10%)</span>
+        <span class="health-comp-val">45</span>
+      </div>
+      <div class="health-component">
+        <span class="health-comp-name">Recompete Volume (10%)</span>
+        <span class="health-comp-val">73</span>
+      </div>
+      <div class="health-component">
+        <span class="health-comp-name">Set-Aside Activity (10%)</span>
+        <span class="health-comp-val">67</span>
+      </div>
+      <div class="health-component">
+        <span class="health-comp-name">Time to Award (10%)</span>
+        <span class="health-comp-val">52</span>
+      </div>
+      <div class="health-component">
+        <span class="health-comp-name">DOGE Impact (5%)</span>
+        <span class="health-comp-val">38</span>
+      </div>
+    </div>
+    <div class="health-interp">The federal procurement market is splitting into two speeds. DoD and IC are accelerating (cyber, AI, space), driving the spending velocity score up. But civilian agency disruption from DOGE is dragging down competition density, protest rates, and time-to-award. For contractors: if you&#x27;re defense-focused, it&#x27;s a strong market. If you&#x27;re civilian-focused, the next 6-12 months will be turbulent. The set-aside activity uptick in Q3 is the one bright spot for small businesses on the civilian side.</div>
+  </div>
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <div class="toc-title">In This Brief</div>
+    <div class="toc-grid">
+      <a href="#section-01" class="toc-item"><span class="toc-num">01</span><span class="toc-dot" style="background:#EF4444;"></span>DOGE Tracker</a>
+      <a href="#section-02" class="toc-item"><span class="toc-num">02</span><span class="toc-dot" style="background:#991B1B;"></span>"Is It Wired?" Scorecard</a>
+      <a href="#section-03" class="toc-item"><span class="toc-num">03</span><span class="toc-dot" style="background:#F59E0B;"></span>Bridge Contract Watch</a>
+      <a href="#section-04" class="toc-item"><span class="toc-num">04</span><span class="toc-dot" style="background:#8B5CF6;"></span>Set-Aside Spotlight</a>
+      <a href="#section-05" class="toc-item"><span class="toc-num">05</span><span class="toc-dot" style="background:#EF4444;"></span>Recompete Alerts</a>
+      <a href="#section-06" class="toc-item"><span class="toc-num">06</span><span class="toc-dot" style="background:#10B981;"></span>New Awards</a>
+      <a href="#section-07" class="toc-item"><span class="toc-num">07</span><span class="toc-dot" style="background:#3B82F6;"></span>Option Exercises</a>
+      <a href="#section-08" class="toc-item"><span class="toc-num">08</span><span class="toc-dot" style="background:#8B5CF6;"></span>Funding Actions</a>
+      <a href="#section-09" class="toc-item"><span class="toc-num">09</span><span class="toc-dot" style="background:#92400E;"></span>Protest Report</a>
+      <a href="#section-10" class="toc-item"><span class="toc-num">10</span><span class="toc-dot" style="background:#C9A227;"></span>Market Pulse</a>
+      <a href="#section-11" class="toc-item"><span class="toc-num">11</span><span class="toc-dot" style="background:#F59E0B;"></span>Action Items</a>
+      <a href="#section-12" class="toc-item"><span class="toc-num">12</span><span class="toc-dot" style="background:#3B82F6;"></span>Calendar</a>
+      <a href="#section-13" class="toc-item"><span class="toc-num">13</span><span class="toc-dot" style="background:#C9A227;"></span>One to Watch</a>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top: 24px;">
+    <div class="callout callout-navy">
+      <div class="callout-label">&#9733; Lead Intelligence</div>
+      The Department of Defense has accelerated cyber spending by 34% QoQ, with CYBERCOM and DISA leading procurement. Three major recompetes worth $890M are hitting the street in the next 60 days. If you hold incumbent positions in network defense or zero-trust architecture, now is the time to prep your capture teams.
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-01">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">DOGE Tracker</span>
+    </div>
+    <div class="section-subtitle">Agency disruptions, court rulings, and what it means for your contracts</div>
+
+    <div class="callout callout-amber" style="margin-bottom: 16px;">
+      <div class="callout-label">&#9888; Situation Overview</div>
+      DOGE-driven workforce cuts at USAID and OPM are creating downstream contract disruptions -- 14 active contracts worth $2.3B have lost their COR or program office oversight this month alone.
+    </div>
+
+    <div class="doge-panel">
+      <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px;">Agencies Affected</div>
+
+      <div class="doge-agency">
+        <div class="doge-agency-name">USAID</div>
+        <div class="doge-action">80% RIF of acquisition workforce</div>
+        <div class="doge-impact">127 active contracts ($4.1B) now have no assigned Contracting Officer&#x27;s Representative. Stop-work orders issued on 23 task orders. Primes are burning fee on idle staff.</div>
+        <div class="doge-status ">Injunction filed -- temporary restraining order in effect through April 2, but agency is slow-walking re-staffing. Don&#x27;t count on resumption.</div>
+      </div>
+
+      <div class="doge-agency">
+        <div class="doge-agency-name">OPM</div>
+        <div class="doge-action">Consolidation into GSA proposed</div>
+        <div class="doge-impact">HR IT modernization contracts ($380M across 6 vehicles) are in limbo. OPM issued informal &#x27;continue performance&#x27; guidance but no funded modifications. Contractors billing at risk.</div>
+        <div class="doge-status ">Congressional review period -- expect 90-day delay minimum. If you&#x27;re subbing on OPM work, get your prime&#x27;s position in writing NOW.</div>
+      </div>
+
+      <div class="doge-agency">
+        <div class="doge-agency-name">Department of Education</div>
+        <div class="doge-action">Agency downsizing / potential dissolution</div>
+        <div class="doge-impact">FSA loan servicing contracts ($1.8B) are being reviewed for early termination. TIVAS contract holders (Maximus, Aidvantage) face T4C risk. Student loan tech modernization RFPs pulled from forecast.</div>
+        <div class="doge-status ">Legislation pending. No imminent action but pipeline is frozen. BD teams should pause capture spend on ED opportunities until Q3 FY26 clarity.</div>
+      </div>
+
+      <div class="doge-agency">
+        <div class="doge-agency-name">EPA</div>
+        <div class="doge-action">30% budget cut proposed for FY27</div>
+        <div class="doge-impact">Superfund remediation contracts and environmental monitoring task orders likely to shrink. Current ceiling on EPA OLEM IDIQ ($420M) may not be fully obligated.</div>
+        <div class="doge-status ">Budget proposal stage -- Congress will negotiate, but signal is clear: environmental services declining 2+ years out.</div>
+      </div>
+
+      <div class="doge-agency">
+        <div class="doge-agency-name">DoD / DISA</div>
+        <div class="doge-action">GROWING -- absorbing mission from other agencies</div>
+        <div class="doge-impact">DISA picking up shared services IT work previously spread across civilian agencies. DES ceiling increase this week ($450M) is directly tied to this consolidation. Net positive for DISA-focused contractors.</div>
+        <div class="doge-status doge-status-growing">Active growth. Position here if you&#x27;re losing civilian agency work.</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 16px;">
+      <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-500); margin-bottom: 10px;">Court Rulings &amp; Legal Watch</div>
+
+      <div class="court-card" style="background: var(--white); border: 1px solid var(--gray-200); border-left: 3px solid var(--amber);">
+        <div class="court-case" style="color: var(--navy);">National Council of Nonprofits v. OMB</div>
+        <div class="court-ruling" style="color: var(--gray-600);">D.C. District Court extended TRO on USAID contract terminations through April 2, 2026</div>
+        <div class="court-impact" style="color: var(--gray-500);">Contracts are technically still active but CORs are gone and no new task orders are being issued. &#x27;Zombie contracts&#x27; -- alive on paper, dead in practice. Don&#x27;t staff up expecting resumption.</div>
+      </div>
+
+      <div class="court-card" style="background: var(--white); border: 1px solid var(--gray-200); border-left: 3px solid var(--amber);">
+        <div class="court-case" style="color: var(--navy);">AFGE v. DOGE (consolidated)</div>
+        <div class="court-ruling" style="color: var(--gray-600);">Pending -- oral arguments scheduled March 28</div>
+        <div class="court-impact" style="color: var(--gray-500);">If court rules DOGE advisory committee subject to FACA, all recommendations become advisory-only and agency heads must independently justify cuts. Would slow but not stop the train.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 16px;">
+      <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-500); margin-bottom: 10px;">Contractor Impact Watch</div>
+      <div class="contractor-row">
+
+        <div class="contractor-card" style="background: var(--white); border: 1px solid var(--gray-200);">
+          <div class="contractor-name" style="color: var(--navy);">Chemonics International</div>
+          <div class="contractor-exposure" style="color: var(--red);">Exposure: $1.2B in USAID work (78% of revenue)</div>
+          <div class="contractor-status" style="color: var(--gray-600);">Announced 40% workforce reduction. Teaming partners should assess exposure immediately.</div>
+          <div class="contractor-signal" style="color: var(--gold);">If you&#x27;re subbing to Chemonics on anything, have a backup plan by end of month.</div>
+        </div>
+
+        <div class="contractor-card" style="background: var(--white); border: 1px solid var(--gray-200);">
+          <div class="contractor-name" style="color: var(--navy);">DAI Global</div>
+          <div class="contractor-exposure" style="color: var(--red);">Exposure: $890M USAID portfolio</div>
+          <div class="contractor-status" style="color: var(--gray-600);">Pivoting to State Department and MCC work. May be open to JV arrangements they&#x27;d have rejected 6 months ago.</div>
+          <div class="contractor-signal" style="color: var(--gold);">Opportunity to partner with a firm that has deep international development past performance at a discount.</div>
+        </div>
+
+        <div class="contractor-card" style="background: var(--white); border: 1px solid var(--gray-200);">
+          <div class="contractor-name" style="color: var(--navy);">Maximus</div>
+          <div class="contractor-exposure" style="color: var(--red);">Exposure: $2.1B across ED, HHS, and VA</div>
+          <div class="contractor-status" style="color: var(--gray-600);">ED work at risk but HHS and VA portfolios stable. Stock down 18% creates M&amp;A opportunity for mid-tiers looking to acquire federal BPO capabilities.</div>
+          <div class="contractor-signal" style="color: var(--gold);">Maximus may divest smaller contract vehicles to shore up balance sheet. Watch for novation opportunities.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-navy" style="margin-top: 16px;">
+      <div class="callout-label">&#128270; Outlook</div>
+      The DOGE disruption is creating a two-speed federal market: DoD and IC are accelerating spend (especially cyber and AI), while civilian agencies face 12-18 months of uncertainty. Smart firms are repositioning BD teams from civilian to defense. The biggest hidden risk is COR attrition -- even contracts that survive cuts may suffer from inadequate government oversight, leading to performance disputes and withheld fees. Build relationships with remaining government staff now; they&#x27;re overwhelmed and will remember who made their lives easier.
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-02">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">&ldquo;Is It Wired?&rdquo; Scorecard</span>
+    </div>
+    <div class="section-subtitle">Competitive intelligence scoring: should you spend B&amp;P on these opportunities?</div>
+
+    <div class="wired-card wired-card-donot">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px;">
+        <div class="wired-title">Enterprise Cloud Migration Services</div>
+        <div style="display: inline-flex; align-items: center; gap: 10px;"><span style="font-family: var(--font-display); font-size: 36px; font-weight: 900; color: #FECACA; line-height: 1;">82</span><span style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; background: #450A0A; color: #FECACA; border: 1px solid #991B1B;">DO NOT BID</span></div>
+      </div>
+      <div class="wired-meta">
+        <span><strong>Agency:</strong> Department of Interior / OCIO</span>
+        <span><strong>Est. Value:</strong> $45,000,000</span>
+        <span><strong>Type:</strong> </span>
+      </div>
+      <div class="wired-signals">
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Sole-source history:</strong> The predecessor contract was sole-sourced to Accenture Federal 3 times (FY21, FY23, FY24). J&amp;A cited &#x27;unique knowledge of DOI systems&#x27; each time.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Response window:</strong> 30 days for a $45M full technical volume. Technically compliant with FAR but aggressive for the scope. Favors teams already familiar with DOI&#x27;s architecture.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Key personnel requirements:</strong> Requires PM with &#x27;5+ years supporting DOI cloud environments specifically.&#x27; Only the incumbent&#x27;s staff meets this.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Number of prior offers:</strong> Prior iterations received only 2 offers. Thin market or shaped requirements.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Recent industry engagement:</strong> No industry day held. No Sources Sought issued. RFP appeared without pre-solicitation notice.</span>
+        </div>
+      </div>
+      <div class="wired-verdict">
+        <div class="wired-verdict-label">Verdict</div>
+        <div class="wired-verdict-text">LIKELY WIRED. Five of five red flags triggered. The sole-source history, DOI-specific key personnel requirement, and lack of industry engagement strongly suggest this is shaped for Accenture Federal. Unless you have deep DOI cloud experience AND can staff the key personnel requirement, this is a no-bid.</div>
+      </div>
+      <div class="wired-exception">
+        <strong style="color: #A7F3D0;">Exception:</strong> If you are a small business with DOI past performance, consider protesting the key personnel requirement as unduly restrictive. GAO has sustained similar protests (see Matter of Deloitte Consulting, B-418541).
+      </div>
+    </div>
+
+    <div class="wired-card wired-card-monitor">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px;">
+        <div class="wired-title">Next-Gen Border Surveillance Technology</div>
+        <div style="display: inline-flex; align-items: center; gap: 10px;"><span style="font-family: var(--font-display); font-size: 36px; font-weight: 900; color: var(--navy); line-height: 1;">31</span><span style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A;">MONITOR</span></div>
+      </div>
+      <div class="wired-meta">
+        <span><strong>Agency:</strong> CBP / Office of Technology Innovation</span>
+        <span><strong>Est. Value:</strong> $280,000,000</span>
+        <span><strong>Type:</strong> </span>
+      </div>
+      <div class="wired-signals">
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-green"></span>
+          <span><strong>Sole-source history:</strong> No sole-source history. Prior contract was competitively awarded with 6 offerors.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-green"></span>
+          <span><strong>Response window:</strong> 60 days -- generous for the scope. CBP wants competition.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-green"></span>
+          <span><strong>Key personnel requirements:</strong> Experience with &#x27;autonomous surveillance systems in border environments&#x27; -- specific but not tied to one vendor.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-green"></span>
+          <span><strong>Industry engagement:</strong> Two industry days held (Jan and Feb 2026). Sources Sought issued Nov 2025 with 28 responses. CBP published Q&amp;A from 140+ questions.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-green"></span>
+          <span><strong>Multiple award structure:</strong> RFP explicitly states up to 3 awards for different technology domains (sensor, AI/analytics, integration).</span>
+        </div>
+      </div>
+      <div class="wired-verdict">
+        <div class="wired-verdict-label">Verdict</div>
+        <div class="wired-verdict-text">WIDE OPEN. Zero red flags. CBP has done everything right: industry days, Sources Sought, generous timeline, multiple awards. This is a genuine competition. The $280M value and multiple-award structure mean there&#x27;s room for several winners.</div>
+      </div>
+      <div class="wired-exception">
+        <strong style="color: #A7F3D0;">Exception:</strong> The sensor domain favors Elbit Systems and Anduril (they hold the current tower contracts). AI/analytics and integration domains are more open.
+      </div>
+    </div>
+
+    <div class="wired-card wired-card-donot">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px;">
+        <div class="wired-title">IT Help Desk and End User Support</div>
+        <div style="display: inline-flex; align-items: center; gap: 10px;"><span style="font-family: var(--font-display); font-size: 36px; font-weight: 900; color: #FECACA; line-height: 1;">91</span><span style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; background: #450A0A; color: #FECACA; border: 1px solid #991B1B;">DO NOT BID</span></div>
+      </div>
+      <div class="wired-meta">
+        <span><strong>Agency:</strong> Department of Education</span>
+        <span><strong>Est. Value:</strong> $22,000,000</span>
+        <span><strong>Type:</strong> </span>
+      </div>
+      <div class="wired-signals">
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Agency status:</strong> Department of Education faces potential dissolution under DOGE. Any contract awarded may be terminated within 12 months.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Sole-source history:</strong> This exact scope has been sole-sourced to Maximus for 4 consecutive years.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Response window:</strong> 28 days. Below the 30-day minimum for non-commercial solicitations -- potential protest ground.</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Timing:</strong> Posted while the agency&#x27;s FY27 budget is under Congressional review for zeroing out. Why issue a new 3-year contract for an agency that may not exist?</span>
+        </div>
+        <div class="wired-signal-row">
+          <span class="signal-flag signal-red"></span>
+          <span><strong>Requirements:</strong> Requires &#x27;familiarity with ED-specific ITSM platform (ServiceNow instance ED-SNOW-4).&#x27; Instance-specific requirement is a red flag.</span>
+        </div>
+      </div>
+      <div class="wired-verdict">
+        <div class="wired-verdict-label">Verdict</div>
+        <div class="wired-verdict-text">DO NOT BID. Maximum wired score plus existential risk. Even if you could win, the Department of Education&#x27;s future is uncertain enough that a 3-year contract may become a 6-month T4C. Maximus will bid this as a defensive move to maintain their position. Let them have it.</div>
+      </div>
+      <div class="wired-exception">
+        <strong style="color: #A7F3D0;">Exception:</strong> None. Walk away.
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-03">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Bridge Contract Watch</span>
+    </div>
+    <div class="section-subtitle">Contracts on life support &mdash; each one signals an imminent recompete opportunity</div>
+
+    <div class="card card-amber">
+      <div class="card-header">
+        <div class="card-title">EINSTEIN 3A Support Services</div>
+        <span class="badge-value">$142,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Department of Homeland Security / CISA</span>
+        <span class="card-meta-item"><strong>Incumbent:</strong> Booz Allen Hamilton</span>
+        <span class="card-meta-item"><strong>Duration:</strong> 5</span>
+      </div>
+      <div style="margin-bottom: 12px;"><span style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0;">25 - WIDE OPEN</span></div>
+      <div class="callout callout-amber">
+        <div class="callout-label">&#9888; Recompete Signal</div>
+        CISA issued this bridge after failing to award the follow-on competitive RFP on time. The draft RFP received 340+ industry comments -- CISA is rewriting Section L. Competitive RFP expected July 2026. This is NOT wired -- CISA explicitly told industry they want new approaches to threat detection.
+      </div>
+      <div class="callout callout-blue">
+        <div class="callout-label">&#9654; What To Do</div>
+        If you have SOC/SIEM operations experience at DHS-scale networks, submit a capabilities statement to CISA&#x27;s Industry Liaison before the re-issued RFP drops. The 340+ comments signal CISA is listening.
+      </div>
+    </div>
+
+    <div class="card card-amber">
+      <div class="card-header">
+        <div class="card-title">IRS CADE2 Database Modernization</div>
+        <span class="badge-value">$89,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Department of Treasury / IRS</span>
+        <span class="card-meta-item"><strong>Incumbent:</strong> CGI Federal</span>
+        <span class="card-meta-item"><strong>Duration:</strong> 7</span>
+      </div>
+      <div style="margin-bottom: 12px;"><span style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A;">55 - MONITOR</span></div>
+      <div class="callout callout-amber">
+        <div class="callout-label">&#9888; Recompete Signal</div>
+        Second bridge extension in 12 months. IRS acquisition division is understaffed post-DOGE hiring freeze. The recompete WILL happen but is slipping right. CGI has been on this for 7 years and the GAO flagged timeline concerns. There&#x27;s real vulnerability here.
+      </div>
+      <div class="callout callout-blue">
+        <div class="callout-label">&#9654; What To Do</div>
+        Long capture timeline. Use this bridge period to build IRS relationships. Attend the IRS Industry Day for Enterprise Modernization (expected June 2026). If you have Oracle Financial Services or SAP S/4HANA experience in federal environments, you&#x27;re relevant.
+      </div>
+    </div>
+
+    <div class="card card-amber">
+      <div class="card-header">
+        <div class="card-title">Fort Liberty BOS Contract</div>
+        <span class="badge-value">$412,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> U.S. Army Installation Management Command (IMCOM)</span>
+        <span class="card-meta-item"><strong>Incumbent:</strong> Vectrus (now V2X)</span>
+        <span class="card-meta-item"><strong>Duration:</strong> 8</span>
+      </div>
+      <div style="margin-bottom: 12px;"><span style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 3px; background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A;">60 - MONITOR</span></div>
+      <div class="callout callout-amber">
+        <div class="callout-label">&#9888; Recompete Signal</div>
+        IMCOM consolidating 4 installation support contracts into a single enterprise BOS vehicle. The bridge is long (9 months) because the new structure is fundamentally different from the predecessor. V2X has incumbency but the scope expansion to multi-installation means they need partners they didn&#x27;t need before.
+      </div>
+      <div class="callout callout-blue">
+        <div class="callout-label">&#9654; What To Do</div>
+        If you provide facility management, environmental services, or logistics support, contact V2X about subcontracting on the consolidated vehicle. IMCOM is also considering a small business set-aside for a separate facilities maintenance component -- watch SAM.gov for NAICS 561210 from IMCOM.
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-04">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Set-Aside Spotlight</span>
+    </div>
+    <div class="section-subtitle">Small business goals, agency performance gaps, and upcoming set-aside opportunities</div>
+    <div class="setaside-stats-bar">
+      <div class="setaside-stat">
+        <div class="setaside-stat-num">23.0%</div>
+        <div class="setaside-stat-label">SB Goal</div>
+      </div>
+      <div class="setaside-stat">
+        <div class="setaside-stat-num">23.1%</div>
+        <div class="setaside-stat-label">SB Actual</div>
+      </div>
+      <div class="setaside-stat">
+        <div class="setaside-stat-num">FY26 (through Q2)</div>
+        <div class="setaside-stat-label">Fiscal Year</div>
+      </div>
+    </div>
+    <div style="font-size: 13px; color: var(--gray-600); margin-bottom: 16px; line-height: 1.6;">Barely meeting goal. Individual category shortfalls below.</div>
+    <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--purple); margin-bottom: 10px;">Agencies Below Target</div>
+
+    <div class="card card-purple">
+      <div class="card-header">
+        <div class="card-title">Department of Veterans Affairs</div>
+        <span class="badge badge-set-aside">HUBZone</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Goal:</strong> 3.0%</span>
+        <span class="card-meta-item"><strong>Actual:</strong> 1.8%</span>
+        <span class="card-meta-item"><strong style="color: var(--red);">Gap:</strong> <span style="color: var(--red); font-weight: 700;">-1.2%</span></span>
+        <span class="card-meta-item"><strong>Dollar Gap:</strong> $340M</span>
+      </div>
+      <div class="card-body">VA needs to award $340M more to HUBZone firms by September 30. If you&#x27;re HUBZone certified with health IT or facilities management experience, target VA&#x27;s OSDBU office immediately. They will be actively seeking HUBZone firms for Q3-Q4 set-asides.</div>
+    </div>
+
+    <div class="card card-purple">
+      <div class="card-header">
+        <div class="card-title">Department of Defense (overall)</div>
+        <span class="badge badge-set-aside">WOSB</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Goal:</strong> 5.0%</span>
+        <span class="card-meta-item"><strong>Actual:</strong> 3.9%</span>
+        <span class="card-meta-item"><strong style="color: var(--red);">Gap:</strong> <span style="color: var(--red); font-weight: 700;">-1.1%</span></span>
+        <span class="card-meta-item"><strong>Dollar Gap:</strong> $4.2B</span>
+      </div>
+      <div class="card-body">DoD&#x27;s WOSB shortfall is massive -- $4.2B. Army and Navy are the worst performers. WOSB-certified firms in IT services, professional services, and logistics should target Army MICC and NAVSEA contracting offices. Expect a wave of WOSB set-asides in Q3.</div>
+    </div>
+
+    <div class="card card-purple">
+      <div class="card-header">
+        <div class="card-title">Department of Energy</div>
+        <span class="badge badge-set-aside">SDB (Small Disadvantaged Business)</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Goal:</strong> 15.0%</span>
+        <span class="card-meta-item"><strong>Actual:</strong> 11.2%</span>
+        <span class="card-meta-item"><strong style="color: var(--red);">Gap:</strong> <span style="color: var(--red); font-weight: 700;">-3.8%</span></span>
+        <span class="card-meta-item"><strong>Dollar Gap:</strong> $890M</span>
+      </div>
+      <div class="card-body">DOE is furthest behind of any major agency in SDB contracting. Their national labs drive most spending and historically underperform on SB goals. 8(a) firms with STEM or environmental remediation capabilities should target DOE&#x27;s Office of Science and NNSA.</div>
+    </div>
+
+    <div style="margin-top: 8px;">
+      <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--purple); margin-bottom: 10px;">Upcoming Set-Aside Opportunities</div>
+      <div style="border: 1px solid var(--purple-border); border-radius: var(--radius); overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+          <thead>
+            <tr style="background: var(--purple-dim);">
+              <th style="text-align: left; padding: 10px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5B21B6; border-bottom: 1px solid var(--purple-border);">Opportunity</th>
+              <th style="text-align: left; padding: 10px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5B21B6; border-bottom: 1px solid var(--purple-border);">Agency</th>
+              <th style="text-align: right; padding: 10px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5B21B6; border-bottom: 1px solid var(--purple-border);">Value</th>
+              <th style="text-align: left; padding: 10px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #5B21B6; border-bottom: 1px solid var(--purple-border);">Set-Aside</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--gray-100);">
+              <td style="padding: 8px 12px; color: var(--navy); font-weight: 600;"></td>
+              <td style="padding: 8px 12px; color: var(--gray-600);">VA</td>
+              <td style="padding: 8px 12px; text-align: right; font-family: var(--font-mono); font-weight: 600; color: var(--navy);"></td>
+              <td style="padding: 8px 12px;"><span class="badge badge-set-aside">SDVOSB</span></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--gray-100);">
+              <td style="padding: 8px 12px; color: var(--navy); font-weight: 600;"></td>
+              <td style="padding: 8px 12px; color: var(--gray-600);">VA</td>
+              <td style="padding: 8px 12px; text-align: right; font-family: var(--font-mono); font-weight: 600; color: var(--navy);"></td>
+              <td style="padding: 8px 12px;"><span class="badge badge-set-aside">HUBZone</span></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--gray-100);">
+              <td style="padding: 8px 12px; color: var(--navy); font-weight: 600;"></td>
+              <td style="padding: 8px 12px; color: var(--gray-600);">Army PEO EIS</td>
+              <td style="padding: 8px 12px; text-align: right; font-family: var(--font-mono); font-weight: 600; color: var(--navy);"></td>
+              <td style="padding: 8px 12px;"><span class="badge badge-set-aside">WOSB</span></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--gray-100);">
+              <td style="padding: 8px 12px; color: var(--navy); font-weight: 600;"></td>
+              <td style="padding: 8px 12px; color: var(--gray-600);">DOE / NNSA</td>
+              <td style="padding: 8px 12px; text-align: right; font-family: var(--font-mono); font-weight: 600; color: var(--navy);"></td>
+              <td style="padding: 8px 12px;"><span class="badge badge-set-aside">8(a)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-05">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Recompete Alerts</span>
+    </div>
+    <div class="section-subtitle">Contracts expiring within 180 days -- protect your revenue or start your capture</div>
+
+    <div class="card card-red">
+      <div class="card-header">
+        <div class="card-title">Enterprise IT Support Services (EITSS-III)</div>
+        <span class="badge-value">$487,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Defense Information Systems Agency (DISA)</span>
+        <span class="card-meta-item"><strong>Incumbent:</strong> Leidos</span>
+        <span class="card-meta-item"><strong>NAICS:</strong> 541512</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;">
+        <span class="badge badge-days">104d remaining</span>
+        <span class="badge badge-winnability-medium">Winnability: MEDIUM</span>
+        <span class="badge badge-fno">Full &amp; Open</span>
+      </div>
+      <div class="card-body">Scope expanding to include zero-trust implementation. Estimated new ceiling $650M. DISA is consolidating 3 legacy support contracts into this single vehicle.</div>
+      <div style="font-family: var(--font-mono); font-size: 11px; color: var(--blue); margin-bottom: 12px;">&#9654; Draft RFP Expected Apr 2026</div>
+      <details>
+        <summary>Winnability Analysis</summary>
+        <ul class="factors">
+          <li>Leidos has held this since 2018 -- 8 years of incumbency creates some fatigue, but they&#x27;ve performed well (CPARS: Exceptional/Very Good)</li>
+          <li>Zero-trust expansion opens a lane for firms with strong Zscaler/Palo Alto Prisma implementation credentials</li>
+          <li>DISA wants contractor consolidation -- firms that can show they&#x27;ll reduce total vendor count will score higher on management approach</li>
+          <li>Price competition will be fierce. Leidos will sharpen pencils to defend. Your price-to-win needs to be 8-12% below current run rate</li>
+          <li>Key discriminator: automated ATO pipeline. DISA&#x27;s new CIO is obsessed with speeding up authority-to-operate timelines</li>
+        </ul>
+      </details>
+
+      <div class="callout callout-amber" style="margin-top: 8px;">
+        <div class="callout-label">&#9878; Protest History</div>
+        EITSS-II was protested by SAIC in 2018 (denied). No sustained protests on this line. DISA has clean procurement record on this vehicle.
+      </div>
+      <details>
+        <summary>Who Should Pursue This</summary>
+        <ul class="pursue-list">
+          <li>Large businesses with DISA past performance and existing zero-trust implementations at scale (10K+ endpoints)</li>
+          <li>Mid-tier firms should team -- lead with zero-trust niche expertise and backfill traditional IT support with proven subs</li>
+          <li>If you don&#x27;t already have a relationship with DISA J6, you&#x27;re too late for prime. Position as sub to Leidos, SAIC, or Peraton.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card card-red">
+      <div class="card-header">
+        <div class="card-title">Network Operations &amp; Cyber Defense (NOCDef)</div>
+        <span class="badge-value">$312,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> U.S. Cyber Command (CYBERCOM)</span>
+        <span class="card-meta-item"><strong>Incumbent:</strong> Booz Allen Hamilton</span>
+        <span class="card-meta-item"><strong>NAICS:</strong> 541519</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;">
+        <span class="badge badge-days">119d remaining</span>
+        <span class="badge badge-winnability-high">Winnability: HIGH</span>
+        <span class="badge badge-fno">Full &amp; Open</span>
+      </div>
+      <div class="card-body">CYBERCOM restructuring into 3 task areas: (1) Defensive Cyber Operations, (2) Threat Intelligence Fusion, (3) Hunt Forward support. Multiple awards likely -- one per task area. This is a MAJOR shaping opportunity.</div>
+      <div style="font-family: var(--font-mono); font-size: 11px; color: var(--blue); margin-bottom: 12px;">&#9654; Sources Sought Published</div>
+      <details>
+        <summary>Winnability Analysis</summary>
+        <ul class="factors">
+          <li>Multiple-award structure means you don&#x27;t have to beat BAH head-to-head -- you can win a task area where they&#x27;re weakest</li>
+          <li>Task Area 2 (Threat Intelligence Fusion) is wide open -- BAH&#x27;s strength is ops, not intel. CrowdStrike, Mandiant/Google, and Recorded Future subs are gold here</li>
+          <li>Task Area 3 (Hunt Forward) requires deployed experience. Only 4-5 firms in the country have credible Hunt Forward past performance</li>
+          <li>CYBERCOM is actively seeking new entrants. SIGINT from industry day: &#x27;We don&#x27;t want a single throat to choke anymore&#x27;</li>
+          <li>Sources Sought responses due April 10 -- if you haven&#x27;t started your response, drop everything and write it this week</li>
+        </ul>
+      </details>
+
+      <div class="callout callout-amber" style="margin-top: 8px;">
+        <div class="callout-label">&#9878; Protest History</div>
+        No protests on current contract. However, CYBERCOM&#x27;s last 3 major awards have ALL been protested. Budget a 90-day protest delay into your staffing plan.
+      </div>
+      <details>
+        <summary>Who Should Pursue This</summary>
+        <ul class="pursue-list">
+          <li>Task Area 1: Large cyber firms with SOC/NOC operations at scale -- SAIC, Leidos, ManTech, Peraton</li>
+          <li>Task Area 2: Threat intel specialists -- Booz (incumbent advantage), but also CACI, ECS, and commercial threat intel firms with federal arms</li>
+          <li>Task Area 3: Only pursue if you have actual Hunt Forward or CPT deployment experience. CYBERCOM will verify. Don&#x27;t waste your B&amp;P.</li>
+          <li>Small businesses: CYBERCOM is considering an SDVOSB set-aside for a separate Hunt Forward support TO. Watch SAM.gov for NAICS 541519 from CYBERCOM.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card card-red">
+      <div class="card-header">
+        <div class="card-title">Health IT Modernization Support</div>
+        <span class="badge-value">$94,500,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Defense Health Agency (DHA)</span>
+        <span class="card-meta-item"><strong>Incumbent:</strong> CACI International</span>
+        <span class="card-meta-item"><strong>NAICS:</strong> 541511</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;">
+        <span class="badge badge-days-medium">166d remaining</span>
+        <span class="badge badge-winnability-high">Winnability: HIGH</span>
+        <span class="badge badge-set-aside">Small Business Set-Aside</span>
+      </div>
+      <div class="card-body">MHS GENESIS rollout delays may extend incumbent PoP by 6-12 months via bridge contract. BUT -- the recompete will still happen. DHA is under Congressional pressure to compete this. CMMC Level 2 will be a go/no-go requirement.</div>
+      <div style="font-family: var(--font-mono); font-size: 11px; color: var(--blue); margin-bottom: 12px;">&#9654; Market Research Phase</div>
+      <details>
+        <summary>Winnability Analysis</summary>
+        <ul class="factors">
+          <li>Small business set-aside eliminates the primes -- CACI will have to compete through an SB affiliate or lose this</li>
+          <li>CACI&#x27;s SB affiliate (Six3 Systems) is the likely incumbent vehicle, but Six3 has grown past SB size standards for 541511 ($34M). Watch for a size protest opportunity.</li>
+          <li>MHS GENESIS experience is the #1 discriminator. If you&#x27;ve done Cerner/Oracle Health implementations at military treatment facilities, you&#x27;re in the running</li>
+          <li>DHA is frustrated with timeline slippage -- position your proposal around schedule discipline and earned value management rigor</li>
+          <li>CMMC Level 2 certification is a hard gate. Start your assessment NOW if you don&#x27;t have it. C3PAO wait times are 4-6 months.</li>
+        </ul>
+      </details>
+
+      <div class="callout callout-amber" style="margin-top: 8px;">
+        <div class="callout-label">&#9878; Protest History</div>
+        Size protest filed on CACI&#x27;s SB status during initial award (2021). Dismissed on procedural grounds but the underlying size question remains live.
+      </div>
+      <details>
+        <summary>Who Should Pursue This</summary>
+        <ul class="pursue-list">
+          <li>Small businesses with NAICS 541511 under $34M revenue AND Oracle Health/Cerner implementation experience</li>
+          <li>SDVOSB firms with health IT credentials -- DHA may add an SDVOSB evaluation preference</li>
+          <li>8(a) firms in the health IT space should contact DHA&#x27;s OSBP about a potential sole-source bridge if they have relevant past performance</li>
+          <li>If you&#x27;re a large business: identify your SB teaming partner NOW and start the mentor-protege paperwork</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card card-red">
+      <div class="card-header">
+        <div class="card-title">Logistics Data Analytics Platform (LDAP)</div>
+        <span class="badge-value">$67,200,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Defense Logistics Agency (DLA)</span>
+        <span class="card-meta-item"><strong>Incumbent:</strong> Palantir Technologies</span>
+        <span class="card-meta-item"><strong>NAICS:</strong> 518210</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;">
+        <span class="badge badge-days-medium">181d remaining</span>
+        <span class="badge badge-winnability-medium">Winnability: MEDIUM</span>
+        <span class="badge badge-fno">Full &amp; Open</span>
+      </div>
+      <div class="card-body">DLA evaluating move to commercial SaaS. The real story: DLA&#x27;s Deputy Director of Logistics Operations told the NDIA conference last month that &#x27;we&#x27;re paying custom platform prices for what should be a commercial capability.&#x27; Translation: Palantir&#x27;s pricing model is on the chopping block.</div>
+      <div style="font-family: var(--font-mono); font-size: 11px; color: var(--blue); margin-bottom: 12px;">&#9654; Pre-Solicitation Notice Expected May 2026</div>
+      <details>
+        <summary>Winnability Analysis</summary>
+        <ul class="factors">
+          <li>DLA is signaling they want a commercial solution, not a bespoke platform. This favors Snowflake/Databricks-based approaches over Palantir&#x27;s Foundry</li>
+          <li>Palantir&#x27;s lock-in is real but not insurmountable -- DLA has been quietly building data exports into their contract mods for the past year. They&#x27;re planning the exit.</li>
+          <li>Price will be the deciding factor. Palantir&#x27;s per-seat licensing is 3-4x commercial rates. Come in with a consumption-based model.</li>
+          <li>The twist: DLA also wants predictive logistics (AI/ML for demand forecasting). Pure SaaS firms need an AI story.</li>
+          <li>Palantir will protest if they lose. Budget 120 days and have a bridge plan ready.</li>
+        </ul>
+      </details>
+
+      <div class="callout callout-amber" style="margin-top: 8px;">
+        <div class="callout-label">&#9878; Protest History</div>
+        Palantir has protested 6 federal contracts in the last 3 years (won 2, denied 4). They WILL protest. Factor this into your timeline.
+      </div>
+      <details>
+        <summary>Who Should Pursue This</summary>
+        <ul class="pursue-list">
+          <li>Cloud-native analytics firms (Databricks, Snowflake partners) with FedRAMP High authorization</li>
+          <li>Mid-tier firms like ECS, Unison, or Definitive Logic that can integrate commercial platforms with DLA&#x27;s legacy ERP (SAP-based)</li>
+          <li>Palantir competitors with defense logistics past performance -- C3.ai, Dataiku with federal arms</li>
+          <li>SIs with strong DLA relationships: Accenture Federal, Deloitte, IBM. They can wrap commercial tech in a managed service.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-06">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">New Contract Awards</span>
+    </div>
+    <div class="section-subtitle">Awarded this week -- competitive intelligence for your pipeline</div>
+
+    <div class="card card-green">
+      <div class="card-header">
+        <div class="card-title">Joint All-Domain Command &amp; Control (JADC2) Integration</div>
+        <span class="badge-value">$1,240,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> U.S. Army PEO C3T</span>
+        <span class="card-meta-item"><strong>Awardee:</strong> General Dynamics IT</span>
+        <span class="card-meta-item"><strong>PoP:</strong> 5 years (base + 4 options)</span>
+      </div>
+      <div class="card-meta" style="margin-top: -4px;">
+        <span class="card-meta-item"><strong>Also Competed:</strong> Leidos, L3Harris, Northrop Grumman</span>
+      </div>
+      <div class="card-body">Largest C3 integration award this fiscal year. GDIT beat Leidos on technical approach score despite Leidos being 11% lower on price.</div>
+
+      <div class="callout callout-green">
+        <div class="callout-label">&#10003; Why They Won</div>
+        GDIT&#x27;s winning move was their &#x27;digital twin&#x27; integration testing environment -- they proposed a virtual JADC2 testbed that lets the Army validate cross-domain data flows without live exercises. This cut the estimated T&amp;E timeline by 14 months. They also brought Anduril as a key sub for mesh networking, which signaled commercial tech integration the Army wanted to see. Leidos lost on innovation, not price.
+      </div>
+
+      <div class="callout callout-red">
+        <div class="callout-label">&#10007; If You Lost</div>
+        Leidos should protest on the best-value tradeoff rationale -- 11% price advantage dismissed is aggressive and GAO may take a hard look. L3Harris should pivot to the sensor-to-shooter sub-tier; GDIT will need RF expertise they don&#x27;t have in-house. Northrop should focus on the Space-based JADC2 node that PEO Space is expected to solicit in Q4 FY26.
+      </div>
+
+      <div class="callout callout-blue">
+        <div class="callout-label">&#9670; Market Signal</div>
+        The Army is willing to pay more for speed and innovation in C3. Traditional &#x27;safe&#x27; proposals from incumbent primes are losing to firms that bring commercial tech partners and accelerated delivery models. If you&#x27;re still proposing waterfall integration approaches for C2 programs, you&#x27;re going to keep losing.
+      </div>
+    </div>
+
+    <div class="card card-green">
+      <div class="card-header">
+        <div class="card-title">Cloud Migration &amp; Managed Services (CMMS)</div>
+        <span class="badge-value">$389,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Department of Veterans Affairs (VA)</span>
+        <span class="card-meta-item"><strong>Awardee:</strong> Accenture Federal Services</span>
+        <span class="card-meta-item"><strong>PoP:</strong> 3 years base + 2 option years</span>
+      </div>
+      <div class="card-meta" style="margin-top: -4px;">
+        <span class="card-meta-item"><strong>Also Competed:</strong> Deloitte, IBM Federal</span>
+      </div>
+      <div class="card-body">VA&#x27;s largest single cloud contract. Multi-cloud strategy (AWS + Azure). Accenture&#x27;s proposal included a FinOps practice that projected $47M in cloud cost optimization over the PoP.</div>
+
+      <div class="callout callout-green">
+        <div class="callout-label">&#10003; Why They Won</div>
+        Accenture Federal won on two fronts: (1) their embedded FinOps team that guaranteed measurable cloud cost reduction -- VA has been burned by cloud migrations that doubled their hosting costs, and (2) a multi-cloud architecture that avoids vendor lock-in (VA&#x27;s CTO publicly stated this was a priority after the C2E sole-source controversy). Deloitte&#x27;s proposal was AWS-only. IBM pushed hybrid cloud with on-prem Z-series -- the VA didn&#x27;t want more hardware.
+      </div>
+
+      <div class="callout callout-red">
+        <div class="callout-label">&#10007; If You Lost</div>
+        Deloitte should target the VA&#x27;s application modernization layer -- CMMS is infrastructure, but the 200+ legacy VistA applications still need to be refactored. That&#x27;s a separate $500M+ opportunity in FY27. IBM Federal should pivot to the VA&#x27;s AI/ML initiative for claims processing where their Watson Health lineage still carries weight.
+      </div>
+
+      <div class="callout callout-blue">
+        <div class="callout-label">&#9670; Market Signal</div>
+        FinOps is no longer a nice-to-have -- it&#x27;s becoming an evaluation factor. Agencies that got burned by &#x27;lift and shift&#x27; cloud migrations in 2022-2024 are now demanding cost governance as a core deliverable. If your cloud practice doesn&#x27;t include a FinOps capability with certified practitioners, build it before your next proposal.
+      </div>
+    </div>
+
+    <div class="card card-green">
+      <div class="card-header">
+        <div class="card-title">AI/ML Training Data Curation</div>
+        <span class="badge-value">$78,500,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> National Geospatial-Intelligence Agency (NGA)</span>
+        <span class="card-meta-item"><strong>Awardee:</strong> Scale AI</span>
+        <span class="card-meta-item"><strong>PoP:</strong> 2 years base + 1 option</span>
+      </div>
+      <div class="card-meta" style="margin-top: -4px;">
+        <span class="card-meta-item"><strong>Also Competed:</strong> Anthropic, Palantir Technologies</span>
+      </div>
+      <div class="card-body">First major NGA award to a pure-play AI data company. Scale AI&#x27;s federal division (Scale for Government) has grown from 12 to 180 people in 18 months.</div>
+
+      <div class="callout callout-green">
+        <div class="callout-label">&#10003; Why They Won</div>
+        Scale AI won because NGA realized their bottleneck isn&#x27;t algorithms -- it&#x27;s labeled training data at scale. Scale&#x27;s existing commercial relationships with Meta and OpenAI gave them a data annotation workforce (100K+ contractors globally) that no defense prime could match. They also proposed a &#x27;data flywheel&#x27; where model performance improvements automatically generate better training labels for the next iteration. Palantir proposed Foundry-based labeling but couldn&#x27;t match throughput. Anthropic&#x27;s proposal was technically strong but they lacked the cleared facility infrastructure.
+      </div>
+
+      <div class="callout callout-red">
+        <div class="callout-label">&#10007; If You Lost</div>
+        Palantir should focus on the downstream deployment layer -- Scale curates the data, but someone needs to deploy the trained models into NGA&#x27;s classified workflows. That integration work is Palantir&#x27;s sweet spot. Anthropic should invest in SCIF infrastructure and cleared personnel if they&#x27;re serious about IC work; their technical approach scored highest but facility/clearance gaps killed them. Traditional defense primes: this is your warning shot. AI-native firms are taking market share in the IC. Acquire or partner.
+      </div>
+
+      <div class="callout callout-blue">
+        <div class="callout-label">&#9670; Market Signal</div>
+        The IC is unbundling the AI value chain. Data curation, model training, model evaluation, and deployment are being procured separately. This creates entry points for specialist firms at each layer. The days of a single prime owning the entire AI pipeline are ending. Position yourself in one layer and own it.
+      </div>
+    </div>
+
+    <div class="card card-green">
+      <div class="card-header">
+        <div class="card-title">Satellite Ground Systems O&amp;M</div>
+        <span class="badge-value">$215,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Space Systems Command (SSC)</span>
+        <span class="card-meta-item"><strong>Awardee:</strong> Raytheon Technologies</span>
+        <span class="card-meta-item"><strong>PoP:</strong> 5 years</span>
+      </div>
+      <div class="card-meta" style="margin-top: -4px;">
+        <span class="card-meta-item"><strong>Also Competed:</strong> Lockheed Martin, Ball Aerospace</span>
+      </div>
+      <div class="card-body">Includes classified resilient comms upgrade. Raytheon leveraged commercial LEO experience from their Starshield work with SpaceX.</div>
+
+      <div class="callout callout-green">
+        <div class="callout-label">&#10003; Why They Won</div>
+        Raytheon&#x27;s differentiator was hybrid ground architecture -- they proposed commercial cloud-based ground processing (via AWS Ground Station) for unclassified data, with seamless handoff to classified on-prem processing. This cut estimated ground infrastructure costs by 35%. Their SpaceX Starshield collaboration gave them credible commercial LEO integration experience that LockMart and Ball couldn&#x27;t match. Ball Aerospace was strong on the sensor side but weak on the network resilience requirements.
+      </div>
+
+      <div class="callout callout-red">
+        <div class="callout-label">&#10007; If You Lost</div>
+        Lockheed Martin should leverage their GPS OCX experience to target the follow-on PNT ground modernization expected in FY27. Ball Aerospace should position as a sub to Raytheon for the sensor calibration task area -- Raytheon will need their expertise. Both should note: SSC is moving toward commercial-first ground architectures. Invest in commercial cloud ground station partnerships.
+      </div>
+
+      <div class="callout callout-blue">
+        <div class="callout-label">&#9670; Market Signal</div>
+        Space ground systems are going commercial-hybrid. SSC&#x27;s acquisition strategy explicitly calls for &#x27;commercial where possible, custom where necessary.&#x27; Firms still proposing fully bespoke ground architectures are at a structural disadvantage. The commercial space boom (SpaceX, Amazon Kuiper) is creating a talent and technology pipeline that military-only firms can&#x27;t access.
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-07">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <span class="section-title">Option Year Exercises</span>
+    </div>
+    <div class="section-subtitle">Incumbents extending -- read the signals for recompete timing</div>
+
+    <div class="card card-blue">
+      <div class="card-header">
+        <div class="card-title">Cybersecurity Maturity Model Certification (CMMC) Assessor Support</div>
+        <span class="badge-value">$42,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> DoD CIO</span>
+        <span class="card-meta-item"><strong>Contractor:</strong> ManTech International</span>
+        <span class="card-meta-item"><strong>Option Year 2 of 4</strong></span>
+      </div>
+      <div class="card-body">CMMC 2.0 rollout driving 3x assessment volume. ManTech adding 200 assessors. Option exercised 45 days early -- strong signal of government satisfaction.</div>
+
+      <div class="callout callout-blue">
+        <div class="callout-label">&#128161; Recompete Signal</div>
+        Two option years remaining means recompete is 2+ years out. No urgency to capture. BUT: the CMMC ecosystem is exploding and ManTech is building an assessor army that will be hard to displace. If you want to compete for CMMC-III, start building your assessor bench NOW -- it takes 12-18 months to certify a CMMC assessor.
+      </div>
+      <details>
+        <summary>Who Should Watch This</summary>
+        <ul class="pursue-list">
+          <li>Cybersecurity firms building CMMC assessment practices (Coalfire, Schellman, A-LIGN)</li>
+          <li>MSPs serving the Defense Industrial Base -- CMMC is creating massive demand for compliance-as-a-service</li>
+          <li>Any firm planning to bid on DoD contracts after 2027 -- CMMC Level 2 will be table stakes. This is not optional.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card card-blue">
+      <div class="card-header">
+        <div class="card-title">Financial Systems Modernization (FSM)</div>
+        <span class="badge-value">$31,800,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Department of Treasury</span>
+        <span class="card-meta-item"><strong>Contractor:</strong> CGI Federal</span>
+        <span class="card-meta-item"><strong>Option Year 3 of 5</strong></span>
+      </div>
+      <div class="card-body">Exercised despite GAO audit findings on migration timeline. Treasury&#x27;s CFO office defended CGI&#x27;s performance in Congressional testimony -- rare and notable public endorsement.</div>
+
+      <div class="callout callout-blue">
+        <div class="callout-label">&#128161; Recompete Signal</div>
+        Two option years left, but Treasury has signaled they may not exercise Option Year 5 and instead accelerate recompete to align with the Federal Financial Management Improvement Act milestones. Smart capture managers should start shaping in late FY27, not FY28. The GAO findings create an opening -- Treasury may want fresh eyes even if they&#x27;re publicly defending CGI.
+      </div>
+      <details>
+        <summary>Who Should Watch This</summary>
+        <ul class="pursue-list">
+          <li>SAP and Oracle federal SIs -- Treasury&#x27;s target state is a unified ERP, and the current system is a patchwork</li>
+          <li>Mid-tier firms with Treasury/IRS past performance (Guidehouse, Maximus, Unison)</li>
+          <li>DOGE watchers: Treasury is one of the &#x27;efficiency&#x27; targets. If DOGE pushes shared financial services, this contract scope could expand dramatically or be absorbed into a cross-agency vehicle.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="card card-blue">
+      <div class="card-header">
+        <div class="card-title">Enterprise Cloud Hosting (ECH)</div>
+        <span class="badge-value">$187,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Agency:</strong> Intelligence Community (IC)</span>
+        <span class="card-meta-item"><strong>Contractor:</strong> Amazon Web Services (AWS)</span>
+        <span class="card-meta-item"><strong>Option Year 4 of 5 (FINAL)</strong></span>
+      </div>
+      <div class="card-body">Final option year. IC already exploring multi-cloud follow-on. Microsoft Azure Government and Google Cloud for Defense both briefed the IC CIO last month. Oracle also positioning via their DoD JWCC win.</div>
+
+      <div class="callout callout-blue">
+        <div class="callout-label">&#128161; Recompete Signal</div>
+        THIS IS THE BIG ONE. Final option year means the follow-on RFP should drop within 12 months. The IC&#x27;s multi-cloud pivot is real -- they&#x27;ve been building abstraction layers on top of C2S for two years specifically to reduce AWS lock-in. The follow-on will almost certainly be multi-award. AWS will retain the largest share but Microsoft and Google will get meaningful work. Estimated follow-on value: $1.5-2B over 5 years.
+      </div>
+      <details>
+        <summary>Who Should Watch This</summary>
+        <ul class="pursue-list">
+          <li>Microsoft Azure Government team -- this is their best shot at cracking the IC cloud market. They&#x27;ve invested heavily in air-gapped Azure for TS/SCI.</li>
+          <li>Google Cloud for Defense -- their Distributed Cloud offering is purpose-built for classified environments. They need this win for credibility.</li>
+          <li>Cloud SIs (Accenture Federal, Deloitte, SAIC) -- the multi-cloud management layer is where the services money will be. CSPs will fight over IaaS; you should fight over the integration and migration work.</li>
+          <li>Any firm with IL6/TS cloud experience -- the IC will need migration support to move workloads between CSPs. This is a $200M+ services opportunity adjacent to the main cloud contract.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-08">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <span class="section-title">Significant Funding Actions</span>
+    </div>
+    <div class="section-subtitle">Budget movements, modifications, and ceiling increases -- follow the money</div>
+
+    <div class="card card-purple">
+      <div class="card-header">
+        <div class="card-title">Defense Enclave Services (DES)</div>
+        <span class="badge-value">$450,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Type:</strong> Ceiling Increase</span>
+        <span class="card-meta-item"><strong>Agency:</strong> DISA</span>
+        <span class="card-meta-item"><strong>Contractor:</strong> SAIC</span>
+        <span class="card-meta-item"><strong>New Ceiling:</strong> $7,250,000,000</span>
+
+      </div>
+      <div class="card-body">Fourth ceiling increase in 18 months. DISA consolidation accelerating faster than planned. SAIC&#x27;s DES now absorbs IT services from 22 defense agencies. This is becoming the single largest IT services contract in the federal government.</div>
+
+      <div class="callout callout-navy">
+        <div class="callout-label">&#128270; Intel Note</div>
+        DES ceiling increases are the clearest signal that DOGE-style consolidation is actually working in DoD. DISA is eating other agencies&#x27; IT budgets. If you&#x27;re not on DES as a sub, you&#x27;re locked out of a growing $7.25B market. SAIC is actively seeking subs for cloud migration, identity management, and endpoint security. Contact their DES program office in Fort Meade.
+      </div>
+    </div>
+
+    <div class="card card-purple">
+      <div class="card-header">
+        <div class="card-title">Alliant 2 GWAC</div>
+        <span class="badge-value">$128,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Type:</strong> New Task Order</span>
+        <span class="card-meta-item"><strong>Agency:</strong> GSA / FBI</span>
+        <span class="card-meta-item"><strong>Contractor:</strong> Perspecta (now Peraton)</span>
+
+      </div>
+      <div class="card-body">FBI biometric identity services. Sole-source justification cited urgency of IAFIS modernization and Peraton&#x27;s unique position as legacy system maintainer.</div>
+
+      <div class="callout callout-navy">
+        <div class="callout-label">&#128270; Intel Note</div>
+        Sole-source on Alliant 2 is legally defensible but politically risky in the current climate. DOGE has flagged sole-source justifications over $50M for review. This may get challenged -- not through GAO protest but through DOGE audit. Peraton should expect scrutiny. Competitors (IDEMIA, NEC) should monitor for any break in sole-source justification -- a competitive follow-on would be worth $300M+.
+      </div>
+    </div>
+
+    <div class="card card-purple">
+      <div class="card-header">
+        <div class="card-title">Next Generation Enterprise Network (NGEN-R)</div>
+        <span class="badge-value">$92,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Type:</strong> Incremental Funding</span>
+        <span class="card-meta-item"><strong>Agency:</strong> Navy / PEO Digital</span>
+        <span class="card-meta-item"><strong>Contractor:</strong> Leidos</span>
+        <span class="card-meta-item"><strong>New Ceiling:</strong> $8,400,000,000</span>
+
+      </div>
+      <div class="card-body">Funding for FY26 Q2 operations. Network modernization on schedule. Leidos has successfully migrated 340K users to the new architecture.</div>
+
+      <div class="callout callout-navy">
+        <div class="callout-label">&#128270; Intel Note</div>
+        NGEN-R is Leidos&#x27;s crown jewel and it&#x27;s performing well. Don&#x27;t waste capture dollars trying to unseat them on the recompete (2029). Instead, look at the NGEN-R ecosystem: Leidos needs subs for SD-WAN deployment (Cisco/Aruba), SASE implementation, and Navy tactical edge networking. The sub-tier opportunities are $50-100M each and far more winnable than the prime contract.
+      </div>
+    </div>
+
+    <div class="card card-purple">
+      <div class="card-header">
+        <div class="card-title">CIO-SP4</div>
+        <span class="badge-value">$2,000,000,000</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Type:</strong> Ceiling Increase</span>
+        <span class="card-meta-item"><strong>Agency:</strong> NIH NITAAC</span>
+        <span class="card-meta-item"><strong>Contractor:</strong> Multiple Award</span>
+        <span class="card-meta-item"><strong>New Ceiling:</strong> $52,000,000,000</span>
+
+      </div>
+      <div class="card-body">CIO-SP4 ceiling raised to $52B to accommodate surge in health IT task orders. CIO-SP4 is now the largest health IT GWAC by ceiling value, surpassing CIO-SP3&#x27;s peak.</div>
+
+      <div class="callout callout-navy">
+        <div class="callout-label">&#128270; Intel Note</div>
+        If you&#x27;re on CIO-SP4, you should be staffing a dedicated task order response team. The velocity of TOs is increasing -- NITAAC issued 47 new TOs in February alone (up from 28/month average in FY25). The sweet spot is $5-25M health data analytics and interoperability TOs from HHS, VA, and CDC. Firms NOT on CIO-SP4: look at subcontracting to prime holders or pursue the 8(a) STARS III vehicle as an alternate path to the same agency buyers.
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-09">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <span class="section-title">Protest Report</span>
+    </div>
+    <div class="section-subtitle">GAO protest decisions and what they mean for your capture strategy</div>
+    <div class="protest-stats-bar">
+      <div class="protest-stat">
+        <div class="protest-stat-num">47</div>
+        <div class="protest-stat-label">filed</div>
+      </div>
+      <div class="protest-stat">
+        <div class="protest-stat-num">31</div>
+        <div class="protest-stat-label">decided</div>
+      </div>
+      <div class="protest-stat">
+        <div class="protest-stat-num">5</div>
+        <div class="protest-stat-label">sustained</div>
+      </div>
+      <div class="protest-stat">
+        <div class="protest-stat-num">18</div>
+        <div class="protest-stat-label">denied</div>
+      </div>
+      <div class="protest-stat">
+        <div class="protest-stat-num">16.1%</div>
+        <div class="protest-stat-label">sustain rate</div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left: 4px solid var(--navy-light);">
+      <div class="card-header">
+        <div class="card-title">Matter of Raytheon Intelligence &amp; Space, B-422891</div>
+        <span class="protest-outcome protest-sustained">SUSTAINED</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Protester:</strong> Raytheon Intelligence &amp; Space</span>
+        <span class="card-meta-item"><strong>Agency:</strong> Space Systems Command</span>
+        <span class="card-meta-item"><strong>Contract:</strong> </span>
+      </div>
+      <div class="card-body"></div>
+      <div class="callout callout-navy">
+        <div class="callout-label">&#9878; What It Means</div>
+        SSC must re-evaluate past performance for both offerors. This likely delays the award by 90-120 days. L3Harris may still win on re-evaluation, but the pricing and technical scores are now exposed to scrutiny. If you lost on this competition, monitor for the corrective action announcement -- there may be an opportunity to submit a revised proposal.
+      </div>
+      <div class="callout callout-blue">
+        <div class="callout-label">&#128218; Lesson</div>
+        Document EVERYTHING about your on-time delivery performance. Agencies that rate incumbents favorably despite schedule slippage are vulnerable to protest. If you&#x27;re better on schedule, make that the centerpiece of your past performance narrative.
+      </div>
+    </div>
+
+    <div class="card" style="border-left: 4px solid var(--navy-light);">
+      <div class="card-header">
+        <div class="card-title">Matter of Palantir Technologies, B-422956</div>
+        <span class="protest-outcome protest-denied">DENIED</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Protester:</strong> Palantir Technologies</span>
+        <span class="card-meta-item"><strong>Agency:</strong> Defense Intelligence Agency</span>
+        <span class="card-meta-item"><strong>Contract:</strong> </span>
+      </div>
+      <div class="card-body"></div>
+      <div class="callout callout-navy">
+        <div class="callout-label">&#9878; What It Means</div>
+        The IC is serious about moving away from proprietary lock-in. DIA explicitly evaluated against vendor lock-in risk -- Palantir&#x27;s Foundry platform was scored lower because of data portability concerns. This is a signal for ALL IC procurements: if your solution creates lock-in, you will be penalized.
+      </div>
+      <div class="callout callout-blue">
+        <div class="callout-label">&#128218; Lesson</div>
+        Build data portability and open standards into your technical approach. Agencies are no longer just saying they want open architecture -- they&#x27;re scoring against it. If you&#x27;re competing against Palantir or similar proprietary platforms, make vendor-agnosticism your #1 discriminator.
+      </div>
+    </div>
+
+    <div class="card" style="border-left: 4px solid var(--navy-light);">
+      <div class="card-header">
+        <div class="card-title">Matter of Deloitte Consulting, B-423001</div>
+        <span class="protest-outcome protest-dismissed">DISMISSED (VOLUNTARY CORRECTIVE ACTION)</span>
+      </div>
+      <div class="card-meta">
+        <span class="card-meta-item"><strong>Protester:</strong> Deloitte Consulting LLP</span>
+        <span class="card-meta-item"><strong>Agency:</strong> Department of Veterans Affairs</span>
+        <span class="card-meta-item"><strong>Contract:</strong> </span>
+      </div>
+      <div class="card-body"></div>
+      <div class="callout callout-navy">
+        <div class="callout-label">&#9878; What It Means</div>
+        The $389M VA CMMS award we reported in this issue is now in corrective action. Accenture may still win, but the re-evaluation creates an opening for Deloitte and potentially other offerors. Watch for the amended solicitation -- the FinOps criteria will be more explicit, which may level the playing field.
+      </div>
+      <div class="callout callout-blue">
+        <div class="callout-label">&#128218; Lesson</div>
+        When an agency creates a new evaluation factor (like FinOps), push back during the Q&amp;A period if it&#x27;s vaguely defined. Deloitte&#x27;s protest succeeded not because FinOps was wrong, but because the evaluation criteria for it were insufficiently defined. Vague criteria = protest opportunity.
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-10">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <span class="section-title">Market Pulse</span>
+    </div>
+    <div class="section-subtitle">Weekly spending trends, top agencies, and hot NAICS codes</div>
+
+    <div class="pulse-panel">
+      <div class="pulse-headline">
+        <div>
+          <div class="pulse-subtitle">Total Obligations This Week</div>
+          <div class="pulse-total">$4,830,000,000</div>
+        </div>
+        <div class="pulse-change">+12.3% YoY</div>
+      </div>
+
+      <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px;">Top Agencies by Spend</div>
+      <div class="pulse-grid">
+
+        <div class="pulse-row">
+          <div style="flex: 1;">
+            <div class="pulse-agency-name">DoD</div>
+            <div class="pulse-trend">Accelerating -- cyber and C2 driving growth. DOGE cuts hitting civilian agencies are being redirected here.</div>
+          </div>
+          <div class="pulse-amount">$2,890,000,000</div>
+        </div>
+
+        <div class="pulse-row">
+          <div style="flex: 1;">
+            <div class="pulse-agency-name">VA</div>
+            <div class="pulse-trend">Stable. VA is DOGE-proof due to Congressional protection. Cloud and EHR modernization are the big spenders.</div>
+          </div>
+          <div class="pulse-amount">$620,000,000</div>
+        </div>
+
+        <div class="pulse-row">
+          <div style="flex: 1;">
+            <div class="pulse-agency-name">DHS</div>
+            <div class="pulse-trend">Border tech surge. CBP and ICE procurement up 22% QoQ on surveillance and biometric systems.</div>
+          </div>
+          <div class="pulse-amount">$485,000,000</div>
+        </div>
+
+      </div>
+
+      <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin: 20px 0 10px;">Trending NAICS Codes</div>
+
+      <div class="naics-tag">
+        <div style="flex: 1;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span class="naics-code">541512</span>
+            <span class="naics-desc">Computer Systems Design</span>
+            <span class="naics-change">+28%</span>
+          </div>
+          <div class="naics-insight">Zero-trust mandates driving demand across all agencies. If you have NIST 800-207 implementation experience, highlight it in every proposal.</div>
+        </div>
+      </div>
+
+      <div class="naics-tag">
+        <div style="flex: 1;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span class="naics-code">541519</span>
+            <span class="naics-desc">Other IT Consulting</span>
+            <span class="naics-change">+19%</span>
+          </div>
+          <div class="naics-insight">Catch-all NAICS benefiting from AI/ML advisory work. Agencies are buying &#x27;AI strategy&#x27; consulting before committing to platforms.</div>
+        </div>
+      </div>
+
+      <div class="naics-tag">
+        <div style="flex: 1;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+            <span class="naics-code">541715</span>
+            <span class="naics-desc">R&amp;D in Physical Sciences</span>
+            <span class="naics-change">+15%</span>
+          </div>
+          <div class="naics-insight">IC and Space Force R&amp;D spend. This NAICS is where the classified AI work hides. Watch for BAAs from IARPA and AFRL.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-11">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <span class="section-title">Action Items</span>
+    </div>
+    <div class="section-subtitle">Priority-ranked actions for your BD team this week</div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #EF4444;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #FEF2F2; color: #EF4444; border: 1px solid #EF444433;">URGENT</span>
+        </div>
+        <div class="action-title">Submit Sources Sought response for CYBERCOM NOCDef recompete</div>
+        <div class="action-context">The NOCDef restructuring into 3 task areas is the biggest capture opportunity this quarter. Sources Sought responses shape the acquisition strategy. If you don&#x27;t respond, CYBERCOM won&#x27;t know you exist when they finalize the RFP. Multiple awards likely -- you don&#x27;t need to compete for all 3 task areas.</div>
+        <div class="action-deadline">DEADLINE: 2026-04-10</div>
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #EF4444;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #FEF2F2; color: #EF4444; border: 1px solid #EF444433;">URGENT</span>
+        </div>
+        <div class="action-title">Register for DISA Industry Day (EITSS-III recompete)</div>
+        <div class="action-context">DISA has scheduled an Industry Day for April 8 at Fort Meade. Registration closes March 28. This is your last chance to shape the zero-trust requirements before the draft RFP drops. Bring your technical SME, not your BD lead -- DISA wants to talk architecture, not capabilities briefings.</div>
+        <div class="action-deadline">DEADLINE: 2026-03-28</div>
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #EF4444;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #FEF2F2; color: #EF4444; border: 1px solid #EF444433;">URGENT</span>
+        </div>
+        <div class="action-title">Assess your USAID subcontract exposure and invoke termination-for-convenience protections</div>
+        <div class="action-context">If you&#x27;re subbing on any USAID contract, your prime should have issued a stop-work or T4C flowdown by now. If they haven&#x27;t, send a written request for direction. Protect your termination settlement rights -- the 60-day clock for filing claims starts when the prime receives the government&#x27;s T4C notice, not when they tell you about it.</div>
+        
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #F59E0B;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #FFFBEB; color: #F59E0B; border: 1px solid #F59E0B33;">THIS WEEK</span>
+        </div>
+        <div class="action-title">Set SAM.gov alerts for NAICS 541512 and 541519 at DISA and CYBERCOM</div>
+        <div class="action-context">Both agencies are in active procurement mode. DISA alone has 6 solicitations expected in the next 90 days. SAM.gov alerts are free and take 2 minutes. There is no excuse for missing a solicitation because you weren&#x27;t monitoring.</div>
+        
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #F59E0B;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #FFFBEB; color: #F59E0B; border: 1px solid #F59E0B33;">THIS WEEK</span>
+        </div>
+        <div class="action-title">Start CMMC Level 2 assessment if you plan to bid on ANY DoD work after September 2027</div>
+        <div class="action-context">C3PAO assessment wait times are now 4-6 months and growing. ManTech&#x27;s option exercise this week signals CMMC enforcement is accelerating. The cost of assessment ($50-150K) is trivial compared to being locked out of the DoD market. Companies that wait until 2027 will face 12+ month backlogs.</div>
+        
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #F59E0B;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #FFFBEB; color: #F59E0B; border: 1px solid #F59E0B33;">THIS WEEK</span>
+        </div>
+        <div class="action-title">Contact SAIC&#x27;s DES program office about subcontracting opportunities</div>
+        <div class="action-context">The $450M DES ceiling increase means SAIC is absorbing new scope and needs sub-tier support in cloud migration, identity/access management, and endpoint security. DES is becoming the single front door for defense agency IT. Getting on this vehicle as a sub is a strategic imperative.</div>
+        
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #3B82F6;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #EFF6FF; color: #3B82F6; border: 1px solid #3B82F633;">THIS MONTH</span>
+        </div>
+        <div class="action-title">Build or acquire FinOps capability for your cloud practice</div>
+        <div class="action-context">Accenture Federal&#x27;s VA win was decided in part by their FinOps commitment. This is becoming a standard evaluation factor. At minimum: get 2-3 staff FinOps Certified Practitioners (FOCP). At best: build a FinOps practice with tooling (Apptio, CloudHealth, or Spot by NetApp) and client case studies.</div>
+        
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #3B82F6;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #EFF6FF; color: #3B82F6; border: 1px solid #3B82F633;">THIS MONTH</span>
+        </div>
+        <div class="action-title">Review your pipeline for civilian agency exposure and rebalance toward DoD/IC</div>
+        <div class="action-context">DOGE disruption is creating a 12-18 month civilian agency freeze. If more than 40% of your pipeline is civilian (especially USAID, ED, EPA, OPM), you need to diversify NOW. DoD cyber, AI, and space are growing. VA and DHS are stable. Start building DoD relationships today -- they take 6-12 months to mature.</div>
+        
+      </div>
+    </div>
+
+    <div class="action-card">
+      <div class="action-priority" style="background: #3B82F6;"></div>
+      <div class="action-content">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <span class="badge" style="background: #EFF6FF; color: #3B82F6; border: 1px solid #3B82F633;">THIS MONTH</span>
+        </div>
+        <div class="action-title">Identify IC multi-cloud follow-on opportunities as AWS ECH enters final option year</div>
+        <div class="action-context">The IC&#x27;s $742M AWS cloud hosting contract is in its last year. The follow-on will be multi-cloud and multi-award. Cloud SIs should position for the migration and integration services layer ($200M+ opportunity). Start building relationships with the IC CIO&#x27;s office and attending IC IT enterprise events.</div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-12">
+    <div class="section-header">
+      <span class="section-num">12</span>
+      <span class="section-title">Calendar: What&rsquo;s Coming</span>
+    </div>
+    <div class="section-subtitle">Key dates, deadlines, and events for GovCon professionals</div>
+    <div class="cal-group-title">This Week</div>
+    <div class="cal-item">
+      <span class="cal-urgency" style="background: #EF4444; box-shadow: 0 0 4px #EF444455;"></span>
+      <span class="cal-date">2026-03-19</span>
+      <span class="cal-type-badge cal-type-deadline">deadline</span>
+      <div class="cal-info">
+        <div class="cal-title-text">CYBERCOM NOCDef Sources Sought -- comments due</div>
+        <div class="cal-detail">Last chance to shape the multi-award structure. Submit your capabilities statement.</div>
+      </div>
+    </div>
+    <div class="cal-item">
+      <span class="cal-urgency" style="background: #F59E0B; box-shadow: 0 0 4px #F59E0B55;"></span>
+      <span class="cal-date">2026-03-20</span>
+      <span class="cal-type-badge cal-type-webinar">webinar</span>
+      <div class="cal-info">
+        <div class="cal-title-text">SBA WOSB Certification Changes -- Info Session</div>
+        <div class="cal-detail">New WOSB self-certification rules effective April 1. Free SBA webinar.</div>
+      </div>
+    </div>
+    <div class="cal-item">
+      <span class="cal-urgency" style="background: #EF4444; box-shadow: 0 0 4px #EF444455;"></span>
+      <span class="cal-date">2026-03-21</span>
+      <span class="cal-type-badge cal-type-deadline">deadline</span>
+      <div class="cal-info">
+        <div class="cal-title-text">CIO-SP4 Small Business Task Order -- Responses Due</div>
+        <div class="cal-detail">CDC data analytics TO, $12M, SDVOSB set-aside. If you&#x27;re on CIO-SP4 Pool 1, submit by 4 PM EST.</div>
+      </div>
+    </div>
+    <div class="cal-group-title">Next Two Weeks</div>
+    <div class="cal-item">
+      <span class="cal-urgency" style="background: #EF4444; box-shadow: 0 0 4px #EF444455;"></span>
+      <span class="cal-date">2026-03-28</span>
+      <span class="cal-type-badge cal-type-deadline">deadline</span>
+      <div class="cal-info">
+        <div class="cal-title-text">DISA EITSS-III Industry Day Registration Closes</div>
+        <div class="cal-detail">April 8 at Fort Meade. Bring your zero-trust SME, not your BD lead.</div>
+      </div>
+    </div>
+    <div class="cal-item">
+      <span class="cal-urgency" style="background: #F59E0B; box-shadow: 0 0 4px #F59E0B55;"></span>
+      <span class="cal-date">2026-04-01</span>
+      <span class="cal-type-badge cal-type-event">event</span>
+      <div class="cal-info">
+        <div class="cal-title-text">Joint Staff J6 JADC2 Industry Engagement -- Registration Opens</div>
+        <div class="cal-detail">May 15 at the Pentagon. This shapes the $3-5B CJADC2-TEP program. Register day one -- it will fill.</div>
+      </div>
+    </div>
+    <div class="cal-item">
+      <span class="cal-urgency" style="background: #EF4444; box-shadow: 0 0 4px #EF444455;"></span>
+      <span class="cal-date">2026-04-02</span>
+      <span class="cal-type-badge cal-type-legal">legal</span>
+      <div class="cal-info">
+        <div class="cal-title-text">USAID TRO Expires</div>
+        <div class="cal-detail">National Council of Nonprofits v. OMB temporary restraining order. If not extended, USAID contract terminations resume.</div>
+      </div>
+    </div>
+    <div class="cal-item">
+      <span class="cal-urgency" style="background: #EF4444; box-shadow: 0 0 4px #EF444455;"></span>
+      <span class="cal-date">2026-04-08</span>
+      <span class="cal-type-badge cal-type-event">event</span>
+      <div class="cal-info">
+        <div class="cal-title-text">DISA Industry Day -- EITSS-III Recompete</div>
+        <div class="cal-detail">Fort Meade. Zero-trust requirements briefing. Pre-registration required (closes Mar 28).</div>
+      </div>
+    </div>
+    <div class="cal-item">
+      <span class="cal-urgency" style="background: #EF4444; box-shadow: 0 0 4px #EF444455;"></span>
+      <span class="cal-date">2026-04-10</span>
+      <span class="cal-type-badge cal-type-deadline">deadline</span>
+      <div class="cal-info">
+        <div class="cal-title-text">CYBERCOM NOCDef -- Sources Sought Responses Due</div>
+        <div class="cal-detail">Three task areas. Respond to the one(s) where you have strongest past performance. Don&#x27;t try all three.</div>
+      </div>
+    </div>
+    <div class="cal-group-title">Looking Ahead</div>
+    <div class="cal-item">
+      
+      <span class="cal-date">2026-05-15</span>
+      <span class="cal-type-badge cal-type-event">event</span>
+      <div class="cal-info">
+        <div class="cal-title-text">Joint Staff J6 JADC2 Cross-Functional Team Industry Engagement</div>
+        <div class="cal-detail">The Pentagon. Shapes the $3-5B CJADC2-TEP program.</div>
+      </div>
+    </div>
+    <div class="cal-item">
+      
+      <span class="cal-date">2026-06-01</span>
+      <span class="cal-type-badge cal-type-forecast">forecast</span>
+      <div class="cal-info">
+        <div class="cal-title-text">IRS Enterprise Modernization Industry Day (Expected)</div>
+        <div class="cal-detail">Following the CADE2 bridge contract. Oracle/SAP financial systems expertise needed.</div>
+      </div>
+    </div>
+    <div class="cal-item">
+      
+      <span class="cal-date">2026-09-30</span>
+      <span class="cal-type-badge cal-type-deadline">deadline</span>
+      <div class="cal-info">
+        <div class="cal-title-text">FY26 End -- Agency Spending Surge</div>
+        <div class="cal-detail">Expect 30-40% of annual discretionary spend in September. Set-aside activity peaks.</div>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="section" id="section-13">
+    <div class="section-header">
+      <span class="section-num">13</span>
+      <span class="section-title">One to Watch</span>
+    </div>
+    <div class="section-subtitle">The opportunity smart BD teams should be tracking now</div>
+
+    <div class="watch-panel">
+      <div class="watch-flag">&#9733; Forward-Looking Intelligence</div>
+      <div class="watch-headline">CJADC2 Tactical Edge AI -- The $3B Program Nobody&#x27;s Talking About</div>
+      <div class="watch-meta"><strong>DoD / Joint Staff J6</strong> &middot; Est. Value: <strong>$3,000,000,000 - $5,000,000,000</strong> &middot; RFI expected October-December 2026. Draft RFP late FY27. Award FY28.</div>
+      <div class="watch-body">Buried in the FY27 budget justification documents is a new program element for &#x27;Combined Joint All-Domain Command and Control -- Tactical Edge Processing&#x27; (CJADC2-TEP). This is the Joint Staff&#x27;s answer to the latency problem in JADC2: instead of backhauling all sensor data to cloud for AI processing, they want AI inference running on ruggedized edge devices at the battalion level and below. The program calls for federated learning across classification domains -- models that train on TS/SCI data but deploy inferences at the unclassified tactical edge.</div>
+
+      <div class="watch-why">
+        <div class="watch-why-label">&#128161; Why It Matters</div>
+        <div class="watch-why-text">This is the next JEDI/JWCC-scale program, but for edge computing instead of cloud. The $1.24B GDIT award this week is the integration layer -- CJADC2-TEP is the compute layer underneath it. First RFI expected Q1 FY27. Estimated ceiling $3-5B over 10 years. The firms that shape this requirement in the next 6 months will own the competitive landscape for the next decade.</div>
+      </div>
+
+      <div style="font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">What to Do Now</div>
+      <ul class="watch-actions">
+        <li>Read the FY27 PB justification book for PE 0604XXX (classified PE -- request through your cleared facility&#x27;s SAPCO)</li>
+        <li>Attend the Joint Staff J6 JADC2 Cross-Functional Team industry engagement on May 15 at the Pentagon (registration opens April 1)</li>
+        <li>If you have edge AI capabilities (NVIDIA Jetson, Qualcomm SNPE, or custom ASIC experience), start building a past performance portfolio with tactical use cases</li>
+        <li>Identify your teaming strategy early: this will require hardware (ruggedized edge servers), software (ML inference frameworks), and integration (tactical network expertise). No single firm has all three.</li>
+        <li>Connect with the GDIT JADC2 team -- they will be the prime integrator and will need edge computing subs. Their win this week makes them the center of gravity for this ecosystem.</li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider-gold"></div>
+  <div class="cta-block">
+    <div class="cta-headline">Stop Wasting $50K on Proposals You Can't Win</div>
+    <div class="cta-body">GovCon Weekly Intelligence gives you the bid/no-bid signals, incumbent analysis, and winnability scoring that enterprise platforms charge $8K+ for.</div>
+    <a href="#" class="cta-button">Start Your Free Trial</a>
+    <div class="cta-price">Pro: $29/mo ($249/yr) &middot; Insider: $79/mo ($699/yr) &middot; Cancel anytime</div>
+    <div style="font-size: 11px; color: var(--gray-500); margin-top: 16px; font-style: italic;">Trusted by 2,400+ capture managers, BD leads, and GovCon advisors</div>
+  </div>
+
+  <div class="feedback">
+    <div class="feedback-question">How useful was this week's brief?</div>
+    <div class="feedback-buttons">
+      <a href="#" class="feedback-btn">&#128077; Useful</a>
+      <a href="#" class="feedback-btn">&#128078; Not Useful</a>
+      <a href="#" class="feedback-btn">&#128232; Forward to a Colleague</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong style="color: #E2E8F0;">GovCon Weekly Intelligence</strong><br>
+    Curated analysis for government contractors who compete to win.<br>
+    <br>
+    <span style="color: var(--gray-600); font-size: 10px;">Data current as of March 18, 2026 05:00 EST &middot; Sources: USAspending.gov, FPDS-NG, SAM.gov, Federal Register, GAO, SBA Scorecards<br>
+    Winnability scores computed from incumbent tenure, protest history, set-aside status, and competitive landscape analysis.<br>
+    &ldquo;Is It Wired?&rdquo; scores derived from extent_competed, number_of_offers, solicitation_procedures, and incumbent contract history.</span><br>
+    <br>
+    <a href="#">Manage Preferences</a> &middot; <a href="#">Unsubscribe</a> &middot; <a href="#">View in Browser</a><br>
+    &copy; 2026 GovCon Weekly Intelligence. All rights reserved.
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>
