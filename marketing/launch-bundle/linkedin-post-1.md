@@ -4,13 +4,13 @@
 
 **Post Copy:**
 ```
-I spent 10 years in federal contracting watching small firms miss $10M+ recompetes because they couldn't afford the $20K/yr intel platforms.
+Small GovCon firms are missing $10M+ recompetes because they can't afford the $20K/yr intel platforms.
 
-The big guys get GovWin. The mid-tier gets Bloomberg Gov. Small 8(a) and SDVOSB firms? They're searching SAM.gov manually and hoping they don't miss the boat.
+The big primes get GovWin. The mid-tier gets Bloomberg Gov. Small 8(a) and SDVOSB firms? They're searching SAM.gov manually and hoping they don't miss the boat.
 
-So I built something different.
+I built something to fix this.
 
-GovCon Weekly Intelligence: AI-powered contract intel for $149/mo, not $20,000/yr.
+GovCon Weekly Intelligence: AI-powered contract intel, free to start.
 
 Every Monday morning at 7am, you get:
 
@@ -155,11 +155,11 @@ No commitment. Cancel anytime.
 
 **"I'm a solo BD consultant — is this for me?"**
 ```
-Absolutely. Several of our early users are solo consultants.
+Absolutely — solo BD consultants are exactly who I built this for.
 
-The time savings alone justifies it — instead of 10 hours/week on research, you spend 8 minutes reading the Monday brief.
+Instead of 10 hours/week on manual SAM.gov research, you get an 8-minute Monday brief with everything that matters.
 
 That's billable time you get back.
 
-Free trial: [link]
+Free to try: [link]
 ```

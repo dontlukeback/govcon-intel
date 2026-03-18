@@ -4,15 +4,9 @@
 
 **Post Copy:**
 ```
-"We caught a $12M recompete at DHS three months before it hit SAM.gov.
+What would it mean for your capture team to know about a recompete 3-6 months before it hits SAM.gov?
 
-Gave us enough runway to build the team, shape the RFP, and position as the obvious choice.
-
-That alone paid for five years of this service."
-
-— Director of BD, Mid-tier IT Services Firm, Reston VA
-
-This is what early access looks like in federal contracting.
+That's the difference between bidding blind and shaping the opportunity.
 
 Most small GovCons find out about recompetes when the RFP drops. By then:
 → The incumbent has already been positioning for 6 months

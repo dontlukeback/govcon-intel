@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://govconweekly.com/</loc>
+    <loc>https://dontlukeback.github.io/govcon-intel/</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://govconweekly.com/terms</loc>
+    <loc>https://dontlukeback.github.io/govcon-intel/terms</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://govconweekly.com/privacy</loc>
+    <loc>https://dontlukeback.github.io/govcon-intel/privacy</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>

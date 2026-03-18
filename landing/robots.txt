@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://govconweekly.com/sitemap.xml
+Sitemap: https://dontlukeback.github.io/govcon-intel/sitemap.xml
