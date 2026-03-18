@@ -233,11 +233,13 @@ INSIGHTS_FILE="${OUTPUT_DIR}/insights_${TODAY}.md"
 if [[ -f "${SCRIPT_DIR}/generate_insights.py" ]]; then
     info "Found generate_insights.py"
     INSIGHTS_ARGS=(--output "${INSIGHTS_FILE}")
-    if [[ -n "${DATA_FILE}" ]]; then
-        INSIGHTS_ARGS+=(--data "${DATA_FILE}")
-    fi
-    if [[ -f "${REPORT_FILE}" ]]; then
-        INSIGHTS_ARGS+=(--report "${REPORT_FILE}")
+    # generate_insights.py expects the structured dict format (corrected_all.json),
+    # not the raw awards list. Pass it if available, otherwise fall back to DATA_FILE.
+    CORRECTED_FILE="${DATA_DIR}/corrected_all.json"
+    if [[ -f "${CORRECTED_FILE}" ]]; then
+        INSIGHTS_ARGS+=(--input "${CORRECTED_FILE}")
+    elif [[ -n "${DATA_FILE}" ]]; then
+        INSIGHTS_ARGS+=(--input "${DATA_FILE}")
     fi
     if ${PYTHON} "${SCRIPT_DIR}/generate_insights.py" "${INSIGHTS_ARGS[@]}" 2>&1; then
         success "Insights saved to insights_${TODAY}.md"
@@ -260,8 +262,11 @@ HTML_FILE="${OUTPUT_DIR}/report_${TODAY}.html"
 if [[ -f "${SCRIPT_DIR}/report_to_html.py" ]]; then
     info "Found report_to_html.py"
     HTML_ARGS=(--output "${HTML_FILE}")
-    if [[ -f "${REPORT_FILE}" ]]; then
-        HTML_ARGS+=(--input "${REPORT_FILE}")
+    # report_to_html.py also expects the structured dict format (corrected_all.json)
+    if [[ -f "${CORRECTED_FILE}" ]]; then
+        HTML_ARGS+=(--input "${CORRECTED_FILE}")
+    elif [[ -n "${DATA_FILE}" ]]; then
+        HTML_ARGS+=(--input "${DATA_FILE}")
     fi
     if ${PYTHON} "${SCRIPT_DIR}/report_to_html.py" "${HTML_ARGS[@]}" 2>&1; then
         success "HTML saved to report_${TODAY}.html"
