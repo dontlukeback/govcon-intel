@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | GovCon Weekly Intelligence</title>
+    <meta name="description" content="Terms of Service for GovCon Weekly Intelligence, the AI-powered federal contract intelligence newsletter.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gold-dim: rgba(197, 164, 78, 0.15);
+            --white: #FFFFFF;
+            --gray-100: #F4F5F7;
+            --gray-200: #E2E4E9;
+            --gray-300: #C4C8D0;
+            --gray-600: #6B7280;
+            --gray-800: #2D3142;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--navy);
+            border-bottom: 1px solid rgba(197, 164, 78, 0.2);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--navy);
+        }
+
+        .nav-logo-text {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.3px;
+        }
+
+        .nav-logo-text span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ── Page Header ── */
+        .page-header {
+            background: linear-gradient(170deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+            padding: 120px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 800px 600px at 20% 80%, rgba(197, 164, 78, 0.04) 0%, transparent 70%),
+                radial-gradient(ellipse 600px 400px at 80% 20%, rgba(197, 164, 78, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: var(--gray-300);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Legal Content ── */
+        .legal-content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 60px 24px 90px;
+        }
+
+        .legal-content .plain-english {
+            background: var(--gold-dim);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 6px 6px 0;
+            padding: 16px 20px;
+            margin-bottom: 40px;
+            font-size: 15px;
+            color: var(--navy);
+            line-height: 1.65;
+        }
+
+        .legal-content h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .legal-content h2:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .legal-content h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+
+        .legal-content p {
+            font-size: 15px;
+            color: var(--gray-800);
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .legal-content ul, .legal-content ol {
+            margin: 12px 0 14px 24px;
+            font-size: 15px;
+            color: var(--gray-800);
+            line-height: 1.7;
+        }
+
+        .legal-content li {
+            margin-bottom: 6px;
+        }
+
+        .legal-content strong {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .legal-content .caps-text {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.7;
+            color: var(--gray-800);
+        }
+
+        .legal-content a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .legal-content .contact-box {
+            background: var(--gray-100);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-top: 32px;
+        }
+
+        .legal-content .contact-box p {
+            margin-bottom: 4px;
+        }
+
+        .legal-content .agreement-note {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-200);
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--navy);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 32px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--gray-300);
+            opacity: 0.5;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--gray-300);
+            opacity: 0.5;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-header {
+                padding: 110px 20px 48px;
+            }
+
+            .page-header h1 {
+                font-size: 30px;
+            }
+
+            .legal-content {
+                padding: 40px 20px 60px;
+            }
+
+            .legal-content h2 {
+                font-size: 20px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon">GC</div>
+            <div class="nav-logo-text">GovCon <span>Weekly</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#problem">Why This Exists</a></li>
+            <li><a href="index.html#solution">What You Get</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#cta" style="color: var(--gold);">Get Started</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="page-header">
+    <h1>Terms of Service</h1>
+    <p>Last Updated: March 18, 2026</p>
+</div>
+
+<!-- Legal Content -->
+<div class="legal-content">
+
+    <div class="plain-english">
+        <strong>Plain English Summary:</strong> We provide federal contract intelligence to help government contractors make better business development decisions. These terms explain what you can expect from us and what we need from you.
+    </div>
+
+    <h2>1. What We Provide</h2>
+
+    <h3>1.1 Intelligence Service</h3>
+    <p>We provide weekly analysis of federal contract awards sourced from publicly available government databases (primarily USAspending.gov). Our Service includes:</p>
+    <ul>
+        <li>Curated contract award data across technology verticals</li>
+        <li>AI-generated analysis and trend identification</li>
+        <li>Recompete tracking and opportunity signals</li>
+        <li>Strategic insights for business development teams</li>
+    </ul>
+
+    <h3>1.2 Data Sources</h3>
+    <p>All contract data is sourced from public government databases. We do not have access to non-public or proprietary government information. We aggregate, analyze, and present publicly available data.</p>
+
+    <h3>1.3 Service Tiers</h3>
+    <p>We offer both free and paid subscription tiers. Specific features and pricing for paid tiers are described on our website and are subject to change with reasonable notice.</p>
+
+    <h2>2. AI-Generated Content Disclaimer</h2>
+
+    <h3>2.1 Nature of Analysis</h3>
+    <p><strong>IMPORTANT:</strong> Our analysis and insights are generated using artificial intelligence (Claude API and other AI systems). While we strive for accuracy, AI-generated analysis may contain errors, omissions, or interpretations that differ from human analysis.</p>
+
+    <h3>2.2 Not Business Advice</h3>
+    <p>The intelligence, analysis, and recommendations provided through our Service are <strong>informational only</strong> and do not constitute:</p>
+    <ul>
+        <li>Business advice or consulting</li>
+        <li>Legal advice</li>
+        <li>Financial advice</li>
+        <li>Bid/no-bid recommendations</li>
+        <li>Guarantees of contract opportunities</li>
+    </ul>
+    <p>You should independently verify all information and consult with qualified professionals before making business decisions based on our analysis.</p>
+
+    <h3>2.3 No Warranty on Accuracy</h3>
+    <p>While we make commercially reasonable efforts to ensure data accuracy, we do not warrant that:</p>
+    <ul>
+        <li>Our analysis is error-free or complete</li>
+        <li>Data from government sources is accurate or up-to-date</li>
+        <li>AI interpretations reflect actual market conditions</li>
+        <li>Opportunities identified will result in successful bids</li>
+    </ul>
+
+    <h2>3. Your Account and Responsibilities</h2>
+
+    <h3>3.1 Subscription</h3>
+    <p>To receive our newsletter, you must provide a valid email address. For paid tiers, you may need to provide additional information and payment details.</p>
+
+    <h3>3.2 Accurate Information</h3>
+    <p>You agree to provide accurate and complete information when subscribing and to keep this information current.</p>
+
+    <h3>3.3 Acceptable Use</h3>
+    <p>You agree to use the Service only for lawful purposes and in compliance with these Terms. You will not:</p>
+    <ul>
+        <li>Share paid content with non-subscribers</li>
+        <li>Attempt to reverse-engineer our AI analysis methods</li>
+        <li>Use automated systems to scrape or harvest data from our Service</li>
+        <li>Resell or redistribute our content without written permission</li>
+        <li>Use the Service to spam or harass others</li>
+    </ul>
+
+    <h3>3.4 B2B Use</h3>
+    <p>Our Service is intended for business-to-business use by government contractors, consultants, and related professionals. We do not target or knowingly collect information from individuals under 18.</p>
+
+    <h2>4. Intellectual Property</h2>
+
+    <h3>4.1 Our Content</h3>
+    <p>The analysis, insights, formatting, and presentation of data in our Service are protected by copyright and remain our property (or our licensors'). Public government data itself remains in the public domain.</p>
+
+    <h3>4.2 Limited License</h3>
+    <p>We grant you a limited, non-exclusive, non-transferable license to:</p>
+    <ul>
+        <li><strong>Free tier:</strong> View and use our content for your internal business purposes</li>
+        <li><strong>Paid tier:</strong> View, download, and use our content for your internal business purposes</li>
+    </ul>
+    <p>You may not republish, redistribute, or create derivative works from our content without written permission.</p>
+
+    <h3>4.3 Trademarks</h3>
+    <p>"GovCon Weekly Intelligence" and our logo are our trademarks. You may not use our trademarks without prior written consent.</p>
+
+    <h2>5. Payment Terms (Paid Subscriptions)</h2>
+
+    <h3>5.1 Billing</h3>
+    <p>Paid subscriptions are billed in advance on a monthly or annual basis, as selected during signup. All fees are in U.S. dollars.</p>
+
+    <h3>5.2 Automatic Renewal</h3>
+    <p>Subscriptions automatically renew at the end of each billing period unless you cancel before the renewal date.</p>
+
+    <h3>5.3 Cancellation and Refunds</h3>
+    <p>You may cancel your paid subscription at any time. Cancellation takes effect at the end of your current billing period. We do not provide refunds for partial periods, except as required by law or at our sole discretion.</p>
+
+    <h3>5.4 Price Changes</h3>
+    <p>We may change our pricing with at least 30 days' notice. Price changes apply to renewals after the notice period. If you don't accept a price increase, you may cancel your subscription.</p>
+
+    <h2>6. Privacy and Data</h2>
+    <p>We collect and use your personal information as described in our <a href="privacy.html">Privacy Policy</a>. By using the Service, you consent to our data practices as described in that policy.</p>
+    <p>Key points:</p>
+    <ul>
+        <li>We collect email addresses through Beehiiv</li>
+        <li>We use analytics to improve our Service</li>
+        <li>We do not sell your personal information</li>
+        <li>See our full <a href="privacy.html">Privacy Policy</a> for details</li>
+    </ul>
+
+    <h2>7. Third-Party Services</h2>
+
+    <h3>7.1 Service Providers</h3>
+    <p>We use third-party services including:</p>
+    <ul>
+        <li><strong>Beehiiv</strong> for newsletter distribution</li>
+        <li><strong>Claude API (Anthropic)</strong> for AI analysis</li>
+        <li><strong>USAspending.gov</strong> for contract data</li>
+        <li><strong>Analytics providers</strong> for website metrics</li>
+    </ul>
+    <p>These providers have their own terms and privacy policies.</p>
+
+    <h3>7.2 External Links</h3>
+    <p>Our newsletter may include links to third-party websites (e.g., SAM.gov, government agency sites). We are not responsible for the content or practices of these external sites.</p>
+
+    <h2>8. Service Availability</h2>
+
+    <h3>8.1 No Uptime Guarantee</h3>
+    <p>We strive to provide reliable service but do not guarantee uninterrupted access. The Service is provided "as is" and "as available."</p>
+
+    <h3>8.2 Changes to Service</h3>
+    <p>We may modify, suspend, or discontinue any part of the Service at any time, with or without notice. We are not liable for any such changes.</p>
+
+    <h3>8.3 Beta Features</h3>
+    <p>We may offer experimental or beta features. These are provided without warranty and may be modified or removed at any time.</p>
+
+    <h2>9. Disclaimers and Limitations of Liability</h2>
+
+    <h3>9.1 Disclaimer of Warranties</h3>
+    <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</p>
+    <p>We do not warrant that:</p>
+    <ul>
+        <li>The Service will meet your requirements</li>
+        <li>Data or analysis will be accurate, complete, or timely</li>
+        <li>Errors will be corrected</li>
+        <li>The Service will be secure or virus-free</li>
+    </ul>
+
+    <h3>9.2 Limitation of Liability</h3>
+    <p class="caps-text">TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, LOST PROFITS, REVENUE, OR BUSINESS OPPORTUNITIES, LOSS OF DATA OR BUSINESS INTERRUPTION, OR ANY DAMAGES ARISING FROM YOUR USE OF OR INABILITY TO USE THE SERVICE.</p>
+    <p class="caps-text">OUR TOTAL LIABILITY FOR ALL CLAIMS SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE 12 MONTHS BEFORE THE CLAIM AROSE, OR $100, WHICHEVER IS GREATER.</p>
+
+    <h3>9.3 Basis of the Bargain</h3>
+    <p>These limitations reflect the allocation of risk between us and are fundamental elements of the basis of our agreement. The Service would not be provided without these limitations.</p>
+
+    <h2>10. Indemnification</h2>
+    <p>You agree to indemnify and hold us harmless from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from:</p>
+    <ul>
+        <li>Your violation of these Terms</li>
+        <li>Your misuse of the Service</li>
+        <li>Your violation of any law or third-party rights</li>
+    </ul>
+
+    <h2>11. Term and Termination</h2>
+
+    <h3>11.1 Term</h3>
+    <p>These Terms remain in effect while you use the Service.</p>
+
+    <h3>11.2 Your Right to Terminate</h3>
+    <p>You may stop using the Service or cancel your subscription at any time by unsubscribing from our newsletter or canceling your account.</p>
+
+    <h3>11.3 Our Right to Terminate</h3>
+    <p>We may suspend or terminate your access to the Service at any time, with or without cause, with or without notice. Reasons for termination may include:</p>
+    <ul>
+        <li>Violation of these Terms</li>
+        <li>Fraudulent or illegal activity</li>
+        <li>Non-payment (for paid subscriptions)</li>
+        <li>At our sole discretion</li>
+    </ul>
+
+    <h3>11.4 Effect of Termination</h3>
+    <p>Upon termination:</p>
+    <ul>
+        <li>Your right to access the Service ends immediately</li>
+        <li>You must stop using any content obtained through the Service</li>
+        <li>Provisions that by their nature should survive (disclaimers, limitations, indemnification) will continue</li>
+    </ul>
+
+    <h2>12. General Legal Terms</h2>
+
+    <h3>12.1 Governing Law</h3>
+    <p>These Terms are governed by the laws of the State of Delaware, United States, without regard to conflict of law principles.</p>
+
+    <h3>12.2 Dispute Resolution</h3>
+    <p>Any disputes arising from these Terms or the Service shall be resolved through binding arbitration in accordance with the American Arbitration Association's Commercial Arbitration Rules, except that you may bring claims in small claims court if they qualify.</p>
+    <p>Arbitration shall be conducted in Delaware or remotely. Each party bears its own costs, and the arbitrator may award attorneys' fees to the prevailing party.</p>
+    <p><strong>YOU AGREE TO ARBITRATE DISPUTES INDIVIDUALLY, NOT AS PART OF A CLASS ACTION.</strong></p>
+
+    <h3>12.3 Exceptions to Arbitration</h3>
+    <p>Either party may seek injunctive relief in court for intellectual property infringement or unauthorized use of the Service.</p>
+
+    <h3>12.4 Entire Agreement</h3>
+    <p>These Terms, together with our <a href="privacy.html">Privacy Policy</a>, constitute the entire agreement between you and GovCon Weekly Intelligence regarding the Service.</p>
+
+    <h3>12.5 Changes to Terms</h3>
+    <p>We may update these Terms from time to time. If we make material changes, we will notify you by email or through the Service at least 30 days before the changes take effect. Your continued use of the Service after changes take effect constitutes acceptance of the new Terms.</p>
+
+    <h3>12.6 Severability</h3>
+    <p>If any provision of these Terms is found unenforceable, that provision will be modified to reflect the parties' intention or eliminated to the minimum extent necessary, and the remaining provisions will remain in full effect.</p>
+
+    <h3>12.7 Waiver</h3>
+    <p>Our failure to enforce any provision of these Terms does not waive our right to enforce it later.</p>
+
+    <h3>12.8 Assignment</h3>
+    <p>You may not assign or transfer these Terms or your account without our written consent. We may assign these Terms without restriction.</p>
+
+    <h3>12.9 Force Majeure</h3>
+    <p>We are not liable for delays or failures in performance resulting from circumstances beyond our reasonable control, including natural disasters, government actions, internet failures, or third-party service outages.</p>
+
+    <h2>13. Government Contractors Notice</h2>
+    <p>If you are a U.S. government contractor, you are responsible for ensuring your use of our Service complies with:</p>
+    <ul>
+        <li>Your contract requirements</li>
+        <li>Federal Acquisition Regulation (FAR) provisions</li>
+        <li>Agency-specific regulations</li>
+        <li>Security and data handling requirements</li>
+    </ul>
+    <p>Our Service does not provide controlled unclassified information (CUI) or classified data. All information is sourced from publicly available databases.</p>
+
+    <h2>14. Export Control</h2>
+    <p>You agree to comply with all applicable export control laws and regulations. The Service may not be used in countries subject to U.S. trade embargoes or by individuals on U.S. government restricted party lists.</p>
+
+    <h2>15. Contact Us</h2>
+    <div class="contact-box">
+        <p><strong>GovCon Weekly Intelligence</strong></p>
+        <p>Email: <a href="mailto:legal@govconintel.com">legal@govconintel.com</a></p>
+        <p>Website: <a href="index.html">govconintel.com</a></p>
+    </div>
+
+    <p class="agreement-note">By subscribing to our newsletter or using our Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <p class="footer-text">Built with AI. Powered by USAspending.gov and FPDS open data.</p>
+        <ul class="footer-links">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="mailto:legal@govconintel.com">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GovCon Weekly Intelligence | AI-Powered Federal Contract Intelligence</title>
+    <meta name="description" content="Stop missing federal contracts. AI-powered weekly intelligence on recompetes, new awards, and competitor moves — for $149/mo, not $20,000/yr.">
+    <meta property="og:title" content="GovCon Weekly Intelligence | AI-Powered Federal Contract Intelligence">
+    <meta property="og:description" content="Stop missing federal contracts. AI-powered weekly intelligence on recompetes, new awards, and competitor moves — for $149/mo, not $20,000/yr.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://govconintel.com">
+    <meta property="og:image" content="https://govconintel.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GovCon Weekly Intelligence | AI-Powered Federal Contract Intelligence">
+    <meta name="twitter:description" content="Stop missing federal contracts. AI-powered weekly intelligence on recompetes, new awards, and competitor moves — for $149/mo, not $20,000/yr.">
+    <meta name="twitter:image" content="https://govconintel.com/og-image.png">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gold-dim: rgba(197, 164, 78, 0.15);
+            --white: #FFFFFF;
+            --gray-100: #F4F5F7;
+            --gray-200: #E2E4E9;
+            --gray-300: #C4C8D0;
+            --gray-600: #6B7280;
+            --gray-800: #2D3142;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--navy);
+            border-bottom: 1px solid rgba(197, 164, 78, 0.2);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--navy);
+        }
+
+        .nav-logo-text {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -0.3px;
+        }
+
+        .nav-logo-text span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(170deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+            padding: 140px 24px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 800px 600px at 20% 80%, rgba(197, 164, 78, 0.04) 0%, transparent 70%),
+                radial-gradient(ellipse 600px 400px at 80% 20%, rgba(197, 164, 78, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold-dim);
+            border: 1px solid rgba(197, 164, 78, 0.3);
+            color: var(--gold-light);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-sub {
+            font-size: 19px;
+            color: var(--gray-300);
+            line-height: 1.65;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-sub strong {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .hero-form {
+            display: flex;
+            gap: 10px;
+            max-width: 480px;
+            margin: 0 auto 20px;
+        }
+
+        .hero-form input[type="email"] {
+            flex: 1;
+            padding: 14px 18px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            font-size: 15px;
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .hero-form input[type="email"]::placeholder {
+            color: var(--gray-300);
+            opacity: 0.6;
+        }
+
+        .hero-form input[type="email"]:focus {
+            border-color: var(--gold);
+        }
+
+        .hero-form button {
+            padding: 14px 28px;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .hero-form button:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+
+        .hero-trust {
+            font-size: 13px;
+            color: var(--gray-300);
+            opacity: 0.5;
+        }
+
+        /* ── Section common ── */
+        section {
+            padding: 90px 24px;
+        }
+
+        .section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -0.8px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--gray-600);
+            max-width: 600px;
+            line-height: 1.65;
+        }
+
+        /* ── Problem Section ── */
+        .problem {
+            background: var(--gray-100);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .problem-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            padding: 32px 28px;
+        }
+
+        .problem-card-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(197, 164, 78, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 20px;
+        }
+
+        .problem-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .problem-card p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ── Solution Section ── */
+        .solution-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            margin-top: 48px;
+            align-items: start;
+        }
+
+        .solution-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .solution-list li {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .solution-check {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--gold-dim);
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .solution-check svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .solution-list h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .solution-list p {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.55;
+        }
+
+        /* Report preview mockup */
+        .report-preview {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(10, 22, 40, 0.08);
+        }
+
+        .report-header {
+            background: var(--navy);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .report-header-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.5px;
+        }
+
+        .report-header-date {
+            font-size: 11px;
+            color: var(--gray-300);
+        }
+
+        .report-body {
+            padding: 20px;
+        }
+
+        .report-section-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .report-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .report-item:last-child {
+            border-bottom: none;
+        }
+
+        .report-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .report-item-agency {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .report-item-value {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .report-item-desc {
+            font-size: 12px;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+
+        .report-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-top: 6px;
+        }
+
+        .tag-recompete {
+            background: #FFF3CD;
+            color: #856404;
+        }
+
+        .tag-award {
+            background: #D4EDDA;
+            color: #155724;
+        }
+
+        .tag-intel {
+            background: #D6E9F8;
+            color: #1B4F72;
+        }
+
+        .report-ai-box {
+            margin-top: 16px;
+            background: var(--gold-dim);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 6px 6px 0;
+            padding: 12px 14px;
+        }
+
+        .report-ai-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .report-ai-text {
+            font-size: 12px;
+            color: var(--navy);
+            line-height: 1.55;
+        }
+
+        /* ── Pricing ── */
+        .pricing {
+            background: var(--gray-100);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            padding: 36px 28px;
+            text-align: center;
+            position: relative;
+            transition: box-shadow 0.2s;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 4px 20px rgba(10, 22, 40, 0.08);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--gold);
+            box-shadow: 0 4px 24px rgba(197, 164, 78, 0.15);
+        }
+
+        .pricing-popular {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 16px;
+            border-radius: 12px;
+        }
+
+        .pricing-tier {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -1px;
+            margin-bottom: 4px;
+        }
+
+        .pricing-price span {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--gray-600);
+        }
+
+        .pricing-desc {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            min-height: 42px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
+        .pricing-features li {
+            font-size: 14px;
+            color: var(--gray-800);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features li::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            background: var(--gold-dim);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 11.5L3.5 8.5l1-1 2 2 4.5-4.5 1 1z' fill='%23C5A44E'/%3E%3C/svg%3E");
+            background-size: 16px;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 13px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .pricing-cta-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--gray-200);
+        }
+
+        .pricing-cta-outline:hover {
+            border-color: var(--navy);
+        }
+
+        .pricing-cta-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .pricing-cta-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+
+        /* ── Social Proof ── */
+        .social-proof {
+            text-align: center;
+        }
+
+        .social-proof-stat {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .social-proof-stat-label {
+            font-size: 16px;
+            color: var(--gray-600);
+            margin-bottom: 48px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 0;
+        }
+
+        .testimonial-card {
+            background: var(--gray-100);
+            border-radius: 10px;
+            padding: 28px;
+            text-align: left;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--gray-800);
+            line-height: 1.65;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-author {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+
+        /* ── CTA Bottom ── */
+        .cta-bottom {
+            background: var(--navy);
+            text-align: center;
+            padding: 80px 24px;
+        }
+
+        .cta-bottom h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.8px;
+            margin-bottom: 14px;
+        }
+
+        .cta-bottom p {
+            font-size: 17px;
+            color: var(--gray-300);
+            margin-bottom: 36px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-bottom .hero-form {
+            margin-bottom: 0;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--navy);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 32px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--gray-300);
+            opacity: 0.5;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--gray-300);
+            opacity: 0.5;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 20px 70px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+                letter-spacing: -0.8px;
+            }
+
+            .hero-sub {
+                font-size: 16px;
+            }
+
+            .hero-form {
+                flex-direction: column;
+            }
+
+            .hero-form button {
+                width: 100%;
+            }
+
+            .problem-grid,
+            .pricing-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .social-proof-stat {
+                font-size: 36px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .pricing-card.featured {
+                order: -1;
+            }
+
+            .cta-bottom .hero-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">GC</div>
+            <div class="nav-logo-text">GovCon <span>Weekly</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#problem">Why This Exists</a></li>
+            <li><a href="#solution">What You Get</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#cta" style="color: var(--gold);">Get Started</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-badge">Federal Contract Intelligence</div>
+        <h1>Stop Missing Federal Contracts</h1>
+        <p class="hero-sub">
+            AI-powered weekly intelligence on who's winning, who's losing, and where the recompetes are.
+            For <strong>$149/mo</strong>, not $20,000/yr.
+        </p>
+        <!-- BEEHIIV EMBED CODE HERE -->
+        <div class="hero-form-placeholder" style="max-width: 480px; margin: 0 auto 20px;">
+            <!-- Replace this entire div with your Beehiiv embed code. -->
+            <!-- The form below is a placeholder that mirrors Beehiiv styling. -->
+            <form class="hero-form" action="#" method="post">
+                <input type="email" placeholder="Enter your work email" required>
+                <button type="submit">Subscribe Free</button>
+            </form>
+        </div>
+        <p class="hero-trust">Free weekly brief. No credit card required. Unsubscribe anytime.</p>
+    </div>
+</section>
+
+<!-- Problem -->
+<section class="problem" id="problem">
+    <div class="section-inner">
+        <span class="section-label">The Problem</span>
+        <h2 class="section-title">You're flying blind on federal opportunities.</h2>
+        <p class="section-subtitle">
+            You're checking SAM.gov manually. Your competitors are using $20K/yr tools. Neither works well enough.
+        </p>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-card-icon">
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+                </div>
+                <h3>Missing Recompetes</h3>
+                <p>Contracts worth millions expire every quarter in your NAICS codes. By the time you see them on SAM.gov, incumbents have a 6-month head start on capture.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-card-icon">
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7Z"/></svg>
+                </div>
+                <h3>Can't Track Competitors</h3>
+                <p>You don't know when a competitor picks up a new option year, wins in an adjacent space, or starts building a team for a recompete you're targeting.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-card-icon">
+                    <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6-2a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"/><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" d="M2 2l20 20"/></svg>
+                </div>
+                <h3>Overpaying for Stale Intel</h3>
+                <p>GovWin and Deltek charge $15K-$25K/yr for databases that still require hours of manual analysis. Small and mid-size firms can't justify the spend.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solution -->
+<section class="solution" id="solution">
+    <div class="section-inner">
+        <span class="section-label">The Solution</span>
+        <h2 class="section-title">Every Monday morning, you get:</h2>
+        <p class="section-subtitle" style="margin-bottom: 0;">
+            A concise, AI-analyzed brief tailored to your NAICS codes, past performance, and competitive landscape.
+        </p>
+        <div class="solution-layout">
+            <ul class="solution-list">
+                <li>
+                    <div class="solution-check">
+                        <svg fill="none" viewBox="0 0 14 14"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.5 7.5L5.5 10.5L11.5 3.5"/></svg>
+                    </div>
+                    <div>
+                        <h4>Recompete Alerts</h4>
+                        <p>Contracts in your NAICS codes with periods of performance ending in the next 6-18 months. Sorted by ceiling value. No noise.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="solution-check">
+                        <svg fill="none" viewBox="0 0 14 14"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.5 7.5L5.5 10.5L11.5 3.5"/></svg>
+                    </div>
+                    <div>
+                        <h4>New Award Tracking</h4>
+                        <p>Who won what this week, for how much, and which agency. Spot patterns before your competitors do.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="solution-check">
+                        <svg fill="none" viewBox="0 0 14 14"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.5 7.5L5.5 10.5L11.5 3.5"/></svg>
+                    </div>
+                    <div>
+                        <h4>Competitor Intelligence</h4>
+                        <p>Option exercises, funding modifications, and new wins for the companies you're tracking. Know their pipeline as well as you know yours.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="solution-check">
+                        <svg fill="none" viewBox="0 0 14 14"><path stroke="#C5A44E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.5 7.5L5.5 10.5L11.5 3.5"/></svg>
+                    </div>
+                    <div>
+                        <h4>AI Analysis</h4>
+                        <p>Plain-English summaries of what these data points mean for your business. Trend spotting, agency budget shifts, and strategic recommendations.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Report Preview Mockup -->
+            <div class="report-preview">
+                <div class="report-header">
+                    <span class="report-header-title">GOVCON WEEKLY INTEL BRIEF</span>
+                    <span class="report-header-date">Mar 17, 2026</span>
+                </div>
+                <div class="report-body">
+                    <div class="report-section-label">Recompete Alert</div>
+                    <div class="report-item">
+                        <div class="report-item-header">
+                            <span class="report-item-agency">Dept. of Veterans Affairs</span>
+                            <span class="report-item-value">$14.2M ceiling</span>
+                        </div>
+                        <div class="report-item-desc">IT Modernization Support Services &mdash; PoP ends Sep 2026. Incumbent: Booz Allen. NAICS 541512.</div>
+                        <span class="report-tag tag-recompete">Recompete &mdash; 6mo window</span>
+                    </div>
+                    <div class="report-item">
+                        <div class="report-item-header">
+                            <span class="report-item-agency">U.S. Army / ACC-APG</span>
+                            <span class="report-item-value">$8.7M</span>
+                        </div>
+                        <div class="report-item-desc">Cybersecurity Assessment &amp; Authorization &mdash; awarded to CACI Federal. Set-aside: SDVOSB.</div>
+                        <span class="report-tag tag-award">New Award</span>
+                    </div>
+
+                    <div class="report-section-label" style="margin-top: 16px;">Competitor Watch</div>
+                    <div class="report-item">
+                        <div class="report-item-header">
+                            <span class="report-item-agency">Leidos</span>
+                            <span class="report-item-value">Option Year 3 exercised</span>
+                        </div>
+                        <div class="report-item-desc">DHA Health IT contract &mdash; $22M modification. Extends through FY27.</div>
+                        <span class="report-tag tag-intel">Competitor Intel</span>
+                    </div>
+
+                    <div class="report-ai-box">
+                        <div class="report-ai-label">AI Analysis</div>
+                        <div class="report-ai-text">VA IT modernization spend up 18% YoY. Three major contracts in your NAICS expiring Q3-Q4 2026 &mdash; a capture window is opening. Recommend teaming outreach to incumbent subs now.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+    <div class="section-inner" style="text-align: center;">
+        <span class="section-label">Pricing</span>
+        <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Simple pricing. No enterprise sales call.</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+            Cancel anytime. Every plan starts with a free report so you can evaluate the quality.
+        </p>
+        <div class="pricing-grid">
+            <!-- Free -->
+            <div class="pricing-card">
+                <div class="pricing-tier">Free</div>
+                <div class="pricing-price">$0</div>
+                <p class="pricing-desc">Monthly market overview to keep you informed.</p>
+                <ul class="pricing-features">
+                    <li>Monthly market overview email</li>
+                    <li>Top 10 recompetes by ceiling value</li>
+                    <li>Major awards summary</li>
+                    <li>Agency budget trend highlights</li>
+                </ul>
+                <a href="#cta" class="pricing-cta pricing-cta-outline">Subscribe Free</a>
+            </div>
+            <!-- Pro -->
+            <div class="pricing-card featured">
+                <div class="pricing-popular">Most Popular</div>
+                <div class="pricing-tier">Pro</div>
+                <div class="pricing-price">$149<span>/mo</span></div>
+                <p class="pricing-desc">Weekly personalized brief for serious BD teams.</p>
+                <ul class="pricing-features">
+                    <li>Weekly intelligence brief every Monday</li>
+                    <li>NAICS code filtering (up to 10 codes)</li>
+                    <li>Competitor tracking (up to 15 companies)</li>
+                    <li>Recompete alerts with PoP timelines</li>
+                    <li>AI analysis and recommendations</li>
+                    <li>Award and modification tracking</li>
+                </ul>
+                <a href="#cta" class="pricing-cta pricing-cta-primary">Subscribe Free</a>
+            </div>
+            <!-- Enterprise -->
+            <div class="pricing-card">
+                <div class="pricing-tier">Enterprise</div>
+                <div class="pricing-price">$399<span>/mo</span></div>
+                <p class="pricing-desc">For firms running multiple verticals.</p>
+                <ul class="pricing-features">
+                    <li>Everything in Pro</li>
+                    <li>Custom vertical tracking (unlimited NAICS)</li>
+                    <li>Team access (up to 10 seats)</li>
+                    <li>REST API access</li>
+                    <li>Slack and Teams integration</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#cta" class="pricing-cta pricing-cta-outline">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Proof -->
+<section class="social-proof">
+    <div class="section-inner">
+        <span class="section-label">Trusted by GovCon Professionals</span>
+        <div class="social-proof-stat">50+</div>
+        <p class="social-proof-stat-label">GovCon firms read this every Monday morning.</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">"We caught a $12M recompete at DHS three months before it hit SAM.gov. Gave us enough runway to build the team and shape the RFP. That alone paid for five years of this service."</p>
+                <div class="testimonial-author">Director of BD</div>
+                <div class="testimonial-role">Mid-tier IT Services Firm, Reston VA</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">"I was paying $18K/yr for GovWin and still spending 10 hours a week on manual research. This gives me better competitive intel in a 5-minute Monday read."</p>
+                <div class="testimonial-author">VP of Strategy</div>
+                <div class="testimonial-role">SDVOSB Cybersecurity Firm</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testimonial-text">"The competitor tracking alone is worth it. We knew Leidos picked up an option year on a contract we were targeting before their own BD team announced it internally."</p>
+                <div class="testimonial-author">Capture Manager</div>
+                <div class="testimonial-role">8(a) Professional Services, DC Metro</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="cta-bottom" id="cta">
+    <h2>Your competitors already have this intel.</h2>
+    <p>Get your first weekly brief free. See what you've been missing.</p>
+    <!-- BEEHIIV EMBED CODE HERE -->
+    <div class="hero-form-placeholder">
+        <!-- Replace this entire div with your Beehiiv embed code. -->
+        <form class="hero-form" action="#" method="post">
+            <input type="email" placeholder="Enter your work email" required>
+            <button type="submit">Subscribe Free</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <p class="footer-text">Built with AI. Powered by USAspending.gov and FPDS open data.</p>
+        <ul class="footer-links">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="mailto:legal@govconintel.com">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

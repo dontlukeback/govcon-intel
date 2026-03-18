@@ -1,0 +1,229 @@
+{
+  "report_date": "2026-03-18",
+  "report_title": "GovCon Weekly Intelligence",
+  "report_subtitle": "Week of March 16-22, 2026",
+  "notable": {
+    "headline": "DoD Cyber Budget Surge: $2.1B in New Obligations This Quarter",
+    "summary": "The Department of Defense has accelerated cyber spending by 34% QoQ, with CYBERCOM and DISA leading procurement. Three major recompetes worth $890M are hitting the street in the next 60 days. If you hold incumbent positions in network defense or zero-trust architecture, now is the time to prep your capture teams.",
+    "key_stat": "$2.1B",
+    "key_stat_label": "New DoD Cyber Obligations (Q1 FY26)"
+  },
+  "sections": {
+    "recompete_alerts": {
+      "title": "Recompete Alerts",
+      "subtitle": "Contracts expiring within 180 days -- protect your revenue",
+      "items": [
+        {
+          "contract_name": "Enterprise IT Support Services (EITSS-III)",
+          "agency": "Defense Information Systems Agency (DISA)",
+          "incumbent": "Leidos",
+          "current_value": "$487,000,000",
+          "current_value_raw": 487000000,
+          "expiration_date": "2026-06-30",
+          "days_remaining": 104,
+          "naics": "541512",
+          "set_aside": "Full & Open",
+          "solicitation_status": "Draft RFP Expected Apr 2026",
+          "notable_detail": "Scope expanding to include zero-trust implementation. Estimated new ceiling $650M.",
+          "urgency": "high"
+        },
+        {
+          "contract_name": "Network Operations & Cyber Defense (NOCDef)",
+          "agency": "U.S. Cyber Command (CYBERCOM)",
+          "incumbent": "Booz Allen Hamilton",
+          "current_value": "$312,000,000",
+          "current_value_raw": 312000000,
+          "expiration_date": "2026-07-15",
+          "days_remaining": 119,
+          "naics": "541519",
+          "set_aside": "Full & Open",
+          "solicitation_status": "Sources Sought Published",
+          "notable_detail": "CYBERCOM restructuring support contract into 3 task areas. Potential for multiple awards.",
+          "urgency": "high"
+        },
+        {
+          "contract_name": "Health IT Modernization Support",
+          "agency": "Defense Health Agency (DHA)",
+          "incumbent": "CACI International",
+          "current_value": "$94,500,000",
+          "current_value_raw": 94500000,
+          "expiration_date": "2026-08-31",
+          "days_remaining": 166,
+          "naics": "541511",
+          "set_aside": "Small Business Set-Aside",
+          "solicitation_status": "Market Research Phase",
+          "notable_detail": "MHS GENESIS rollout delays may extend incumbent period of performance.",
+          "urgency": "medium"
+        },
+        {
+          "contract_name": "Logistics Data Analytics Platform (LDAP)",
+          "agency": "Defense Logistics Agency (DLA)",
+          "incumbent": "Palantir Technologies",
+          "current_value": "$67,200,000",
+          "current_value_raw": 67200000,
+          "expiration_date": "2026-09-15",
+          "days_remaining": 181,
+          "naics": "518210",
+          "set_aside": "Full & Open",
+          "solicitation_status": "Pre-Solicitation Notice Expected May 2026",
+          "notable_detail": "DLA evaluating move to commercial SaaS. Significant architecture shift possible.",
+          "urgency": "medium"
+        }
+      ]
+    },
+    "new_awards": {
+      "title": "New Contract Awards",
+      "subtitle": "Awarded this week -- competitive intelligence for your pipeline",
+      "items": [
+        {
+          "contract_name": "Joint All-Domain Command & Control (JADC2) Integration",
+          "agency": "U.S. Army PEO C3T",
+          "awardee": "General Dynamics IT",
+          "award_value": "$1,240,000,000",
+          "award_value_raw": 1240000000,
+          "award_date": "2026-03-14",
+          "period_of_performance": "5 years (base + 4 options)",
+          "naics": "541330",
+          "set_aside": "Full & Open",
+          "competitors_known": ["Leidos", "L3Harris", "Northrop Grumman"],
+          "notable_detail": "Largest C3 integration award this fiscal year. GDIT beat Leidos on technical approach score."
+        },
+        {
+          "contract_name": "Cloud Migration & Managed Services (CMMS)",
+          "agency": "Department of Veterans Affairs (VA)",
+          "awardee": "Accenture Federal Services",
+          "award_value": "$389,000,000",
+          "award_value_raw": 389000000,
+          "award_date": "2026-03-16",
+          "period_of_performance": "3 years base + 2 option years",
+          "naics": "541519",
+          "set_aside": "Full & Open",
+          "competitors_known": ["Deloitte", "IBM Federal"],
+          "notable_detail": "VA's largest single cloud contract. Multi-cloud strategy (AWS + Azure)."
+        },
+        {
+          "contract_name": "AI/ML Training Data Curation",
+          "agency": "National Geospatial-Intelligence Agency (NGA)",
+          "awardee": "Scale AI",
+          "award_value": "$78,500,000",
+          "award_value_raw": 78500000,
+          "award_date": "2026-03-17",
+          "period_of_performance": "2 years base + 1 option",
+          "naics": "541715",
+          "set_aside": "Full & Open",
+          "competitors_known": ["Anthropic", "Palantir Technologies"],
+          "notable_detail": "First major NGA award to a pure-play AI data company. Signals shift from traditional defense primes."
+        },
+        {
+          "contract_name": "Satellite Ground Systems O&M",
+          "agency": "Space Systems Command (SSC)",
+          "awardee": "Raytheon Technologies",
+          "award_value": "$215,000,000",
+          "award_value_raw": 215000000,
+          "award_date": "2026-03-13",
+          "period_of_performance": "5 years",
+          "naics": "541330",
+          "set_aside": "Full & Open",
+          "competitors_known": ["Lockheed Martin", "Ball Aerospace"],
+          "notable_detail": "Includes classified resilient comms upgrade. Raytheon leveraged commercial LEO experience."
+        }
+      ]
+    },
+    "option_exercises": {
+      "title": "Option Year Exercises",
+      "subtitle": "Incumbents extending -- signals of satisfied customers",
+      "items": [
+        {
+          "contract_name": "Cybersecurity Maturity Model Certification (CMMC) Assessor Support",
+          "agency": "DoD CIO",
+          "contractor": "ManTech International",
+          "option_value": "$42,000,000",
+          "option_value_raw": 42000000,
+          "option_year": "Option Year 2 of 4",
+          "base_contract_value": "$180,000,000",
+          "notable_detail": "CMMC 2.0 rollout driving 3x assessment volume. ManTech adding 200 assessors."
+        },
+        {
+          "contract_name": "Financial Systems Modernization (FSM)",
+          "agency": "Department of Treasury",
+          "contractor": "CGI Federal",
+          "option_value": "$31,800,000",
+          "option_value_raw": 31800000,
+          "option_year": "Option Year 3 of 5",
+          "base_contract_value": "$156,000,000",
+          "notable_detail": "Smooth exercise despite GAO audit findings. Treasury satisfied with migration timeline."
+        },
+        {
+          "contract_name": "Enterprise Cloud Hosting (ECH)",
+          "agency": "Intelligence Community (IC)",
+          "contractor": "Amazon Web Services (AWS)",
+          "option_value": "$187,000,000",
+          "option_value_raw": 187000000,
+          "option_year": "Option Year 4 of 5",
+          "base_contract_value": "$742,000,000",
+          "notable_detail": "Final option year. IC already exploring multi-cloud follow-on. Microsoft positioning aggressively."
+        }
+      ]
+    },
+    "funding_actions": {
+      "title": "Significant Funding Actions",
+      "subtitle": "Budget movements, modifications, and ceiling increases",
+      "items": [
+        {
+          "action_type": "Ceiling Increase",
+          "contract_name": "Defense Enclave Services (DES)",
+          "agency": "DISA",
+          "contractor": "SAIC",
+          "modification_value": "$450,000,000",
+          "modification_value_raw": 450000000,
+          "new_ceiling": "$7,250,000,000",
+          "notable_detail": "Fourth ceiling increase in 18 months. DISA consolidation accelerating faster than planned."
+        },
+        {
+          "action_type": "New Task Order",
+          "contract_name": "Alliant 2 GWAC",
+          "agency": "GSA / FBI",
+          "contractor": "Perspecta (now Peraton)",
+          "modification_value": "$128,000,000",
+          "modification_value_raw": 128000000,
+          "new_ceiling": null,
+          "notable_detail": "FBI biometric identity services. Sole-source justification cited urgency of IAFIS modernization."
+        },
+        {
+          "action_type": "Incremental Funding",
+          "contract_name": "Next Generation Enterprise Network (NGEN-R)",
+          "agency": "Navy / PEO Digital",
+          "contractor": "Leidos",
+          "modification_value": "$92,000,000",
+          "modification_value_raw": 92000000,
+          "new_ceiling": "$8,400,000,000",
+          "notable_detail": "Funding for FY26 Q2 operations. Network modernization on schedule."
+        },
+        {
+          "action_type": "Ceiling Increase",
+          "contract_name": "CIO-SP4",
+          "agency": "NIH NITAAC",
+          "contractor": "Multiple Award",
+          "modification_value": "$2,000,000,000",
+          "modification_value_raw": 2000000000,
+          "new_ceiling": "$52,000,000,000",
+          "notable_detail": "CIO-SP4 ceiling raised to accommodate surge in health IT task orders post-pandemic modernization."
+        }
+      ]
+    }
+  },
+  "market_pulse": {
+    "total_obligations_week": "$4,830,000,000",
+    "yoy_change": "+12.3%",
+    "top_agencies_by_spend": [
+      {"agency": "DoD", "amount": "$2,890,000,000"},
+      {"agency": "VA", "amount": "$620,000,000"},
+      {"agency": "DHS", "amount": "$485,000,000"}
+    ],
+    "trending_naics": [
+      {"code": "541512", "description": "Computer Systems Design", "change": "+28%"},
+      {"code": "541519", "description": "Other IT Consulting", "change": "+19%"},
+      {"code": "541715", "description": "R&D in Physical Sciences", "change": "+15%"}
+    ]
+  }
+}
