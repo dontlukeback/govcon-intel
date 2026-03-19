@@ -1,0 +1,13 @@
+2026-03-19 10:55:23,924  INFO  Auto-detected latest file: govcon_awards_2026-03-18.json
+2026-03-19 10:55:23,927  INFO  Loaded 1138 awards from govcon_awards_2026-03-18.json
+2026-03-19 10:55:23,928  INFO  Snapshot saved: /Users/luke/Personal/govcon-intel/data/archive/2026-03-18.json
+2026-03-19 10:55:23,936  INFO  Master updated: 0 -> 1138 total awards (+1138 new, 0 existing updated)
+2026-03-19 10:55:23,938  INFO  Stats: 1138 awards, 360 recipients, 24 agencies, 1 weeks archived
+2026-03-19 10:55:23,938  INFO  Total contract value: $8,747,988,663.99
+2026-03-19 11:46:19,801  INFO  Auto-detected latest file: govcon_awards_2026-03-18.json
+2026-03-19 11:46:19,804  INFO  Loaded 1138 awards from govcon_awards_2026-03-18.json
+2026-03-19 11:46:19,804  WARNING  Snapshot 2026-03-18.json already exists — overwriting
+2026-03-19 11:46:19,805  INFO  Snapshot saved: /Users/luke/Personal/govcon-intel/data/archive/2026-03-18.json
+2026-03-19 11:46:19,818  INFO  Master updated: 1138 -> 1138 total awards (+0 new, 1138 existing updated)
+2026-03-19 11:46:19,820  INFO  Stats: 1138 awards, 360 recipients, 24 agencies, 1 weeks archived
+2026-03-19 11:46:19,820  INFO  Total contract value: $8,747,988,663.99

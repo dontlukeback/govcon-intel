@@ -1,0 +1,22 @@
+{
+  "total_awards": 1138,
+  "unique_recipients": 360,
+  "unique_agencies": 24,
+  "total_value_usd": 8747988663.99,
+  "weeks_archived": 1,
+  "week_dates": [
+    "2026-03-18"
+  ],
+  "top_verticals": {
+    "Cybersecurity": 522,
+    "AI/ML": 308,
+    "Cloud": 253,
+    "Identity Management": 78,
+    "FedRAMP": 38,
+    "Networking/SDWAN": 21,
+    "Data Analytics": 17,
+    "DevSecOps": 1,
+    "Zero Trust": 1
+  },
+  "last_updated": "2026-03-19T11:46:19.819891"
+}
