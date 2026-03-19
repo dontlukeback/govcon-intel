@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Homeland Security IT Contracts & Awards | Federal Spending Intelligence</title>
+    <meta name="description" content="Track Department of Homeland Security IT contract awards, spending trends, and top contractors. $149.69M in federal IT spending across 35 awards.">
+    <link rel="canonical" href="https://dontlukeback.github.io/govcon-intel/agencies/department-of-homeland-security.html">
+    <meta property="og:title" content="Department of Homeland Security IT Contracts & Awards">
+    <meta property="og:description" content="$149.69M in federal IT spending across 35 awards. Track spending trends and top contractors.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dontlukeback.github.io/govcon-intel/agencies/department-of-homeland-security.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Department of Homeland Security IT Contracts & Awards">
+    <meta name="twitter:description" content="$149.69M in federal IT spending across 35 awards.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--navy);
+            color: var(--gray-100);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--navy-mid);
+            border-bottom: 1px solid var(--navy-light);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav a {
+            color: var(--gray-100);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+
+        .card {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-light);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contractor-row {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--navy-light);
+        }
+
+        .contractor-row:last-child {
+            border-bottom: none;
+        }
+
+        .contractor-rank {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-600);
+            width: 3rem;
+        }
+
+        .contractor-info {
+            flex: 1;
+        }
+
+        .contractor-name {
+            font-weight: 600;
+            color: var(--gray-100);
+            margin-bottom: 0.25rem;
+        }
+
+        .contractor-stats {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .vertical-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .vertical-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-name {
+            font-weight: 600;
+            color: var(--gray-100);
+        }
+
+        .vertical-count {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .vertical-bar {
+            background: var(--navy);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-fill {
+            background: var(--gold);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .vertical-value {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+        }
+
+        .award-card {
+            background: var(--navy);
+            border: 1px solid var(--navy-light);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .award-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .award-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .award-date {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .award-contractor {
+            font-weight: 600;
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-description {
+            color: var(--gray-600);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .award-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        .award-id {
+            font-family: monospace;
+        }
+
+        .award-vertical {
+            color: var(--gold-light);
+        }
+
+        .cta-section {
+            background: var(--navy-mid);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contractor-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contractor-rank {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">GovCon Intelligence</a>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="index.html">Agencies</a>
+                <a href="../insights.html">Insights</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> / <a href="index.html">Agencies</a> / Department of Homeland Security
+        </div>
+
+        <div class="page-header">
+            <h1 class="page-title">Department of Homeland Security</h1>
+            <p class="page-subtitle">IT Contract Awards & Spending Intelligence</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total IT Spending</div>
+                <div class="stat-value">$149.69M</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Awards</div>
+                <div class="stat-value">35</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Average Award</div>
+                <div class="stat-value">$4.28M</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Top Contractors</h2>
+            <div class="card">
+                
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#1</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">CDA INC</div>
+                            <div class="contractor-stats">
+                                2 awards · $49.28M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#2</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP</div>
+                            <div class="contractor-stats">
+                                1 award · $33.42M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#3</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">ELBITAMERICA, INC.</div>
+                            <div class="contractor-stats">
+                                1 award · $15.06M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#4</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">NIYAMIT, INC.</div>
+                            <div class="contractor-stats">
+                                1 award · $7.79M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#5</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">INTERNATIONAL BUSINESS MACHINES CORPORATION</div>
+                            <div class="contractor-stats">
+                                1 award · $7.24M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#6</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">PARAGON SYSTEMS INC</div>
+                            <div class="contractor-stats">
+                                4 awards · $6.32M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#7</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">DELOITTE CONSULTING LLP</div>
+                            <div class="contractor-stats">
+                                2 awards · $5.95M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#8</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">PARAGON PROFESSIONAL SERVICES LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $4.23M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#9</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">ARDENT MANAGEMENT CONSULTING, LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $3.93M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#10</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">JAVA PRODUCTIONS, INC.</div>
+                            <div class="contractor-stats">
+                                1 award · $2.60M
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technology Areas</h2>
+            <div class="card">
+                
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Cloud</span>
+                            <span class="vertical-count">21 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 60.0%"></div>
+                        </div>
+                        <div class="vertical-value">$91.38M</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Identity Management</span>
+                            <span class="vertical-count">5 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 14.285714285714285%"></div>
+                        </div>
+                        <div class="vertical-value">$43.81M</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Data Analytics</span>
+                            <span class="vertical-count">4 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 11.428571428571429%"></div>
+                        </div>
+                        <div class="vertical-value">$7.81M</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Cybersecurity</span>
+                            <span class="vertical-count">4 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 11.428571428571429%"></div>
+                        </div>
+                        <div class="vertical-value">$6.34M</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Networking/SDWAN</span>
+                            <span class="vertical-count">2 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 5.714285714285714%"></div>
+                        </div>
+                        <div class="vertical-value">$1.09M</div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Top 10 Awards by Value</h2>
+            
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$33.42M</div>
+                            <div class="award-date">2026-02-01</div>
+                        </div>
+                        <div class="award-contractor">UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP</div>
+                        <div class="award-description">PROTECTIVE SECURITY OFFICER (PSO) SERVICES THROUGHOUT THE NEW YORK METROPOLITAN AREA</div>
+                        <div class="award-meta">
+                            <span class="award-id">70RFP125FRE200027</span>
+                            <span class="award-vertical">Identity Management</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$33.05M</div>
+                            <div class="award-date">2025-01-01</div>
+                        </div>
+                        <div class="award-contractor">CDA INC</div>
+                        <div class="award-description">TASK ORDER UNDER MULTIPLE AWARD CONTRACT 70RFP224DEC000009 FOR PROTECTIVE SECURITY OFFICER (PSO) SERVICES THROUGHOUT PUERTO RICO AND THE U.S. VIRGI...</div>
+                        <div class="award-meta">
+                            <span class="award-id">70RFP124FRE200039</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$16.23M</div>
+                            <div class="award-date">2025-05-01</div>
+                        </div>
+                        <div class="award-contractor">CDA INC</div>
+                        <div class="award-description">ARMED PROTECTIVE SECURITY OFFICER (PSO) SERVICES THROUGHOUT HAWAII AND THE PACIFIC ISLANDS TASK ORDER AWARD</div>
+                        <div class="award-meta">
+                            <span class="award-id">70RFPW25FRW900007</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$15.06M</div>
+                            <div class="award-date">2023-09-01</div>
+                        </div>
+                        <div class="award-contractor">ELBITAMERICA, INC.</div>
+                        <div class="award-description">DO AWARD</div>
+                        <div class="award-meta">
+                            <span class="award-id">70B02C23F00000877</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$7.79M</div>
+                            <div class="award-date">2022-02-12</div>
+                        </div>
+                        <div class="award-contractor">NIYAMIT, INC.</div>
+                        <div class="award-description">FEIMS & ICAM TOOL APPLICATION MANAGEMENT SUPPORT</div>
+                        <div class="award-meta">
+                            <span class="award-id">70FA3022F00000102</span>
+                            <span class="award-vertical">Identity Management</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$7.24M</div>
+                            <div class="award-date">2020-09-29</div>
+                        </div>
+                        <div class="award-contractor">INTERNATIONAL BUSINESS MACHINES CORPORATION</div>
+                        <div class="award-description">ACE DISASTER RECOVERY (DR) INFRASTRUCTURE-AS-A-SERVICE (IAAS) - BASE YEAR</div>
+                        <div class="award-meta">
+                            <span class="award-id">70B04C20F00001153</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$4.23M</div>
+                            <div class="award-date">2025-06-01</div>
+                        </div>
+                        <div class="award-contractor">PARAGON PROFESSIONAL SERVICES LLC</div>
+                        <div class="award-description">THIS AWARD PROVIDES TRANSPORTATION AND GUARD SERVICES FOR THE ENFORCEMENT AND REMOVAL OPERATIONS, NEWARK AREA OF RESPONSIBILITY TO ACHIEVE THE ICE ...</div>
+                        <div class="award-meta">
+                            <span class="award-id">70CDCR25FR0000043</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$4.16M</div>
+                            <div class="award-date">2025-08-01</div>
+                        </div>
+                        <div class="award-contractor">PARAGON SYSTEMS INC</div>
+                        <div class="award-description">TASK ORDER AWARD PROTECTIVE SECURITY OFFICER SERVICE THROUGHOUT MASSACHUSETTS  I/A/W DHS ACQUISITION ALERT 25-07, REV 1, THIS ACTION FALLS WITHIN S...</div>
+                        <div class="award-meta">
+                            <span class="award-id">70RFP125FRE100022</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$3.93M</div>
+                            <div class="award-date">2025-09-16</div>
+                        </div>
+                        <div class="award-contractor">ARDENT MANAGEMENT CONSULTING, LLC</div>
+                        <div class="award-description">THIS IS A 6-MONTH BRIDGE CONTRACT FOR INFORMATION SECURITY, PRODUCTION MONITORING AND PROCESS SUPPORT SERVICES.</div>
+                        <div class="award-meta">
+                            <span class="award-id">70B04C25F00001072</span>
+                            <span class="award-vertical">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$3.11M</div>
+                            <div class="award-date">2025-02-21</div>
+                        </div>
+                        <div class="award-contractor">DELOITTE CONSULTING LLP</div>
+                        <div class="award-description">PROGRAM MANAGEMENT AND DATA ANALYTICS</div>
+                        <div class="award-meta">
+                            <span class="award-id">70B06C25F00000156</span>
+                            <span class="award-vertical">Data Analytics</span>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Track Department of Homeland Security Spending Weekly</h2>
+            <p class="cta-description">Get alerts when Department of Homeland Security awards new contracts in your tech area. Real-time competitive intelligence delivered to your inbox.</p>
+            <a href="../index.html#subscribe" class="cta-button">Subscribe Now</a>
+        </div>
+    </div>
+
+    <script src="../js/tracker.js"></script>
+</body>
+</html>

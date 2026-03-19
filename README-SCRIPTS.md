@@ -1,6 +1,6 @@
 # GovCon Intelligence — Viral Growth Features
 
-This repository contains two key scripts that drive organic newsletter growth through personalization and urgency.
+This repository contains three key script categories that drive organic newsletter growth through personalization, urgency, and SEO content moats.
 
 ## Scripts
 
@@ -89,6 +89,64 @@ CRITICAL (39 days): DOE | $74.8M | Accenture Federal
 HIGH (82 days): GSA | $339.5M | Kratos S2
 MODERATE (141 days): State Dept | $134.6M | SAIC
 ```
+
+---
+
+### 3. `generate_agency_pages.py` — SEO Content Moat
+
+**Purpose:** Generate public SEO-optimized landing pages for federal agencies. People searching for "[Agency] IT contracts" or "[Agency] contract awards" land on our pages.
+
+**Usage:**
+
+```bash
+# Generate all agency pages (default: agencies with 5+ awards)
+python3 generate_agency_pages.py
+
+# Higher threshold for more selective pages
+python3 generate_agency_pages.py --min-awards 10
+```
+
+**Output:**
+- `landing/agencies/{slug}.html` (e.g., department-of-energy.html)
+- `landing/agencies/index.html` (directory of all agencies)
+
+**What it does:**
+- Groups all awards by awarding_agency
+- For each agency with 5+ awards, generates a full intelligence page:
+  - Total IT spend this period
+  - Top contractors winning at this agency
+  - Technology verticals (what tech areas this agency buys)
+  - Top 10 awards with full details
+  - Subscribe CTA: "Track [Agency] spending weekly"
+- Creates an index/directory page linking all agencies
+- Navy+gold theme matching main site
+- Full SEO meta tags (title, description, og tags)
+- Target keywords: "[agency name] contracts", "[agency name] IT spending"
+
+**Why it drives growth:**
+- **SEO moat:** 15+ agency pages (with contractor pages = 30+ total)
+- Auto-regenerates weekly as new data comes in
+- Captures organic search traffic from GovCon professionals
+- Each page has subscribe CTA converting searchers to subscribers
+- Content compounds: more weeks = richer data = better pages
+
+**Example output:**
+- `/landing/agencies/department-of-energy.html` — $3.51B across 12 awards
+- `/landing/agencies/general-services-administration.html` — $966M across 755 awards
+- `/landing/agencies/department-of-veterans-affairs.html` — $1.15B across 33 awards
+
+**Integration strategy:**
+1. Generate pages weekly alongside newsletter
+2. Add internal links from newsletter to agency pages
+3. Add sitemap.xml entries for all agency pages
+4. Monitor Google Search Console for "[Agency] contracts" rankings
+5. Add "View full [Agency] intelligence" CTAs in newsletter
+
+**Content moat math:**
+- Week 1: 15 agency pages
+- Week 10: Same 15 pages but 10x richer data
+- Week 52: Each page has full year of spending trends
+- Result: Impossible to replicate without 52 weeks of data
 
 ---
 

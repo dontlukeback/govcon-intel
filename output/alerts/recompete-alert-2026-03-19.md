@@ -5,7 +5,7 @@
 
 ## Summary
 
-We've identified **5** high-value contracts expiring within 180 days. Total value at risk: **$1.22B**.
+We've identified **10** high-value contracts expiring within 180 days. Total value at risk: **$1.39B**.
 
 These contracts either have no visible RFP activity yet (bridge contract risk) or are in active solicitation. If you're not tracking these, you're leaving opportunities on the table.
 
@@ -20,6 +20,11 @@ These contracts either have no visible RFP activity yet (bridge contract risk) o
 | Department of Veterans Affairs | $244.7M | COGNOSANTE MVH LLC | 167 | **MODERATE** |
 | Department of State | $134.6M | SCIENCE APPLICATIONS INTERNATI | 141 | **MODERATE** |
 | Department of Energy | $74.8M | ACCENTURE FEDERAL SERVICES LLC | 39 | **CRITICAL** |
+| Department of Defense | $58.3M | AT&T ENTERPRISES, LLC | 158 | **MODERATE** |
+| Department of Health and Human | $41.9M | ODDBALL, INC. | 59 | **CRITICAL** |
+| National Archives and Records  | $28.6M | MUTATIO INC. | 35 | **CRITICAL** |
+| Department of State | $21.6M | CENTERPOINT LLC | 100 | **HIGH** |
+| General Services Administratio | $19.4M | CQ JV, LLC | 61 | **HIGH** |
 
 ---
 
@@ -132,6 +137,113 @@ Mid-tier firms or large subs with $22.4M+ in past performance. If you're NOT the
 
 ---
 
+### 6. Department of Defense | $58.3M | 158 days
+
+**Urgency Level:** MODERATE — Contract expires within 6 months
+
+**Department of Defense** has a **$58.3M** contract expiring in **158 days** (ends 2026-08-25). Current incumbent: **AT&T ENTERPRISES, LLC**. Contract vehicle: GSA OASIS. 
+
+**Scope:** VPNS DEDICATED ACCESS ARRANGEMENT
+
+**Who should pursue this:**
+
+Mid-tier firms or large subs with $17.5M+ in past performance. If you're NOT the incumbent (AT&T ENTERPRISES, LLC), you need a compelling technical discriminator or significant price advantage.
+
+**Action items for this week:**
+
+- Add this to your BD pipeline tracker. Review monthly.
+- Research AT&T ENTERPRISES, LLC's performance on this contract (CPARS, protests, past performance).
+- Start relationship-building with Department of Defense stakeholders.
+- Verify you have access to GSA OASIS or identify a prime partner who does.
+
+
+---
+
+### 7. Department of Health and Human Services | $41.9M | 59 days
+
+**Urgency Level:** CRITICAL — Contract expires in 2 months or less
+
+**Department of Health and Human Services** has a **$41.9M** contract expiring in **59 days** (ends 2026-05-18). Current incumbent: **ODDBALL, INC.**. 
+
+**Scope:** 003708-NEW AWARD FOR BEDAP CONTRACT
+
+**Who should pursue this:**
+
+Mid-tier firms or large subs with $12.6M+ in past performance. If you're NOT the incumbent (ODDBALL, INC.), you need a compelling technical discriminator or significant price advantage.
+
+**Action items for this week:**
+
+- **URGENT:** RFP may already be out or imminent. Check SAM.gov daily.
+- Contact the contracting officer at Department of Health and Human Services TODAY to request RFI/sources sought if not yet published.
+- Assemble your capture team now. You have 60 days or less to respond.
+
+
+---
+
+### 8. National Archives and Records Administration | $28.6M | 35 days
+
+**Urgency Level:** CRITICAL — Contract expires in 2 months or less
+
+**National Archives and Records Administration** has a **$28.6M** contract expiring in **35 days** (ends 2026-04-24). Current incumbent: **MUTATIO INC.**. Contract vehicle: CIO-SP3. 
+
+**Scope:** NISP O&M SUPPORT SERVICES BASE POP: SEP 15, 2020 - SEP 14, 2021 TASK ORDER POP: SEP 15, 2020 - SEP 14, 2025
+
+**Who should pursue this:**
+
+Mid-tier firms or large subs with $8.6M+ in past performance. If you're NOT the incumbent (MUTATIO INC.), you need a compelling technical discriminator or significant price advantage.
+
+**Action items for this week:**
+
+- **URGENT:** RFP may already be out or imminent. Check SAM.gov daily.
+- Contact the contracting officer at National Archives and Records Administration TODAY to request RFI/sources sought if not yet published.
+- Assemble your capture team now. You have 60 days or less to respond.
+- Verify you have access to CIO-SP3 or identify a prime partner who does.
+
+
+---
+
+### 9. Department of State | $21.6M | 100 days
+
+**Urgency Level:** HIGH — Contract expires in 4 months or less
+
+**Department of State** has a **$21.6M** contract expiring in **100 days** (ends 2026-06-28). Current incumbent: **CENTERPOINT LLC**. 
+
+**Scope:** AWARD OF TASK ORDER FOR CYBERSECURITY.
+
+**Who should pursue this:**
+
+Mid-tier firms or large subs with $6.5M+ in past performance. If you're NOT the incumbent (CENTERPOINT LLC), you need a compelling technical discriminator or significant price advantage.
+
+**Action items for this week:**
+
+- Set SAM.gov alerts for this contract number and agency.
+- Request a pre-RFP meeting with Department of State program office to discuss upcoming requirements.
+- Start building your teaming strategy. Identify complementary partners.
+
+
+---
+
+### 10. General Services Administration | $19.4M | 61 days
+
+**Urgency Level:** HIGH — Contract expires in 4 months or less
+
+**General Services Administration** has a **$19.4M** contract expiring in **61 days** (ends 2026-05-20). Current incumbent: **CQ JV, LLC**. 
+
+**Scope:** MILITARY COMMUNICATIONS MILCOMM  POSITIONING NAVIGATION AND  TRAINING PNT CYBERSECURITY SUPPORT
+
+**Who should pursue this:**
+
+Mid-tier firms or large subs with $5.8M+ in past performance. If you're NOT the incumbent (CQ JV, LLC), you need a compelling technical discriminator or significant price advantage.
+
+**Action items for this week:**
+
+- Set SAM.gov alerts for this contract number and agency.
+- Request a pre-RFP meeting with General Services Administration program office to discuss upcoming requirements.
+- Start building your teaming strategy. Identify complementary partners.
+
+
+---
+
 ## How to Use This Alert
 
 **If you see a contract in your domain:**
@@ -144,6 +256,6 @@ Mid-tier firms or large subs with $22.4M+ in past performance. If you're NOT the
 
 ---
 
-*This alert was generated from contracts ending within 180 days with value ≥ $50.0M. These are mid-week urgent briefs, separate from the Monday weekly digest.*
+*This alert was generated from contracts ending within 180 days with value ≥ $10.0M. These are mid-week urgent briefs, separate from the Monday weekly digest.*
 
 *Questions? Reply to this email.*

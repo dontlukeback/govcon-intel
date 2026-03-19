@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Energy IT Contracts & Awards | Federal Spending Intelligence</title>
+    <meta name="description" content="Track Department of Energy IT contract awards, spending trends, and top contractors. $3.51B in federal IT spending across 12 awards.">
+    <link rel="canonical" href="https://dontlukeback.github.io/govcon-intel/agencies/department-of-energy.html">
+    <meta property="og:title" content="Department of Energy IT Contracts & Awards">
+    <meta property="og:description" content="$3.51B in federal IT spending across 12 awards. Track spending trends and top contractors.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dontlukeback.github.io/govcon-intel/agencies/department-of-energy.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Department of Energy IT Contracts & Awards">
+    <meta name="twitter:description" content="$3.51B in federal IT spending across 12 awards.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--navy);
+            color: var(--gray-100);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--navy-mid);
+            border-bottom: 1px solid var(--navy-light);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav a {
+            color: var(--gray-100);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+
+        .card {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-light);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contractor-row {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--navy-light);
+        }
+
+        .contractor-row:last-child {
+            border-bottom: none;
+        }
+
+        .contractor-rank {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-600);
+            width: 3rem;
+        }
+
+        .contractor-info {
+            flex: 1;
+        }
+
+        .contractor-name {
+            font-weight: 600;
+            color: var(--gray-100);
+            margin-bottom: 0.25rem;
+        }
+
+        .contractor-stats {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .vertical-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .vertical-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-name {
+            font-weight: 600;
+            color: var(--gray-100);
+        }
+
+        .vertical-count {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .vertical-bar {
+            background: var(--navy);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-fill {
+            background: var(--gold);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .vertical-value {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+        }
+
+        .award-card {
+            background: var(--navy);
+            border: 1px solid var(--navy-light);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .award-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .award-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .award-date {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .award-contractor {
+            font-weight: 600;
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-description {
+            color: var(--gray-600);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .award-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        .award-id {
+            font-family: monospace;
+        }
+
+        .award-vertical {
+            color: var(--gold-light);
+        }
+
+        .cta-section {
+            background: var(--navy-mid);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contractor-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contractor-rank {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">GovCon Intelligence</a>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="index.html">Agencies</a>
+                <a href="../insights.html">Insights</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> / <a href="index.html">Agencies</a> / Department of Energy
+        </div>
+
+        <div class="page-header">
+            <h1 class="page-title">Department of Energy</h1>
+            <p class="page-subtitle">IT Contract Awards & Spending Intelligence</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total IT Spending</div>
+                <div class="stat-value">$3.51B</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Awards</div>
+                <div class="stat-value">12</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Average Award</div>
+                <div class="stat-value">$292.46M</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Top Contractors</h2>
+            <div class="card">
+                
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#1</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">SAVANNAH RIVER MISSION COMPLETION, LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $2.10B
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#2</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">IDAHO ENVIRONMENTAL COALITION LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $1.30B
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#3</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">ACCENTURE FEDERAL SERVICES LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $74.80M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#4</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.</div>
+                            <div class="contractor-stats">
+                                1 award · $18.79M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#5</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">V3GATE, LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $8.12M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#6</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">CAMEO CONSULTING GROUP LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $520.64K
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#7</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">ADVANCED COMPUTER CONCEPTS, INC.</div>
+                            <div class="contractor-stats">
+                                1 award · $405.85K
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#8</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">AMAZON WEB SERVICES, INC.</div>
+                            <div class="contractor-stats">
+                                1 award · $173.65K
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#9</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">SIGMA SCIENCE INC</div>
+                            <div class="contractor-stats">
+                                1 award · $148.39K
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#10</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">MINBURN TECHNOLOGY GROUP, LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $119.94K
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technology Areas</h2>
+            <div class="card">
+                
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Cloud</span>
+                            <span class="vertical-count">6 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 50.0%"></div>
+                        </div>
+                        <div class="vertical-value">$3.41B</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Cybersecurity</span>
+                            <span class="vertical-count">5 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 41.66666666666667%"></div>
+                        </div>
+                        <div class="vertical-value">$94.26M</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">FedRAMP</span>
+                            <span class="vertical-count">1 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 8.333333333333332%"></div>
+                        </div>
+                        <div class="vertical-value">$405.85K</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Identity Management</span>
+                            <span class="vertical-count">1 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 8.333333333333332%"></div>
+                        </div>
+                        <div class="vertical-value">$148.39K</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Networking/SDWAN</span>
+                            <span class="vertical-count">1 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 8.333333333333332%"></div>
+                        </div>
+                        <div class="vertical-value">$29.20K</div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Top 10 Awards by Value</h2>
+            
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$2.10B</div>
+                            <div class="award-date">2023-10-01</div>
+                        </div>
+                        <div class="award-contractor">SAVANNAH RIVER MISSION COMPLETION, LLC</div>
+                        <div class="award-description">THIS AWARD IS FOR THE SAVANNAH RIVER INTEGRATED MISSION COMPLETION CONTRACT - TASK ORDER 6 (LIQUID WASTE OPERATIONS).</div>
+                        <div class="award-meta">
+                            <span class="award-id">89303723FEM400292</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$1.30B</div>
+                            <div class="award-date">2023-10-01</div>
+                        </div>
+                        <div class="award-contractor">IDAHO ENVIRONMENTAL COALITION LLC</div>
+                        <div class="award-description">THE PURPOSE OF THIS ACTION IS TO AWARD THE ICP TEN YEAR PLAN HYBRID TASK ORDER UNDER SINGLE AWARD MASTER IDIQ CONTRACT 89303321DEM000061.  CLIN 05 ...</div>
+                        <div class="award-meta">
+                            <span class="award-id">89304223FEM400000</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$74.80M</div>
+                            <div class="award-date">2024-03-29</div>
+                        </div>
+                        <div class="award-contractor">ACCENTURE FEDERAL SERVICES LLC</div>
+                        <div class="award-description">CBOSS BPA TASK ORDER FOR IM-30 CYBERSECURITY STRATEGY, POLICY, OPERATIONS, ENGINEERING, AND PROGRAM MANAGEMENT FOR THE U.S. DEPARTMENT OF ENERGY (D...</div>
+                        <div class="award-meta">
+                            <span class="award-id">89303024FIM000144</span>
+                            <span class="award-vertical">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$18.79M</div>
+                            <div class="award-date">2020-08-19</div>
+                        </div>
+                        <div class="award-contractor">GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.</div>
+                        <div class="award-description">THE CONTRACTOR SHALL PROVIDE CYBER-SECURITY SUPPORT, AS REQUIRED AND DIRECTED BY THE FEDERAL PROJECT MANAGER, IN THE OPERATIONS AND MAINTENANCE (O&...</div>
+                        <div class="award-meta">
+                            <span class="award-id">89303020FCF000012</span>
+                            <span class="award-vertical">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$8.12M</div>
+                            <div class="award-date">2024-05-01</div>
+                        </div>
+                        <div class="award-contractor">V3GATE, LLC</div>
+                        <div class="award-description">ESTABLISH DELIVERY ORDER # 89303024FIM000148 FOR IM-60 AWS CLOUD SERVICES.</div>
+                        <div class="award-meta">
+                            <span class="award-id">89303024FIM000148</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$520.64K</div>
+                            <div class="award-date">2022-05-05</div>
+                        </div>
+                        <div class="award-contractor">CAMEO CONSULTING GROUP LLC</div>
+                        <div class="award-description">CONTRACTOR TO PROVIDE CYBERSECURITY SUPPORT IN ACCORDANCE WITH THE STATEMENT OF WORK.</div>
+                        <div class="award-meta">
+                            <span class="award-id">89303922FEM000154</span>
+                            <span class="award-vertical">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$405.85K</div>
+                            <div class="award-date">2024-07-01</div>
+                        </div>
+                        <div class="award-contractor">ADVANCED COMPUTER CONCEPTS, INC.</div>
+                        <div class="award-description">BRAND NAME ONLY FOR CARAHSOFT, SERVICENOW ADMINISTRATIVE SERVICE RENEWAL.  THIS IS OST'S INSTANCE OF THE FEDRAMP APPROVED CLOUD-BASED VIRTUAL HELPD...</div>
+                        <div class="award-meta">
+                            <span class="award-id">89233124FNA400607</span>
+                            <span class="award-vertical">FedRAMP</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$173.65K</div>
+                            <div class="award-date">2026-03-01</div>
+                        </div>
+                        <div class="award-contractor">AMAZON WEB SERVICES, INC.</div>
+                        <div class="award-description">CENTRALIZED AMAZON WEB SERVICES (AWS) CLOUD SERVICES FOR WESTERN AREA POWER ADMINISTRATION INFORMATION TECHNOLOGY</div>
+                        <div class="award-meta">
+                            <span class="award-id">89503026FWA401132</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$148.39K</div>
+                            <div class="award-date">2025-12-16</div>
+                        </div>
+                        <div class="award-contractor">SIGMA SCIENCE INC</div>
+                        <div class="award-description">NEW AWARD OF TASK ORDER 25: LESSONS LEARNED FROM MANAGING POST CLOSURE CRITICALITY ISSUES IN A LICENSE APPLICATION FOR A NUCLEAR SNF/HLW REPOSITORY</div>
+                        <div class="award-meta">
+                            <span class="award-id">89243226FNE400215</span>
+                            <span class="award-vertical">Cloud, Identity Management</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$119.94K</div>
+                            <div class="award-date">2024-08-08</div>
+                        </div>
+                        <div class="award-contractor">MINBURN TECHNOLOGY GROUP, LLC</div>
+                        <div class="award-description">THE PURPOSE OF THIS NEW DELIVERY ORDER IS TO ESTABLISH AN ORDER FOR THE OFFICE OF THE DEPUTY CHIEF INFORMATION OFFICER FOR CYBERSECURITY IN SUPPORT...</div>
+                        <div class="award-meta">
+                            <span class="award-id">89303024FIM000163</span>
+                            <span class="award-vertical">Cloud, Cybersecurity</span>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Track Department of Energy Spending Weekly</h2>
+            <p class="cta-description">Get alerts when Department of Energy awards new contracts in your tech area. Real-time competitive intelligence delivered to your inbox.</p>
+            <a href="../index.html#subscribe" class="cta-button">Subscribe Now</a>
+        </div>
+    </div>
+
+    <script src="../js/tracker.js"></script>
+</body>
+</html>
