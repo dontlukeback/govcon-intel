@@ -29,19 +29,34 @@ from typing import Dict, List, Any
 
 def load_all_awards() -> List[Dict[str, Any]]:
     """
-    Load all available award data from current and archived files.
+    Load all available award data from the cumulative archive.
+
+    Primary source: data/archive/all_awards.json (12-week cumulative data).
+    Fallback: individual weekly files from data/ and data/archive/.
 
     As we accumulate more weeks of data, this function automatically includes them,
     making scorecards richer over time (THE DATA MOAT).
     """
     awards = []
     data_dir = Path(__file__).parent / "data"
+    archive_dir = data_dir / "archive"
 
-    # Load current week's data
+    # Primary: load cumulative all_awards.json (preferred — deduplicated, complete)
+    cumulative_file = archive_dir / "all_awards.json"
+    if cumulative_file.exists():
+        try:
+            with open(cumulative_file, 'r', encoding='utf-8') as f:
+                awards = json.load(f)
+                print(f"   Loaded {len(awards):,} awards from {cumulative_file.name} (cumulative archive)")
+                print(f"Total awards loaded: {len(awards):,}\n")
+                return awards
+        except Exception as e:
+            print(f"   Failed to load {cumulative_file.name}: {e}")
+            print("   Falling back to individual weekly files...")
+
+    # Fallback: load individual weekly files
     current_files = list(data_dir.glob("govcon_awards_*.json"))
 
-    # Load archived data
-    archive_dir = data_dir / "archive"
     if archive_dir.exists():
         archive_files = list(archive_dir.glob("govcon_awards_*.json"))
     else:
@@ -50,10 +65,10 @@ def load_all_awards() -> List[Dict[str, Any]]:
     all_files = current_files + archive_files
 
     if not all_files:
-        print("⚠️  No award data found. Run pipeline.py first.")
+        print("No award data found. Run pipeline.py first.")
         return []
 
-    print(f"📊 Loading data from {len(all_files)} file(s)...")
+    print(f"Loading data from {len(all_files)} file(s)...")
 
     for file_path in sorted(all_files):
         try:
@@ -62,9 +77,9 @@ def load_all_awards() -> List[Dict[str, Any]]:
                 awards.extend(data)
                 print(f"   Loaded {len(data):,} awards from {file_path.name}")
         except Exception as e:
-            print(f"   ⚠️  Failed to load {file_path.name}: {e}")
+            print(f"   Failed to load {file_path.name}: {e}")
 
-    print(f"✅ Total awards loaded: {len(awards):,}\n")
+    print(f"Total awards loaded: {len(awards):,}\n")
     return awards
 
 
