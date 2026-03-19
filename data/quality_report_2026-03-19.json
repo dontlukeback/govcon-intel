@@ -1,0 +1,252 @@
+{
+  "report_date": "2026-03-19 01:13:41",
+  "input_file": "govcon_awards_2026-03-18.json",
+  "award_count": 1138,
+  "overall_status": "WARNING",
+  "summary": {
+    "pass": 6,
+    "warning": 1,
+    "critical": 0,
+    "total_checks": 7
+  },
+  "checks": [
+    {
+      "check": "award_count",
+      "status": "PASS",
+      "message": "Award count 1138 is within expected range [500, 2000]",
+      "details": {
+        "count": 1138,
+        "expected_range": [
+          500,
+          2000
+        ]
+      }
+    },
+    {
+      "check": "total_value",
+      "status": "PASS",
+      "message": "Total value $8,747,988,664 is within expected range",
+      "details": {
+        "total_value": 8747988663.99,
+        "expected_range": [
+          1000000000,
+          50000000000
+        ],
+        "null_amounts": 0,
+        "zero_amounts": 0,
+        "negative_amounts": 0,
+        "mega_awards_over_1B": [
+          {
+            "recipient": "SAVANNAH RIVER MISSION COMPLETION, LLC",
+            "amount": 2101554261.49,
+            "agency": "Department of Energy"
+          },
+          {
+            "recipient": "IDAHO ENVIRONMENTAL COALITION LLC",
+            "amount": 1304803621.24,
+            "agency": "Department of Energy"
+          }
+        ]
+      }
+    },
+    {
+      "check": "vertical_coverage",
+      "status": "PASS",
+      "message": "All 9 expected verticals have coverage",
+      "details": {
+        "vertical_counts": {
+          "Cybersecurity": 522,
+          "AI/ML": 308,
+          "Cloud": 253,
+          "Identity Management": 78,
+          "FedRAMP": 38,
+          "Networking/SDWAN": 21,
+          "Data Analytics": 17,
+          "DevSecOps": 1,
+          "Zero Trust": 1
+        },
+        "missing_verticals": [],
+        "unexpected_verticals": [],
+        "low_count_verticals": {
+          "Zero Trust": 1,
+          "DevSecOps": 1
+        }
+      }
+    },
+    {
+      "check": "null_rates",
+      "status": "PASS",
+      "message": "Null rates within expected ranges",
+      "details": {
+        "field_null_rates": {
+          "award_id": {
+            "null_count": 0,
+            "null_pct": 0.0,
+            "baseline_pct": 0.0,
+            "delta_pp": 0.0
+          },
+          "description": {
+            "null_count": 0,
+            "null_pct": 0.0,
+            "baseline_pct": 0.0,
+            "delta_pp": 0.0
+          },
+          "award_amount": {
+            "null_count": 0,
+            "null_pct": 0.0,
+            "baseline_pct": 3.0,
+            "delta_pp": -3.0
+          },
+          "awarding_agency": {
+            "null_count": 0,
+            "null_pct": 0.0,
+            "baseline_pct": 0.0,
+            "delta_pp": 0.0
+          },
+          "recipient_name": {
+            "null_count": 0,
+            "null_pct": 0.0,
+            "baseline_pct": 0.0,
+            "delta_pp": 0.0
+          },
+          "start_date": {
+            "null_count": 0,
+            "null_pct": 0.0,
+            "baseline_pct": 0.0,
+            "delta_pp": 0.0
+          },
+          "end_date": {
+            "null_count": 0,
+            "null_pct": 0.0,
+            "baseline_pct": 0.0,
+            "delta_pp": 0.0
+          },
+          "verticals": {
+            "null_count": 0,
+            "null_pct": 0.0,
+            "baseline_pct": 0.0,
+            "delta_pp": 0.0
+          },
+          "vehicle": {
+            "null_count": 1101,
+            "null_pct": 96.7,
+            "baseline_pct": 97.3,
+            "delta_pp": -0.6
+          },
+          "set_aside": {
+            "null_count": 1082,
+            "null_pct": 95.1,
+            "baseline_pct": 95.2,
+            "delta_pp": -0.1
+          },
+          "naics_code": {
+            "null_count": 1088,
+            "null_pct": 95.6,
+            "baseline_pct": 95.7,
+            "delta_pp": -0.1
+          },
+          "naics_description": {
+            "null_count": 1088,
+            "null_pct": 95.6,
+            "baseline_pct": 95.7,
+            "delta_pp": -0.1
+          }
+        },
+        "degraded_fields": []
+      }
+    },
+    {
+      "check": "duplicates",
+      "status": "PASS",
+      "message": "No duplicate IDs among 1138 awards",
+      "details": {
+        "total_ids": 1138,
+        "unique_ids": 1138,
+        "duplicate_count": 0,
+        "duplicate_ids": {},
+        "missing_id_count": 0
+      }
+    },
+    {
+      "check": "date_range",
+      "status": "WARNING",
+      "message": "5 date(s) older than 10y, 0 in future",
+      "details": {
+        "valid_dates": 1138,
+        "parse_errors": 0,
+        "too_old_count": 5,
+        "future_count": 0,
+        "date_range": {
+          "earliest": "2001-06-18",
+          "latest": "2026-06-30"
+        },
+        "too_old_samples": [
+          {
+            "award_id": "DTFA0101CA0065CALL0001",
+            "start_date": "2001-06-18",
+            "recipient": "LEIDOS, INC."
+          },
+          {
+            "award_id": "DTFA0102D03006CALL0018",
+            "start_date": "2012-07-06",
+            "recipient": "HARRIS CORPORATION"
+          },
+          {
+            "award_id": "DTFA0102D03006CALL0017",
+            "start_date": "2012-07-06",
+            "recipient": "HARRIS CORPORATION"
+          },
+          {
+            "award_id": "IND15PD00500",
+            "start_date": "2015-05-28",
+            "recipient": "TRACE3 GOVERNMENT, LLC"
+          },
+          {
+            "award_id": "CA9502",
+            "start_date": "2009-03-13",
+            "recipient": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION"
+          }
+        ],
+        "future_samples": []
+      }
+    },
+    {
+      "check": "recipients",
+      "status": "PASS",
+      "message": "14/20 top recipients are known contractors (70%)",
+      "details": {
+        "unique_recipients": 360,
+        "empty_recipient_names": 0,
+        "top_20_recognized": 14,
+        "top_20_total": 20,
+        "recognition_rate_pct": 70.0,
+        "unrecognized_top_recipients": [
+          {
+            "name": "BL HARBERT INTERNATIONAL LLC",
+            "total_value": 814339696.0
+          },
+          {
+            "name": "ALLIANT INSURANCE SERVICES, INC.",
+            "total_value": 97122523.71
+          },
+          {
+            "name": "HIVE GROUP, LLC",
+            "total_value": 91061278.8
+          },
+          {
+            "name": "TRACE3 GOVERNMENT, LLC",
+            "total_value": 57912706.62
+          },
+          {
+            "name": "CDA INC",
+            "total_value": 49281909.39
+          },
+          {
+            "name": "ODDBALL, INC.",
+            "total_value": 41891529.91
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GovCon Weekly Intelligence | See the Sample</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23C5A44E'/><text x='50%25' y='55%25' font-size='16' font-weight='800' fill='%230A1628' text-anchor='middle' dominant-baseline='middle'>GC</text></svg>">
+    <meta name="description" content="Federal contract intelligence delivered every Monday. See the quality for yourself.">
+    <meta property="og:title" content="GovCon Weekly Intelligence | See the Sample">
+    <meta property="og:description" content="Federal contract intelligence delivered every Monday. See the quality for yourself.">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gold-lighter: #E8D9A8;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-700: #374151;
+            --red: #DC2626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--navy);
+            background: var(--navy);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: var(--gold);
+            border-radius: 8px;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--gold-lighter);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        /* Quality Section */
+        .quality-section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .quality-header {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .sample-item {
+            border-left: 3px solid var(--gold);
+            padding-left: 20px;
+            margin-bottom: 28px;
+        }
+
+        .sample-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .sample-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .sample-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .sample-context {
+            font-size: 15px;
+            color: var(--gray-700);
+            line-height: 1.5;
+        }
+
+        /* What You Get */
+        .what-you-get {
+            background: var(--navy-mid);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 32px;
+        }
+
+        .what-header {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-item {
+            font-size: 15px;
+            color: var(--gold-lighter);
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .benefit-item:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gold);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--gold);
+            font-size: 17px;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 2px solid var(--navy);
+        }
+
+        .cta-button:hover {
+            background: var(--navy-light);
+            border-color: var(--navy-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-note {
+            font-size: 14px;
+            color: var(--navy-mid);
+            margin-top: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--navy-light);
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: var(--gray-300);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 32px 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .quality-section {
+                padding: 24px 20px;
+            }
+
+            .sample-value {
+                font-size: 18px;
+            }
+
+            .sample-context {
+                font-size: 14px;
+            }
+
+            .what-you-get {
+                padding: 24px 20px;
+            }
+
+            .cta-section {
+                padding: 24px 20px;
+            }
+
+            .cta-text {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                font-size: 16px;
+                padding: 14px 32px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="logo">GC</div>
+            <h1>See the quality for yourself</h1>
+            <p class="subtitle">This week's report. Real data, real analysis.</p>
+        </div>
+
+        <!-- Quality Examples -->
+        <div class="quality-section">
+            <div class="quality-header">Sample Intelligence from March 18, 2026</div>
+
+            <div class="sample-item">
+                <div class="sample-label">Recompete with Action Item</div>
+                <div class="sample-value">$312M CYBERCOM contract expires in 119 days</div>
+                <div class="sample-context">Network Operations & Cyber Defense (NOCDef). Incumbent: Booz Allen Hamilton. Sources Sought published. Agency signaling restructure into 3 task areas—multiple awards likely. Weakened incumbent position = challenger opportunity.</div>
+            </div>
+
+            <div class="sample-item">
+                <div class="sample-label">Small Business Opportunity</div>
+                <div class="sample-value">$94.5M DHA recompete—small business set-aside</div>
+                <div class="sample-context">Health IT Modernization Support. NAICS 541511. 166 days to expiration. If you're a small business with relevant past performance, this is your lane. Prime contractors locked out—start teaming discussions now.</div>
+            </div>
+
+            <div class="sample-item">
+                <div class="sample-label">Strategic Analysis</div>
+                <div class="sample-value">CIO-SP4 ceiling increased $2B to $52B</div>
+                <div class="sample-context">Ceiling increases are the federal government's way of voting with their wallet. NIH is accelerating scope faster than planned. If you're positioned on this vehicle, pursue task orders aggressively. New RFPs are coming.</div>
+            </div>
+        </div>
+
+        <!-- What You Get -->
+        <div class="what-you-get">
+            <div class="what-header">Every Monday at 7am</div>
+            <ul class="benefit-list">
+                <li class="benefit-item">Recompete alerts 3-6 months before SAM.gov</li>
+                <li class="benefit-item">Competitor tracking (who won what this week)</li>
+                <li class="benefit-item">Small business subcontracting leads</li>
+                <li class="benefit-item">Agency strategy signals and trend analysis</li>
+                <li class="benefit-item">Specific action items tied to this week's data</li>
+            </ul>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <div class="cta-text">Start getting reports like this</div>
+            <a href="https://govconweekly.beehiiv.com/subscribe" class="cta-button">Subscribe Free</a>
+            <div class="cta-note">Free to start. No credit card. Cancel anytime.</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="footer-text">8-minute read. Built for BD teams who need intel, not databases.</p>
+        </div>
+    </div>
+</body>
+</html>

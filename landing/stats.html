@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Analytics — GovCon Intel</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gray-50: #F9FAFB;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+        .header {
+            background: var(--navy);
+            color: #fff;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 { font-size: 20px; font-weight: 700; }
+        .header h1 span { color: var(--gold); }
+        .header .meta { font-size: 13px; color: #94A3B8; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+
+        /* KPI cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .kpi {
+            background: #fff;
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .kpi .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-600); margin-bottom: 4px; }
+        .kpi .value { font-size: 28px; font-weight: 700; color: var(--navy); }
+        .kpi .sub { font-size: 12px; color: var(--gray-600); margin-top: 2px; }
+
+        /* Tables */
+        .section { margin-bottom: 32px; }
+        .section h2 { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--navy); }
+        table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--gray-200); border-radius: 8px; overflow: hidden; }
+        th { background: var(--navy); color: #fff; text-align: left; padding: 10px 14px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        td { padding: 10px 14px; font-size: 14px; border-top: 1px solid var(--gray-200); }
+        tr:hover td { background: #F8FAFC; }
+        .empty { text-align: center; padding: 40px; color: var(--gray-600); }
+
+        /* Filter */
+        .filter-bar {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 6px 16px; border-radius: 6px; border: 1px solid var(--gray-200);
+            background: #fff; font-size: 13px; cursor: pointer; font-weight: 500;
+        }
+        .filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+        .danger-btn {
+            margin-left: auto; padding: 6px 16px; border-radius: 6px; border: 1px solid #EF4444;
+            background: #fff; color: #EF4444; font-size: 13px; cursor: pointer; font-weight: 500;
+        }
+        .danger-btn:hover { background: #EF4444; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1><span>GovCon Intel</span> — Site Analytics</h1>
+        </div>
+        <div class="meta" id="last-updated"></div>
+    </div>
+    <div class="container">
+        <div class="filter-bar">
+            <button class="filter-btn active" data-range="7">Last 7 days</button>
+            <button class="filter-btn" data-range="30">Last 30 days</button>
+            <button class="filter-btn" data-range="90">All time</button>
+            <button class="danger-btn" id="clear-btn">Clear data</button>
+        </div>
+
+        <div class="kpi-grid" id="kpis"></div>
+
+        <div class="section">
+            <h2>Page Views</h2>
+            <table>
+                <thead><tr><th>Page</th><th>Views</th><th>Avg Time (s)</th></tr></thead>
+                <tbody id="pages-body"></tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>CTA Clicks (Substack conversions)</h2>
+            <table>
+                <thead><tr><th>Page</th><th>Link Text</th><th>Clicks</th></tr></thead>
+                <tbody id="clicks-body"></tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Referrers</h2>
+            <table>
+                <thead><tr><th>Source</th><th>Visits</th></tr></thead>
+                <tbody id="refs-body"></tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Recent Events (last 50)</h2>
+            <table>
+                <thead><tr><th>Time</th><th>Type</th><th>Page</th><th>Detail</th></tr></thead>
+                <tbody id="events-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        var STORAGE_KEY = 'gc_analytics';
+        var activeDays = 7;
+
+        function getStore() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { views: [], clicks: [], sessions: 0 }; }
+            catch (e) { return { views: [], clicks: [], sessions: 0 }; }
+        }
+
+        function cutoff() {
+            return Date.now() - activeDays * 24 * 60 * 60 * 1000;
+        }
+
+        function fmtDate(ts) {
+            var d = new Date(ts);
+            return d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function fmtRef(ref) {
+            if (!ref || ref === '(direct)') return '(direct)';
+            try { return new URL(ref).hostname; }
+            catch (e) { return ref.substring(0, 60); }
+        }
+
+        function friendlyPage(p) {
+            if (p === '/' || p === '/index.html' || p === '/govcon-intel/' || p === '/govcon-intel/index.html') return 'Home';
+            return p.replace('/govcon-intel/', '/').replace('.html', '').replace(/^\//, '');
+        }
+
+        function render() {
+            var store = getStore();
+            var c = cutoff();
+            var views = (store.views || []).filter(function (v) { return v.ts > c && v.type !== 'duration'; });
+            var durations = (store.views || []).filter(function (v) { return v.ts > c && v.type === 'duration'; });
+            var clicks = (store.clicks || []).filter(function (v) { return v.ts > c; });
+
+            // KPIs
+            var totalViews = views.length;
+            var totalClicks = clicks.length;
+            var convRate = totalViews > 0 ? ((totalClicks / totalViews) * 100).toFixed(1) : '0.0';
+            var avgTime = durations.length > 0
+                ? Math.round(durations.reduce(function (s, d) { return s + d.seconds; }, 0) / durations.length)
+                : 0;
+
+            document.getElementById('kpis').innerHTML =
+                kpiCard('Page Views', totalViews, activeDays + 'd window') +
+                kpiCard('CTA Clicks', totalClicks, 'Substack links') +
+                kpiCard('Conv. Rate', convRate + '%', 'clicks / views') +
+                kpiCard('Avg Time', avgTime + 's', 'on page') +
+                kpiCard('Sessions', store.sessions || 0, 'all time');
+
+            // Pages table
+            var pageCounts = {};
+            var pageTimes = {};
+            views.forEach(function (v) {
+                var p = friendlyPage(v.page);
+                pageCounts[p] = (pageCounts[p] || 0) + 1;
+            });
+            durations.forEach(function (d) {
+                var p = friendlyPage(d.page);
+                if (!pageTimes[p]) pageTimes[p] = [];
+                pageTimes[p].push(d.seconds);
+            });
+            var pageRows = Object.keys(pageCounts).sort(function (a, b) { return pageCounts[b] - pageCounts[a]; });
+            document.getElementById('pages-body').innerHTML = pageRows.length
+                ? pageRows.map(function (p) {
+                    var avg = pageTimes[p] ? Math.round(pageTimes[p].reduce(function (s, v) { return s + v; }, 0) / pageTimes[p].length) : '-';
+                    return '<tr><td>' + p + '</td><td>' + pageCounts[p] + '</td><td>' + avg + '</td></tr>';
+                }).join('')
+                : '<tr><td colspan="3" class="empty">No data yet</td></tr>';
+
+            // Clicks table
+            var clickGroups = {};
+            clicks.forEach(function (c) {
+                var key = friendlyPage(c.page) + '|||' + (c.text || 'link');
+                clickGroups[key] = (clickGroups[key] || 0) + 1;
+            });
+            var clickRows = Object.keys(clickGroups).sort(function (a, b) { return clickGroups[b] - clickGroups[a]; });
+            document.getElementById('clicks-body').innerHTML = clickRows.length
+                ? clickRows.map(function (k) {
+                    var parts = k.split('|||');
+                    return '<tr><td>' + parts[0] + '</td><td>' + parts[1] + '</td><td>' + clickGroups[k] + '</td></tr>';
+                }).join('')
+                : '<tr><td colspan="3" class="empty">No CTA clicks yet</td></tr>';
+
+            // Referrers
+            var refCounts = {};
+            views.forEach(function (v) {
+                var r = fmtRef(v.ref);
+                refCounts[r] = (refCounts[r] || 0) + 1;
+            });
+            var refRows = Object.keys(refCounts).sort(function (a, b) { return refCounts[b] - refCounts[a]; });
+            document.getElementById('refs-body').innerHTML = refRows.length
+                ? refRows.map(function (r) {
+                    return '<tr><td>' + r + '</td><td>' + refCounts[r] + '</td></tr>';
+                }).join('')
+                : '<tr><td colspan="2" class="empty">No referrer data</td></tr>';
+
+            // Recent events
+            var all = views.map(function (v) { return { ts: v.ts, type: 'view', page: friendlyPage(v.page), detail: v.ref ? 'from ' + fmtRef(v.ref) : '' }; })
+                .concat(clicks.map(function (c) { return { ts: c.ts, type: 'click', page: friendlyPage(c.page), detail: c.text || '' }; }))
+                .concat(durations.map(function (d) { return { ts: d.ts, type: 'duration', page: friendlyPage(d.page), detail: d.seconds + 's' }; }));
+            all.sort(function (a, b) { return b.ts - a.ts; });
+            all = all.slice(0, 50);
+            document.getElementById('events-body').innerHTML = all.length
+                ? all.map(function (e) {
+                    return '<tr><td>' + fmtDate(e.ts) + '</td><td>' + e.type + '</td><td>' + e.page + '</td><td>' + e.detail + '</td></tr>';
+                }).join('')
+                : '<tr><td colspan="4" class="empty">No events recorded</td></tr>';
+
+            document.getElementById('last-updated').textContent = 'Updated: ' + new Date().toLocaleString();
+        }
+
+        function kpiCard(label, value, sub) {
+            return '<div class="kpi"><div class="label">' + label + '</div><div class="value">' + value + '</div><div class="sub">' + sub + '</div></div>';
+        }
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                activeDays = parseInt(btn.getAttribute('data-range'), 10);
+                render();
+            });
+        });
+
+        // Clear data
+        document.getElementById('clear-btn').addEventListener('click', function () {
+            if (confirm('Clear all analytics data? This cannot be undone.')) {
+                localStorage.removeItem(STORAGE_KEY);
+                render();
+            }
+        });
+
+        render();
+    })();
+    </script>
+</body>
+</html>
