@@ -1,0 +1,12 @@
+<svg width="600" height="20" viewBox="0 0 600 20" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main divider line -->
+  <line x1="0" y1="10" x2="270" y2="10" stroke="#C5A44E" stroke-width="1" opacity="0.6"/>
+
+  <!-- Center geometric accent -->
+  <rect x="285" y="7" width="6" height="6" fill="#C5A44E" opacity="0.8" transform="rotate(45 288 10)"/>
+  <rect x="294" y="7" width="6" height="6" fill="#C5A44E" opacity="0.6" transform="rotate(45 297 10)"/>
+  <rect x="303" y="7" width="6" height="6" fill="#C5A44E" opacity="0.8" transform="rotate(45 306 10)"/>
+
+  <!-- Right line -->
+  <line x1="330" y1="10" x2="600" y2="10" stroke="#C5A44E" stroke-width="1" opacity="0.6"/>
+</svg>

@@ -1,0 +1,81 @@
+<svg width="1000" height="200" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0A1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1e35;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="200" rx="8" fill="url(#bgGradient)" filter="url(#shadow)"/>
+
+  <!-- Border accent -->
+  <rect width="1000" height="200" rx="8" fill="none" stroke="#C5A44E" stroke-width="1" opacity="0.3"/>
+
+  <!-- Top accent bar -->
+  <rect width="1000" height="4" fill="#C5A44E" opacity="0.6"/>
+
+  <!-- Title -->
+  <text x="40" y="50" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="600" fill="#8899AA" letter-spacing="3">
+    WEEKLY SNAPSHOT
+  </text>
+
+  <!-- Stats Grid -->
+  <!-- Stat 1: Awards -->
+  <text x="40" y="110" font-family="'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="700" fill="#C5A44E">
+    1,173
+  </text>
+  <text x="40" y="135" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.7">
+    AWARDS TRACKED
+  </text>
+
+  <!-- Vertical divider -->
+  <line x1="220" y1="80" x2="220" y2="150" stroke="#C5A44E" stroke-width="1" opacity="0.2"/>
+
+  <!-- Stat 2: Value -->
+  <text x="250" y="110" font-family="'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="700" fill="#C5A44E">
+    $8.7B
+  </text>
+  <text x="250" y="135" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.7">
+    TOTAL VALUE
+  </text>
+
+  <!-- Vertical divider -->
+  <line x1="440" y1="80" x2="440" y2="150" stroke="#C5A44E" stroke-width="1" opacity="0.2"/>
+
+  <!-- Stat 3: Cyber -->
+  <text x="470" y="110" font-family="'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="700" fill="#C5A44E">
+    547
+  </text>
+  <text x="470" y="135" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.7">
+    CYBER AWARDS
+  </text>
+
+  <!-- Vertical divider -->
+  <line x1="650" y1="80" x2="650" y2="150" stroke="#C5A44E" stroke-width="1" opacity="0.2"/>
+
+  <!-- Stat 4: Small Business -->
+  <text x="680" y="110" font-family="'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="700" fill="#C5A44E">
+    7
+  </text>
+  <text x="680" y="135" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#FFFFFF" opacity="0.7">
+    SB SET-ASIDES
+  </text>
+
+  <!-- Warning indicator for low SB count -->
+  <circle cx="760" cy="102" r="6" fill="#FF6B6B" opacity="0.8"/>
+  <text x="775" y="107" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="600" fill="#FF6B6B">
+    &lt;1%
+  </text>
+
+  <!-- Bottom accent line -->
+  <line x1="40" y1="165" x2="960" y2="165" stroke="#C5A44E" stroke-width="1" opacity="0.2"/>
+
+  <!-- Data source note -->
+  <text x="40" y="185" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11" font-weight="400" fill="#8899AA" opacity="0.6">
+    Data: USAspending.gov | Updated: March 18, 2026
+  </text>
+</svg>

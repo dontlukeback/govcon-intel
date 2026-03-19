@@ -1,2 +1,5 @@
 .env
-.env
+archive/
+data/enrichment_debug_*.txt
+output/*.log
+__pycache__/

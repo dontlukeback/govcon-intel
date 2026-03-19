@@ -97,187 +97,88 @@ echo ""
 GENERATED=()
 SKIPPED=()
 
-# ─── Step 1: Pull data ──────────────────────────────────────────────────────
+# ─── Step 1: Pull data from USAspending API ─────────────────────────────────
 
-header "Step 1/4 — Pull transaction data from USAspending API"
+header "Step 1/4 — Pull data from USAspending API"
 
-# pipeline.py saves to data/govcon_awards_YYYY-MM-DD.json by convention
 PIPELINE_DATA_FILE="${DATA_DIR}/govcon_awards_${TODAY}.json"
-# We also copy/symlink to the output dir for clean date-stamped output
-OUTPUT_DATA_FILE="${OUTPUT_DIR}/data_${TODAY}.json"
 
-pull_succeeded=false
-
-if [[ -f "${SCRIPT_DIR}/pipeline.py" ]]; then
-    info "Found pipeline.py (improved pipeline)"
-    if ${PYTHON} "${SCRIPT_DIR}/pipeline.py" --days "${DAYS}" 2>&1; then
-        pull_succeeded=true
-        success "Data pull complete"
-    else
-        fail "pipeline.py failed (exit $?)"
-        # Fall through to try pull_corrected.py
-        if [[ -f "${SCRIPT_DIR}/pull_corrected.py" ]]; then
-            warn "Falling back to pull_corrected.py"
-        fi
-    fi
-fi
-
-if [[ "${pull_succeeded}" == false && -f "${SCRIPT_DIR}/pull_corrected.py" ]]; then
-    info "Found pull_corrected.py"
-    if ${PYTHON} "${SCRIPT_DIR}/pull_corrected.py" --days "${DAYS}" 2>&1; then
-        pull_succeeded=true
-        success "Data pull complete (via pull_corrected.py)"
-    else
-        fail "pull_corrected.py failed (exit $?)"
-    fi
-fi
-
-# Locate the data file — check both expected locations
-DATA_FILE=""
-if [[ -f "${PIPELINE_DATA_FILE}" ]]; then
-    DATA_FILE="${PIPELINE_DATA_FILE}"
-elif [[ -f "${DATA_DIR}/corrected_all.json" ]]; then
-    # Fallback to corrected_all.json if that's what the pull script produced
-    DATA_FILE="${DATA_DIR}/corrected_all.json"
-fi
-
-if [[ -n "${DATA_FILE}" ]]; then
-    # Copy to output dir with date stamp
-    cp "${DATA_FILE}" "${OUTPUT_DATA_FILE}"
-    success "Data saved to output/data_${TODAY}.json"
-    GENERATED+=("data_${TODAY}.json")
-elif [[ "${pull_succeeded}" == false ]]; then
-    if [[ ! -f "${SCRIPT_DIR}/pipeline.py" && ! -f "${SCRIPT_DIR}/pull_corrected.py" ]]; then
-        warn "No data pull script found (expected pipeline.py or pull_corrected.py)"
-    fi
+if ${PYTHON} "${SCRIPT_DIR}/pipeline.py" --days "${DAYS}" 2>&1; then
+    success "Data pull complete"
+    GENERATED+=("govcon_awards_${TODAY}.json")
+else
+    fail "pipeline.py failed (exit $?)"
     SKIPPED+=("data pull")
+fi
+
+if [[ ! -f "${PIPELINE_DATA_FILE}" ]]; then
+    fail "Expected data file not found: ${PIPELINE_DATA_FILE}"
+    fail "Cannot continue without data. Exiting."
+    exit 1
 fi
 
 if [[ "${DRY_RUN}" == true ]]; then
     header "Dry run complete"
-    info "Data pull finished. Skipping report generation (--dry-run)."
-    if [[ -n "${DATA_FILE}" ]]; then
-        AWARD_COUNT=$(${PYTHON} -c "import json; print(len(json.load(open('${DATA_FILE}'))))" 2>/dev/null || echo "?")
-        info "Awards pulled: ${AWARD_COUNT}"
-    fi
+    AWARD_COUNT=$(${PYTHON} -c "import json; print(len(json.load(open('${PIPELINE_DATA_FILE}'))))" 2>/dev/null || echo "?")
+    info "Awards pulled: ${AWARD_COUNT}"
     exit 0
 fi
 
-# ─── Step 2: Generate markdown report ───────────────────────────────────────
+# ─── Step 2: AI enrichment ──────────────────────────────────────────────────
 
-header "Step 2/4 — Generate markdown report"
+header "Step 2/4 — Enrich data with AI editorial analysis"
 
-REPORT_FILE="${OUTPUT_DIR}/report_${TODAY}.md"
-
-if [[ -f "${SCRIPT_DIR}/generate_report.py" ]]; then
-    info "Found generate_report.py"
-    REPORT_ARGS=(--output "${REPORT_FILE}" --days "${DAYS}")
-    # Pass data file if it exists
-    if [[ -n "${DATA_FILE}" ]]; then
-        REPORT_ARGS+=(--data "${DATA_FILE}")
-    fi
-    # Pass template if it exists
-    if [[ -f "${SCRIPT_DIR}/SAMPLE_REPORT_V2.md" ]]; then
-        REPORT_ARGS+=(--template "${SCRIPT_DIR}/SAMPLE_REPORT_V2.md")
-    fi
-    if ${PYTHON} "${SCRIPT_DIR}/generate_report.py" "${REPORT_ARGS[@]}" 2>&1; then
-        success "Report saved to report_${TODAY}.md"
-        GENERATED+=("report_${TODAY}.md")
+if [[ -f "${SCRIPT_DIR}/enrich.py" ]]; then
+    info "Running enrich.py (Claude API)..."
+    if ${PYTHON} "${SCRIPT_DIR}/enrich.py" --input "${PIPELINE_DATA_FILE}" --date "${TODAY}" 2>&1; then
+        success "Enrichment complete — data/corrected_all.json updated"
+        GENERATED+=("enriched_${TODAY}.json")
     else
-        fail "generate_report.py failed"
-        SKIPPED+=("markdown report")
+        fail "enrich.py failed"
+        if [[ -f "${DATA_DIR}/corrected_all.json" ]]; then
+            warn "Using existing corrected_all.json as fallback"
+        else
+            fail "No enriched data available. Cannot generate newsletter."
+            exit 1
+        fi
     fi
-elif [[ -n "${DATA_FILE}" ]]; then
-    # Fallback: create a minimal report from data
-    info "No generate_report.py found — creating stub report from data"
-    AWARD_COUNT=$(${PYTHON} -c "import json; print(len(json.load(open('${DATA_FILE}'))))" 2>/dev/null || echo "?")
-    TOTAL_VALUE=$(${PYTHON} -c "
-import json
-awards = json.load(open('${DATA_FILE}'))
-total = sum(a.get('award_amount') or 0 for a in awards)
-print(f'\${total:,.0f}')
-" 2>/dev/null || echo "N/A")
-    cat > "${REPORT_FILE}" <<REPORT_EOF
-# GovCon Intelligence Weekly Brief
-
-**Period:** ${START_DATE} to ${TODAY}
-**Generated:** $(date '+%B %d, %Y at %H:%M %Z')
-
----
-
-## Summary
-
-- **Total awards tracked:** ${AWARD_COUNT}
-- **Total contract value:** ${TOTAL_VALUE}
-
-> Full report generation (generate_report.py) not yet implemented.
-> This is a stub. Raw data available at: data_${TODAY}.json
-
----
-
-*Generated by GovCon Intelligence Pipeline*
-REPORT_EOF
-    success "Stub report saved to report_${TODAY}.md"
-    GENERATED+=("report_${TODAY}.md (stub)")
 else
-    warn "No report generator and no data file — skipping report"
-    SKIPPED+=("markdown report")
+    warn "enrich.py not found — skipping AI enrichment"
+    SKIPPED+=("AI enrichment")
 fi
 
-# ─── Step 3: Generate insights ──────────────────────────────────────────────
+# ─── Step 3: Generate HTML newsletter ────────────────────────────────────────
 
-header "Step 3/4 — Generate insights"
+header "Step 3/4 — Generate HTML newsletter"
 
-INSIGHTS_FILE="${OUTPUT_DIR}/insights_${TODAY}.md"
-
-if [[ -f "${SCRIPT_DIR}/generate_insights.py" ]]; then
-    info "Found generate_insights.py"
-    INSIGHTS_ARGS=(--output "${INSIGHTS_FILE}")
-    # generate_insights.py expects the structured dict format (corrected_all.json),
-    # not the raw awards list. Pass it if available, otherwise fall back to DATA_FILE.
-    CORRECTED_FILE="${DATA_DIR}/corrected_all.json"
-    if [[ -f "${CORRECTED_FILE}" ]]; then
-        INSIGHTS_ARGS+=(--input "${CORRECTED_FILE}")
-    elif [[ -n "${DATA_FILE}" ]]; then
-        INSIGHTS_ARGS+=(--input "${DATA_FILE}")
-    fi
-    if ${PYTHON} "${SCRIPT_DIR}/generate_insights.py" "${INSIGHTS_ARGS[@]}" 2>&1; then
-        success "Insights saved to insights_${TODAY}.md"
-        GENERATED+=("insights_${TODAY}.md")
+if [[ -f "${SCRIPT_DIR}/generate_newsletter.py" ]]; then
+    if ${PYTHON} "${SCRIPT_DIR}/generate_newsletter.py" 2>&1; then
+        success "HTML newsletter generated"
+        GENERATED+=("report_${TODAY}_v2.html")
     else
-        fail "generate_insights.py failed"
-        SKIPPED+=("insights")
+        fail "generate_newsletter.py failed"
+        SKIPPED+=("HTML newsletter")
     fi
 else
-    warn "generate_insights.py not found — skipping insights generation"
-    SKIPPED+=("insights")
+    warn "generate_newsletter.py not found"
+    SKIPPED+=("HTML newsletter")
 fi
 
-# ─── Step 4: Generate HTML ──────────────────────────────────────────────────
+# ─── Step 4: Generate Substack markdown ──────────────────────────────────────
 
-header "Step 4/4 — Generate HTML report"
+header "Step 4/4 — Generate Substack markdown"
 
-HTML_FILE="${OUTPUT_DIR}/report_${TODAY}.html"
-
-if [[ -f "${SCRIPT_DIR}/report_to_html.py" ]]; then
-    info "Found report_to_html.py"
-    HTML_ARGS=(--output "${HTML_FILE}")
-    # report_to_html.py also expects the structured dict format (corrected_all.json)
-    if [[ -f "${CORRECTED_FILE}" ]]; then
-        HTML_ARGS+=(--input "${CORRECTED_FILE}")
-    elif [[ -n "${DATA_FILE}" ]]; then
-        HTML_ARGS+=(--input "${DATA_FILE}")
-    fi
-    if ${PYTHON} "${SCRIPT_DIR}/report_to_html.py" "${HTML_ARGS[@]}" 2>&1; then
-        success "HTML saved to report_${TODAY}.html"
-        GENERATED+=("report_${TODAY}.html")
+if [[ -f "${SCRIPT_DIR}/generate_substack.py" ]]; then
+    if ${PYTHON} "${SCRIPT_DIR}/generate_substack.py" 2>&1; then
+        success "Substack markdown generated"
+        GENERATED+=("substack_${TODAY}.md")
     else
-        fail "report_to_html.py failed"
-        SKIPPED+=("HTML report")
+        fail "generate_substack.py failed"
+        SKIPPED+=("Substack markdown")
     fi
 else
-    warn "report_to_html.py not found — skipping HTML generation"
-    SKIPPED+=("HTML report")
+    warn "generate_substack.py not found"
+    SKIPPED+=("Substack markdown")
 fi
 
 # ─── Summary ─────────────────────────────────────────────────────────────────
@@ -288,13 +189,13 @@ echo ""
 if [[ ${#GENERATED[@]} -gt 0 ]]; then
     echo -e "${GREEN}${BOLD}Generated:${NC}"
     for item in "${GENERATED[@]}"; do
-        echo -e "  ${GREEN}+${NC} ${OUTPUT_DIR}/${item}"
+        echo -e "  ${GREEN}+${NC} ${item}"
     done
 fi
 
 if [[ ${#SKIPPED[@]} -gt 0 ]]; then
     echo ""
-    echo -e "${YELLOW}${BOLD}Skipped (component not yet built):${NC}"
+    echo -e "${YELLOW}${BOLD}Skipped:${NC}"
     for item in "${SKIPPED[@]}"; do
         echo -e "  ${YELLOW}-${NC} ${item}"
     done
@@ -302,18 +203,4 @@ fi
 
 echo ""
 info "Total: ${#GENERATED[@]} generated, ${#SKIPPED[@]} skipped"
-
-if [[ ${#SKIPPED[@]} -gt 0 ]]; then
-    echo ""
-    info "To build missing components, create these scripts in ${SCRIPT_DIR}/:"
-    [[ ! -f "${SCRIPT_DIR}/pipeline.py" && ! -f "${SCRIPT_DIR}/pull_corrected.py" ]] && \
-        echo "    - pipeline.py (or pull_corrected.py) — USAspending API data pull"
-    [[ ! -f "${SCRIPT_DIR}/generate_report.py" ]] && \
-        echo "    - generate_report.py — markdown report from V2 template"
-    [[ ! -f "${SCRIPT_DIR}/generate_insights.py" ]] && \
-        echo "    - generate_insights.py — AI-generated insights layer"
-    [[ ! -f "${SCRIPT_DIR}/report_to_html.py" ]] && \
-        echo "    - report_to_html.py — markdown to newsletter HTML"
-fi
-
 echo ""
