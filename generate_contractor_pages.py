@@ -530,7 +530,7 @@ def generate_contractor_page(contractor: Dict[str, Any]) -> str:
         <div class="cta-section">
             <h2>Track {name}'s Federal Activity</h2>
             <p>Get weekly updates on new contracts, recompetes, and competitor moves in your inbox.</p>
-            <a href="https://govconintelligence.substack.com/subscribe" class="cta-button">Subscribe for Free</a>
+            <a href="https://buttondown.com/govcon" class="cta-button">Subscribe for Free</a>
         </div>
 
         <div class="section">
@@ -601,7 +601,7 @@ def generate_contractor_page(contractor: Dict[str, Any]) -> str:
         <div class="cta-section">
             <h2>Want Weekly Updates?</h2>
             <p>Track {name} and 100+ other contractors. Get alerted to new awards, recompetes, and competitive intelligence.</p>
-            <a href="https://govconintelligence.substack.com/subscribe" class="cta-button">Subscribe Now</a>
+            <a href="https://buttondown.com/govcon" class="cta-button">Subscribe Now</a>
         </div>
     </div>
 
@@ -853,7 +853,7 @@ def generate_index_page(contractors: List[Dict[str, Any]]) -> str:
         <div class="cta-section">
             <h2>Get Weekly Contractor Intelligence</h2>
             <p>Track new awards, recompetes, and competitor moves. Free to start.</p>
-            <a href="https://govconintelligence.substack.com/subscribe" class="cta-button">Subscribe for Free</a>
+            <a href="https://buttondown.com/govcon" class="cta-button">Subscribe for Free</a>
         </div>
 
         <div class="contractor-grid">
@@ -885,7 +885,7 @@ def generate_index_page(contractors: List[Dict[str, Any]]) -> str:
         <div class="cta-section">
             <h2>Want Deeper Intelligence?</h2>
             <p>Subscribe to get weekly updates on contractor activity, recompetes, and competitive moves.</p>
-            <a href="https://govconintelligence.substack.com/subscribe" class="cta-button">Subscribe Now</a>
+            <a href="https://buttondown.com/govcon" class="cta-button">Subscribe Now</a>
         </div>
     </div>
 

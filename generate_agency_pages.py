@@ -618,7 +618,7 @@ def generate_agency_page(agency_name: str, metrics: Dict[str, Any], slug: str) -
         <div class="cta-section">
             <h2 class="cta-title">Track {agency_name} Spending Weekly</h2>
             <p class="cta-description">Get alerts when {agency_name} awards new contracts in your tech area. Real-time competitive intelligence delivered to your inbox.</p>
-            <a href="../index.html#subscribe" class="cta-button">Subscribe Now</a>
+            <a href="https://buttondown.com/govcon" class="cta-button">Subscribe Now</a>
         </div>
     </div>
 
