@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency for International Development IT Contracts & Awards | Federal Spending Intelligence</title>
+    <meta name="description" content="Track Agency for International Development IT contract awards, spending trends, and top contractors. $393.35M in federal IT spending across 10 awards.">
+    <link rel="canonical" href="https://dontlukeback.github.io/govcon-intel/agencies/agency-for-international-development.html">
+    <meta property="og:title" content="Agency for International Development IT Contracts & Awards">
+    <meta property="og:description" content="$393.35M in federal IT spending across 10 awards. Track spending trends and top contractors.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dontlukeback.github.io/govcon-intel/agencies/agency-for-international-development.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agency for International Development IT Contracts & Awards">
+    <meta name="twitter:description" content="$393.35M in federal IT spending across 10 awards.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--navy);
+            color: var(--gray-100);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--navy-mid);
+            border-bottom: 1px solid var(--navy-light);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav a {
+            color: var(--gray-100);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+
+        .card {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-light);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contractor-row {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--navy-light);
+        }
+
+        .contractor-row:last-child {
+            border-bottom: none;
+        }
+
+        .contractor-rank {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-600);
+            width: 3rem;
+        }
+
+        .contractor-info {
+            flex: 1;
+        }
+
+        .contractor-name {
+            font-weight: 600;
+            color: var(--gray-100);
+            margin-bottom: 0.25rem;
+        }
+
+        .contractor-stats {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .vertical-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .vertical-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-name {
+            font-weight: 600;
+            color: var(--gray-100);
+        }
+
+        .vertical-count {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .vertical-bar {
+            background: var(--navy);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-fill {
+            background: var(--gold);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .vertical-value {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+        }
+
+        .award-card {
+            background: var(--navy);
+            border: 1px solid var(--navy-light);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .award-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .award-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .award-date {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .award-contractor {
+            font-weight: 600;
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-description {
+            color: var(--gray-600);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .award-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        .award-id {
+            font-family: monospace;
+        }
+
+        .award-vertical {
+            color: var(--gold-light);
+        }
+
+        .cta-section {
+            background: var(--navy-mid);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contractor-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contractor-rank {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">GovCon Intelligence</a>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="index.html">Agencies</a>
+                <a href="../insights.html">Insights</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> / <a href="index.html">Agencies</a> / Agency for International Development
+        </div>
+
+        <div class="page-header">
+            <h1 class="page-title">Agency for International Development</h1>
+            <p class="page-subtitle">IT Contract Awards & Spending Intelligence</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total IT Spending</div>
+                <div class="stat-value">$393.35M</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Awards</div>
+                <div class="stat-value">10</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Average Award</div>
+                <div class="stat-value">$39.34M</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Top Contractors</h2>
+            <div class="card">
+                
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#1</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">CREDENCE MANAGEMENT SOLUTIONS LIMITED LIABILITY COMPANY</div>
+                            <div class="contractor-stats">
+                                1 award · $243.93M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#2</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">ELIZABETH GLASER PEDIATRIC AIDS FOUNDATION</div>
+                            <div class="contractor-stats">
+                                1 award · $91.07M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#3</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">SOCIAL SOLUTIONS INTERNATIONAL, INC.</div>
+                            <div class="contractor-stats">
+                                1 award · $20.95M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#4</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">SOCHA, LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $14.10M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#5</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">UNISON SOFTWARE INC</div>
+                            <div class="contractor-stats">
+                                1 award · $9.97M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#6</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">V3GATE, LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $6.06M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#7</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">MOSTAQBAL ENGINEERING & ENVIRONMENTAL CONSULTANTS</div>
+                            <div class="contractor-stats">
+                                1 award · $3.26M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#8</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">SEGURA CONSULTING LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $2.68M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#9</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">CCSI-3LINKS, LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $1.27M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#10</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">FORVIS MAZARS CHARTERED ACCOUNTANTS AND CONSULTANTS</div>
+                            <div class="contractor-stats">
+                                1 award · $66.50K
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technology Areas</h2>
+            <div class="card">
+                
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Cloud</span>
+                            <span class="vertical-count">8 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 80.0%"></div>
+                        </div>
+                        <div class="vertical-value">$376.57M</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Cybersecurity</span>
+                            <span class="vertical-count">2 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 20.0%"></div>
+                        </div>
+                        <div class="vertical-value">$35.05M</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Data Analytics</span>
+                            <span class="vertical-count">1 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 10.0%"></div>
+                        </div>
+                        <div class="vertical-value">$2.68M</div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Top 10 Awards by Value</h2>
+            
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$243.93M</div>
+                            <div class="award-date">2023-10-23</div>
+                        </div>
+                        <div class="award-contractor">CREDENCE MANAGEMENT SOLUTIONS LIMITED LIABILITY COMPANY</div>
+                        <div class="award-description">THE TASK ORDER IS AWARDED FOR THE IMPLEMENTATION OF THE USAID/BHA PROGRAM ENTITLED BUREAU FOR HUMANITARIAN ASSISTANCE SUPPORT CONTRACT (BHASC).  TH...</div>
+                        <div class="award-meta">
+                            <span class="award-id">7200AA24N00001</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$91.07M</div>
+                            <div class="award-date">2021-11-09</div>
+                        </div>
+                        <div class="award-contractor">ELIZABETH GLASER PEDIATRIC AIDS FOUNDATION</div>
+                        <div class="award-description">IMPLEMENTATION FOR HIV AND TB ACTIVITIES FOR THE LOCAL AWARD ON COMPREHENSIVE CLIENT CENTERED HEALTH PROJECT</div>
+                        <div class="award-meta">
+                            <span class="award-id">72062122C00001</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$20.95M</div>
+                            <div class="award-date">2020-08-04</div>
+                        </div>
+                        <div class="award-contractor">SOCIAL SOLUTIONS INTERNATIONAL, INC.</div>
+                        <div class="award-description">BASE AWARD - PACIFIC AMERICAN FUND INITIAL OBLIGATION OF $6,408,000</div>
+                        <div class="award-meta">
+                            <span class="award-id">72049220C00004</span>
+                            <span class="award-vertical">Cybersecurity, Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$14.10M</div>
+                            <div class="award-date">2022-10-03</div>
+                        </div>
+                        <div class="award-contractor">SOCHA, LLC</div>
+                        <div class="award-description">SAHEL REGIONAL OFFICE MONITORING REPORTING AND CAPACITY STRENGTHENING SUPPORT CONTRACT</div>
+                        <div class="award-meta">
+                            <span class="award-id">72068522F00006</span>
+                            <span class="award-vertical">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$9.97M</div>
+                            <div class="award-date">2022-01-01</div>
+                        </div>
+                        <div class="award-contractor">UNISON SOFTWARE INC</div>
+                        <div class="award-description">THE PURPOSE OF THIS AWARD IS FOR THE GLAAS (PRISM) LICENSE RENEWAL (JAN 2022 - DEC 2026)</div>
+                        <div class="award-meta">
+                            <span class="award-id">72MC1022M00004</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$6.06M</div>
+                            <div class="award-date">2024-12-26</div>
+                        </div>
+                        <div class="award-contractor">V3GATE, LLC</div>
+                        <div class="award-description">THE PURPOSE OF THIS REQUEST IS TO ESTABLISH A NEW AWARD FOR THE ORACLE ENTERPRISE UNLIMITED LICENSE AGREEMENT (ULA) BUNDLES AND SUPPORT.</div>
+                        <div class="award-meta">
+                            <span class="award-id">72MC1025N00006</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$3.26M</div>
+                            <div class="award-date">2022-10-02</div>
+                        </div>
+                        <div class="award-contractor">MOSTAQBAL ENGINEERING & ENVIRONMENTAL CONSULTANTS</div>
+                        <div class="award-description">RELEASE OF NEW AWARD, A&E SERVICES FOR JORDAN IRAQ POWER INTERCONNECTION ACTIVITY, THIS IS A BUY-IN TO THE EDY IDIQ, APPROXIMATELY $3,000,000</div>
+                        <div class="award-meta">
+                            <span class="award-id">72027821F00005</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$2.68M</div>
+                            <div class="award-date">2023-09-27</div>
+                        </div>
+                        <div class="award-contractor">SEGURA CONSULTING LLC</div>
+                        <div class="award-description">USAID WSSH DATA & ANALYTICS ACTIVITY</div>
+                        <div class="award-meta">
+                            <span class="award-id">7200AA23F00012</span>
+                            <span class="award-vertical">Data Analytics</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$1.27M</div>
+                            <div class="award-date">2024-08-21</div>
+                        </div>
+                        <div class="award-contractor">CCSI-3LINKS, LLC</div>
+                        <div class="award-description">HSPD-12 FOLLOW-ON AWARD</div>
+                        <div class="award-meta">
+                            <span class="award-id">72MC1024N00014</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$66.50K</div>
+                            <div class="award-date">2022-09-19</div>
+                        </div>
+                        <div class="award-contractor">FORVIS MAZARS CHARTERED ACCOUNTANTS AND CONSULTANTS</div>
+                        <div class="award-description">AWARD A BPA CALL ORDER FOR THE WEST BANK AND GAZA MISSION ORDER NO. 21 COMPLIANCE REVIEW UNDER BPA NO. AID-294-E-17-00002.</div>
+                        <div class="award-meta">
+                            <span class="award-id">72029422F50003</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Track Agency for International Development Spending Weekly</h2>
+            <p class="cta-description">Get alerts when Agency for International Development awards new contracts in your tech area. Real-time competitive intelligence delivered to your inbox.</p>
+            <a href="../index.html#subscribe" class="cta-button">Subscribe Now</a>
+        </div>
+    </div>
+
+    <script src="../js/tracker.js"></script>
+</body>
+</html>

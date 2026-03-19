@@ -42,38 +42,44 @@ def slugify(text: str) -> str:
 
 def load_all_awards() -> List[Dict[str, Any]]:
     """
-    Load all available award data from current and archived files.
+    Load all available award data, preferring the cumulative all_awards.json.
     More weeks = richer analysis (data moat).
     """
     awards = []
     data_dir = Path(__file__).parent / "data"
-
-    # Load current week's data
-    current_files = list(data_dir.glob("govcon_awards_*.json"))
-
-    # Load archived data
     archive_dir = data_dir / "archive"
-    if archive_dir.exists():
-        archive_files = list(archive_dir.glob("govcon_awards_*.json"))
-    else:
-        archive_files = []
 
-    all_files = current_files + archive_files
-
-    if not all_files:
-        print("⚠️  No award data found. Run pipeline.py first.")
-        return []
-
-    print(f"📊 Loading data from {len(all_files)} file(s)...")
-
-    for file_path in sorted(all_files):
+    # Prefer cumulative dataset (12-week backfill lives here)
+    all_awards_path = archive_dir / "all_awards.json"
+    if all_awards_path.exists():
+        print(f"📊 Loading cumulative dataset: {all_awards_path.name}")
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                awards.extend(data)
-                print(f"   Loaded {len(data):,} awards from {file_path.name}")
+            with open(all_awards_path, 'r', encoding='utf-8') as f:
+                awards = json.load(f)
+                print(f"   Loaded {len(awards):,} awards from {all_awards_path.name}")
         except Exception as e:
-            print(f"   ⚠️  Failed to load {file_path.name}: {e}")
+            print(f"   ⚠️  Failed to load {all_awards_path.name}: {e}")
+            awards = []
+
+    # Fallback: load individual weekly files if cumulative dataset missing or empty
+    if not awards:
+        current_files = list(data_dir.glob("govcon_awards_*.json"))
+        archive_files = list(archive_dir.glob("govcon_awards_*.json")) if archive_dir.exists() else []
+        all_files = current_files + archive_files
+
+        if not all_files:
+            print("⚠️  No award data found. Run pipeline.py first.")
+            return []
+
+        print(f"📊 Fallback: loading data from {len(all_files)} weekly file(s)...")
+        for file_path in sorted(all_files):
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    awards.extend(data)
+                    print(f"   Loaded {len(data):,} awards from {file_path.name}")
+            except Exception as e:
+                print(f"   ⚠️  Failed to load {file_path.name}: {e}")
 
     print(f"✅ Total awards loaded: {len(awards):,}\n")
     return awards

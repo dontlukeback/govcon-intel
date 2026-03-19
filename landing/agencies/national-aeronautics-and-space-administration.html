@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Aeronautics and Space Administration IT Contracts & Awards | Federal Spending Intelligence</title>
+    <meta name="description" content="Track National Aeronautics and Space Administration IT contract awards, spending trends, and top contractors. $7.66B in federal IT spending across 100 awards.">
+    <link rel="canonical" href="https://dontlukeback.github.io/govcon-intel/agencies/national-aeronautics-and-space-administration.html">
+    <meta property="og:title" content="National Aeronautics and Space Administration IT Contracts & Awards">
+    <meta property="og:description" content="$7.66B in federal IT spending across 100 awards. Track spending trends and top contractors.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dontlukeback.github.io/govcon-intel/agencies/national-aeronautics-and-space-administration.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="National Aeronautics and Space Administration IT Contracts & Awards">
+    <meta name="twitter:description" content="$7.66B in federal IT spending across 100 awards.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--navy);
+            color: var(--gray-100);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--navy-mid);
+            border-bottom: 1px solid var(--navy-light);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav a {
+            color: var(--gray-100);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-header {
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+
+        .card {
+            background: var(--navy-mid);
+            border: 1px solid var(--navy-light);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contractor-row {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--navy-light);
+        }
+
+        .contractor-row:last-child {
+            border-bottom: none;
+        }
+
+        .contractor-rank {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-600);
+            width: 3rem;
+        }
+
+        .contractor-info {
+            flex: 1;
+        }
+
+        .contractor-name {
+            font-weight: 600;
+            color: var(--gray-100);
+            margin-bottom: 0.25rem;
+        }
+
+        .contractor-stats {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .vertical-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .vertical-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-name {
+            font-weight: 600;
+            color: var(--gray-100);
+        }
+
+        .vertical-count {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .vertical-bar {
+            background: var(--navy);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-fill {
+            background: var(--gold);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .vertical-value {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+        }
+
+        .award-card {
+            background: var(--navy);
+            border: 1px solid var(--navy-light);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .award-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .award-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .award-date {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .award-contractor {
+            font-weight: 600;
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-description {
+            color: var(--gray-600);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .award-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        .award-id {
+            font-family: monospace;
+        }
+
+        .award-vertical {
+            color: var(--gold-light);
+        }
+
+        .cta-section {
+            background: var(--navy-mid);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contractor-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contractor-rank {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">GovCon Intelligence</a>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="index.html">Agencies</a>
+                <a href="../insights.html">Insights</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> / <a href="index.html">Agencies</a> / National Aeronautics and Space Administration
+        </div>
+
+        <div class="page-header">
+            <h1 class="page-title">National Aeronautics and Space Administration</h1>
+            <p class="page-subtitle">IT Contract Awards & Spending Intelligence</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total IT Spending</div>
+                <div class="stat-value">$7.66B</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Awards</div>
+                <div class="stat-value">100</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Average Award</div>
+                <div class="stat-value">$76.65M</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Top Contractors</h2>
+            <div class="card">
+                
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#1</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">ASSOCIATION OF UNIVERSITIES FOR RESEARCH IN ASTRONOMY, INC.</div>
+                            <div class="contractor-stats">
+                                1 award · $2.50B
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#2</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">LOCKHEED MARTIN CORP</div>
+                            <div class="contractor-stats">
+                                1 award · $2.03B
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#3</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">NORTHROP GRUMMAN SYSTEMS CORPORATION</div>
+                            <div class="contractor-stats">
+                                1 award · $1.55B
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#4</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">LOCKHEED MARTIN CORPORATION</div>
+                            <div class="contractor-stats">
+                                2 awards · $516.92M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#5</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">SOUTHWEST RESEARCH INSTITUTE</div>
+                            <div class="contractor-stats">
+                                2 awards · $416.76M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#6</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">KBR WYLE SERVICES, LLC</div>
+                            <div class="contractor-stats">
+                                1 award · $227.12M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#7</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">CALIFORNIA INSTITUTE OF TECHNOLOGY</div>
+                            <div class="contractor-stats">
+                                3 awards · $175.36M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#8</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">FOUR POINTS TECHNOLOGY, L.L.C.</div>
+                            <div class="contractor-stats">
+                                1 award · $91.80M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#9</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">THE TRUSTEES OF PRINCETON UNIVERSITY</div>
+                            <div class="contractor-stats">
+                                1 award · $49.41M
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contractor-row">
+                        <div class="contractor-rank">#10</div>
+                        <div class="contractor-info">
+                            <div class="contractor-name">AMENTUM TECHNOLOGY, INC.</div>
+                            <div class="contractor-stats">
+                                2 awards · $17.85M
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Technology Areas</h2>
+            <div class="card">
+                
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Cybersecurity</span>
+                            <span class="vertical-count">32 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 32.0%"></div>
+                        </div>
+                        <div class="vertical-value">$5.44B</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Cloud</span>
+                            <span class="vertical-count">32 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 32.0%"></div>
+                        </div>
+                        <div class="vertical-value">$4.34B</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">FedRAMP</span>
+                            <span class="vertical-count">20 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 20.0%"></div>
+                        </div>
+                        <div class="vertical-value">$3.81B</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Identity Management</span>
+                            <span class="vertical-count">5 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 5.0%"></div>
+                        </div>
+                        <div class="vertical-value">$2.50B</div>
+                    </div>
+                    <div class="vertical-item">
+                        <div class="vertical-header">
+                            <span class="vertical-name">Data Analytics</span>
+                            <span class="vertical-count">4 awards</span>
+                        </div>
+                        <div class="vertical-bar">
+                            <div class="vertical-fill" style="width: 4.0%"></div>
+                        </div>
+                        <div class="vertical-value">$56.96M</div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Top 10 Awards by Value</h2>
+            
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$2.50B</div>
+                            <div class="award-date">1987-09-15</div>
+                        </div>
+                        <div class="award-contractor">ASSOCIATION OF UNIVERSITIES FOR RESEARCH IN ASTRONOMY, INC.</div>
+                        <div class="award-description">THE PRIMARY ACTIVITIES COVERED BY THIS EFFORT INCLUDE THE FINAL SERVICING MISSION AND SUBSEQUENT OPERATIONS THROUGH END-OF-MISSION. THESE ACTIVITIE...</div>
+                        <div class="award-meta">
+                            <span class="award-id">GSFC0198106DNAS526555</span>
+                            <span class="award-vertical">Cloud, Cybersecurity, FedRAMP, Identity Management</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$2.03B</div>
+                            <div class="award-date">2008-12-04</div>
+                        </div>
+                        <div class="award-contractor">LOCKHEED MARTIN CORP</div>
+                        <div class="award-description">THE GOVERNMENT IS PROCURING THE NEXT-GENERATION GEOSTATIONARY OPERATIONAL ENVIRONMENTAL SATELLITES (GOES) SERIES TO CONTINUE ITS MISSION THROUGH NE...</div>
+                        <div class="award-meta">
+                            <span class="award-id">NNG09HR00C</span>
+                            <span class="award-vertical">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$1.55B</div>
+                            <div class="award-date">2015-09-03</div>
+                        </div>
+                        <div class="award-contractor">NORTHROP GRUMMAN SYSTEMS CORPORATION</div>
+                        <div class="award-description">IGF::OT::IGF NEXTSTEP NRA AWARD.  THIS NEXTSTEP CONTRACT BUILDS UPON THE SUCCESS OF COMMERCIAL ORBITAL TRANSPORTATION SERVICES SPACE ACT AGREEMENT ...</div>
+                        <div class="award-meta">
+                            <span class="award-id">NNH15CN76C</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$382.23M</div>
+                            <div class="award-date">2004-04-21</div>
+                        </div>
+                        <div class="award-contractor">SOUTHWEST RESEARCH INSTITUTE</div>
+                        <div class="award-description">TAS::80 0120::TAS AS THE PRINCIPAL INVESTIGATOR (PI) INSTITUTION FOR THE MAGNETOSPHERIC MULTISCALE  (MMS) INSTRUMENT SUITE SCIENCE TEAM (ISST), THE...</div>
+                        <div class="award-meta">
+                            <span class="award-id">NNG04EB99C</span>
+                            <span class="award-vertical">Cybersecurity, FedRAMP</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$325.88M</div>
+                            <div class="award-date">2007-09-24</div>
+                        </div>
+                        <div class="award-contractor">LOCKHEED MARTIN CORPORATION</div>
+                        <div class="award-description">TAS::80 0114::TAS SOLAR ULTRAVIOLET IMAGER (SUVI) INSTRUMENT.  THIS CONTRACT IS FOR THE DESIGN, ANALYZE, DEVELOP, FABRICATE, INTEGRATE, TEST, EVALU...</div>
+                        <div class="award-meta">
+                            <span class="award-id">NNG07HW20C</span>
+                            <span class="award-vertical">Cybersecurity, FedRAMP</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$227.12M</div>
+                            <div class="award-date">2019-08-10</div>
+                        </div>
+                        <div class="award-contractor">KBR WYLE SERVICES, LLC</div>
+                        <div class="award-description">THE OVERALL SCOPE OF THIS CONTRACT IS TO PROVIDE WALLOPS RANGE OPERATIONS AND MAINTENANCE SUPPORT SERVICES TRAINING COMMAND, CONTROL, COMMUNICATION...</div>
+                        <div class="award-meta">
+                            <span class="award-id">80GSFC19C0013</span>
+                            <span class="award-vertical">FedRAMP</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$191.04M</div>
+                            <div class="award-date">2009-10-01</div>
+                        </div>
+                        <div class="award-contractor">LOCKHEED MARTIN CORPORATION</div>
+                        <div class="award-description">INTERFACE REGION IMAGING SPECTROGRAPH (IRIS). THE CONTRACTOR SHALL REFINE AND EVOLVE THE CONTRACTOR'S COST ESTIMATE FOR PHASES B-F FOR THE INTERFAC...</div>
+                        <div class="award-meta">
+                            <span class="award-id">NNG09FA40C</span>
+                            <span class="award-vertical">Cybersecurity, FedRAMP</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$102.42M</div>
+                            <div class="award-date">2018-10-01</div>
+                        </div>
+                        <div class="award-contractor">CALIFORNIA INSTITUTE OF TECHNOLOGY</div>
+                        <div class="award-description">SCIENCE MISSION DIRECTORATE, RESEARCH AND ANALYSIS (R&A), FOR ASTROPHYSICS ROSES AWARDS AND GUEST OBSERVER AWARD SUPPORT</div>
+                        <div class="award-meta">
+                            <span class="award-id">80NM0018F0610</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$91.80M</div>
+                            <div class="award-date">2024-02-01</div>
+                        </div>
+                        <div class="award-contractor">FOUR POINTS TECHNOLOGY, L.L.C.</div>
+                        <div class="award-description">THIS DELIVERY ORDER IS FOR PROVIDING AN ENTERPRISE-WIDE SOLUTION FOR CLOUD SERVICES</div>
+                        <div class="award-meta">
+                            <span class="award-id">80TECH24FA015</span>
+                            <span class="award-vertical">Cloud</span>
+                        </div>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <div class="award-amount">$72.84M</div>
+                            <div class="award-date">2018-10-01</div>
+                        </div>
+                        <div class="award-contractor">CALIFORNIA INSTITUTE OF TECHNOLOGY</div>
+                        <div class="award-description">COLD ATOM LAB (CAL) 70-18547</div>
+                        <div class="award-meta">
+                            <span class="award-id">80NM0018F0581</span>
+                            <span class="award-vertical">FedRAMP</span>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Track National Aeronautics and Space Administration Spending Weekly</h2>
+            <p class="cta-description">Get alerts when National Aeronautics and Space Administration awards new contracts in your tech area. Real-time competitive intelligence delivered to your inbox.</p>
+            <a href="../index.html#subscribe" class="cta-button">Subscribe Now</a>
+        </div>
+    </div>
+
+    <script src="../js/tracker.js"></script>
+</body>
+</html>
