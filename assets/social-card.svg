@@ -1,0 +1,76 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0A1628"/>
+
+  <!-- Accent Lines -->
+  <rect x="0" y="0" width="8" height="630" fill="#C5A44E"/>
+  <rect x="1192" y="0" width="8" height="630" fill="#C5A44E"/>
+
+  <!-- Decorative Elements -->
+  <rect x="80" y="80" width="120" height="4" fill="#C5A44E" opacity="0.6"/>
+  <rect x="1000" y="546" width="120" height="4" fill="#C5A44E" opacity="0.6"/>
+
+  <!-- Main Title -->
+  <text x="600" y="180" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle" letter-spacing="2">
+    GOVCON WEEKLY
+  </text>
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#C5A44E" text-anchor="middle" letter-spacing="2">
+    INTELLIGENCE
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="310" font-family="Arial, sans-serif" font-size="24" fill="#999" text-anchor="middle">
+    Federal Contract Awards Analysis
+  </text>
+
+  <!-- Stats Container Background -->
+  <rect x="200" y="360" width="800" height="180" rx="12" fill="#1a2d4d" opacity="0.8"/>
+
+  <!-- Stats Grid -->
+  <!-- Stat 1: Total Awards -->
+  <text x="300" y="410" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#C5A44E" text-anchor="middle" letter-spacing="1">
+    AWARDS
+  </text>
+  <text x="300" y="460" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="white" text-anchor="middle">
+    1,138
+  </text>
+  <text x="300" y="495" font-family="Arial, sans-serif" font-size="16" fill="#ccc" text-anchor="middle">
+    this week
+  </text>
+
+  <!-- Divider -->
+  <rect x="420" y="385" width="2" height="130" fill="#C5A44E" opacity="0.3"/>
+
+  <!-- Stat 2: Total Value -->
+  <text x="600" y="410" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#C5A44E" text-anchor="middle" letter-spacing="1">
+    VALUE
+  </text>
+  <text x="600" y="460" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="white" text-anchor="middle">
+    $8.7B
+  </text>
+  <text x="600" y="495" font-family="Arial, sans-serif" font-size="16" fill="#ccc" text-anchor="middle">
+    total spend
+  </text>
+
+  <!-- Divider -->
+  <rect x="780" y="385" width="2" height="130" fill="#C5A44E" opacity="0.3"/>
+
+  <!-- Stat 3: Verticals -->
+  <text x="900" y="410" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#C5A44E" text-anchor="middle" letter-spacing="1">
+    VERTICALS
+  </text>
+  <text x="900" y="460" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="white" text-anchor="middle">
+    9
+  </text>
+  <text x="900" y="495" font-family="Arial, sans-serif" font-size="16" fill="#ccc" text-anchor="middle">
+    tech categories
+  </text>
+
+  <!-- Bottom accent bar -->
+  <rect x="200" y="570" width="800" height="6" rx="3" fill="#C5A44E"/>
+
+  <!-- Footer text -->
+  <text x="600" y="605" font-family="Arial, sans-serif" font-size="18" fill="#999" text-anchor="middle" letter-spacing="1">
+    Get actionable intelligence delivered weekly
+  </text>
+</svg>

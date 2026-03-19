@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Track Federal Contract Recompetes Before They Hit SAM.gov</title>
+    <meta name="description" content="Practical guide to tracking federal contract recompetes and expiring contracts using USAspending.gov and FPDS data. Find opportunities before your competitors see the RFP on SAM.gov.">
+    <link rel="canonical" href="https://dontlukeback.github.io/govcon-intel/blog/track-federal-recompetes.html">
+    <meta property="og:title" content="How to Track Federal Contract Recompetes Before They Hit SAM.gov">
+    <meta property="og:description" content="Track federal contract recompetes and expiring contracts before the RFP hits SAM.gov. Step-by-step guide using free tools.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dontlukeback.github.io/govcon-intel/blog/track-federal-recompetes.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Track Federal Contract Recompetes Before They Hit SAM.gov">
+    <meta name="twitter:description" content="Track federal contract recompetes before they hit SAM.gov using USAspending.gov and FPDS data.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--gray-800);
+            background: var(--gray-50);
+        }
+
+        nav {
+            background: var(--navy);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        nav a.home-link {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a.home-link:hover {
+            color: var(--gold);
+        }
+
+        article {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .meta {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin: 2.5rem 0 1rem 0;
+            padding-top: 1rem;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            color: var(--navy-mid);
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--gray-800);
+        }
+
+        strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            color: var(--gray-800);
+        }
+
+        .callout {
+            background: var(--gray-50);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .step-box {
+            background: var(--gray-50);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .step-box h3 {
+            margin-top: 0;
+            color: var(--gold);
+        }
+
+        code {
+            background: var(--gray-100);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--navy);
+        }
+
+        .example-box {
+            background: var(--navy);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+
+        .example-box h4 {
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .example-box p {
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: white;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .cta-box h3 {
+            color: var(--gold);
+            margin: 0 0 1rem 0;
+            padding: 0;
+        }
+
+        .cta-box p {
+            color: var(--gray-100);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        .internal-links {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .internal-links h4 {
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .internal-links ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .internal-links a {
+            color: var(--navy-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .internal-links a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            article {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.875rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">GovCon Weekly Intelligence</a>
+            <a href="../index.html" class="home-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <article>
+        <h1>How to Track Federal Contract Recompetes Before They Hit SAM.gov</h1>
+
+        <div class="meta">
+            Published March 18, 2026 | 10 min read
+        </div>
+
+        <p>By the time a federal contract recompete shows up on SAM.gov as an RFP, you're already late. The incumbent has been working the program office for months. Your competitors with agency relationships saw it coming and have been positioning since the last option year was exercised.</p>
+
+        <p>If you want to win recompetes, you need to track expiring contracts <strong>before</strong> the solicitation drops. That means identifying contracts that are approaching their period of performance end dates and building your capture strategy 6-12 months in advance.</p>
+
+        <p>This guide shows you how to do exactly that using free, publicly available data from USAspending.gov and FPDS-NG. No expensive tools required.</p>
+
+        <h2>Why Recompetes Matter More Than New Starts</h2>
+
+        <p>In federal contracting, roughly 70% of contract value each year comes from recompetes, not new programs. The math is simple:</p>
+
+        <ul>
+            <li>Federal agencies are risk-averse and prefer to extend proven solutions</li>
+            <li>Budget constraints mean new programs are rare</li>
+            <li>Most "new" contracts are actually recompetes with updated requirements</li>
+        </ul>
+
+        <p>But here's the opportunity: <strong>incumbents lose recompetes 30-40% of the time.</strong> Agencies aren't satisfied with the status quo, or they're required to compete for best value, or the incumbent got complacent.</p>
+
+        <p>If you can identify expiring contracts early, you can:</p>
+
+        <ul>
+            <li>Build relationships with the program office before the RFP drops</li>
+            <li>Shape requirements through white papers and industry days</li>
+            <li>Recruit the right technical staff and teaming partners</li>
+            <li>Develop a discriminating proposal strategy</li>
+        </ul>
+
+        <p>All of this takes time. That's why tracking recompetes 6-12 months out is a competitive advantage.</p>
+
+        <h2>The Problem with SAM.gov</h2>
+
+        <p>SAM.gov is where federal solicitations get posted. It's the official system of record. But for tracking recompetes, it has two fatal flaws:</p>
+
+        <ol>
+            <li><strong>You only see opportunities when the RFP is published</strong> — usually 30-60 days before proposals are due. By then, the requirements are locked in and incumbents have a massive head start.</li>
+            <li><strong>There's no way to search for "contracts expiring soon"</strong> — SAM.gov shows solicitations, not existing contracts approaching their end dates.</li>
+        </ol>
+
+        <p>To track recompetes early, you need to look upstream at contract award data and calculate when contracts are expiring based on their period of performance.</p>
+
+        <h2>Step-by-Step: How to Track Expiring Contracts</h2>
+
+        <div class="step-box">
+            <h3>Step 1: Identify Your Target Agencies and NAICS Codes</h3>
+            <p>Before you start searching, get clear on what you're looking for. You need two things:</p>
+            <ul>
+                <li><strong>Target agencies:</strong> Which federal agencies do you want to work with? (e.g., DISA, DHA, CYBERCOM, VA)</li>
+                <li><strong>NAICS codes:</strong> What type of work do you do? (e.g., 541512 for IT systems design, 541519 for cyber, 541611 for management consulting)</li>
+            </ul>
+            <p>The narrower your focus, the easier it is to track recompetes. Don't try to monitor the entire federal market.</p>
+        </div>
+
+        <div class="step-box">
+            <h3>Step 2: Use USAspending.gov Advanced Search</h3>
+            <p>USAspending.gov is the official source for federal spending data. It's free, updated daily, and searchable. Here's how to find expiring contracts:</p>
+            <ol>
+                <li>Go to <a href="https://www.usaspending.gov/search" target="_blank">usaspending.gov/search</a></li>
+                <li>Click <strong>"Advanced Search"</strong></li>
+                <li>Under <strong>"Award Type"</strong>, select <strong>"Contracts"</strong></li>
+                <li>Under <strong>"Agencies"</strong>, add your target agencies (e.g., Defense Information Systems Agency)</li>
+                <li>Under <strong>"NAICS Code"</strong>, add your relevant codes</li>
+                <li>Under <strong>"Award Amount"</strong>, set a minimum (e.g., $5M+) to filter out small purchases</li>
+                <li>Under <strong>"Time Period"</strong>, select the last 3-5 years (this gives you contracts that might be ending soon)</li>
+            </ol>
+            <p>Click <strong>"Search"</strong> and export the results to CSV.</p>
+        </div>
+
+        <div class="step-box">
+            <h3>Step 3: Calculate Period of Performance End Dates</h3>
+            <p>Now you have a list of contracts. The key fields you need are:</p>
+            <ul>
+                <li><strong>Award Date:</strong> When the contract was signed</li>
+                <li><strong>Period of Performance End Date:</strong> When the contract expires (if provided)</li>
+                <li><strong>Base + Options:</strong> Total potential contract length</li>
+            </ul>
+            <p>Most federal contracts are 1 base year + 4 option years (total 5 years). If a contract was awarded in 2021, it's likely expiring in 2026.</p>
+            <p><strong>Manual Method:</strong> Open the CSV in Excel/Google Sheets. Filter for contracts with end dates in the next 6-12 months.</p>
+            <p><strong>Automated Method:</strong> Use a simple Python script to calculate expiring contracts (more on this below).</p>
+        </div>
+
+        <div class="step-box">
+            <h3>Step 4: Research Each Expiring Contract</h3>
+            <p>Once you have a list of contracts expiring in 6-12 months, dig deeper on each one:</p>
+            <ul>
+                <li><strong>Who's the incumbent?</strong> Look up the contractor on USAspending or SAM.gov.</li>
+                <li><strong>What's the contract value?</strong> Is it worth pursuing? ($5M+ is typically worth the BD investment)</li>
+                <li><strong>What agency/program office manages it?</strong> Find the contracting officer and program manager names (often in the award data or via FOIA)</li>
+                <li><strong>Has the agency exercised all option years?</strong> If they're exercising options, they're satisfied. If they're not, there might be performance issues.</li>
+            </ul>
+        </div>
+
+        <div class="step-box">
+            <h3>Step 5: Set Up SAM.gov Alerts for Recompetes</h3>
+            <p>Now that you know which contracts are expiring, set up alerts on SAM.gov so you're notified the moment the recompete solicitation is posted:</p>
+            <ol>
+                <li>Go to <a href="https://sam.gov" target="_blank">sam.gov</a> and create a free account</li>
+                <li>Navigate to <strong>"Contract Opportunities"</strong></li>
+                <li>Click <strong>"Saved Searches"</strong></li>
+                <li>Create a search with: <strong>Agency name + NAICS code + keywords from the contract title</strong></li>
+                <li>Enable email notifications</li>
+            </ol>
+            <p>Example: If you're tracking the DISA EITSS-III recompete, set an alert for "Defense Information Systems Agency" + NAICS 541512 + "Enterprise IT Support".</p>
+        </div>
+
+        <h2>Real-World Example: Tracking the DISA EITSS-III Recompete</h2>
+
+        <div class="example-box">
+            <h4>Case Study: DISA Enterprise IT Support Services (EITSS-III)</h4>
+            <p><strong>Original Award:</strong> Leidos, $487M, awarded July 2021</p>
+            <p><strong>Period of Performance:</strong> 1 base + 4 options = 5 years total</p>
+            <p><strong>Expiration Date:</strong> July 2026 (104 days from now)</p>
+            <p><strong>Status:</strong> Draft RFP expected April 2026</p>
+            <p><strong>Why It Matters:</strong> This is a major IT services contract with high recompete potential. The short timeline (104 days) suggests the RFP is imminent.</p>
+            <p><strong>Action for Competitors:</strong> If you're not already engaging DISA's program office, you're too late. But you can still position as a subcontractor to likely primes (SAIC, General Dynamics IT, Peraton).</p>
+        </div>
+
+        <p>This is the kind of intelligence you get from tracking expiring contracts systematically. By the time this RFP hits SAM.gov, informed competitors have already spent 6+ months building relationships and shaping their proposals.</p>
+
+        <h2>Automating Recompete Tracking with Python (Optional)</h2>
+
+        <p>If you're comfortable with basic scripting, you can automate this process using the USAspending.gov API. Here's a simple Python script structure:</p>
+
+        <div class="callout">
+            <p><strong>Basic Logic:</strong></p>
+            <ol>
+                <li>Query the USAspending API for contracts by agency + NAICS code</li>
+                <li>Filter for contracts awarded 3-5 years ago</li>
+                <li>Calculate period of performance end dates based on base + options</li>
+                <li>Identify contracts expiring in the next 6-12 months</li>
+                <li>Export results to CSV or send as an email alert</li>
+            </ol>
+            <p>The USAspending API is free and doesn't require authentication for basic queries. Documentation: <a href="https://api.usaspending.gov/" target="_blank" style="color: var(--gold);">api.usaspending.gov</a></p>
+        </div>
+
+        <h2>What to Do Once You Find an Expiring Contract</h2>
+
+        <p>Finding the recompete is only step one. Here's what to do next:</p>
+
+        <h3>6-12 Months Before Expiration:</h3>
+        <ul>
+            <li>Request a meeting with the program office to discuss upcoming requirements</li>
+            <li>Submit white papers on technical approaches or pain points</li>
+            <li>Attend industry days (if announced)</li>
+            <li>Identify and recruit teaming partners</li>
+            <li>Start building discriminators for your technical proposal</li>
+        </ul>
+
+        <h3>3-6 Months Before Expiration:</h3>
+        <ul>
+            <li>Monitor SAM.gov for the draft RFP or sources sought notice</li>
+            <li>Respond to sources sought with a capabilities statement</li>
+            <li>Finalize teaming agreements</li>
+            <li>Start drafting proposal sections (past performance, corporate experience)</li>
+        </ul>
+
+        <h3>1-3 Months Before Expiration:</h3>
+        <ul>
+            <li>Prepare for the final RFP drop (usually 30-60 days before proposals due)</li>
+            <li>Allocate proposal resources (writers, graphics, pricing)</li>
+            <li>Conduct Pink Team / Red Team reviews</li>
+        </ul>
+
+        <p>If you wait until the RFP is posted, you've lost 80% of your ability to influence the outcome.</p>
+
+        <h2>Common Mistakes When Tracking Recompetes</h2>
+
+        <ul>
+            <li><strong>Tracking too many opportunities:</strong> Focus on 10-20 high-value recompetes, not 200. Quality over quantity.</li>
+            <li><strong>Ignoring option years:</strong> Just because a contract was awarded 5 years ago doesn't mean it's expiring. Check if the agency exercised all option years.</li>
+            <li><strong>Assuming all contracts recompete:</strong> Some contracts get extended via bridge contracts or sole-source modifications. Track the pattern for each agency.</li>
+            <li><strong>Not engaging the customer early:</strong> Finding the recompete means nothing if you don't build a relationship with the program office.</li>
+        </ul>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Tracking federal contract recompetes before they hit SAM.gov is a competitive advantage that costs nothing except time. The data is public and free. The process is straightforward:</p>
+
+        <ol>
+            <li>Use USAspending.gov to find contracts by agency + NAICS code</li>
+            <li>Calculate period of performance end dates</li>
+            <li>Filter for contracts expiring in 6-12 months</li>
+            <li>Set SAM.gov alerts for each recompete</li>
+            <li>Start your capture campaign early</li>
+        </ol>
+
+        <p>The firms that win recompetes consistently aren't smarter or luckier. They're just better at tracking the pipeline and engaging customers before the RFP drops.</p>
+
+        <div class="cta-box">
+            <h3>Or Let Us Do It For You</h3>
+            <p>GovCon Weekly Intelligence tracks expiring contracts across 9 tech verticals and delivers recompete alerts to your inbox every week. No spreadsheets. No API calls. Just actionable intelligence on opportunities that matter.</p>
+            <a href="../index.html#subscribe" class="cta-button">Subscribe Free</a>
+        </div>
+
+        <div class="internal-links">
+            <h4>Related Articles</h4>
+            <ul>
+                <li><a href="govwin-alternatives.html">GovWin Alternatives: 5 Federal Contract Intelligence Tools for Small Business</a></li>
+                <li><a href="small-business-federal-contracts.html">Federal Contract Intelligence for 8(a) and SDVOSB Firms on a Budget</a></li>
+                <li><a href="../index.html">Subscribe to GovCon Weekly Intelligence</a></li>
+            </ul>
+        </div>
+    </article>
+</body>
+</html>

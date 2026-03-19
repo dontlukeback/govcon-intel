@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Contract Intelligence for 8(a) and SDVOSB Firms on a Budget</title>
+    <meta name="description" content="How 8(a) and SDVOSB small businesses can compete for federal contracts without $20K intelligence tools. Practical strategies using free data sources and smart positioning.">
+    <link rel="canonical" href="https://dontlukeback.github.io/govcon-intel/blog/small-business-federal-contracts.html">
+    <meta property="og:title" content="Federal Contract Intelligence for 8(a) and SDVOSB Firms on a Budget">
+    <meta property="og:description" content="How small businesses can compete for federal contracts without expensive intelligence tools. Practical guide for 8(a) and SDVOSB firms.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dontlukeback.github.io/govcon-intel/blog/small-business-federal-contracts.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Federal Contract Intelligence for 8(a) and SDVOSB Firms on a Budget">
+    <meta name="twitter:description" content="How 8(a) and SDVOSB firms can compete for federal contracts without expensive tools.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--gray-800);
+            background: var(--gray-50);
+        }
+
+        nav {
+            background: var(--navy);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        nav a.home-link {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a.home-link:hover {
+            color: var(--gold);
+        }
+
+        article {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .meta {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin: 2.5rem 0 1rem 0;
+            padding-top: 1rem;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            color: var(--navy-mid);
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--gray-800);
+        }
+
+        strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            color: var(--gray-800);
+        }
+
+        .callout {
+            background: var(--gray-50);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout strong {
+            color: var(--gold);
+        }
+
+        .stat-box {
+            background: var(--navy);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .stat-box .stat {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box .label {
+            font-size: 1rem;
+            color: var(--gray-200);
+        }
+
+        .strategy-box {
+            background: var(--gray-50);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .strategy-box h3 {
+            margin-top: 0;
+            color: var(--gold);
+        }
+
+        .example-box {
+            background: var(--navy-light);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+
+        .example-box h4 {
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .example-box p {
+            color: var(--gray-100);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: white;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .cta-box h3 {
+            color: var(--gold);
+            margin: 0 0 1rem 0;
+            padding: 0;
+        }
+
+        .cta-box p {
+            color: var(--gray-100);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: var(--gold-light);
+        }
+
+        .internal-links {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .internal-links h4 {
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .internal-links ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .internal-links a {
+            color: var(--navy-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .internal-links a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        .resource-list {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+
+        .resource-list h4 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .resource-list ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            article {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.875rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .stat-box .stat {
+                font-size: 2rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">GovCon Weekly Intelligence</a>
+            <a href="../index.html" class="home-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <article>
+        <h1>Federal Contract Intelligence for 8(a) and SDVOSB Firms on a Budget</h1>
+
+        <div class="meta">
+            Published March 18, 2026 | 11 min read
+        </div>
+
+        <p>If you run an 8(a) or Service-Disabled Veteran-Owned Small Business (SDVOSB), you've probably heard the pitch from GovWin, Bloomberg Government, or one of the other federal contract intelligence platforms: "You need our tool to compete."</p>
+
+        <p>Then they quote you $10,000-$20,000 per user per year. For a small business with 2-5 employees, that's a significant budget line—often more than your entire marketing and BD budget combined.</p>
+
+        <p>Here's what they won't tell you: <strong>most small businesses don't need expensive tools to win federal contracts.</strong> What you need is smart positioning, relationship-building, and a disciplined approach to opportunity qualification.</p>
+
+        <p>This guide shows you how to compete for federal contracts using free data sources, practical strategies, and your small business advantages—without breaking the bank.</p>
+
+        <h2>The Small Business Advantage Nobody Talks About</h2>
+
+        <p>Large primes spend millions on intelligence tools, proposal factories, and lobbying. But they have structural disadvantages that you don't:</p>
+
+        <ul>
+            <li><strong>Set-aside requirements:</strong> 23% of federal contract dollars are legally required to go to small businesses. Large primes are locked out of competing directly.</li>
+            <li><strong>Agility:</strong> You can pivot faster, customize solutions, and provide direct access to senior leadership.</li>
+            <li><strong>Lower overhead:</strong> Your G&A rates are 30-50% lower than the primes, which means you can bid more competitively.</li>
+            <li><strong>Niche expertise:</strong> You can dominate a vertical or agency that's too small for primes to care about.</li>
+        </ul>
+
+        <p>The challenge isn't competing with primes. It's finding the right opportunities and building the relationships to win them.</p>
+
+        <div class="stat-box">
+            <span class="stat">$154B</span>
+            <span class="label">Federal small business contract spending in FY2025</span>
+        </div>
+
+        <h2>Reality Check: What Actually Wins Contracts</h2>
+
+        <p>Before we dive into tools and tactics, let's be honest about what wins federal contracts—especially for small businesses:</p>
+
+        <ol>
+            <li><strong>Past performance:</strong> Relevant contract experience in the same domain (70% of evaluation weight)</li>
+            <li><strong>Agency relationships:</strong> Knowing the program office and understanding their pain points</li>
+            <li><strong>Technical approach:</strong> A proposal that shows you understand the mission</li>
+            <li><strong>Price:</strong> Competitive pricing (but rarely lowest price wins)</li>
+        </ol>
+
+        <p>Notice what's missing? <strong>Intelligence tools.</strong> They help you find opportunities, but they don't win proposals.</p>
+
+        <p>If you're spending $20K/year on GovWin but not investing in capture management, proposal development, or BD relationships, your priorities are backward.</p>
+
+        <h2>The Free Tools You Actually Need</h2>
+
+        <p>Here's the good news: the most important federal contracting data is free and publicly available. You just need to know where to look.</p>
+
+        <div class="resource-list">
+            <h4>Essential Free Resources</h4>
+            <ul>
+                <li><strong>SAM.gov:</strong> Where all federal solicitations are posted. Set up saved searches and email alerts.</li>
+                <li><strong>USAspending.gov:</strong> Complete database of federal spending. Track awards, recompetes, and contractor activity.</li>
+                <li><strong>FPDS-NG:</strong> Detailed contract data including vehicle, NAICS, set-aside type, and program office.</li>
+                <li><strong>SBA Dynamic Small Business Search:</strong> Find small business teaming partners by NAICS code and certification.</li>
+                <li><strong>DSBS (Dynamic Small Business Search):</strong> Identify joint venture partners and subcontractors.</li>
+                <li><strong>Beta.SAM.gov API:</strong> Programmatic access to contract opportunities (free, no authentication required for basic queries).</li>
+            </ul>
+        </div>
+
+        <h2>Strategy 1: Focus on Small Business Set-Asides</h2>
+
+        <p>This is your biggest advantage. Federal agencies are required to set aside contracts for small businesses, and large primes can't compete. The set-aside categories include:</p>
+
+        <ul>
+            <li><strong>8(a) Business Development Program:</strong> For socially and economically disadvantaged small businesses</li>
+            <li><strong>SDVOSB:</strong> Service-Disabled Veteran-Owned Small Businesses</li>
+            <li><strong>WOSB/EDWOSB:</strong> Women-Owned Small Businesses / Economically Disadvantaged WOSB</li>
+            <li><strong>HUBZone:</strong> Historically Underutilized Business Zones</li>
+            <li><strong>Small Business Set-Aside:</strong> General small business (no specific socioeconomic category)</li>
+        </ul>
+
+        <div class="callout">
+            <p><strong>Pro Tip:</strong> On SAM.gov, filter opportunities by your set-aside type. If you're an 8(a) firm, search for "8(a) Set-Aside" opportunities. This eliminates 90% of the noise and focuses you on contracts you can actually win.</p>
+        </div>
+
+        <h3>Real Example from This Week's Data</h3>
+
+        <div class="example-box">
+            <h4>Health IT Modernization Support – Defense Health Agency (DHA)</h4>
+            <p><strong>Contract Value:</strong> $94.5M</p>
+            <p><strong>Set-Aside:</strong> Small Business Set-Aside</p>
+            <p><strong>NAICS:</strong> 541511 (Custom Computer Programming Services)</p>
+            <p><strong>Incumbent:</strong> CACI International (large business)</p>
+            <p><strong>Expiration:</strong> 166 days (August 2026)</p>
+            <p><strong>Why It Matters:</strong> This contract is moving from a large business to a small business set-aside. CACI can't compete. Small businesses with relevant DHA or healthcare IT experience should be positioning now.</p>
+        </div>
+
+        <p>This is the kind of opportunity you find by tracking set-asides systematically. A large business just lost $94.5M of recurring revenue because the agency decided to set it aside for small business. That's your opening.</p>
+
+        <h2>Strategy 2: Subcontracting on Large Prime Awards</h2>
+
+        <p>Here's a secret: <strong>large prime contracts have small business subcontracting requirements.</strong> Every federal contract over $750K must include a subcontracting plan with percentage goals for small business participation.</p>
+
+        <p>Translation: When a large prime wins a $500M contract, they're legally required to subcontract 20-40% of that work to small businesses. That's $100M-$200M in opportunities.</p>
+
+        <h3>How to Position as a Subcontractor</h3>
+
+        <ol>
+            <li><strong>Identify large awards in your domain:</strong> Use USAspending.gov to track recent awards over $50M in your NAICS codes.</li>
+            <li><strong>Research the prime contractor:</strong> Look up their small business liaison office (SBLO) on their website.</li>
+            <li><strong>Send a capabilities brief:</strong> A 1-page summary of your capabilities, past performance, and certifications. Reference the specific contract.</li>
+            <li><strong>Follow up:</strong> Primes are actively looking for small business partners to meet their subcontracting goals. Make it easy for them to find you.</li>
+        </ol>
+
+        <h3>This Week's Subcontracting Opportunities</h3>
+
+        <div class="strategy-box">
+            <h3>Joint All-Domain Command & Control (JADC2) Integration</h3>
+            <p><strong>Prime:</strong> General Dynamics IT | <strong>Value:</strong> $1.24B | <strong>Agency:</strong> U.S. Army PEO C3T</p>
+            <p><strong>What They Need:</strong> General Dynamics IT's strengths are enterprise IT and cloud. They need small business partners for cybersecurity, data analytics, and DevSecOps work.</p>
+            <p><strong>Action:</strong> Contact General Dynamics IT's small business liaison office. Reference this specific contract. Highlight your 8(a) or SDVOSB status and relevant past performance in cyber or data.</p>
+        </div>
+
+        <div class="strategy-box">
+            <h3>Cloud Migration & Managed Services (CMMS)</h3>
+            <p><strong>Prime:</strong> Accenture Federal Services | <strong>Value:</strong> $389M | <strong>Agency:</strong> Department of Veterans Affairs</p>
+            <p><strong>What They Need:</strong> Accenture excels at digital transformation and cloud strategy. They need small business partners for specialized cloud security, compliance (FedRAMP), and healthcare IT integration.</p>
+            <p><strong>Action:</strong> Reach out to Accenture's SBLO within 30 days of award. Early engagement is key—primes finalize their subcontracting plans in the first 60-90 days.</p>
+        </div>
+
+        <div class="strategy-box">
+            <h3>Satellite Ground Systems O&M</h3>
+            <p><strong>Prime:</strong> Raytheon Technologies | <strong>Value:</strong> $215M | <strong>Agency:</strong> Space Systems Command</p>
+            <p><strong>What They Need:</strong> Raytheon's strengths are hardware and systems engineering. They need small businesses for IT modernization, analytics, and software development on ground systems.</p>
+            <p><strong>Action:</strong> If you have experience with DoD software development or data analytics, position now. Reference your SDVOSB or 8(a) status prominently.</p>
+        </div>
+
+        <h2>Strategy 3: Target Small Agencies and Niche Verticals</h2>
+
+        <p>Large primes focus on DoD, VA, DHS, and the intelligence community. That means smaller agencies and niche verticals are underserved:</p>
+
+        <ul>
+            <li><strong>Department of Agriculture (USDA)</strong></li>
+            <li><strong>Department of Transportation (DOT)</strong></li>
+            <li><strong>Department of Energy (DOE)</strong></li>
+            <li><strong>Environmental Protection Agency (EPA)</strong></li>
+            <li><strong>Small Business Administration (SBA)</strong></li>
+        </ul>
+
+        <p>These agencies have smaller contracts ($1M-$20M range) that are perfect for small businesses. The competition is less intense, and you can build deep relationships with program offices.</p>
+
+        <div class="callout">
+            <p><strong>Pro Tip:</strong> Pick ONE agency and become the go-to small business in your domain. It's better to be the leading cybersecurity SDVOSB at USDA than to chase random opportunities across 10 agencies.</p>
+        </div>
+
+        <h2>Strategy 4: Build Your Pipeline Around Recompetes</h2>
+
+        <p>New programs are rare. Most federal contract spending is on recompetes—existing contracts that are expiring and need to be re-bid.</p>
+
+        <p>The advantage? You know:</p>
+        <ul>
+            <li>The exact scope of work (it's in the existing contract)</li>
+            <li>The incumbent (and whether they're vulnerable)</li>
+            <li>The contract value (no surprises)</li>
+            <li>The agency's priorities (based on past modifications)</li>
+        </ul>
+
+        <p>Track recompetes 6-12 months before expiration using USAspending.gov. Filter for small business set-asides in your NAICS codes. Set up SAM.gov alerts for when the RFP drops.</p>
+
+        <p>For a detailed guide, see: <a href="track-federal-recompetes.html" style="color: var(--gold);">How to Track Federal Contract Recompetes Before They Hit SAM.gov</a></p>
+
+        <h2>What NOT to Waste Money On</h2>
+
+        <p>Let's be honest about what doesn't work for small businesses on a budget:</p>
+
+        <ul>
+            <li><strong>Expensive intelligence tools ($10K+/year):</strong> You don't need them until you're bidding 20+ opportunities per year.</li>
+            <li><strong>Generic lead lists:</strong> Buying lists of federal opportunities from sketchy vendors. The data is free on SAM.gov.</li>
+            <li><strong>Conferences and tradeshows (with no plan):</strong> Don't go to a conference hoping to "network." Go with a list of 10 specific people you need to meet.</li>
+            <li><strong>Bidding everything:</strong> Proposal costs add up. If you bid 50 opportunities and win 1, you're wasting resources. Focus on 5-10 high-probability opportunities.</li>
+        </ul>
+
+        <h2>Your $0 Budget Federal Contracting Stack</h2>
+
+        <p>Here's exactly what you need to compete effectively as a small business, all for free:</p>
+
+        <div class="resource-list">
+            <h4>The Zero-Budget Stack</h4>
+            <ul>
+                <li><strong>SAM.gov:</strong> Daily email alerts for opportunities in your NAICS codes + set-aside type</li>
+                <li><strong>USAspending.gov:</strong> Monthly research on recent awards and expiring contracts in your target agencies</li>
+                <li><strong>GovCon Weekly Intelligence:</strong> Free weekly newsletter with curated recompetes, trends, and subcontracting opportunities</li>
+                <li><strong>LinkedIn:</strong> Follow contracting officers, program managers, and competitors in your space</li>
+                <li><strong>Agency OSDBU offices:</strong> Every agency has an Office of Small and Disadvantaged Business Utilization. They want to help you.</li>
+                <li><strong>SBA resources:</strong> Free training, counseling, and matchmaking through SBA district offices and Procurement Technical Assistance Centers (PTACs)</li>
+            </ul>
+        </div>
+
+        <p>Total cost: $0. Time investment: 5-10 hours per week.</p>
+
+        <h2>When Should You Invest in Paid Tools?</h2>
+
+        <p>Once you're winning contracts and have revenue, consider paid tools if:</p>
+
+        <ul>
+            <li>You're bidding 20+ opportunities per year and need better pipeline tracking</li>
+            <li>You need competitive intelligence on 50+ contractors in your space</li>
+            <li>You're managing multiple BD staff and need centralized data</li>
+            <li>You're ready to invest $500-$1,000/month in BD infrastructure</li>
+        </ul>
+
+        <p>Start with mid-tier tools like GovTribe ($200-$400/month) before jumping to GovWin ($1,000+/month).</p>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Federal contracting isn't about who has the best tools. It's about who has:</p>
+
+        <ul>
+            <li><strong>Relevant past performance</strong></li>
+            <li><strong>Strong agency relationships</strong></li>
+            <li><strong>A disciplined qualification process</strong></li>
+            <li><strong>The ability to write winning proposals</strong></li>
+        </ul>
+
+        <p>If you're an 8(a) or SDVOSB firm with limited budget, focus on:</p>
+
+        <ol>
+            <li>Tracking small business set-asides in your NAICS codes</li>
+            <li>Positioning as a subcontractor on large prime awards</li>
+            <li>Building relationships with 2-3 target agencies</li>
+            <li>Winning your first contract and building past performance</li>
+        </ol>
+
+        <p>Do this consistently for 12-24 months, and you'll have more opportunities than you can bid. At that point, invest in tools to scale—not before.</p>
+
+        <div class="cta-box">
+            <h3>Federal Contract Intelligence Built for Small Businesses</h3>
+            <p>GovCon Weekly Intelligence tracks small business set-asides, recompetes, and subcontracting opportunities across 9 tech verticals. Delivered to your inbox every week. Free.</p>
+            <a href="../index.html#subscribe" class="cta-button">Subscribe Free</a>
+        </div>
+
+        <div class="internal-links">
+            <h4>Related Articles</h4>
+            <ul>
+                <li><a href="govwin-alternatives.html">GovWin Alternatives: 5 Federal Contract Intelligence Tools for Small Business</a></li>
+                <li><a href="track-federal-recompetes.html">How to Track Federal Contract Recompetes Before They Hit SAM.gov</a></li>
+                <li><a href="../index.html">Subscribe to GovCon Weekly Intelligence</a></li>
+            </ul>
+        </div>
+    </article>
+</body>
+</html>

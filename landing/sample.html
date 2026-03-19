@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Report — GovCon Weekly Intelligence</title>
+<meta name="description" content="See exactly what GovCon Weekly Intelligence looks like. Real contract data, real analysis, delivered every Monday.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23C5A44E'/><text x='50%25' y='55%25' font-size='16' font-weight='800' fill='%230A1628' text-anchor='middle' dominant-baseline='middle'>GC</text></svg>">
+<style>
+/* ── Sticky banner ── */
+.sample-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #0A1628;
+    border-bottom: 2px solid #C5A44E;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.sample-banner-text {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #E2E4E9;
+}
+
+.sample-banner-text strong {
+    color: #C5A44E;
+    font-weight: 700;
+}
+
+.sample-banner-cta {
+    display: inline-block;
+    background: #C5A44E;
+    color: #0A1628;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.sample-banner-cta:hover {
+    background: #D4BA72;
+}
+
+/* ── Report frame ── */
+.sample-frame {
+    margin-top: 52px;
+}
+
+.sample-header {
+    background: #132238;
+    padding: 28px 24px 24px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.sample-header-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #C5A44E;
+    background: rgba(197, 164, 78, 0.15);
+    border: 1px solid rgba(197, 164, 78, 0.3);
+    padding: 5px 14px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.sample-header-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.sample-header-sub {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 6px;
+}
+
+.sample-header-sub a {
+    color: #C5A44E;
+    text-decoration: none;
+}
+
+.sample-header-sub a:hover {
+    text-decoration: underline;
+}
+
+/* ── Bottom CTA ── */
+.sample-bottom-cta {
+    background: #0A1628;
+    padding: 60px 24px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.sample-bottom-cta h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+    margin: 0 0 10px;
+}
+
+.sample-bottom-cta p {
+    font-size: 16px;
+    color: #94A3B8;
+    margin: 0 0 28px;
+    line-height: 1.6;
+}
+
+.sample-bottom-cta a.cta-btn {
+    display: inline-block;
+    background: #C5A44E;
+    color: #0A1628;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.sample-bottom-cta a.cta-btn:hover {
+    background: #D4BA72;
+    transform: translateY(-1px);
+}
+
+.sample-bottom-cta .back-link {
+    display: block;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #64748B;
+    text-decoration: none;
+}
+
+.sample-bottom-cta .back-link:hover {
+    color: #C5A44E;
+}
+
+/* ── Newsletter embed container ── */
+.sample-newsletter-embed {
+    background: #f4f4f4;
+    padding: 0;
+}
+
+/* Override newsletter styles to sit nicely in frame */
+.sample-newsletter-embed *{margin:0;padding:0;box-sizing:border-box}
+.sample-newsletter-embed body{background:#f4f4f4;font-family:Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#222}
+.sample-newsletter-embed .outer{max-width:600px;margin:0 auto;background:#fff}
+.sample-newsletter-embed .pad{padding:0 24px}
+.sample-newsletter-embed img{max-width:100%;display:block}
+.sample-newsletter-embed a{color:#2563EB;text-decoration:underline}
+.sample-newsletter-embed hr{border:none;border-top:1px solid #e5e5e5;margin:24px 0}
+
+/* Header */
+.sample-newsletter-embed .hdr{background:#0F172A;padding:20px 24px;text-align:center}
+.sample-newsletter-embed .hdr-logo{font-family:Georgia,serif;font-size:22px;font-weight:700;color:#C9A227;letter-spacing:-0.5px}
+.sample-newsletter-embed .hdr-sub{font-size:12px;color:#94a3b8;margin-top:2px}
+
+/* Section label */
+.sample-newsletter-embed .cat{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#C9A227;margin:24px 0 6px}
+
+/* Headlines */
+.sample-newsletter-embed h2{font-family:Georgia,serif;font-size:22px;font-weight:700;color:#111;line-height:1.3;margin:0 0 12px}
+.sample-newsletter-embed h3{font-size:17px;font-weight:700;color:#111;line-height:1.3;margin:20px 0 6px}
+
+/* Body text */
+.sample-newsletter-embed p{margin:0 0 12px;color:#333}
+.sample-newsletter-embed .small{font-size:14px;color:#666}
+
+/* Bullet lists */
+.sample-newsletter-embed ul{margin:0 0 12px;padding-left:20px}
+.sample-newsletter-embed li{margin-bottom:8px;color:#333}
+
+/* Market ticker */
+.sample-newsletter-embed .ticker{width:100%;border-collapse:collapse;margin:12px 0}
+.sample-newsletter-embed .ticker td{padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
+.sample-newsletter-embed .ticker td:first-child{font-weight:700;width:40%}
+.sample-newsletter-embed .ticker td:nth-child(2){color:#666}
+.sample-newsletter-embed .ticker td:last-child{text-align:right;font-weight:600}
+.sample-newsletter-embed .up{color:#16a34a}
+.sample-newsletter-embed .dn{color:#dc2626}
+
+/* Box section */
+.sample-newsletter-embed .box{border:1px solid #e5e5e5;border-radius:4px;padding:20px 24px;margin:20px 0}
+
+/* CTA */
+.sample-newsletter-embed .cta{background:#C9A227;text-align:center;padding:20px;margin:24px 0;border-radius:4px}
+.sample-newsletter-embed .cta p{color:#0F172A;margin:0 0 12px;font-weight:600;font-size:15px}
+.sample-newsletter-embed .cta a{display:inline-block;background:#0F172A;color:#C9A227;padding:10px 24px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:0.5px}
+
+/* Footer */
+.sample-newsletter-embed .ftr{background:#0F172A;padding:20px 24px;text-align:center}
+.sample-newsletter-embed .ftr p{font-size:11px;color:#64748b;line-height:1.5}
+.sample-newsletter-embed .ftr .gold{color:#C9A227}
+
+/* Feedback */
+.sample-newsletter-embed .fb{text-align:center;padding:16px 0;font-size:14px;color:#666}
+.sample-newsletter-embed .fb a{text-decoration:none;margin:0 8px;font-size:20px}
+
+@media (max-width: 600px) {
+    .sample-banner {
+        padding: 10px 16px;
+        gap: 10px;
+    }
+    .sample-banner-text {
+        font-size: 13px;
+        text-align: center;
+    }
+    .sample-header-title {
+        font-size: 18px;
+    }
+    .sample-bottom-cta h2 {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+<body style="margin:0; padding:0; background:#f4f4f4;">
+
+<!-- Sticky top banner -->
+<div class="sample-banner">
+    <span class="sample-banner-text"><strong>This is a sample report.</strong> Get this in your inbox every Monday.</span>
+    <a href="https://govconintelligence.substack.com" class="sample-banner-cta">Subscribe Free</a>
+</div>
+
+<div class="sample-frame">
+
+<!-- Report header frame -->
+<div class="sample-header">
+    <div class="sample-header-label">Sample Report</div>
+    <h1 class="sample-header-title">GovCon Weekly Intelligence</h1>
+    <p class="sample-header-sub">Week of March 18, 2026 &mdash; <a href="index.html">Back to homepage</a></p>
+</div>
+
+<!-- Actual newsletter content -->
+<div class="sample-newsletter-embed">
+<div class="outer">
+
+<div class="hdr">
+  <div class="hdr-logo">GOVCON WEEKLY</div>
+  <div class="hdr-sub">March 18, 2026 &bull; Issue #1</div>
+</div>
+
+<div class="pad">
+
+<p style="margin-top:20px"><strong>Good morning.</strong> The federal market split into two lanes this week. DoD dropped $2.1B in cyber money while USAID can&rsquo;t find anyone to answer the phone. Five things you need to know, then we&rsquo;ll get into the contracts.</p>
+
+<p style="font-size:14px;color:#666;font-style:italic">&mdash;GovCon Weekly team</p>
+
+<!-- MARKET TICKER -->
+<div class="box">
+<div class="cat" style="margin-top:0">PROCUREMENT PULSE</div>
+
+<table class="ticker">
+<tr><td>Weekly Obligations</td><td>$8.7B</td><td class="up">+23.4% YoY</td></tr>
+<tr><td>Department of Energy</td><td>$3.5B</td><td style="color:#666">Nuclear cleanup surge drives 1</td></tr>
+<tr><td>Department of Veterans Affairs</td><td>$1.2B</td><td style="color:#666">Healthcare IT and cybersecurit</td></tr>
+<tr><td>Department of Transportation</td><td>$1.1B</td><td style="color:#666">Air traffic control modernizat</td></tr>
+<tr><td>Health Index</td><td>74/100</td><td class="up">&uarr;6 pts</td></tr>
+<tr><td>Avg Bidders/RFP</td><td>3.2</td><td class="dn">&darr;from 4.1</td></tr>
+</table>
+<p class="small">*DoD cyber is surging. Civilian agencies in freefall. SB utilization at 3-year low.</p>
+</div>
+
+<!-- LEAD -->
+<div class="cat">DOGE WATCH</div>
+<h2>14 contracts lost their government oversight this month</h2>
+
+<p><strong>DOGE workforce cuts are creating a problem nobody anticipated:</strong> contracts that are technically alive but have no Contracting Officer&rsquo;s Representative watching them. USAID alone has 127 active contracts ($4.1B) with nobody on the government side. Stop-work orders hit 23 task orders.</p>
+
+<p>The agency-by-agency breakdown:</p>
+<ul>
+<li><strong>General Services Administration:</strong> $966M in GSA awards under review for potential cancellation or modification</li>
+<li><strong>Department of Veterans Affairs:</strong> $1.15B in VA contracts face potential ceiling reductions in Q3 2026</li>
+</ul>
+
+<p><strong>Court watch:</strong> <em>Coalition for Government Accountability v. OMB</em> Federal court upheld DOGE authority to review existing contracts for efficiency improvements. Contractors can no longer claim immunity from mid-contract modifications based on efficiency reviews</p>
+
+<hr>
+
+<!-- AWARDS -->
+<div class="cat">WHO WON THIS WEEK</div>
+<h2>$4.4B in new awards</h2>
+
+<h3>Savannah River Mission Completion LLC takes $2.1B Savannah River Liquid Waste Operations</h3>
+<p><strong>Massive nuclear waste cleanup task order extends operations through 2031.</strong> SRMC leveraged 15 years of site-specific experience and demonstrated cost efficiencies exceeding DOE targets by 12%.</p>
+<p>DOE prioritizing proven performance over lowest price&mdash;technical excellence and past performance carry heavy weight in nuclear cleanup awards.</p>
+<h3>TriWest Healthcare Alliance Corp takes $820M TriWest Healthcare Alliance February 2026 Services</h3>
+<p><strong>Emergency healthcare services extension while VA resolves contractor performance disputes.</strong> TriWest accepted VA&rsquo;s emergency terms without modification while competitors demanded contract protections.</p>
+<p>VA healthcare contracts increasingly subject to emergency extensions&mdash;flexibility and speed becoming more valuable than price optimization.</p>
+<h3>BL Harbert International LLC takes $814M Hanoi NEC Construction Management</h3>
+<p><strong>Major embassy construction project in Vietnam represents largest State construction award in Southeast Asia.</strong> BL Harbert&rsquo;s Vietnam-specific experience and existing in-country relationships proved decisive.</p>
+<p>State Department prioritizing contractors with proven international experience over lowest domestic bidders&mdash;regional expertise commanding premium pricing.</p>
+<h3>Leidos Inc takes $663M ATOP Advanced Technologies and Oceanic Procedures</h3>
+<p><strong>Air traffic control modernization covering oceanic airspace management systems.</strong> Leidos demonstrated superior FedRAMP integration with existing FAA systems and committed to 99.97% uptime guarantee that competitors couldn&rsquo;t match.</p>
+<p>DOT increasingly demanding cloud-first solutions with aggressive uptime commitments&mdash;traditional aerospace contractors losing ground to IT integrators with strong cloud partnerships.</p>
+
+<hr>
+
+<!-- WIRED -->
+<div class="cat">IS IT WIRED?</div>
+<h2>Score check on 5 upcoming recompetes</h2>
+
+<p class="small">We score 0&ndash;100 on whether a recompete is pre-wired for the incumbent. Higher = more wired.</p>
+
+<table class="ticker">
+<tr><td><strong>Education Department Student Aid Processing Modernization</strong><br><span class="small">Department of Education</span></td><td></td><td><span style="color:#16a34a;font-size:15px"><strong>15</strong> OPEN</span></td></tr>
+<tr><td><strong>DEA BLUESTONE IT Services</strong><br><span class="small">$422M &bull; Salient CRGT</span></td><td></td><td><span style="color:#16a34a;font-size:15px"><strong>35</strong> OPEN</span></td></tr>
+<tr><td><strong>SSA AWS Connect Contact Center Services</strong><br><span class="small">$150M &bull; Four Points Technology</span></td><td></td><td><span style="color:#d97706;font-size:15px"><strong>45</strong> TOSS-UP</span></td></tr>
+<tr><td><strong>EPA Environmental Justice Data Analytics Platform</strong><br><span class="small">Environmental Protection Agency</span></td><td></td><td><span style="color:#d97706;font-size:15px"><strong>45</strong> TOSS-UP</span></td></tr>
+<tr><td><strong>Treasury Enterprise Cloud Infrastructure Services</strong><br><span class="small">Department of the Treasury</span></td><td></td><td><span style="color:#dc2626;font-size:15px"><strong>85</strong> WIRED</span></td></tr>
+</table>
+
+<p><strong>The one to chase: Education Department Student Aid Processing Modernization.</strong> </p>
+
+<p><strong>The one to skip: Treasury Enterprise Cloud Infrastructure Services.</strong> Looks wired. Don&rsquo;t waste your B&amp;P budget.</p>
+
+<p><strong>The toss-up: SSA AWS Connect Contact Center Services.</strong> Proven AWS partnership advantage</p>
+
+<hr>
+
+<!-- BRIDGE -->
+<div class="cat">BRIDGE WATCH</div>
+<h2>3 contracts the government couldn&rsquo;t recompete in time</h2>
+
+<ul>
+<li><strong>State Department Core Networks Interim Support</strong> (Science Applications International Corporation, $135M/15 months (May 9, 2025 - Aug 8, 2026)) &mdash; State using bridge to develop new cybersecurity requirements and performance standards&mdash;expect major changes in final solicitation including zero trust architecture mandates <strong>Wide open competition favors cybersecurity specialists with State Department experience&mdash;start building cleared team now</strong></li>
+<li><strong>DHS Pacific Islands PSO Services Extension</strong> (CDA Inc, $16M/4 years (May 1, 2025 - Apr 30, 2029)) &mdash; Unusually long bridge suggests major program restructuring&mdash;DHS likely consolidating multiple regional security contracts into single national vehicle <strong>High wired score indicates incumbent advantage&mdash;small security contractors should focus on teaming rather than prime competition</strong></li>
+<li><strong>Commerce Cloud Migration Bridge Services</strong> (IgniteAction LLC, $16M/1 year (May 30, 2025 - May 31, 2026)) &mdash; Short bridge indicates quick transition to larger cloud services contract&mdash;Commerce testing small business performance before major award decision <strong>Moderate wiring suggests competition possible but incumbent has performance advantage&mdash;cloud specialists should prepare aggressive technical approach</strong></li>
+</ul>
+
+<hr>
+
+<!-- QUICK HITS -->
+<div class="cat">QUICK HITS</div>
+<h2>What else happened</h2>
+
+<ul>
+<li><strong>Idaho Environmental Coalition LLC Idaho Environmental Coalition Ten Year Plan gets $1.3B new task order, now $2.6B.</strong> DOE doubling down on nuclear cleanup&mdash;similar expansions likely at other sites. Environmental contractors should prepare for surge in task order opportunities through 2027.</li>
+<li><strong>Science Applications International Corporation State Department Core Data Networks gets another $135M ceiling bump&mdash;now $269M.</strong> Bridge contract signals major recompete coming&mdash;SAIC buying time while State develops new requirements. Competitors should start teaming now for the main event.</li>
+<li><strong>IgniteAction LLC Commerce Data Center Cloud Migration gets $16M incremental funding.</strong> Small business getting significant cloud work at Commerce&mdash;agency clearly committed to supporting small contractors in digital transformation efforts. More opportunities coming.</li>
+<li><strong>Alcor Technical Solutions LLC CMS Identity and Access Management Modernization gets $17M new task order, now $35M.</strong> HHS accelerating identity management investments across all operating divisions&mdash;this is first of several major awards coming. Identity specialists should track CMS, CDC, and NIH solicitations closely.</li>
+<li><strong>Accenture Federal Services DOE CBOSS Cybersecurity Strategy and Operations option exercised ($75M).</strong> Cybersecurity support for DOE&rsquo;s Office of Chief Information Officer despite DOGE efficiency concerns. DOE exercised option but added performance metrics tied to DOGE efficiency standards&mdash;recompete likely to emphasize cost reduction over technical innovation.</li>
+<li><strong>Deloitte &amp; Touche LLP VA Cybersecurity Transformation Program option exercised ($67M).</strong> Zero trust implementation across VA&rsquo;s enterprise despite budget pressures from DOGE reviews. Full option exercise suggests VA commitment to cybersecurity investment&mdash;final option year likely and recompete will be competitive.</li>
+<li><strong>Trace3 Government LLC Interior GIS Cloud Hosting Services option exercised ($58M).</strong> Long-running geospatial cloud services contract nearing end of performance period. Near-maximum option exercises indicate strong performance but also signal imminent recompete&mdash;start positioning for 2025 solicitation.</li>
+</ul>
+
+<hr>
+
+<!-- SET-ASIDES -->
+<div class="cat">SMALL BUSINESS</div>
+<h2>3 agencies scrambling to hit SB goals</h2>
+
+<p>When agencies fall short, they flood the market with set-asides before Sept 30. Here are the gaps:</p>
+
+<table class="ticker">
+<tr><td><strong>Department of Commerce &bull; Small Business</strong></td><td class="dn">-4.8% gap</td><td class="dn">$2.4B short</td></tr>
+<tr><td><strong>Department of the Interior &bull; HUBZone</strong></td><td class="dn">-1.2% gap</td><td class="dn">$450M short</td></tr>
+<tr><td><strong>Department of Education &bull; Women-Owned Small Business</strong></td><td class="dn">-1.9% gap</td><td class="dn">$200M short</td></tr>
+</table>
+
+<p><strong>If you hold these certifications, target these agencies in Q3&ndash;Q4 FY26.</strong> The set-aside surge is coming.</p>
+
+<hr>
+
+<!-- PROTESTS -->
+<div class="cat">PROTEST CORNER</div>
+
+<ul>
+<li><strong>Matter of TechFlow Inc., B-421847 ($340M) &mdash; SUSTAINED.</strong> Document past performance thoroughly and challenge cost evaluation math&mdash;GAO increasingly scrutinizing agency arithmetic in complex procurements</li>
+<li><strong>Matter of Accenture Federal Services, B-421923 ($180M) &mdash; DENIED.</strong> Technical protests require specific evidence of evaluation errors&mdash;general disagreement with scoring insufficient for GAO relief</li>
+<li><strong>Matter of CACI Inc.-Federal, B-421778 ($95M) &mdash; DISMISSED.</strong> Know GAO jurisdictional limits for task order protests&mdash;procedural mistakes waste time and money while competitors execute</li>
+</ul>
+
+<hr>
+
+<!-- YOUR TO-DO LIST -->
+<div class="box">
+<div class="cat" style="margin-top:0">YOUR TO-DO LIST</div>
+
+<ol style="padding-left:20px;margin:8px 0">
+<li style="margin-bottom:6px"><strong>Respond to GSA&rsquo;s COSMIC sources sought by March 22</strong> (due Mar 22)</li>
+<li style="margin-bottom:6px"><strong>Attend VA DevSecOps industry day registration</strong> (due Mar 29)</li>
+<li style="margin-bottom:6px"><strong>Submit DOGE efficiency metrics for existing contracts</strong> (due Mar 31)</li>
+<li style="margin-bottom:6px"><strong>Update FedRAMP authorization status</strong></li>
+<li style="margin-bottom:6px"><strong>Assess nuclear cleanup capability gaps</strong></li>
+<li style="margin-bottom:6px"><strong>Prepare for State Department international construction opportunities</strong> (due Apr 15)</li>
+<li style="margin-bottom:6px"><strong>Develop cloud-native air traffic control solutions</strong> (due Apr 30)</li>
+<li style="margin-bottom:6px"><strong>Review small business goal gaps at underperforming agencies</strong> (due Apr 30)</li>
+</ol>
+
+<p class="small"><strong>Calendar:</strong> Mar 20 NASA SEWP VI Final Proposals Due &bull; Mar 22 GSA COSMIC Sources Sought Response &bull; Mar 24 DOE Nuclear Cleanup Industry Day &bull; Mar 28 GAO Decision Expected: Matter of Northrop Grumman &bull; Mar 31 DOGE Efficiency Metrics Submission &bull; Apr 3 VA DevSecOps Industry Day &bull; Apr 5 Treasury Cloud Infrastructure Proposals Due &bull; Apr 8 SBA HUBZone Certification Changes</p>
+
+</div>
+
+<hr>
+
+<!-- ONE MORE THING -->
+<div class="cat">ONE MORE THING</div>
+<h2>Pentagon&rsquo;s Joint Warfighting Cloud Capability recompete reshapes defense IT landscape</h2>
+
+<p><strong>DoD is preparing the largest cloud services recompete in federal history, replacing the troubled JEDI program with a multi-vendor approach. The Joint Warfighting Cloud Capability (JWCC) recompete will support classified and unclassified workloads across all military branches.</strong></p>
+
+<p>This recompete will determine which contractors dominate defense cloud services through 2034. The multi-award structure creates opportunities for smaller cloud specialists to compete alongside hyperscalers. Edge computing and tactical cloud capabilities will be heavily weighted, favoring contractors with military-specific solutions.</p>
+
+<!-- CTA (replaced with subscribe link) -->
+<div class="cta">
+  <p>You just read the full report. Want this every Monday?</p>
+  <a href="https://govconintelligence.substack.com">Subscribe Free</a>
+</div>
+
+<div class="fb">
+  How&rsquo;d we do? <a href="#">&#128077;</a> <a href="#">&#128078;</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="#" style="font-size:14px">Forward to a colleague</a>
+</div>
+
+</div><!-- /pad -->
+
+<div class="ftr">
+  <p><span class="gold">GovCon Weekly Intelligence</span></p>
+  <p>Data: USAspending &bull; SAM.gov &bull; GAO &bull; Federal Register &bull; SBA</p>
+  <p>&copy; 2026 GovCon Weekly. <a href="#" style="color:#94a3b8">Unsubscribe</a></p>
+</div>
+
+</div><!-- /outer -->
+</div><!-- /sample-newsletter-embed -->
+
+<!-- Bottom CTA -->
+<div class="sample-bottom-cta">
+    <h2>Want this every Monday?</h2>
+    <p>Federal contract intelligence delivered to your inbox. Free to start. Unsubscribe anytime.</p>
+    <a href="https://govconintelligence.substack.com" class="cta-btn">Subscribe Free</a>
+    <a href="index.html" class="back-link">Back to homepage</a>
+</div>
+
+</div><!-- /sample-frame -->
+
+</body>
+</html>
