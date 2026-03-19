@@ -1,5 +1,5 @@
 {
-  "report_date": "2026-03-19 01:13:41",
+  "report_date": "2026-03-19 10:53:38",
   "input_file": "govcon_awards_2026-03-18.json",
   "award_count": 1138,
   "overall_status": "WARNING",
@@ -68,8 +68,8 @@
         "missing_verticals": [],
         "unexpected_verticals": [],
         "low_count_verticals": {
-          "Zero Trust": 1,
-          "DevSecOps": 1
+          "DevSecOps": 1,
+          "Zero Trust": 1
         }
       }
     },
