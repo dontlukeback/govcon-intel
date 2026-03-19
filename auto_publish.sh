@@ -105,20 +105,24 @@ if [[ "${FILE_SIZE}" -lt 1000 ]]; then
     notify "WARN: GovCon newsletter only ${FILE_SIZE} bytes — check quality" "high"
 fi
 
-# Step 3: Publish to Substack
-log "Step 3: Publishing to Substack..."
-if ${PYTHON} "${SCRIPT_DIR}/auto_publish.py" ${DRY_RUN} --date "${TODAY}" 2>&1 | tee -a "${LOG_FILE}"; then
+# Step 3: Publish to Buttondown
+log "Step 3: Publishing to Buttondown..."
+PUBLISH_ARGS=""
+if [[ -n "${DRY_RUN}" ]]; then
+    PUBLISH_ARGS="--draft"
+fi
+if ${PYTHON} "${SCRIPT_DIR}/buttondown_publish.py" ${PUBLISH_ARGS} 2>&1 | tee -a "${LOG_FILE}"; then
     if [[ -n "${DRY_RUN}" ]]; then
         log "Step 3: Draft created (dry run)"
-        notify "GovCon Weekly draft created for ${TODAY} (dry run). Review in Substack dashboard."
+        notify "GovCon Weekly draft created for ${TODAY}. Review in Buttondown dashboard."
     else
-        log "Step 3: Published to Substack"
-        notify "GovCon Weekly published for ${TODAY}. ${FILE_SIZE} bytes, live on Substack."
+        log "Step 3: Published to Buttondown"
+        notify "GovCon Weekly published for ${TODAY}. ${FILE_SIZE} bytes. Sent to all subscribers."
     fi
 else
     EXIT_CODE=$?
-    log "Step 3: auto_publish.py FAILED (exit ${EXIT_CODE})" "ERROR"
-    notify "FAIL: Substack publish failed (exit ${EXIT_CODE})" "high"
+    log "Step 3: buttondown_publish.py FAILED (exit ${EXIT_CODE})" "ERROR"
+    notify "FAIL: Buttondown publish failed (exit ${EXIT_CODE})" "high"
     exit 1
 fi
 
