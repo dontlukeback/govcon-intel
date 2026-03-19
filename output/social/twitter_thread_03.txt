@@ -1,0 +1,15 @@
+💡 Lesson from this week: How to know if a contract is wired.
+
+1/ "Wired" = RFP is written for a specific vendor. You're just bid candy (there to make it look competitive).
+
+2/ Top 3 signals:
+
+3/ Signal #1: SOW uses vendor-specific jargon. Example: "Must integrate with [Proprietary Tool]" — that's not a requirement, it's a vendor lock-in.
+
+4/ Signal #2: Unrealistic timeline. 14-day response window on a $50M contract? They already know who they want.
+
+5/ Signal #3: Incumbent is named in the RFP. "Current contractor performs XYZ..." = they're writing the requirements around the incumbent.
+
+6/ If you see 2+ of these signals, don't bid. You'll waste 200 hours on a 1% win probability.
+
+7/ I score every major recompete on a 0-100 "wired scale." Get this week's scores: [LINK]

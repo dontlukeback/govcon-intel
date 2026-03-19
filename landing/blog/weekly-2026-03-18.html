@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Federal IT Awards This Week: March 18 | GovCon Weekly Intelligence</title>
+    <meta name="description" content="Breakdown of the largest federal IT contract awards for the week of March 18, 2026. $8.7B across 1138 awards tracked.">
+    <link rel="canonical" href="https://dontlukeback.github.io/govcon-intel/blog/weekly-2026-03-18.html">
+    <meta property="og:title" content="Top Federal IT Awards This Week: March 18">
+    <meta property="og:description" content="Breakdown of the largest federal IT contract awards for the week of March 18, 2026. $8.7B across 1138 awards tracked.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dontlukeback.github.io/govcon-intel/blog/weekly-2026-03-18.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Top Federal IT Awards This Week: March 18">
+    <meta name="twitter:description" content="Breakdown of the largest federal IT contract awards for the week of March 18, 2026. $8.7B across 1138 awards tracked.">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #132238;
+            --navy-light: #1B3A5C;
+            --gold: #C5A44E;
+            --gold-light: #D4BA72;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-800: #1F2937;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--gray-800);
+            background: var(--gray-50);
+        }
+
+        nav {
+            background: var(--navy);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        nav a.home-link {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a.home-link:hover { color: var(--gold); }
+
+        article {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .meta {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin: 2.5rem 0 1rem 0;
+            padding-top: 1rem;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            color: var(--navy-mid);
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--gray-800);
+        }
+
+        strong { color: var(--navy); font-weight: 600; }
+
+        ul, ol { margin: 1rem 0 1.5rem 2rem; }
+        li { margin-bottom: 0.75rem; color: var(--gray-800); }
+
+        /* Data table */
+        .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        thead { background: var(--navy); color: white; }
+        th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; }
+        td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); }
+        tr:nth-child(even) { background: var(--gray-50); }
+        td.amount { font-weight: 600; color: var(--navy); white-space: nowrap; }
+
+        /* Award cards */
+        .award-card {
+            background: var(--gray-50);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .award-card h3 { margin-top: 0; }
+        .award-card .desc {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            font-style: italic;
+        }
+
+        /* Bar chart */
+        .bar-chart { margin: 1.5rem 0 2rem 0; }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .bar-label {
+            width: 160px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+        .bar-track {
+            flex: 1;
+            height: 24px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 0.75rem;
+        }
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--navy-light), var(--gold));
+            border-radius: 4px;
+        }
+        .bar-value {
+            width: 80px;
+            text-align: right;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: white;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .cta-box h3 { color: var(--gold); margin: 0 0 1rem 0; padding: 0; }
+        .cta-box p { color: var(--gray-100); margin-bottom: 1.5rem; }
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .cta-button:hover { background: var(--gold-light); }
+
+        .internal-links {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        .internal-links h4 { margin-bottom: 0.75rem; color: var(--navy); }
+        .internal-links ul { margin-left: 1.5rem; margin-bottom: 0; }
+        .internal-links a {
+            color: var(--navy-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .internal-links a:hover { color: var(--gold); text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            article { margin: 1rem; padding: 1.5rem; }
+            h1 { font-size: 1.875rem; }
+            h2 { font-size: 1.5rem; }
+            nav .container { flex-direction: column; gap: 1rem; }
+            .bar-label { width: 100px; font-size: 0.8rem; }
+            .bar-value { width: 60px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">GovCon Weekly Intelligence</a>
+            <a href="../index.html" class="home-link">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <article>
+        <h1>Top Federal IT Awards This Week: March 18</h1>
+
+        <div class="meta">
+            Published March 18, 2026 | Data sourced from USAspending.gov
+        </div>
+
+        
+        <p>Every week, we analyze the latest federal IT contract awards pulled from USAspending.gov to surface
+        the deals that matter for government contractors. This week: <strong>$8.7B</strong>
+        in awards across <strong>1138 contracts</strong>.</p>
+
+        <h2>Biggest Awards This Week</h2>
+        <p>Here are the largest IT-related contract actions recorded for the week of March 18, 2026:</p>
+
+        <div class="table-wrap">
+        <table>
+            <thead><tr><th>Recipient</th><th>Agency</th><th>Amount</th></tr></thead>
+            <tbody>
+            <tr><td>Savannah River Mission Completion, Llc</td><td>Department of Energy</td><td class='amount'>$2.1B</td></tr>
+<tr><td>Idaho Environmental Coalition Llc</td><td>Department of Energy</td><td class='amount'>$1.3B</td></tr>
+<tr><td>Triwest Healthcare Alliance Corp</td><td>Department of Veterans Affairs</td><td class='amount'>$820M</td></tr>
+<tr><td>Bl Harbert International Llc</td><td>Department of State</td><td class='amount'>$814M</td></tr>
+<tr><td>Leidos, Inc.</td><td>Department of Transportation</td><td class='amount'>$663M</td></tr>
+<tr><td>Salient Crgt, Inc.</td><td>General Services Administration</td><td class='amount'>$422M</td></tr>
+<tr><td>Kratos S2, Inc</td><td>General Services Administration</td><td class='amount'>$340M</td></tr>
+
+            </tbody>
+        </table>
+        </div>
+
+        <h2>Agency Spending Leaders</h2>
+        <p>Federal IT spending this week was concentrated in a handful of agencies:</p>
+        <ol><li><strong>Department of Energy</strong> — $3.5B</li>
+<li><strong>Department of Veterans Affairs</strong> — $1.2B</li>
+<li><strong>Department of Transportation</strong> — $1.1B</li>
+<li><strong>Department of State</strong> — $975M</li>
+<li><strong>General Services Administration</strong> — $966M</li></ol>
+        <p>The <strong>Department of Energy</strong> led all agencies with $3.5B in total
+        IT contract actions — driven primarily by large task order modifications and new awards in the
+        cloud space.</p>
+
+        <h2>Technology Verticals</h2>
+        <p>Breaking down this week's awards by technology category reveals where agencies are investing:</p>
+        <ul><li><strong>Cloud</strong> — $5.9B across 253 awards</li>
+<li><strong>Cybersecurity</strong> — $1.5B across 522 awards</li>
+<li><strong>FedRAMP</strong> — $1.1B across 38 awards</li>
+<li><strong>DevSecOps</strong> — $245M across 1 awards</li>
+<li><strong>Identity Management</strong> — $82M across 78 awards</li></ul>
+
+        <h2>What This Means for Contractors</h2>
+        <p>The Cloud vertical continues to dominate federal IT spending, reflecting sustained
+        government investment in modernization and security. Contractors should watch for follow-on
+        opportunities tied to these large awards, particularly recompetes that may surface over the next 12-18 months.</p>
+
+        <p>Several patterns stand out in this week's data. First, the concentration of dollars at the top:
+        the five largest awards account for a significant share of total spending, which is typical of weeks
+        dominated by large task order modifications. Second, the Department of Energy continues to be one
+        of the most active IT buyers in the federal government, with $3.5B
+        in awards this week alone.</p>
+
+        <p>For small businesses, the GSA schedule and set-aside programs remain the primary entry points.
+        This week saw 7 awards with small business set-asides
+        totaling $15M. Even when set-asides are scarce, the large prime
+        contractors winning these awards — companies like Savannah River Mission Completion, Llc
+        and Idaho Environmental Coalition Llc — are required to meet small business subcontracting
+        goals on contracts above $750K. That makes every large award a potential subcontracting opportunity.</p>
+
+        <h2>How We Track This Data</h2>
+        <p>Every week, we pull the latest IT-related contract awards from USAspending.gov, classify them
+        by technology vertical (AI/ML, Cloud, Cybersecurity, Data Analytics, DevSecOps, FedRAMP, Identity Management, Networking/SDWAN, Zero Trust), and analyze spending
+        patterns across agencies and contractors. This gives government contractors an early signal on
+        where agencies are investing — and where the next opportunities are likely to emerge.</p>
+
+        <p>Want this analysis delivered to your inbox every week? Subscribe below for free weekly
+        intelligence on federal IT contract trends, recompetes, and opportunities.</p>
+    
+
+        <div class="cta-box">
+            <h3>Get Federal Contract Intelligence Every Week</h3>
+            <p>GovCon Weekly Intelligence delivers curated federal contract analysis to your inbox — completely free. Real data. Real insights. No fluff.</p>
+            <a href="../index.html#subscribe" class="cta-button">Subscribe Free</a>
+        </div>
+
+        <div class="internal-links">
+            <h4>Related Articles</h4>
+            <ul>
+                <li><a href="govwin-alternatives.html">GovWin Alternatives: 5 Federal Contract Intelligence Tools</a></li>
+                <li><a href="track-federal-recompetes.html">How to Track Federal Contract Recompetes Before They Hit SAM.gov</a></li>
+                <li><a href="small-business-federal-contracts.html">Federal Contract Intelligence for 8(a) and SDVOSB Firms</a></li>
+                <li><a href="../index.html">Subscribe to GovCon Weekly Intelligence</a></li>
+            </ul>
+        </div>
+    </article>
+<script src="../js/tracker.js"></script>
+<script src="../js/analytics.js"></script>
+</body>
+</html>

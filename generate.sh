@@ -204,3 +204,20 @@ fi
 echo ""
 info "Total: ${#GENERATED[@]} generated, ${#SKIPPED[@]} skipped"
 echo ""
+
+# ============================================================================
+# DISTRIBUTION (Optional)
+# ============================================================================
+echo ""
+echo "============================================================"
+echo "STEP 5: Generate Social Media Content (Optional)"
+echo "============================================================"
+python3 marketing/weekly-auto-content.py
+echo ""
+echo "✅ Social content generated in output/social/"
+echo "   - 5 LinkedIn posts"
+echo "   - 3 Twitter threads"
+echo "   - 1 Reddit post"
+echo "   - 5 Substack Notes"
+echo ""
+echo "📋 Next: Copy-paste to platforms (see marketing/AUTOMATION-SETUP.md)"
