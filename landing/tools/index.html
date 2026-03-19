@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free federal contracting tools - NAICS code lookup, contractor search, and more. Track government contract awards and opportunities.">
+    <title>Free Federal Contracting Tools | GovCon Intel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 35px;
+            backdrop-filter: blur(10px);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .tool-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .tool-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .tool-description {
+            font-size: 1.05em;
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tool-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .tool-features li {
+            padding: 8px 0;
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .tool-features li:before {
+            content: "✓";
+            color: #FFD700;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .tool-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #001f3f;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .tool-cta:hover {
+            transform: scale(1.05);
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.3);
+            color: #FFD700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+
+        .newsletter-cta {
+            background: rgba(255, 215, 0, 0.15);
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .newsletter-cta h2 {
+            font-size: 2em;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-cta p {
+            font-size: 1.1em;
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .newsletter-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #001f3f;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .newsletter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ccc;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Free Federal Contracting Tools</h1>
+            <p class="subtitle">
+                Intelligence tools built for government contractors.<br>
+                No signup required. Updated weekly.
+            </p>
+        </header>
+
+        <div class="tools-grid">
+            <a href="naics-lookup.html" class="tool-card">
+                <div class="tool-icon">🔍</div>
+                <div class="tool-name">NAICS Code Lookup</div>
+                <div class="tool-description">
+                    Find the right NAICS codes for your federal contracts with live award data.
+                </div>
+                <ul class="tool-features">
+                    <li>Search by keyword or industry</li>
+                    <li>See recent award activity</li>
+                    <li>Track total contract values</li>
+                </ul>
+                <span class="tool-cta">Try It Now →</span>
+            </a>
+
+            <a href="contractor-search.html" class="tool-card">
+                <div class="tool-icon">🏢</div>
+                <div class="tool-name">Contractor Search</div>
+                <div class="tool-description">
+                    Look up any federal contractor and see their recent award activity.
+                </div>
+                <ul class="tool-features">
+                    <li>Top 100 contractors by volume</li>
+                    <li>Total awards and values</li>
+                    <li>Active agency relationships</li>
+                </ul>
+                <span class="tool-cta">Search Now →</span>
+            </a>
+
+            <div class="tool-card coming-soon">
+                <div class="tool-icon">📊</div>
+                <div class="tool-name">
+                    Agency Trends
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="tool-description">
+                    Track spending patterns and priorities across federal agencies.
+                </div>
+                <ul class="tool-features">
+                    <li>Weekly spending by agency</li>
+                    <li>Top categories and vendors</li>
+                    <li>Trending keywords</li>
+                </ul>
+            </div>
+
+            <div class="tool-card coming-soon">
+                <div class="tool-icon">🎯</div>
+                <div class="tool-name">
+                    Set-Aside Finder
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="tool-description">
+                    Find set-aside opportunities that match your business certifications.
+                </div>
+                <ul class="tool-features">
+                    <li>Filter by set-aside type</li>
+                    <li>Track award volumes</li>
+                    <li>Identify new opportunities</li>
+                </ul>
+            </div>
+
+            <div class="tool-card coming-soon">
+                <div class="tool-icon">📈</div>
+                <div class="tool-name">
+                    Award Predictor
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="tool-description">
+                    Predict upcoming awards based on historical patterns and agency budgets.
+                </div>
+                <ul class="tool-features">
+                    <li>ML-powered predictions</li>
+                    <li>Historical trend analysis</li>
+                    <li>Custom alerts</li>
+                </ul>
+            </div>
+
+            <div class="tool-card coming-soon">
+                <div class="tool-icon">🔔</div>
+                <div class="tool-name">
+                    Smart Alerts
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+                <div class="tool-description">
+                    Get notified when contracts match your exact criteria.
+                </div>
+                <ul class="tool-features">
+                    <li>Custom search filters</li>
+                    <li>Email and SMS alerts</li>
+                    <li>Competitor tracking</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="newsletter-cta">
+            <h2>Want These Tools Delivered Weekly?</h2>
+            <p>
+                Subscribe to GovCon Intel and get curated federal contract insights,<br>
+                top awards, and market intelligence every Monday morning.
+            </p>
+            <a href="../index.html#subscribe" class="newsletter-button">
+                Subscribe to Weekly Intel →
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <a href="../index.html">← Back to GovCon Intel</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 0.9em;">
+            Free tools for the federal contracting community.<br>
+            Built with real USAspending.gov data, updated weekly.
+        </p>
+    </footer>
+</body>
+</html>

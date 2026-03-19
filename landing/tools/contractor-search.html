@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search federal contractors and see their recent government contract awards. Track top contractors' activity and award values.">
+    <title>Federal Contractor Search - Recent Awards | GovCon Intel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #001f3f;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #FFA500;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-input::placeholder {
+            color: #666;
+        }
+
+        .results {
+            display: none;
+        }
+
+        .results.active {
+            display: block;
+        }
+
+        .contractor-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #FFD700;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .contractor-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .contractor-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .stat-label {
+            color: #FFD700;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .top-agencies {
+            margin-bottom: 20px;
+        }
+
+        .agency-label {
+            color: #FFD700;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .agency-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .agency-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #001f3f;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #ccc;
+            font-size: 1.1em;
+            display: none;
+        }
+
+        .no-results.active {
+            display: block;
+        }
+
+        .popular-contractors {
+            text-align: center;
+            margin-top: 20px;
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .popular-contractors span {
+            color: #FFD700;
+            cursor: pointer;
+            text-decoration: underline;
+            margin: 0 8px;
+            font-size: 0.9em;
+        }
+
+        .popular-contractors span:hover {
+            color: #FFA500;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ccc;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.3);
+            color: #FFD700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Federal Contractor Search</h1>
+            <p class="subtitle">Look up any contractor's recent federal contract awards</p>
+        </header>
+
+        <div class="search-box">
+            <input
+                type="text"
+                class="search-input"
+                id="searchInput"
+                placeholder="Search contractor name (e.g., 'Leidos', 'Booz Allen', 'SAIC')..."
+                autocomplete="off"
+            >
+            <div class="popular-contractors">
+                Popular:
+                <span onclick="searchExample('Leidos')">Leidos</span>
+                <span onclick="searchExample('SAIC')">SAIC</span>
+                <span onclick="searchExample('Booz Allen')">Booz Allen</span>
+                <span onclick="searchExample('Accenture')">Accenture</span>
+                <span onclick="searchExample('Deloitte')">Deloitte</span>
+            </div>
+        </div>
+
+        <div class="results" id="results"></div>
+        <div class="no-results" id="noResults">
+            No contractors found. Try a different search term or check spelling.
+        </div>
+    </div>
+
+    <footer>
+        <p>Free tool by <a href="../index.html">GovCon Intel</a> | <a href="index.html">More Tools</a></p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Data from week of March 18, 2026</p>
+    </footer>
+
+    <script>
+        // Top 100 contractors by total award value (embedded from govcon_awards_2026-03-18.json)
+        const contractorData = [
+            { rank: 1, name: "SAVANNAH RIVER MISSION COMPLETION, LLC", count: 1, total: 2101554261.49, agencies: ["Department of Energy"] },
+            { rank: 2, name: "IDAHO ENVIRONMENTAL COALITION LLC", count: 1, total: 1304803621.24, agencies: ["Department of Energy"] },
+            { rank: 3, name: "TRIWEST HEALTHCARE ALLIANCE CORP", count: 1, total: 819701546.68, agencies: ["Department of Veterans Affairs"] },
+            { rank: 4, name: "BL HARBERT INTERNATIONAL LLC", count: 1, total: 814339696.0, agencies: ["Department of State"] },
+            { rank: 5, name: "LEIDOS, INC.", count: 1, total: 662632660.47, agencies: ["Department of Transportation"] },
+            { rank: 6, name: "SALIENT CRGT, INC.", count: 1, total: 422039859.0, agencies: ["General Services Administration"] },
+            { rank: 7, name: "KRATOS S2, INC", count: 1, total: 339524745.31, agencies: ["Department of Defense"] },
+            { rank: 8, name: "HARRIS CORPORATION", count: 2, total: 269432823.73, agencies: ["Department of Defense"] },
+            { rank: 9, name: "COGNOSANTE MVH LLC", count: 1, total: 244656804.91, agencies: ["Department of Health and Human Services"] },
+            { rank: 10, name: "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION", count: 6, total: 182381260.21, agencies: ["Department of Defense", "NASA"] },
+            { rank: 11, name: "FOUR POINTS TECHNOLOGY, L.L.C.", count: 3, total: 160463721.04, agencies: ["Department of Defense"] },
+            { rank: 12, name: "ALLIANT INSURANCE SERVICES, INC.", count: 1, total: 97122523.71, agencies: ["Department of Health and Human Services"] },
+            { rank: 13, name: "HIVE GROUP, LLC", count: 1, total: 91061278.8, agencies: ["Department of Defense"] },
+            { rank: 14, name: "ACCENTURE FEDERAL SERVICES LLC", count: 2, total: 83556817.3, agencies: ["Department of Health and Human Services"] },
+            { rank: 15, name: "DELOITTE & TOUCHE LLP", count: 4, total: 77580513.27, agencies: ["Department of Health and Human Services", "Department of Labor"] },
+            { rank: 16, name: "AT&T ENTERPRISES, LLC", count: 1, total: 58262118.5, agencies: ["General Services Administration"] },
+            { rank: 17, name: "TRACE3 GOVERNMENT, LLC", count: 1, total: 57912706.62, agencies: ["Department of Veterans Affairs"] },
+            { rank: 18, name: "CDA INC", count: 2, total: 49281909.39, agencies: ["Department of Defense"] },
+            { rank: 19, name: "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.", count: 3, total: 45819457.36, agencies: ["Department of Defense", "NASA"] },
+            { rank: 20, name: "ODDBALL, INC.", count: 1, total: 41891529.91, agencies: ["Department of Veterans Affairs"] },
+            { rank: 21, name: "ADAMS AND ASSOCIATES INC", count: 1, total: 38200956.47, agencies: ["Department of Defense"] },
+            { rank: 22, name: "THE LEWIN GROUP, INC.", count: 1, total: 35914392.0, agencies: ["Department of Health and Human Services"] },
+            { rank: 23, name: "UNIVERSAL PROTECTION SERVICE, LIMITED PARTNERSHIP", count: 1, total: 33421596.4, agencies: ["Department of Defense"] },
+            { rank: 24, name: "EDUCATIONAL TESTING SERVICE", count: 2, total: 29854176.54, agencies: ["Department of Education"] },
+            { rank: 25, name: "MUTATIO INC.", count: 1, total: 28602223.72, agencies: ["Department of Defense"] },
+            { rank: 26, name: "FLORIDA STATE UNIVERSITY", count: 1, total: 27097390.9, agencies: ["NASA"] },
+            { rank: 27, name: "MINDPOINT GROUP LLC", count: 1, total: 27038026.25, agencies: ["Department of Defense"] },
+            { rank: 28, name: "PANAMERICA COMPUTERS, INC.", count: 1, total: 25949472.29, agencies: ["Department of Defense"] },
+            { rank: 29, name: "MCREL INTERNATIONAL", count: 1, total: 24550870.61, agencies: ["Department of Education"] },
+            { rank: 30, name: "BOOZ ALLEN HAMILTON INC", count: 2, total: 23127403.89, agencies: ["Department of Defense"] },
+            { rank: 31, name: "NORIDIAN HEALTHCARE SOLUTIONS, LLC", count: 1, total: 21779587.0, agencies: ["Department of Health and Human Services"] },
+            { rank: 32, name: "CENTERPOINT LLC", count: 1, total: 21580784.46, agencies: ["Department of Defense"] },
+            { rank: 33, name: "CQ JV, LLC", count: 1, total: 19373939.35, agencies: ["Department of Defense"] },
+            { rank: 34, name: "CARAHSOFT TECHNOLOGY CORP", count: 2, total: 17569164.75, agencies: ["Department of Defense", "NASA"] },
+            { rank: 35, name: "ALCOR TECHNICAL SOLUTIONS LLC", count: 1, total: 17384507.5, agencies: ["Department of Defense"] },
+            { rank: 36, name: "IGNITEACTION LLC", count: 1, total: 16118837.2, agencies: ["Department of Veterans Affairs"] },
+            { rank: 37, name: "ELBITAMERICA, INC.", count: 1, total: 15064207.94, agencies: ["Department of Defense"] },
+            { rank: 38, name: "DELL FEDERAL SYSTEMS L.P", count: 2, total: 14981190.57, agencies: ["Department of Defense"] },
+            { rank: 39, name: "DAE SUNG LLC", count: 1, total: 14911194.99, agencies: ["Department of Defense"] },
+            { rank: 40, name: "STEAMPUNK, INC.", count: 1, total: 13206557.76, agencies: ["Department of Veterans Affairs"] },
+            { rank: 41, name: "INTERNATIONAL BUSINESS MACHINES CORPORATION", count: 2, total: 12619711.57, agencies: ["Department of Health and Human Services"] },
+            { rank: 42, name: "BENCHMARK CONSTRUCTION SERVICES INC", count: 1, total: 10376421.13, agencies: ["Department of Defense"] },
+            { rank: 43, name: "NATIONAL OPINION RESEARCH CENTER", count: 1, total: 10278305.92, agencies: ["Department of Health and Human Services"] },
+            { rank: 44, name: "NCS PEARSON INC", count: 1, total: 10017902.0, agencies: ["Department of Education"] },
+            { rank: 45, name: "ASSOCIATED BUILDERS, INC.", count: 1, total: 9842582.0, agencies: ["Department of Defense"] },
+            { rank: 46, name: "TRILLION TECHNOLOGY SOLUTIONS INC", count: 1, total: 8883727.41, agencies: ["Department of Defense"] },
+            { rank: 47, name: "CYBER SECURITY SOLUTIONS LLC", count: 1, total: 8224480.31, agencies: ["Department of Defense"] },
+            { rank: 48, name: "V3GATE, LLC", count: 1, total: 8115995.45, agencies: ["Department of Defense"] },
+            { rank: 49, name: "NIYAMIT, INC.", count: 1, total: 7785887.56, agencies: ["Department of Defense"] },
+            { rank: 50, name: "WESTAT, INC.", count: 1, total: 7312125.0, agencies: ["Department of Health and Human Services"] },
+            { rank: 51, name: "MARIEKE CONSULTING, INC.", count: 1, total: 7310582.63, agencies: ["Department of Defense"] },
+            { rank: 52, name: "ULTRAVIOLET CYBER FEDERAL, LLC", count: 1, total: 7166813.5, agencies: ["Department of Defense"] },
+            { rank: 53, name: "WELLPATH LLC", count: 1, total: 6839435.0, agencies: ["Department of Justice"] },
+            { rank: 54, name: "SIEMENS MEDICAL SOLUTIONS USA, INC.", count: 8, total: 6673423.33, agencies: ["Department of Veterans Affairs"] },
+            { rank: 55, name: "ACTUARIAL RESEARCH CORPORATION", count: 1, total: 6380831.0, agencies: ["Department of Health and Human Services"] },
+            { rank: 56, name: "PARAGON SYSTEMS INC", count: 4, total: 6324317.27, agencies: ["Department of Defense"] },
+            { rank: 57, name: "APPLIED INTELLECT LLC", count: 1, total: 6035400.96, agencies: ["Department of Defense"] },
+            { rank: 58, name: "DELOITTE CONSULTING LLP", count: 2, total: 5948447.01, agencies: ["Department of Defense"] },
+            { rank: 59, name: "CASO LOGZONE LLC", count: 1, total: 5686025.54, agencies: ["Department of Defense"] },
+            { rank: 60, name: "GEO REENTRY INC", count: 4, total: 5555064.68, agencies: ["Department of Justice"] },
+            { rank: 61, name: "HUNATEK SYSTEM SOLUTIONS LLC", count: 1, total: 5554385.14, agencies: ["Department of Defense"] },
+            { rank: 62, name: "SIEMENS INDUSTRY INC", count: 7, total: 4893062.27, agencies: ["Department of Veterans Affairs"] },
+            { rank: 63, name: "DISMAS HOUSE OF ST. LOUIS", count: 1, total: 4884300.0, agencies: ["Department of Justice"] },
+            { rank: 64, name: "FORFEITURE SUPPORT ASSOCIATES LLC", count: 3, total: 4852859.06, agencies: ["Department of Justice"] },
+            { rank: 65, name: "REGULUS GROUP, LLC", count: 1, total: 4838951.54, agencies: ["Department of Defense"] },
+            { rank: 66, name: "MJL ENTERPRISES, LLC", count: 2, total: 4810720.99, agencies: ["Department of Defense"] },
+            { rank: 67, name: "PERATON INC.", count: 1, total: 4793018.84, agencies: ["Department of Defense"] },
+            { rank: 68, name: "SOCIAL & SCIENTIFIC SYSTEMS, INC.", count: 1, total: 4738038.0, agencies: ["Department of Health and Human Services"] },
+            { rank: 69, name: "COMMONWEALTH STRATEGIC SOLUTIONS, LLC", count: 1, total: 4433727.43, agencies: ["Department of Defense"] },
+            { rank: 70, name: "PARAGON PROFESSIONAL SERVICES LLC", count: 1, total: 4231924.0, agencies: ["Department of Justice"] },
+            { rank: 71, name: "DISMAS CHARITIES INC", count: 4, total: 4091361.01, agencies: ["Department of Justice"] },
+            { rank: 72, name: "LNRS DATA SERVICES INC", count: 1, total: 3992935.8, agencies: ["Department of Health and Human Services"] },
+            { rank: 73, name: "ARDENT MANAGEMENT CONSULTING, LLC", count: 1, total: 3930122.51, agencies: ["Department of Defense"] },
+            { rank: 74, name: "SIMPLE TECHNOLOGY SOLUTIONS INC.", count: 1, total: 3710056.7, agencies: ["Department of Defense"] },
+            { rank: 75, name: "FORS MARSH GROUP LLC", count: 1, total: 3637969.63, agencies: ["Department of Defense"] },
+            { rank: 76, name: "GENWEST SYSTEMS INC", count: 1, total: 3589462.26, agencies: ["Department of Defense"] },
+            { rank: 77, name: "STERLING COMPUTERS CORPORATION", count: 1, total: 3294610.0, agencies: ["Department of Veterans Affairs"] },
+            { rank: 78, name: "MANAGEMENT SCIENCE AND INNOVATION, LLC", count: 1, total: 3257548.92, agencies: ["Department of Defense"] },
+            { rank: 79, name: "ADC LTD NM", count: 1, total: 3072011.46, agencies: ["Department of Defense"] },
+            { rank: 80, name: "PATH", count: 1, total: 3019279.17, agencies: ["Department of Health and Human Services"] },
+            { rank: 81, name: "AFFIGENT, LLC", count: 1, total: 3002325.73, agencies: ["Department of Defense"] },
+            { rank: 82, name: "CHAINBRIDGE SOLUTIONS INCORPORATED", count: 1, total: 2961001.78, agencies: ["Department of Defense"] },
+            { rank: 83, name: "GLOBAL GO, LLC", count: 1, total: 2875161.09, agencies: ["Department of Defense"] },
+            { rank: 84, name: "I3 FEDERAL LLC", count: 1, total: 2848678.88, agencies: ["Department of Defense"] },
+            { rank: 85, name: "LMI CONSULTING, LLC", count: 2, total: 2781594.71, agencies: ["Department of Defense"] },
+            { rank: 86, name: "PEREGRINE ADVISORS BENEFIT INC.", count: 1, total: 2724211.2, agencies: ["Department of Health and Human Services"] },
+            { rank: 87, name: "NEW TECH SOLUTIONS, INC.", count: 3, total: 2708554.85, agencies: ["Department of Defense"] },
+            { rank: 88, name: "VOLUNTEERS OF AMERICA TEXAS, INC", count: 1, total: 2632262.45, agencies: ["Department of Justice"] },
+            { rank: 89, name: "JAVA PRODUCTIONS, INC.", count: 1, total: 2595473.42, agencies: ["Department of Defense"] },
+            { rank: 90, name: "RER SOLUTIONS, INC.", count: 1, total: 2551242.0, agencies: ["Department of Health and Human Services"] },
+            { rank: 91, name: "GOLDBELT INTEGRATED LOGISTICS SERVICES, LLC", count: 1, total: 2495869.7, agencies: ["Department of Defense"] },
+            { rank: 92, name: "RMA ASSOCIATES LLC", count: 1, total: 2489583.34, agencies: ["Department of Defense"] },
+            { rank: 93, name: "THE MITRE CORPORATION", count: 1, total: 2459818.0, agencies: ["Department of Defense"] },
+            { rank: 94, name: "CORNERSTONE CONSTRUCTION SERVICES, LLC", count: 1, total: 2314583.0, agencies: ["Department of Defense"] },
+            { rank: 95, name: "EPATHUSA, INC.", count: 1, total: 2285538.57, agencies: ["Department of Health and Human Services"] },
+            { rank: 96, name: "WESLEY MEDICAL STAFFING, INC.", count: 1, total: 2107982.41, agencies: ["Department of Defense"] },
+            { rank: 97, name: "BAHFED CORP", count: 2, total: 2078758.82, agencies: ["Department of Defense"] },
+            { rank: 98, name: "VIBRANTECH SOLUTIONS INC.", count: 1, total: 2071707.45, agencies: ["Department of Defense"] },
+            { rank: 99, name: "OASIS SYSTEMS, LLC", count: 1, total: 2059623.0, agencies: ["Department of Defense"] },
+            { rank: 100, name: "THARROS DEFENSE, INC.", count: 1, total: 2037584.83, agencies: ["Department of Defense"] }
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const resultsDiv = document.getElementById('results');
+        const noResultsDiv = document.getElementById('noResults');
+
+        function searchContractor(query) {
+            if (!query || query.trim().length < 2) {
+                resultsDiv.classList.remove('active');
+                noResultsDiv.classList.remove('active');
+                return;
+            }
+
+            const searchTerm = query.toLowerCase().trim();
+            const matches = contractorData.filter(contractor =>
+                contractor.name.toLowerCase().includes(searchTerm)
+            );
+
+            displayResults(matches);
+        }
+
+        function displayResults(matches) {
+            if (matches.length === 0) {
+                resultsDiv.classList.remove('active');
+                noResultsDiv.classList.add('active');
+                return;
+            }
+
+            noResultsDiv.classList.remove('active');
+            resultsDiv.classList.add('active');
+
+            const html = matches.map(contractor => {
+                const avgAwardValue = contractor.total / contractor.count;
+                const uniqueAgencies = [...new Set(contractor.agencies)];
+
+                return `
+                    <div class="contractor-card">
+                        <div class="contractor-name">
+                            ${contractor.name}
+                            <span class="rank-badge">Rank #${contractor.rank}</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-label">Total Awards</div>
+                                <div class="stat-value">${contractor.count}</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">Total Value</div>
+                                <div class="stat-value">$${formatCurrency(contractor.total)}</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">Avg Award Value</div>
+                                <div class="stat-value">$${formatCurrency(avgAwardValue)}</div>
+                            </div>
+                        </div>
+                        <div class="top-agencies">
+                            <div class="agency-label">Active Agencies:</div>
+                            <div class="agency-list">
+                                ${uniqueAgencies.map(agency =>
+                                    `<span class="agency-tag">${shortenAgency(agency)}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        <a href="#subscribe" class="cta-button">
+                            Get ${contractor.name.split(',')[0]} Activity Alerts Weekly →
+                        </a>
+                    </div>
+                `;
+            }).join('');
+
+            resultsDiv.innerHTML = html;
+        }
+
+        function formatCurrency(amount) {
+            if (amount >= 1000000000) {
+                return (amount / 1000000000).toFixed(2) + 'B';
+            } else if (amount >= 1000000) {
+                return (amount / 1000000).toFixed(1) + 'M';
+            } else if (amount >= 1000) {
+                return (amount / 1000).toFixed(0) + 'K';
+            }
+            return amount.toFixed(2);
+        }
+
+        function shortenAgency(agency) {
+            const abbreviations = {
+                "Department of Defense": "DoD",
+                "Department of Energy": "DOE",
+                "Department of Veterans Affairs": "VA",
+                "Department of Health and Human Services": "HHS",
+                "Department of Homeland Security": "DHS",
+                "Department of Justice": "DOJ",
+                "Department of State": "State",
+                "Department of Transportation": "DOT",
+                "Department of Education": "Education",
+                "Department of Labor": "Labor",
+                "General Services Administration": "GSA",
+                "National Aeronautics and Space Administration": "NASA"
+            };
+            return abbreviations[agency] || agency;
+        }
+
+        function searchExample(term) {
+            searchInput.value = term;
+            searchContractor(term);
+        }
+
+        // Event listeners
+        searchInput.addEventListener('input', (e) => {
+            searchContractor(e.target.value);
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchContractor(e.target.value);
+            }
+        });
+
+        // Auto-focus search input
+        searchInput.focus();
+    </script>
+</body>
+</html>

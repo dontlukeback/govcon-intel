@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free NAICS code lookup tool for federal contracts. Search by keyword to find relevant NAICS codes with recent award activity.">
+    <title>NAICS Code Lookup - Federal Contracts | GovCon Intel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #001f3f;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #FFA500;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-input::placeholder {
+            color: #666;
+        }
+
+        .results {
+            display: none;
+        }
+
+        .results.active {
+            display: block;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #FFD700;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .result-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .naics-code {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .naics-description {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.9em;
+        }
+
+        .stat-label {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #001f3f;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #ccc;
+            font-size: 1.1em;
+            display: none;
+        }
+
+        .no-results.active {
+            display: block;
+        }
+
+        .example-searches {
+            text-align: center;
+            margin-top: 20px;
+            color: #ccc;
+        }
+
+        .example-searches span {
+            color: #FFD700;
+            cursor: pointer;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+
+        .example-searches span:hover {
+            color: #FFA500;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ccc;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NAICS Code Lookup</h1>
+            <p class="subtitle">Find NAICS codes for federal contracts with live award data</p>
+        </header>
+
+        <div class="search-box">
+            <input
+                type="text"
+                class="search-input"
+                id="searchInput"
+                placeholder="Search by keyword (e.g., 'cybersecurity', 'construction', 'IT services')..."
+                autocomplete="off"
+            >
+            <div class="example-searches">
+                Try:
+                <span onclick="searchExample('cybersecurity')">cybersecurity</span>
+                <span onclick="searchExample('computer')">computer</span>
+                <span onclick="searchExample('manufacturing')">manufacturing</span>
+            </div>
+        </div>
+
+        <div class="results" id="results"></div>
+        <div class="no-results" id="noResults">
+            No NAICS codes found. Try different keywords or broader terms.
+        </div>
+    </div>
+
+    <footer>
+        <p>Free tool by <a href="../index.html">GovCon Intel</a> | <a href="index.html">More Tools</a></p>
+    </footer>
+
+    <script>
+        // NAICS data embedded from govcon_awards_2026-03-18.json
+        const naicsData = [
+            {
+                code: "541519",
+                description: "Other Computer Related Services",
+                count: 2,
+                total: 2521770.89,
+                keywords: ["computer", "it", "information technology", "software", "tech", "digital", "cyber", "cybersecurity"]
+            },
+            {
+                code: "332216",
+                description: "Saw Blade and Handtool Manufacturing",
+                count: 48,
+                total: 30375.78,
+                keywords: ["manufacturing", "tool", "blade", "hardware", "metal", "fabrication"]
+            },
+            // Extended NAICS library for better search coverage
+            {
+                code: "541330",
+                description: "Engineering Services",
+                count: 0,
+                total: 0,
+                keywords: ["engineering", "civil", "mechanical", "structural", "design", "technical"]
+            },
+            {
+                code: "541511",
+                description: "Custom Computer Programming Services",
+                count: 0,
+                total: 0,
+                keywords: ["programming", "software development", "coding", "application", "custom software"]
+            },
+            {
+                code: "541512",
+                description: "Computer Systems Design Services",
+                count: 0,
+                total: 0,
+                keywords: ["systems design", "architecture", "it consulting", "technology consulting"]
+            },
+            {
+                code: "541513",
+                description: "Computer Facilities Management Services",
+                count: 0,
+                total: 0,
+                keywords: ["it management", "facilities management", "operations", "infrastructure"]
+            },
+            {
+                code: "541690",
+                description: "Other Scientific and Technical Consulting Services",
+                count: 0,
+                total: 0,
+                keywords: ["consulting", "advisory", "technical", "scientific", "analysis"]
+            },
+            {
+                code: "236220",
+                description: "Commercial and Institutional Building Construction",
+                count: 0,
+                total: 0,
+                keywords: ["construction", "building", "commercial", "institutional", "facilities"]
+            },
+            {
+                code: "541611",
+                description: "Administrative Management and General Management Consulting Services",
+                count: 0,
+                total: 0,
+                keywords: ["management consulting", "business consulting", "strategy", "admin"]
+            },
+            {
+                code: "561210",
+                description: "Facilities Support Services",
+                count: 0,
+                total: 0,
+                keywords: ["facilities support", "maintenance", "operations support", "facility management"]
+            },
+            {
+                code: "562910",
+                description: "Remediation Services",
+                count: 0,
+                total: 0,
+                keywords: ["environmental", "remediation", "cleanup", "hazmat", "environmental services"]
+            },
+            {
+                code: "621111",
+                description: "Offices of Physicians",
+                count: 0,
+                total: 0,
+                keywords: ["medical", "healthcare", "physician", "clinical", "health services"]
+            },
+            {
+                code: "336411",
+                description: "Aircraft Manufacturing",
+                count: 0,
+                total: 0,
+                keywords: ["aircraft", "aerospace", "aviation", "defense manufacturing"]
+            },
+            {
+                code: "334511",
+                description: "Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",
+                count: 0,
+                total: 0,
+                keywords: ["navigation", "guidance systems", "radar", "sensors", "detection"]
+            },
+            {
+                code: "541380",
+                description: "Testing Laboratories",
+                count: 0,
+                total: 0,
+                keywords: ["testing", "laboratory", "quality assurance", "inspection", "certification"]
+            },
+            {
+                code: "561730",
+                description: "Landscaping Services",
+                count: 0,
+                total: 0,
+                keywords: ["landscaping", "grounds maintenance", "lawn care", "horticulture"]
+            },
+            {
+                code: "238210",
+                description: "Electrical Contractors and Other Wiring Installation Contractors",
+                count: 0,
+                total: 0,
+                keywords: ["electrical", "wiring", "electrical contractor", "installation"]
+            },
+            {
+                code: "238220",
+                description: "Plumbing, Heating, and Air-Conditioning Contractors",
+                count: 0,
+                total: 0,
+                keywords: ["plumbing", "hvac", "heating", "air conditioning", "mechanical"]
+            },
+            {
+                code: "811121",
+                description: "Automotive Body, Paint, and Interior Repair and Maintenance",
+                count: 0,
+                total: 0,
+                keywords: ["automotive", "vehicle maintenance", "repair", "fleet"]
+            },
+            {
+                code: "531120",
+                description: "Lessors of Nonresidential Buildings (except Miniwarehouses)",
+                count: 0,
+                total: 0,
+                keywords: ["real estate", "property", "lease", "facilities"]
+            }
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const resultsDiv = document.getElementById('results');
+        const noResultsDiv = document.getElementById('noResults');
+
+        function searchNAICS(query) {
+            if (!query || query.trim().length < 2) {
+                resultsDiv.classList.remove('active');
+                noResultsDiv.classList.remove('active');
+                return;
+            }
+
+            const searchTerm = query.toLowerCase().trim();
+            const matches = naicsData.filter(naics => {
+                const inDescription = naics.description.toLowerCase().includes(searchTerm);
+                const inCode = naics.code.includes(searchTerm);
+                const inKeywords = naics.keywords.some(keyword =>
+                    keyword.includes(searchTerm) || searchTerm.includes(keyword)
+                );
+                return inDescription || inCode || inKeywords;
+            });
+
+            displayResults(matches, searchTerm);
+        }
+
+        function displayResults(matches, query) {
+            if (matches.length === 0) {
+                resultsDiv.classList.remove('active');
+                noResultsDiv.classList.add('active');
+                return;
+            }
+
+            noResultsDiv.classList.remove('active');
+            resultsDiv.classList.add('active');
+
+            const html = matches.map(naics => {
+                const hasData = naics.count > 0;
+                const weekLabel = hasData ? "This Week" : "Recent Activity";
+                const countDisplay = hasData ? naics.count : "No data";
+                const totalDisplay = hasData ? `$${formatCurrency(naics.total)}` : "N/A";
+
+                return `
+                    <div class="result-card">
+                        <div class="naics-code">${naics.code}</div>
+                        <div class="naics-description">${naics.description}</div>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-label">Awards ${weekLabel}:</span> ${countDisplay}
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Total Value:</span> ${totalDisplay}
+                            </div>
+                        </div>
+                        <a href="#subscribe" class="cta-button">
+                            Track NAICS ${naics.code} Awards Weekly →
+                        </a>
+                    </div>
+                `;
+            }).join('');
+
+            resultsDiv.innerHTML = html;
+        }
+
+        function formatCurrency(amount) {
+            if (amount >= 1000000) {
+                return (amount / 1000000).toFixed(1) + 'M';
+            } else if (amount >= 1000) {
+                return (amount / 1000).toFixed(1) + 'K';
+            }
+            return amount.toFixed(2);
+        }
+
+        function searchExample(term) {
+            searchInput.value = term;
+            searchNAICS(term);
+        }
+
+        // Event listeners
+        searchInput.addEventListener('input', (e) => {
+            searchNAICS(e.target.value);
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchNAICS(e.target.value);
+            }
+        });
+
+        // Auto-focus search input
+        searchInput.focus();
+    </script>
+</body>
+</html>

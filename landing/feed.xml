@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GovCon Weekly Intelligence</title>
+    <link>https://dontlukeback.github.io/govcon-intel/</link>
+    <description>Weekly federal contract intelligence — recompetes, competitor tracking, strategic analysis</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dontlukeback.github.io/govcon-intel/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>GovWin Alternatives: 5 Federal Contract Intelligence Tools for Small Business</title>
+      <link>https://dontlukeback.github.io/govcon-intel/blog/govwin-alternatives.html</link>
+      <guid>https://dontlukeback.github.io/govcon-intel/blog/govwin-alternatives.html</guid>
+      <description>Compare GovWin, Bloomberg Gov, GovTribe, HigherGov, and GovCon Weekly Intelligence. Honest review of federal contract intelligence tools including pricing, strengths, and weaknesses for small businesses.</description>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Federal Contract Intelligence for 8(a) and SDVOSB Firms on a Budget</title>
+      <link>https://dontlukeback.github.io/govcon-intel/blog/small-business-federal-contracts.html</link>
+      <guid>https://dontlukeback.github.io/govcon-intel/blog/small-business-federal-contracts.html</guid>
+      <description>How 8(a) and SDVOSB small businesses can compete for federal contracts without $20K intelligence tools. Practical strategies using free data sources and smart positioning.</description>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Track Federal Contract Recompetes Before They Hit SAM.gov</title>
+      <link>https://dontlukeback.github.io/govcon-intel/blog/track-federal-recompetes.html</link>
+      <guid>https://dontlukeback.github.io/govcon-intel/blog/track-federal-recompetes.html</guid>
+      <description>Practical guide to tracking federal contract recompetes and expiring contracts using USAspending.gov and FPDS data. Find opportunities before your competitors see the RFP on SAM.gov.</description>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Top Federal IT Awards This Week: March 18</title>
+      <link>https://dontlukeback.github.io/govcon-intel/blog/weekly-2026-03-18.html</link>
+      <guid>https://dontlukeback.github.io/govcon-intel/blog/weekly-2026-03-18.html</guid>
+      <description>Breakdown of the largest federal IT contract awards for the week of March 18, 2026. $8.7B across 1138 awards tracked.</description>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Newsletter Archive — GovCon Weekly Intelligence</title>
+      <link>https://buttondown.com/govcon/archive/</link>
+      <guid>https://buttondown.com/govcon/archive/</guid>
+      <description>Browse past issues of GovCon Weekly Intelligence on Buttondown.</description>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

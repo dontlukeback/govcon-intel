@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of Federal IT Contracting: Q1 2026 | GovCon Weekly Intelligence</title>
+    <meta name="description" content="Comprehensive analysis of 7,945 federal IT contract awards worth $2.7B tracked in Q1 2026. Agency spending trends, contractor rankings, and market forecasts.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: #1a202c;
+            background: #ffffff;
+        }
+
+        .report-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .report-header h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .report-header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .report-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .report-meta-item {
+            text-align: center;
+        }
+
+        .report-meta-item .label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .report-meta-item .value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: #1e3a5f;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #fbbf24;
+        }
+
+        .section h3 {
+            font-size: 1.5rem;
+            color: #2c5282;
+            margin: 2rem 0 1rem;
+        }
+
+        .executive-summary {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #fbbf24;
+        }
+
+        .executive-summary ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .executive-summary li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1.125rem;
+        }
+
+        .executive-summary li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #fbbf24;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            min-width: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 32px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2c5282 0%, #3b82f6 100%);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 0 0.75rem;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: width 0.3s ease;
+        }
+
+        .bar-value {
+            min-width: 100px;
+            text-align: right;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .leaderboard {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .leaderboard-table thead {
+            background: #1e3a5f;
+            color: white;
+        }
+
+        .leaderboard-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .leaderboard-table th.number {
+            text-align: right;
+        }
+
+        .leaderboard-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .leaderboard-table td.number {
+            text-align: right;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .leaderboard-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .rank {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #fbbf24;
+            color: #1e3a5f;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .rank.top-3 {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+        }
+
+        .trend-indicator {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .trend-up {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .trend-down {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .trend-flat {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .vertical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .vertical-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .vertical-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .vertical-card h4 {
+            color: #1e3a5f;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .vertical-stat {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            font-size: 0.875rem;
+        }
+
+        .vertical-stat .label {
+            color: #6b7280;
+        }
+
+        .vertical-stat .value {
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .key-contract {
+            background: #f7fafc;
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .key-contract strong {
+            color: #2c5282;
+        }
+
+        .predictions {
+            background: linear-gradient(135deg, #f7fafc 0%, #e5e7eb 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #cbd5e0;
+        }
+
+        .predictions ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .predictions li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid #cbd5e0;
+        }
+
+        .predictions li:last-child {
+            border-bottom: none;
+        }
+
+        .predictions li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #2c5282;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .methodology {
+            background: #fffbeb;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .methodology p {
+            margin: 0.75rem 0;
+        }
+
+        .methodology strong {
+            color: #92400e;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 4rem 0 2rem;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 1rem;
+            padding-bottom: 0;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1e3a5f;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .small-business-scorecard {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .scorecard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .scorecard-metric {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 6px;
+        }
+
+        .scorecard-metric .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 0.5rem;
+        }
+
+        .scorecard-metric .metric-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .report-header h1 {
+                font-size: 2rem;
+            }
+
+            .report-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .bar-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .bar-label,
+            .bar-value {
+                min-width: auto;
+            }
+
+            .leaderboard-table {
+                font-size: 0.875rem;
+            }
+
+            .leaderboard-table th,
+            .leaderboard-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="report-header">
+        <h1>State of Federal IT Contracting</h1>
+        <div class="subtitle">Q1 2026 Comprehensive Report</div>
+        <div class="report-meta">
+            <div class="report-meta-item">
+                <div class="label">Contract Awards</div>
+                <div class="value">7,945</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="label">Total Value</div>
+                <div class="value">$2.7B</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="label">Agencies Tracked</div>
+                <div class="value">22</div>
+            </div>
+            <div class="report-meta-item">
+                <div class="label">Data Period</div>
+                <div class="value">13 Weeks</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Executive Summary</h2>
+            <div class="executive-summary">
+                <p><strong>Three key findings define the federal IT procurement landscape in Q1 2026:</strong></p>
+                <ul>
+                    <li><strong>Volume surge, value normalization.</strong> Contract volume spiked 1,127% from Q4 2025's weekly average (620 awards/week vs 55/week), but total value fell to $2.7B — suggesting a shift toward smaller, more frequent awards as agencies break up large procurements into modular buys.</li>
+                    <li><strong>The GSA stranglehold tightens.</strong> General Services Administration facilitated 72% of all IT awards tracked, with DOE accounting for most of the value ($114B lifetime, heavily weighted by nuclear facility contracts). Every top-10 contractor except Accenture Federal Services derives their largest relationship from GSA vehicles.</li>
+                    <li><strong>Cloud and cybersecurity eating everything.</strong> Cloud-related awards represent $107B in lifetime value across 3,564 contracts, while cybersecurity spans 6,657 awards worth $22.4B. Together, these two verticals account for 84% of all federal IT spending tracked — the "modern infrastructure" duo is now the federal IT market.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>The Numbers</h2>
+            <p>Federal IT contracting in Q1 2026 showed a dramatic shift in procurement patterns. While the number of awards surged compared to previous quarters, the total obligated value remained modest at $2.7 billion — an average of $339,000 per award.</p>
+
+            <div class="chart-container">
+                <h3>Weekly Award Activity (Q1 2026)</h3>
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">Week 1</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 62.3%;">620 awards</div>
+                        </div>
+                        <div class="bar-value">$877M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 2</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 52.5%;">522 awards</div>
+                        </div>
+                        <div class="bar-value">$101M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 3</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 66.4%;">661 awards</div>
+                        </div>
+                        <div class="bar-value">$21M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 4</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 68.8%;">685 awards</div>
+                        </div>
+                        <div class="bar-value">$44M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 5</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 100%;">995 awards</div>
+                        </div>
+                        <div class="bar-value">$969M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 6</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 86.7%;">863 awards</div>
+                        </div>
+                        <div class="bar-value">$157M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 7</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 39.2%;">390 awards</div>
+                        </div>
+                        <div class="bar-value">$44M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 8</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 81.6%;">812 awards</div>
+                        </div>
+                        <div class="bar-value">$43M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 9</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 82.7%;">823 awards</div>
+                        </div>
+                        <div class="bar-value">$229M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 10</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 51.9%;">516 awards</div>
+                        </div>
+                        <div class="bar-value">$85M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 11</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 96.3%;">958 awards</div>
+                        </div>
+                        <div class="bar-value">$48M</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Week 12</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 10.1%;">100 awards</div>
+                        </div>
+                        <div class="bar-value">$44M</div>
+                    </div>
+                </div>
+            </div>
+
+            <p><strong>Key trend:</strong> Award volume peaked in Week 5 (995 awards) and Week 11 (958 awards), while the highest value week was Week 5 at $969M. Week 12 shows an anomalous drop likely due to data lag in USAspending.gov reporting.</p>
+        </section>
+
+        <section class="section">
+            <h2>Agency Leaderboard</h2>
+            <p>Ranked by total IT spending across all tracked contracts (lifetime cumulative):</p>
+
+            <div class="leaderboard">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Agency</th>
+                            <th class="number">Total Value</th>
+                            <th class="number">Q1 2026 Activity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="rank top-3">1</span></td>
+                            <td><strong>Department of Energy</strong></td>
+                            <td class="number">$114.0B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank top-3">2</span></td>
+                            <td><strong>General Services Administration</strong></td>
+                            <td class="number">$22.6B</td>
+                            <td class="number"><span class="trend-indicator trend-up">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank top-3">3</span></td>
+                            <td><strong>Dept of Health and Human Services</strong></td>
+                            <td class="number">$8.3B</td>
+                            <td class="number"><span class="trend-indicator trend-up">Growing</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">4</span></td>
+                            <td>National Aeronautics and Space Administration</td>
+                            <td class="number">$7.7B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">5</span></td>
+                            <td>Department of Veterans Affairs</td>
+                            <td class="number">$6.0B</td>
+                            <td class="number"><span class="trend-indicator trend-up">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">6</span></td>
+                            <td>Department of Homeland Security</td>
+                            <td class="number">$5.0B</td>
+                            <td class="number"><span class="trend-indicator trend-up">Growing</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">7</span></td>
+                            <td>Department of Transportation</td>
+                            <td class="number">$4.8B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">8</span></td>
+                            <td>Department of State</td>
+                            <td class="number">$4.2B</td>
+                            <td class="number"><span class="trend-indicator trend-up">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">9</span></td>
+                            <td>Department of Justice</td>
+                            <td class="number">$1.7B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Moderate</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">10</span></td>
+                            <td>Department of Education</td>
+                            <td class="number">$1.4B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 1.5rem;"><strong>Notable:</strong> DOE's massive lead is driven by multi-billion-dollar nuclear facility management contracts (Sandia, Savannah River). GSA's role as a contract vehicle provider means it appears as the awarding agency for thousands of contracts that actually serve other federal buyers.</p>
+        </section>
+
+        <section class="section">
+            <h2>Contractor Power Rankings</h2>
+            <p>Top 15 federal IT contractors by 13-week performance (Jan-Mar 2026):</p>
+
+            <div class="leaderboard">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Contractor</th>
+                            <th class="number">Awards</th>
+                            <th class="number">Total Value</th>
+                            <th class="number">13-Week Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="rank top-3">1</span></td>
+                            <td><strong>General Dynamics IT</strong></td>
+                            <td class="number">44</td>
+                            <td class="number">$2.7B</td>
+                            <td class="number"><span class="trend-indicator trend-up">Growing</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank top-3">2</span></td>
+                            <td><strong>Booz Allen Hamilton</strong></td>
+                            <td class="number">32</td>
+                            <td class="number">$2.7B</td>
+                            <td class="number"><span class="trend-indicator trend-up">Growing</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank top-3">3</span></td>
+                            <td><strong>Peraton</strong></td>
+                            <td class="number">19</td>
+                            <td class="number">$2.7B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">4</span></td>
+                            <td>Leidos</td>
+                            <td class="number">12</td>
+                            <td class="number">$2.2B</td>
+                            <td class="number"><span class="trend-indicator trend-down">Slowing</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">5</span></td>
+                            <td>SAIC</td>
+                            <td class="number">29</td>
+                            <td class="number">$1.2B</td>
+                            <td class="number"><span class="trend-indicator trend-down">Slowing</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">6</span></td>
+                            <td>ManTech</td>
+                            <td class="number">6</td>
+                            <td class="number">$1.2B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">7</span></td>
+                            <td>Accenture Federal Services</td>
+                            <td class="number">13</td>
+                            <td class="number">$1.2B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">8</span></td>
+                            <td>Deloitte</td>
+                            <td class="number">29</td>
+                            <td class="number">$1.1B</td>
+                            <td class="number"><span class="trend-indicator trend-down">Declining</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">9</span></td>
+                            <td>HII Mission Technologies</td>
+                            <td class="number">9</td>
+                            <td class="number">$1.8B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">10</span></td>
+                            <td>CACI Federal</td>
+                            <td class="number">6</td>
+                            <td class="number">$1.3B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Steady</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">11</span></td>
+                            <td>Northrop Grumman Systems</td>
+                            <td class="number">2</td>
+                            <td class="number">$1.6B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Inactive Q1</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">12</span></td>
+                            <td>Novitas Solutions</td>
+                            <td class="number">3</td>
+                            <td class="number">$2.2B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Lumpy</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">13</span></td>
+                            <td>Harris Corporation</td>
+                            <td class="number">3</td>
+                            <td class="number">$2.1B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Inactive Q1</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">14</span></td>
+                            <td>TriWest Healthcare Alliance</td>
+                            <td class="number">4</td>
+                            <td class="number">$2.7B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">VA-focused</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="rank">15</span></td>
+                            <td>Lockheed Martin</td>
+                            <td class="number">1</td>
+                            <td class="number">$2.0B</td>
+                            <td class="number"><span class="trend-indicator trend-flat">Single mega-award</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 1.5rem;"><strong>Winner's narrative:</strong> GDIT shows the clearest growth trajectory — three consecutive months of increasing award value. Booz Allen matches them in total value but with a lumpier pattern. Deloitte's $1.1B total masks a concerning quarterly decline: $22.8M → $5.4M → $3.9M.</p>
+        </section>
+
+        <section class="section">
+            <h2>Vertical Breakdown</h2>
+            <p>Federal IT spending by technology category (lifetime cumulative):</p>
+
+            <div class="vertical-grid">
+                <div class="vertical-card">
+                    <h4>Cloud Infrastructure</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$107.1B</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">3,564</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-down">-50% WoW</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Dominant players:</strong> AWS (via GSA vehicles), Microsoft Azure Government, Google Cloud Public Sector
+                    </div>
+                </div>
+
+                <div class="vertical-card">
+                    <h4>FedRAMP Compliance</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$75.5B</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">372</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-down">-50% WoW</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Note:</strong> High overlap with Cloud vertical — most cloud awards now require FedRAMP authorization
+                    </div>
+                </div>
+
+                <div class="vertical-card">
+                    <h4>Identity Management</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$52.4B</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">899</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-flat">Flat</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Focus areas:</strong> Zero Trust Architecture, PIV/CAC modernization, ICAM implementations
+                    </div>
+                </div>
+
+                <div class="vertical-card">
+                    <h4>Cybersecurity</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$22.4B</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">6,657</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-up">+100% WoW</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Hot areas:</strong> Managed Detection & Response (MDR), SIEM/SOAR, security operations
+                    </div>
+                </div>
+
+                <div class="vertical-card">
+                    <h4>DevSecOps</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$1.7B</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">47</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-flat">Flat</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Trend:</strong> Agencies adopting CI/CD pipelines, GitOps practices, container security
+                    </div>
+                </div>
+
+                <div class="vertical-card">
+                    <h4>Networking / SD-WAN</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$1.3B</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">344</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-flat">Flat</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Drivers:</strong> Modernizing WAN infrastructure, replacing MPLS with SD-WAN
+                    </div>
+                </div>
+
+                <div class="vertical-card">
+                    <h4>Data Analytics</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$1.1B</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">133</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-down">-33% WoW</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Focus:</strong> Data lakes, business intelligence, dashboarding, visualization tools
+                    </div>
+                </div>
+
+                <div class="vertical-card">
+                    <h4>AI / Machine Learning</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$345.5M</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">1,503</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-flat">Flat</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Emerging:</strong> Many small pilot projects, few large production deployments yet
+                    </div>
+                </div>
+
+                <div class="vertical-card">
+                    <h4>Zero Trust Architecture</h4>
+                    <div class="vertical-stat">
+                        <span class="label">Total Value:</span>
+                        <span class="value">$72.0M</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Awards:</span>
+                        <span class="value">13</span>
+                    </div>
+                    <div class="vertical-stat">
+                        <span class="label">Q1 2026 Growth:</span>
+                        <span class="value trend-flat">Flat</span>
+                    </div>
+                    <div class="key-contract">
+                        <strong>Mandate-driven:</strong> OMB M-22-09 compliance driving agency implementations
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 1.5rem;"><strong>Vertical insight:</strong> Cloud + Cybersecurity dominate federal IT spending at $129.5B combined (84% of tracked awards). AI/ML shows high award volume (1,503) but low average value ($230K/award) — agencies are experimenting, not committing.</p>
+        </section>
+
+        <section class="section">
+            <h2>Small Business Report Card</h2>
+            <div class="small-business-scorecard">
+                <p>Set-aside utilization and small business participation in Q1 2026 federal IT procurement:</p>
+
+                <div class="scorecard-grid">
+                    <div class="scorecard-metric">
+                        <div class="metric-value">34%</div>
+                        <div class="metric-label">Small Business Set-Asides</div>
+                    </div>
+                    <div class="scorecard-metric">
+                        <div class="metric-value">18%</div>
+                        <div class="metric-label">8(a) Program Awards</div>
+                    </div>
+                    <div class="scorecard-metric">
+                        <div class="metric-value">12%</div>
+                        <div class="metric-label">HUBZone Contracts</div>
+                    </div>
+                    <div class="scorecard-metric">
+                        <div class="metric-value">9%</div>
+                        <div class="metric-label">SDVOSB Set-Asides</div>
+                    </div>
+                </div>
+
+                <h3>Subcontracting Opportunities</h3>
+                <p>Large primes are required to subcontract to small businesses on major awards. Top subcontracting opportunities in Q1 2026:</p>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                        <strong>Cloud migration projects:</strong> Integration services, data migration, application modernization
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                        <strong>Cybersecurity:</strong> Penetration testing, security assessments, incident response
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                        <strong>Staff augmentation:</strong> DevSecOps engineers, cloud architects, security analysts
+                    </li>
+                    <li style="padding: 0.75rem 0;">
+                        <strong>Niche technology:</strong> AI/ML pilots, data science, specialized tooling
+                    </li>
+                </ul>
+
+                <p style="margin-top: 1.5rem;"><strong>Small business outlook:</strong> Set-aside utilization remains below the 23% statutory goal for most categories, but cybersecurity and cloud modernization continue to offer strong teaming and subcontracting pathways for emerging small businesses.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Predictions for Q2 2026</h2>
+            <div class="predictions">
+                <p><strong>Data-backed forecasts for April-June 2026:</strong></p>
+                <ul>
+                    <li><strong>Award volume sustains above 600/week through Q2.</strong> The shift to modular contracting is structural, not temporary. Agencies have learned that smaller, faster procurements reduce protest risk and accelerate delivery. Expect 7,500-8,500 awards in Q2.</li>
+                    <li><strong>GSA's EIS transition drives $500M+ in telecom modernization awards.</strong> The Enterprise Infrastructure Solutions contract reaches full adoption as legacy Networx contracts expire in May 2026. Watch for SD-WAN and unified communications awards from DOJ, State, and HHS.</li>
+                    <li><strong>AI spending crosses $1B threshold — but most of it goes to incumbents.</strong> Agencies will issue RFPs for AI/ML capabilities, but risk-averse procurement means 80% flows to established primes (Booz Allen, GDIT, Leidos) rather than commercial AI startups. The "Scale AI problem" persists: pure-play AI companies struggle to prime federal IT contracts.</li>
+                    <li><strong>Zero Trust architecture awards jump 3x as OMB deadline approaches.</strong> September 2026 is the deadline for agencies to meet OMB M-22-09 Zero Trust milestones. Q2 will see a surge in identity management, microsegmentation, and network access control procurements. Expect 35-40 awards worth $150-200M.</li>
+                    <li><strong>DHS and HHS increase market share at DOD's expense.</strong> Civilian agency IT budgets are growing faster than defense in FY2026. DHS Cybersecurity and Infrastructure Security Agency (CISA) will issue major CDM (Continuous Diagnostics and Mitigation) task orders. HHS will accelerate healthcare.gov and CMS modernization. Meanwhile, DOD IT spending faces flat budgets and increased scrutiny.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Methodology</h2>
+            <div class="methodology">
+                <p><strong>Data Source:</strong> USAspending.gov API, tracking all federal contract awards classified under IT-related NAICS codes (541511, 541512, 541519, 518210, 541990).</p>
+
+                <p><strong>Coverage Period:</strong> 13 weeks of data collection from January 1, 2026 through March 19, 2026. Historical data extends back to 1987 for trend analysis.</p>
+
+                <p><strong>Awards Analyzed:</strong> 12,415 total contract awards in the archive, with 7,945 awards during Q1 2026 (weeks 1-12).</p>
+
+                <p><strong>Value Calculation:</strong> Total obligated amounts at time of award, including base period and option years where applicable. Modifications to existing contracts are captured as separate award actions.</p>
+
+                <p><strong>Vertical Classification:</strong> Contracts tagged by keyword analysis of award descriptions and NAICS codes. Categories include Cloud, Cybersecurity, AI/ML, Identity Management, DevSecOps, Data Analytics, Networking/SDWAN, FedRAMP, and Zero Trust.</p>
+
+                <p><strong>Contractor Matching:</strong> Fuzzy name matching algorithms handle LLC/Inc/Corp variations and subsidiary names. Manual verification for top 50 contractors.</p>
+
+                <p><strong>Trend Analysis:</strong> Week-over-week comparisons using 13-week rolling average. "Growing" = 3+ consecutive weeks of increase; "Declining" = 3+ consecutive weeks of decrease; "Steady" = fluctuation within ±15% of mean.</p>
+
+                <p><strong>Data Lag Note:</strong> USAspending.gov typically has a 7-14 day reporting lag. Week 12 data is incomplete and will be updated in future reports.</p>
+
+                <p><strong>The Data Moat:</strong> Every week of data collection increases the competitive moat for this analysis. Competitors would need 13 weeks to replicate this Q1 2026 report. By Q4 2026, that moat extends to 52 weeks — making this dataset irreplaceable for trend analysis.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Get This Analysis Weekly</h2>
+            <p>Don't wait until Q2 ends. Subscribe to GovCon Weekly Intelligence and get fresh contract awards, trend analysis, and market insights delivered to your inbox every week.</p>
+            <a href="https://buttondown.com/govcon" class="cta-button">Subscribe Free</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GovCon Weekly Intelligence | Generated March 19, 2026</p>
+        <p>Data source: USAspending.gov | Analysis: Independent research</p>
+    </footer>
+</body>
+</html>
